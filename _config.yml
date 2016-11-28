@@ -1,0 +1,10 @@
+# Site settings
+title: "KeePassXC Password Manager"
+baseurl: ""
+url: ""
+
+github: keepassx-reboot
+
+# Build settings
+markdown: kramdown
+permalink: /:title

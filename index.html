@@ -1,68 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.png">
-
-    <title>KeePassXC Password Manager</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/flat-ui.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/main.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <img class="navbar-logo" src="logo-small.png">
-          <a class="navbar-brand" href="#">KeePassXC</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="download.html"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>Download</a></li>
-              <li><a href="docs.html"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>Docs</a></li>
-              <li><a href="docs.html#faq"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>FAQ</a></li>
-              <li><a href="team.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>About the Team</a></li>
-             </ul>
-          </div><!-- /.navbar-collapse -->
-      </div>
-    </nav>
+---
+layout: default
+---
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <div class="row">
           <div id="logo" class="col-md-3 col-md-offset-1">
-            <img src="logo.png">
+            <img src="/logo.png">
           </div>
           <div class="col-md-8">
             <h4>KeePassXC</h4>
             <h6>KeePass Cross-Platform Community Edition</h6>
-            <p>Fork of KeePassX that aims to incorporate stalled Pull Requests, features, and bug fixes that are not being incorporated into the main KeePassX baseline.</p>
+            <p>The best thing Computers can do is Store information.<br/>
+               You shuldn't lose your time trying to remember and type your passwords.<br/>
+               KeePassXC can store your password safely and Autotype them in your everyday websites and applications.
+            </p>
             <p>
-              <a class="btn btn-warning btn-lg" href="project.html" role="button">Learn more &raquo;</a>
-              <a id="download_button" class="btn btn-info btn-lg" href="download.html" role="button">Download &raquo;</a>
-              <a id="platform_button" class="btn btn-info btn-lg" href="download.html" role="button">Other Platforms &raquo;</a>
+              <a class="btn btn-warning btn-lg" href="/project" role="button"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>Learn more &raquo;</a>
+              <a id="download_button" class="btn btn-info btn-lg" href="/download" role="button"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>Download &raquo;</a>
+              <a id="platform_button" class="btn btn-info btn-lg" href="/download" role="button"><span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>Other Platforms &raquo;</a>
             </p>
           </div>
         </div>
@@ -73,35 +30,31 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h4>Encrypted</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h4><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>Encrypted</h4>
+          <p>The complete database is always encrypted either with AES (alias Rijndael) encryption algorithm using a 256 bit key.
+             KeePassXC uses a database format that is compatible with KeePass Password Safe.
+             Your wallet always works offline with no internet connection.
+          </p>
         </div>
         <div class="col-md-4">
-          <h4>Cross-Platform</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h4><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>Cross-Platform</h4>
+          <p>KeePassXC is a Community fork of KeePassX, the cross-platform port of KeePass for Windows.
+             Every feature is Cross-Platform and tested to give users the same feel on each Operative System,
+             including the loved Autotype feature.
+          </p>
        </div>
         <div class="col-md-4">
-          <h4>Free</h4>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <h4><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>Free</h4>
+          <p>The Source Code is published under the terms of the GNU General Public License.
+             KeePassXC will always be Free as in Feedom as well as in Price.
+             All the contribution from everyone are welcome.
+          </p>
         </div>
       </div>
 
       <hr>
 
-      <footer class="footer">
-        <div class="container">
-          <p>&copy; 2016 KeePassXC Team</p>
-        </div>
-      </footer>
     </div> <!-- /container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!--script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script-->
-    <script src="js/os-detect.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>
+    <script src="/js/os-detect.js"></script>
+    <script src="/js/main.js"></script>

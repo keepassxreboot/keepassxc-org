@@ -1,6 +1,6 @@
 body {
   padding-top: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   font-family: 'Lato', sans-serif;
 }
 
@@ -18,6 +18,14 @@ body {
 .jumbotron {
   background: #6cac4d;
   color:#fff;
+}
+
+.jumbotron-small {
+  padding: 24px 0;
+}
+
+.jumbotron-small {
+  text-align: center;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
