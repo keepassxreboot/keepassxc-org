@@ -54,8 +54,8 @@ body {
   margin-right: 10px;
 }
 
-.glyphicon {
-  padding: 0 5px;
+.fa {
+  padding: 0 5px 0 0;
 }
 
 .btn {
@@ -64,4 +64,22 @@ body {
 
 #platform_button {
   display: none;
+}
+
+.download [class^="col-"] .platform {
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+  transition: all 700ms linear;
+  text-align: center;
+}
+
+.download [class^="col-"] a {
+  color:green;
+}
+.download [class^="col-"] a:hover {
+  color:grey;
+}
+
+.download [class^="col-"] .platform h3 {
+  margin: 20px;
 }
