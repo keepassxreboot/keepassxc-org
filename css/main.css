@@ -83,3 +83,7 @@ body {
 .download [class^="col-"] .platform h3 {
   margin: 20px;
 }
+
+.faq span {
+  font-weight: bold;
+}

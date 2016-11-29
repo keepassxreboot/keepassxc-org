@@ -4,4 +4,33 @@ title: Docs
 permalink: docs
 ---
 
-Hello
+<br/>
+
+<div><a name="wiki"></a><hr/>
+  <h3>Wiki</h3>
+  You can read the official documentation, Build/Install instruction and many other guide on the <a href="https://github.com/keepassxreboot/keepassxc/wiki">Wiki</a>
+</div>
+
+<div><a name="faq"></a><hr/>
+  <h3>FAQ</h3>
+  <p class="faq"><span>Is Auto-Type supported on Mac OS X or Windows?</span><br/>
+    Yes, Auto-Type works cross-platform.
+  </p>
+  <p class="faq"><span>What password database formats are compatible with KeePassXC?</span><br/>
+  KeePassXC currently uses the KeePass 2 (.kdbx) password database format as the native format.
+  It can also import KeePass 1 (.kdb) databases.
+  </p>
+  <p class="faq"><span>Why I get an error when I try to build from source for this Platform?</span><br/>
+  Please follow every step in the <a href="https://github.com/keepassxreboot/keepassxc/wiki/Install-Instruction-from-Source">Wiki:Install-Instruction-from-Source</a> page
+  </p>
+  <p class="faq"><span>Why on Ubuntu/Unity the tray icon, the tray menu and in-app shortcuts don't work?</span><br/>
+  This is a bug caused by the <code>appmenu-qt5</code> package.<br/>
+  You have 3 option:<br/>
+  <ol>
+    <li>Removing the <code>appmenu-qt5</code> package</li>
+    <li>Setting the Environment variable <code>UBUNTU_MENUPROXY=''</code></li>
+    <li>Setting the Environment variable <code>QT_QPA_PLATFORMTHEME=''</code></li>
+  </ol>
+  <strong>Note</strong> By using the 1st or the 3rd, KeePassXC will lose the Unity look&amp;feel.
+  </p>
+</div>
