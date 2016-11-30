@@ -4,4 +4,50 @@ title: "About the Team"
 permalink: team
 ---
 
-Hello
+<h3>Team</h3>
+<p>The actual team is formed by</p>
+<div id="team"></div>
+
+<h3>Contact</h3>
+<p>You can contact us on IRC <code>irc.freenode.net</code> on the channel <code>#keepassxc</code>,
+  on <a href="https://groups.google.com/forum/#!forum/keepassx-reboot">Google Groups</a> or eventually by email
+  at <span id="contact">team [at] keepassxc [dot] org</span></p>
+
+<script>
+(function (window) {
+  var team = document.getElementById("team");
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://api.github.com/orgs/keepassxreboot/public_members');
+
+  request.onload = function (e) {
+    if (request.readyState === 4) {
+      if (request.status === 200) {
+        var data = JSON.parse(request.responseText);
+        team.insertAdjacentHTML('beforeend', '<div class="row"></div>');
+        var team_row = team.children[0];
+        team_row.innerHTML = "";
+        data.forEach(function( value, index ) {
+          team_row.innerHTML += '<div class="col-xs-6 col-md-3"> <div class="thumbnail"><a href="'+value.html_url+'"><img src="'+value.avatar_url+'" alt="'+value.login+'"></a><div class="caption"><h6>'+value.login+'</h6><p><a target="_blank" href="'+value.html_url+'" class="btn btn-primary" role="button">GitHub</a> <a target="_blank" href="https://github.com/keepassxreboot/keepassxc/commits?author='+value.login+'" class="btn btn-default" role="button">Contributions</a></p></div></div></div>';
+        });
+        console.log("DONE"+team_row.innerHTML);
+      } else {
+        console.error(request.statusText);
+        team.innerHTML += 'Error loading contributers... Connection issues?';
+      }
+    }
+  };
+
+  // Catch errors:
+
+  request.onerror = function (e) {
+    console.error(request.statusText);
+    team.innerHTML += 'Error loading contributers... Connection issues?';
+  };
+
+  request.send(null);
+
+  var contact = document.getElementById("contact");
+  var address = contact.innerText.replace(/ \[at\] /, '@').replace(/ \[dot\] /, '.');
+  contact.innerHTML = '<a href="mailto:' + address + '">' + address + '<\/a>';
+}(this));
+</script>
