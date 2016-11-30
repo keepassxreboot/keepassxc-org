@@ -87,3 +87,8 @@ body {
 .faq span {
   font-weight: bold;
 }
+
+a.btn {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}

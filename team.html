@@ -27,7 +27,7 @@ permalink: team
         var team_row = team.children[0];
         team_row.innerHTML = "";
         data.forEach(function( value, index ) {
-          team_row.innerHTML += '<div class="col-xs-6 col-md-3"> <div class="thumbnail"><a href="'+value.html_url+'"><img src="'+value.avatar_url+'" alt="'+value.login+'"></a><div class="caption"><h6>'+value.login+'</h6><p><a target="_blank" href="'+value.html_url+'" class="btn btn-primary" role="button">GitHub</a> <a target="_blank" href="https://github.com/keepassxreboot/keepassxc/commits?author='+value.login+'" class="btn btn-default" role="button">Contributions</a></p></div></div></div>';
+          team_row.innerHTML += '<div class="col-xs-12 col-sm-6 col-md-3"> <div class="thumbnail"><a href="'+value.html_url+'"><img src="'+value.avatar_url+'" alt="'+value.login+'"></a><div class="caption"><h6>'+value.login+'</h6><p><a target="_blank" href="'+value.html_url+'" class="btn btn-primary" role="button">GitHub</a> <a target="_blank" href="https://github.com/keepassxreboot/keepassxc/commits?author='+value.login+'" class="btn btn-default" role="button">Contributions</a></p></div></div></div>';
         });
         console.log("DONE"+team_row.innerHTML);
       } else {
