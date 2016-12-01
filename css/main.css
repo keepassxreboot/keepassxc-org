@@ -69,7 +69,7 @@ body {
 .download [class^="col-"] .platform {
   background-color: rgba(86, 61, 124, 0.15);
   border: 1px solid rgba(86, 61, 124, 0.2);
-  transition: all 700ms linear;
+  transition: all 700ms;
   text-align: center;
 }
 
@@ -91,4 +91,20 @@ body {
 a.btn {
   margin-bottom: 5px;
   margin-top: 5px;
+}
+
+.caption a.btn {
+  margin-left: 0px;
+}
+
+.navbar-toggle::before {
+  content: "\f0c9";
+  font-family: "FontAwesome";
+}
+
+@media (max-width:1000px) {
+  .navbar-nav > li > a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
