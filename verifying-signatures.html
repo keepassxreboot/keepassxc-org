@@ -8,55 +8,67 @@ permalink: verifying-signatures
 
 <div><a name="verify-signature"></a><hr/>
   <p>By verifying the signatures of KeePassXC releases you prove <strong>authenticity</strong> and <strong>integrity</strong> of the downloaded file.<br/>
-    This mean that the file you just downloaded are created by the KeePassXC Team (the sign was made by one of KeePassXC maintainer),<br/>
-     and that the content of the file is exactly what KeePassXC Team signed.<br/><br/>
-     A more detailed article is available on <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project Documentation</a> that adopt the same way to sign releases as we do.
+    This means that the file you just downloaded was created by the KeePassXC Team (the signature was made by one of the KeePassXC maintainers)<br/>
+     and that the contents of the file are exactly what the KeePassXC Team signed.<br/><br/>
+     A more detailed article is available in the <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
   </p>
 </div>
 
 <br/>
 
 <div><a name="how-to-verify-signatures"></a><hr/>
-  <h4>Importing the Master Key</h4>
-  <p>First of all, the KeePassXC Master Key can be imported directly in the following ways</p>
-  <strong>From a keyserver</strong>
+  <h4>Importing the Public Master Key</h4>
+  <p>The KeePassXC public master key can be imported as follows</p>
+  <strong>From a specific keyserver</strong>
   <pre><code>gpg --keyserver pool.sks-keyservers.net --recv-keys 0xBF5A669F2272CF4324C1FDA8CFB4C2166397D0D2</code></pre>
-  <strong>Downloaded manually <a href="https://keepassxc.org/keepassxc_master_signing_key.asc">here</a> and imported with gpg</strong>
+  <strong>Manual downloaded from <a href="https://keepassxc.org/keepassxc_master_signing_key.asc">here</a> and import with gpg</strong>
   <pre><code>gpg --import ./keepassxc_master_signing_key.asc </code></pre>
-  <strong>Fetched directly with gpg</strong>
+  <strong>Fetch via gpg</strong>
   <pre><code>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</code></pre>
-  <p>For additional security we also publish the fingerprint of the KeePassXC Master Signing Key here in this document:</p>
+  <p>These are the fingerprints of the master key and the current signing sub keys:</p>
   <div><pre><code>pub   rsa4096/CFB4C2166397D0D2 2017-01-03 [SC]
       Key fingerprint = BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
-uid                 [  unknown  ] KeePassXC Release <release@keepassxc.org>
+uid                 [  unknown  ] KeePassXC Release &lt;<span id="e0">release 'AT` keepassxc ^DOT' org</span>&gt;
 sub   rsa2048/AFF235EEFB5A2517 2017-01-03 [S] [expires: 2019-01-03]
 sub   rsa2048/D8538E98A26FD9C4 2017-01-03 [S] [expires: 2019-01-03]
 sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
   </div>
-  <p>There should also be a copy of this key at the project’s main website, on the
-    <a href="https://github.com/keepassxreboot/keepassxreboot.github.io/blob/master/keepassxc_master_signing_key.asc">KeePassXC Website repository</a>, and in the archives of the project’s
-    <a href="https://groups.google.com/forum/#!topic/keepassx-reboot/PCfTw99W5aM">group</a>.</p>
+  <p>The full public master key can also be downloaded from the
+    <a href="https://github.com/keepassxreboot/keepassxreboot.github.io/blob/master/keepassxc_master_signing_key.asc">KeePassXC website repository</a> and the archives of the project’s
+    <a href="https://groups.google.com/forum/#!topic/keepassx-reboot/PCfTw99W5aM">Google Group</a>.</p>
   </p>
   <h4>Verifying Releases</h4>
   <p>Every KeePassXC release is made of various files.<br/>
-    A <code>.dmg</code> binary file for macOS, A <code>.zip</code> binary file for Windows and a <code>.tar.gz</code> source tarball for GNU/Linux and other platforms.<br/>
-    Each of these files have a detached <code>.sig</code> version signed with <strong>one of the Release SubKey</strong>.<br/>
-    Finally there is a <code>.DIGESTS</code> file clearsign that contains SHA256 and SHA512 digests for each release files.<br/>
-    <i>Note:</i> If you have trusted "ultimately" the Master key, Release SubKeys are trusted by default.<br/><br/>
-    You can verify the <strong>authenticity</strong> for <strong>binary packages</strong> with the <code>detached signatures</code> by running the following command:
+    A <code>.dmg</code> image for OS X, a <code>.zip</code> archive with binaries for Windows and a <code>.tar.gz</code> source tarball for GNU/Linux and other platforms.<br/>
+    Each of these files has a <code>.sig</code> sidecar file containing a detached signature created with <strong>one of the release sub keys</strong>.<br/>
+    Finally, there is a <code>.DIGESTS</code> file that contains SHA256 and SHA512 digests for each release file.<br/>
+    <i>Note:</i> If you have trusted the master key, the release sub keys are also trusted.<br/><br/>
+    You can verify the <strong>authenticity and integrity</strong> of a downloaded package using its detached signatures by running the following command:
     <pre><code>$ gpg -v --verify KeePassXC-$VERSION.zip.asc KeePassXC.zip
 gpg: using subkey AFF235EEFB5A2517 instead of primary key CFB4C2166397D0D2
 gpg: using PGP trust model
-gpg: Good signature from "KeePassXC Release <release@keepassxc.org>" [unknown]</code></pre>
-    You can verify the <strong>authenticity</strong> for <strong>the digests file</strong> with the <code>clear signature</code> by running the following command:
+gpg: Good signature from "KeePassXC Release &lt;<span id="e1">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]</code></pre>
+    You can verify the <strong>authenticity and integrity</strong> of the digests file by running the following command:
     <pre><code>$ gpg -v --verify KeePassXC-$VERSION.DIGESTS.asc
 gpg: using subkey AFF235EEFB5A2517 instead of primary key CFB4C2166397D0D2
 gpg: using PGP trust model
-gpg: Good signature from "KeePassXC Release <release@keepassxc.org>" [unknown]</code></pre>
-    You can verify the <strong>integrity</strong> for <strong>binary packages</strong> with their <code>hash digest</code> by running the following command:
+gpg: Good signature from "KeePassXC Release &lt;<span id="e2">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]</code></pre>
+    Alternatively, you can also verify the <strong>integrity</strong> of a package by comparing its <code>hash digests</code> with the following command:
     <pre><code>$ sha256sum -c --ignore-missing KeePassXC-$VERSION.DIGESTS
 KeePassXC-2.0.3.zip: OK
 $ sha512sum -c --ignore-missing KeePassXC-$VERSION.DIGESTS
 KeePassXC-2.0.3.zip: OK</code></pre>
   </p>
 </div>
+
+<script>
+(function (window) {
+  var e0 = document.getElementById("e0");
+  var e1 = document.getElementById("e1");
+  var e2 = document.getElementById("e2");
+  e0.innerHTML = e0.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
+  e1.innerHTML = e1.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
+  e2.innerHTML = e2.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
+}(this));
+</script>
+
