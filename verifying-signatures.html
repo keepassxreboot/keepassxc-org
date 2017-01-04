@@ -1,0 +1,62 @@
+---
+layout: pages
+title: Verifying Signatures
+permalink: verifying-signatures
+---
+
+<br/>
+
+<div><a name="verifying-signatures"></a><hr/>
+  <p>By verifying signatures of KeePassXC releases you prove <strong>authenticity</strong> and <strong>integrity</strong> of the downloaded file.<br/>
+    This mean that the file you just downloaded are created by the KeePassXC Team (the sign was made by one of KeePassXC maintainer),<br/>
+     and that the content of the file is exactly what KeePassXC Team signed.<br/><br/>
+     A more detailed article is available on <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project Documentation</a> that adopt the same way to sign releases as we do.
+  </p>
+</div>
+
+<br/>
+
+<div><a name="verifying-signatures"></a><hr/>
+  <h4>Importing the Master Key</h4>
+  <p>First of all you have to import the KeePassXC Master Key</p>
+  <strong>From a keyserver</strong>
+  <pre><code>gpg --keyserver pool.sks-keyservers.net --recv-keys 0xBF5A669F2272CF4324C1FDA8CFB4C2166397D0D2</code></pre>
+  <strong>Downloaded manually <a href="https://keepassxc.org/keepassxc_master_signing_key.asc">here</a> and imported with gpg</strong>
+  <pre><code>gpg --import ./keepassxc_master_signing_key.asc </code></pre>
+  <strong>Fetched directly with gpg</strong>
+  <pre><code>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</code></pre>
+  <p>For additional security we also publish the fingerprint of the KeePassXC Master Signing Key here in this document:</p>
+  <div><pre><code>pub   rsa4096/CFB4C2166397D0D2 2017-01-03 [SC]
+      Key fingerprint = BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
+uid                 [  unknown  ] KeePassXC Release <release@keepassxc.org>
+sub   rsa2048/AFF235EEFB5A2517 2017-01-03 [S] [expires: 2019-01-03]
+sub   rsa2048/D8538E98A26FD9C4 2017-01-03 [S] [expires: 2019-01-03]
+sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
+  </div>
+  <p>There should also be a copy of this key at the project’s main website, on the
+    <a href="https://github.com/keepassxreboot/keepassxreboot.github.io/blob/master/keepassxc_master_signing_key.asc">KeePassXC Website repository</a>, and in the archives of the project’s
+    <a href="https://groups.google.com/forum/#!topic/keepassx-reboot/PCfTw99W5aM">group</a>.</p>
+  </p>
+  <h4>Verifying Releases</h4>
+  <p>Every KeePassXC release is made of various file.<br/>
+    A <code>.dmg</code> binary file for macOS, A <code>.zip</code> binary file for Windows and a <code>.tar.gz</code> source tarball for GNU/Linux and other platform.<br/>
+    Each of this file have a detached <code>.sig</code> version signed with <strong>one of the Release SubKey</strong>.<br/>
+    Finally there is a <code>.DIGESTS</code> file clearsign that contains SHA256 and SHA512 digests for each release file.<br/>
+    <i>Note:</i> If you have trusted "ultimately" the Master key, Release SubKeys are trusted by default.<br/><br/>
+    You can verify the <strong>authenticity</strong> for <strong>binary packages</strong> with the <code>detached signature</code> by running the following command:
+    <pre><code>$ gpg -v --verify KeePassXC-$VERSION.zip.asc KeePassXC.zip
+gpg: using subkey AFF235EEFB5A2517 instead of primary key CFB4C2166397D0D2
+gpg: using PGP trust model
+gpg: Good signature from "KeePassXC Release <release@keepassxc.org>" [unknown]</code></pre>
+    You can verify the <strong>authenticity</strong> for <strong>digests file</strong> with the <code>clear signature</code> by running the following command:
+    <pre><code>$ gpg -v --verify KeePassXC-$VERSION.DIGESTS.asc
+gpg: using subkey AFF235EEFB5A2517 instead of primary key CFB4C2166397D0D2
+gpg: using PGP trust model
+gpg: Good signature from "KeePassXC Release <release@keepassxc.org>" [unknown]</code></pre>
+    You can verify the <strong>integrity</strong> for <strong>binary package</strong> with the <code>hash digest</code> by running the following command:
+    <pre><code>$ sha256sum -c --ignore-missing KeePassXC-$VERSION.DIGESTS
+KeePassXC-2.0.3.zip: OK
+$ sha512sum -c --ignore-missing KeePassXC-$VERSION.DIGESTS
+KeePassXC-2.0.3.zip: OK</code></pre>
+  </p>
+</div>
