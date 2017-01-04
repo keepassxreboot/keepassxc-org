@@ -14,14 +14,12 @@ permalink: verifying-signatures
   </p>
 </div>
 
-<br/>
-
 <div><a name="how-to-verify-signatures"></a><hr/>
   <h4>Importing the Public Master Key</h4>
   <p>The KeePassXC public master key can be imported as follows</p>
   <strong>From a specific keyserver</strong>
   <pre><code>gpg --keyserver pool.sks-keyservers.net --recv-keys 0xBF5A669F2272CF4324C1FDA8CFB4C2166397D0D2</code></pre>
-  <strong>Manual downloaded from <a href="https://keepassxc.org/keepassxc_master_signing_key.asc">here</a> and import with gpg</strong>
+  <strong>Manual download from <a href="https://keepassxc.org/keepassxc_master_signing_key.asc">here</a> and import with gpg</strong>
   <pre><code>gpg --import ./keepassxc_master_signing_key.asc </code></pre>
   <strong>Fetch via gpg</strong>
   <pre><code>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</code></pre>
