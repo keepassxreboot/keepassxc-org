@@ -5,13 +5,13 @@ permalink: team
 ---
 
 <h3>Team</h3>
-<p>The actual team is formed by</p>
+<p>The KeePassXC team is formed by</p>
 <div id="team"></div>
 
 <h3>Contact</h3>
-<p>You can contact us on IRC <code>irc.freenode.net</code> on the channel <code>#keepassxc</code>,
-  on <a href="https://groups.google.com/forum/#!forum/keepassx-reboot">Google Groups</a> or eventually by email
-  at <span id="contact">team [at] keepassxc [dot] org</span></p>
+<p>You can contact us on IRC at <code>chat.freenode.net</code> in the channels <code>#keepassxc</code> and <code>#keepassxc-dev</code>,
+  on <a href="https://groups.google.com/forum/#!forum/keepassx-reboot">Google Groups</a> or directly by email
+  at <span id="c">team 'AT` keepassxc ^DOT' org</span>.</p>
 
 <script>
 (function (window) {
@@ -31,22 +31,21 @@ permalink: team
         });
       } else {
         console.error(request.statusText);
-        team.innerHTML += 'Error loading contributers... Connection issues?';
+        team.innerHTML += 'Error loading contributors... Connection issues?';
       }
     }
   };
 
   // Catch errors:
-
   request.onerror = function (e) {
     console.error(request.statusText);
-    team.innerHTML += 'Error loading contributers... Connection issues?';
+    team.innerHTML += 'Error loading contributors... Connection issues?';
   };
 
   request.send(null);
 
-  var contact = document.getElementById("contact");
-  var address = contact.innerText.replace(/ \[at\] /, '@').replace(/ \[dot\] /, '.');
-  contact.innerHTML = '<a href="mailto:' + address + '">' + address + '<\/a>';
+  var c = document.getElementById("c");
+  var a = c.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
+  c.innerHTML = '<a href="mailto:' + a + '">' + a + '<\/a>';
 }(this));
 </script>

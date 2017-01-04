@@ -12,4 +12,4 @@ This website use **Jekyll** and **GithubPages**.
 
 ### Contributing
 
-For Contributing guidelines refer to the [main repository CONTRIBUTING.md](https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md)
+For contribution guidelines refer to the [CONTRIBUTING.md](https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md) from the main repository.
