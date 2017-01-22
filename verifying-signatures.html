@@ -37,25 +37,19 @@ sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
   </p>
   <h4>Verifying Releases</h4>
   <p>Every KeePassXC release is made of various files.<br/>
-    A <code>.dmg</code> image for OS X, a <code>.zip</code> archive with binaries for Windows and a <code>.tar.gz</code> source tarball for GNU/Linux and other platforms.<br/>
+    A <code>.dmg</code> image for OS X, a <code>.zip</code> archive with binaries for Windows and a self-contained <code>.AppImage</code> for GNU/Linux and other platforms. There is also a cross-platform <code>.tar.bz2</code> source tarball.<br/>
     Each of these files has a <code>.sig</code> sidecar file containing a detached signature created with <strong>one of the release sub keys</strong>.<br/>
-    Finally, there is a <code>.DIGESTS</code> file that contains SHA256 and SHA512 digests for each release file.<br/>
-    <i>Note:</i> If you have trusted the master key, the release sub keys are also trusted.<br/><br/>
+    <i>Note:</i> If you have trusted the master GPG key, the release sub keys are also trusted.<br/><br/>
     You can verify the <strong>authenticity and integrity</strong> of a downloaded package using its detached signatures by running the following command:
-    <pre><code>$ gpg -v --verify KeePassXC-$VERSION.zip.asc KeePassXC.zip
-gpg: using subkey AFF235EEFB5A2517 instead of primary key CFB4C2166397D0D2
-gpg: using PGP trust model
+    <pre><code>$ gpg -v --verify KeePassXC-$VERSION-x86_64.AppImage.sig KeePassXC-$VERSION-x86_64.AppImage
+gpg: Signature made Sun 22 Jan 2017 06:32:45 PM CET
+gpg:                using RSA key 71D4673D73C7F83C17DAE6A2D8538E98A26FD9C4
 gpg: Good signature from "KeePassXC Release &lt;<span id="e1">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]</code></pre>
-    You can verify the <strong>authenticity and integrity</strong> of the digests file by running the following command:
-    <pre><code>$ gpg -v --verify KeePassXC-$VERSION.DIGESTS.asc
-gpg: using subkey AFF235EEFB5A2517 instead of primary key CFB4C2166397D0D2
-gpg: using PGP trust model
-gpg: Good signature from "KeePassXC Release &lt;<span id="e2">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]</code></pre>
-    Alternatively, you can also verify the <strong>integrity</strong> of a package by comparing its <code>hash digests</code> with the following command:
-    <pre><code>$ sha256sum -c --ignore-missing KeePassXC-$VERSION.DIGESTS
-KeePassXC-2.0.3.zip: OK
-$ sha512sum -c --ignore-missing KeePassXC-$VERSION.DIGESTS
-KeePassXC-2.0.3.zip: OK</code></pre>
+
+    Additionally, there is a <code>.DIGEST</code> file that contains the SHA256 digest for each release file.<br/>
+    You can also verify the <strong>integrity</strong> of a package by comparing its hash digest with the following command:
+    <pre><code>$ sha256sum -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
+KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
   </p>
 </div>
 
@@ -66,7 +60,6 @@ KeePassXC-2.0.3.zip: OK</code></pre>
   var e2 = document.getElementById("e2");
   e0.innerHTML = e0.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
   e1.innerHTML = e1.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
-  e2.innerHTML = e2.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
 }(this));
 </script>
 
