@@ -27,7 +27,8 @@ permalink: project
   <a href="https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae">chromeIPass</a> in Google Chrome and Chromium. However, since the plugin in its current
   form offers <a href="https://github.com/keepassxreboot/keepassxc/issues/147">a few pitfalls</a> and we are very concerned about the safety of our users' passwords,
   we decided to not build it into the current main release. However, you can always download <a href="/download#source">the source code</a> and build it yourself with the CMake
-  option <code>-DWITH_XC_HTTP=On</code>. We will reconsider adding the feature to the main release once we have fixed certain aspects.
+  option <code>-DWITH_XC_HTTP=On</code>. We will reconsider adding the feature to the main release once we have
+  <a href="https://github.com/keepassxreboot/keepassxc/issues/177#issuecomment-274582453"">fixed certain aspects</a>.
   <p><strong>Warning:</strong> If you decide to build KeePassXC yourself with KeePassHTTP support, please make sure that it only listens to <code>localhost</code> (<code>127.0.0.1</code>)
   and not to any network-routable interface and especially not to <code>0.0.0.0</code>!
 </div>
