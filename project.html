@@ -12,33 +12,30 @@ permalink: project
   <h5>Additional Features</h5>
 
   <ul>
-    <li>keepasshttp support for use with <a href="https://addons.mozilla.org/en-us/firefox/addon/passifox/">PassIFox</a> for Mozilla Firefox and
-    <a href="https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae">chromeIPass</a> for Google Chrome.</li>
+    <li>Autotype on all three major platforms (Linux, Windows, OS X)
+    <li>Stand-alone password generator
+    <li>Password strength meter
+    <li>Use website's favicons as entry icons
+    <li>Merging of databases
+    <li>Automatic reload when the database changed on disk
   </ul>
+  
+  <div>For a full list of new features and changes, have a look at the <a href="https://github.com/keepassxreboot/keepassxc/blob/master/CHANGELOG">full KeePasssXC changelog</a>.</div>
+  
+  <h6>What about KeePassHTTP?</h6>
+  <p>KeePassXC does support KeePassHTTP for use with <a href="https://addons.mozilla.org/en-us/firefox/addon/passifox/">PassIFox</a> in Firefox and
+  <a href="https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae">chromeIPass</a> in Google Chrome and Chromium. However, since the plugin in its current
+  form offers <a href="https://github.com/keepassxreboot/keepassxc/issues/147">a few pitfalls</a> and we are very concerned about the safety of our users' passwords,
+  we decided to not build it into the current main release. However, you can always download <a href="/download#source">the source code</a> and build it yourself with the CMake
+  option <code>-DWITH_XC_HTTP=On</code>. We will reconsider adding the feature to the main release once we have fixed certain aspects.
+  <p><strong>Warning:</strong> If you decide to build KeePassXC yourself with KeePassHTTP support, please make sure that it only listens to <code>localhost</code> (<code>127.0.0.1</code>)
+  and not to any network-routable interface and especially not to <code>0.0.0.0</code>!
 </div>
-
-<br/>
-
-<div><a name="changelog"></a><hr/>
-  <h5>Last Version's Changelog</h5>
-
-  <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/CHANGELOG">Complete CHANGELOG</a>
-</div>
-
-<br/>
 
 <div><a name="requirements"></a><hr/>
   <h5>Requirements</h5>
 
-  <p>The following tools must exist within your PATH:</p>
-
-  <ul>
-    <li>make</li>
-    <li>cmake (&gt;= 2.8.12)</li>
-    <li>g++ (&gt;= 4.7) or clang++ (&gt;= 3.0)</li>
-  </ul>
-
-  <p>The following libraries are required:</p>
+  <p>KeePassXC has the following runtime requirements:
 
   <ul>
     <li>Qt5 (&gt;= 5.2): qtbase and qttools5</li>
@@ -46,5 +43,13 @@ permalink: project
     <li>zlib</li>
     <li>libmicrohttpd</li>
     <li>libxi, libxtst, qtx11extras (optional for auto-type on X11/Linux)</li>
+  </ul>
+  
+  <p>For building KeePassXC from source code, the following tools have to exist in your <code>PATH</code>:
+
+  <ul>
+    <li>make</li>
+    <li>cmake (&gt;= 2.8.12)</li>
+    <li>g++ (&gt;= 4.7) or clang++ (&gt;= 3.0)</li>
   </ul>
 </div>
