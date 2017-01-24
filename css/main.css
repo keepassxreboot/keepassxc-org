@@ -108,7 +108,18 @@ a.btn {
 }
 
 .github-corner svg {
+  fill:#34495e;
+  color:#ecf0f1;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
   z-index: 1040;
+  transition: all 700ms;
+}
+
+.github-corner svg:hover {
+  fill:#6cac4d;
 }
 
 .github-corner:hover .octo-arm {
