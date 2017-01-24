@@ -28,6 +28,10 @@ body {
   text-align: center;
 }
 
+.navbar-nav > li > a {
+  line-height: 20px;
+}
+
 .navbar-default .navbar-nav > li > a:hover {
   color: #6cac4d !important;
 }
@@ -47,6 +51,7 @@ body {
 
 .navbar-brand {
   color: #30782f !important;
+  height: 50px;
 }
 
 .navbar-logo {
@@ -100,6 +105,44 @@ a.btn {
 .navbar-toggle::before {
   content: "\f0c9";
   font-family: "FontAwesome";
+}
+
+.github-corner svg {
+  z-index: 1040;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+@media (max-width: 767px) {
+  .github-corner svg {
+    top: 55px !important;
+  }
 }
 
 @media (max-width:1000px) {
