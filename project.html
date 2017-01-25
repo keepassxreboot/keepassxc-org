@@ -43,9 +43,11 @@ The project repository is available at <a href="https://github.com/keepassxreboo
     <li>Qt5 (&gt;= 5.2): qtbase and qttools5</li>
     <li>libgcrypt (&gt;= 1.6)</li>
     <li>zlib</li>
-    <li>libmicrohttpd</li>
     <li>libxi, libxtst, qtx11extras (optional for auto-type on X11/Linux)</li>
   </ul>
+
+  <p>When using the AppImage or Snap Package release, these dependencies are already
+  bundled with the application.
 
   <p>For building KeePassXC from source code, the following tools have to exist in your <code>PATH</code>:
 
@@ -53,5 +55,6 @@ The project repository is available at <a href="https://github.com/keepassxreboo
     <li>make</li>
     <li>cmake (&gt;= 2.8.12)</li>
     <li>g++ (&gt;= 4.7) or clang++ (&gt;= 3.0)</li>
+    <li>libmicrohttpd (only when compiling with KeePassHTTP support)</li>
   </ul>
 </div>
