@@ -15,6 +15,15 @@ body {
   padding: 20px 15px;
 }
 
+.footer > .container li:before {
+    content: " – ";
+    padding-right: 10px;
+}
+
+.footer > .container li:first-child:before {
+    content: "";
+}
+
 .jumbotron {
   background: #6cac4d;
   color:#fff;
