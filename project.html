@@ -6,50 +6,62 @@ permalink: project
 
 
 <strong>KeePassXC</strong> is a community fork of <a href="https://www.keepassx.org/">KeePassX</a> which
-<a href="https://github.com/keepassxreboot/keepassx/issues/43">aims to incorporate stalled pull requests, features, and bug fixes that have never made it into the main KeePassX repository</a>.
+<a href="https://github.com/keepassxreboot/keepassx/issues/43">aims to incorporate stalled pull requests, features, and
+    bug fixes that have never made it into the main KeePassX repository</a>.
 The project repository is available <a href="https://github.com/keepassxreboot">on Github</a></p>
 
-<div id="features"><hr/>
-  <h5>Additional Features</h5>
+<div id="features">
+    <hr>
+    <h5>Additional Features</h5>
 
-  <ul>
-    <li>Autotype on all three major platforms (Linux, Windows, OS X)
-    <li>Stand-alone password generator
-    <li>Password strength meter
-    <li>Use website's favicons as entry icons
-    <li>Merging of databases
-    <li>Automatic reload when the database changed on disk
-    <li>KeePassHTTP support for use with <a href="https://addons.mozilla.org/en-us/firefox/addon/passifox/">PassIFox</a> in Firefox and
-        <a href="https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae">chromeIPass</a> in Google Chrome and Chromium.
-    <li>Many bug fixes
-  </ul>
+    <ul>
+        <li>Autotype on all three major platforms (Linux, Windows, OS X)
+        <li>Stand-alone password generator
+        <li>Password strength meter
+        <li>Use website's favicons as entry icons
+        <li>Merging of databases
+        <li>Automatic reload when the database changed on disk
+        <li>KeePassHTTP support for use with <a
+                href="https://addons.mozilla.org/en-us/firefox/addon/passifox/">PassIFox</a> in Firefox and
+            <a href="https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae">chromeIPass</a>
+            in Google Chrome and Chromium.
+        <li>Many bug fixes
+    </ul>
 
-  <div>For a full list of new features and changes, have a look at the <a href="https://github.com/keepassxreboot/keepassxc/blob/master/CHANGELOG">full KeePassXC changelog</a>.</div>
+    <div>For a full list of new features and changes, have a look at the <a
+            href="https://github.com/keepassxreboot/keepassxc/blob/master/CHANGELOG">full KeePassXC changelog</a>.
+    </div>
 
-  <h6>A note about KeePassHTTP</h6>
-  <p>KeePassHTTP is not a highly secure protocol and has certain flaws which allow an attacker to decrypt your passwords if they manage to intercept communication between a KeePassHTTP server and PassIFox/chromeIPass over a network connection (see <a href="https://github.com/pfn/keepasshttp/issues/258">here</a> and <a href="https://github.com/keepassxreboot/keepassxc/issues/147">here</a>). KeePassXC therefore strictly limits communication between itself and the browser plugin to your local computer. As long as your computer is not compromised, your passwords are fairly safe that way, but still use it at your own risk!
+    <h6>A note about KeePassHTTP</h6>
+    <p>KeePassHTTP is not a highly secure protocol and has certain flaws which allow an attacker to decrypt your
+        passwords if they manage to intercept communication between a KeePassHTTP server and PassIFox/chromeIPass over a
+        network connection (see <a href="https://github.com/pfn/keepasshttp/issues/258">here</a> and <a
+                href="https://github.com/keepassxreboot/keepassxc/issues/147">here</a>). KeePassXC therefore strictly
+        limits communication between itself and the browser plugin to your local computer. As long as your computer is
+        not compromised, your passwords are fairly safe that way, but still use it at your own risk!
 </div>
 
-<div id="requirements"><hr/>
-  <h5>Requirements</h5>
+<div id="requirements">
+    <hr>
+    <h5>Requirements</h5>
 
-  <p>KeePassXC has the following runtime requirements:
+    <p>KeePassXC has the following runtime requirements:
 
-  <ul>
-    <li>Qt5 (&gt;= 5.2): qtbase and qttools5</li>
-    <li>libgcrypt (&gt;= 1.6)</li>
-    <li>zlib</li>
-    <li>libxi, libxtst, qtx11extras (optional for auto-type on X11/Linux)</li>
-  </ul>
+    <ul>
+        <li>Qt5 (&gt;= 5.2): qtbase and qttools5</li>
+        <li>libgcrypt (&gt;= 1.6)</li>
+        <li>zlib</li>
+        <li>libxi, libxtst, qtx11extras (optional for auto-type on X11/Linux)</li>
+    </ul>
 
-  <p>When using the AppImage or Snap Package release, these dependencies are already
-  bundled with the application.
+    <p>When using the AppImage or Snap Package release, these dependencies are already
+        bundled with the application.
 
-  <p>For building KeePassXC from source code, the following build-time dependencies are required:
+    <p>For building KeePassXC from source code, the following build-time dependencies are required:
 
-  <ul>
-    <li>make</li>
-    <li>cmake (&gt;= 2.8.12)</li>
-    <li>g++ (&gt;= 4.7) or clang++ (&gt;= 3.0)</li>
-  </ul>
+    <ul>
+        <li>make</li>
+        <li>cmake (&gt;= 2.8.12)</li>
+        <li>g++ (&gt;= 4.7) or clang++ (&gt;= 3.0)</li>
+    </ul>
 </div>

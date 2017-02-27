@@ -10,42 +10,42 @@ permalink: team
 
 <h3 id="contact">Contact</h3>
 <p>You can contact us on IRC at <code>chat.freenode.net</code> in the channels <code>#keepassxc</code> and <code>#keepassxc-dev</code>,
-  on <a href="https://groups.google.com/forum/#!forum/keepassx-reboot">Google Groups</a> or directly by email
-  at <span id="c">team 'AT` keepassxc ^DOT' org</span>.</p>
+    on <a href="https://groups.google.com/forum/#!forum/keepassx-reboot">Google Groups</a> or directly by email
+    at <span id="c">team 'AT` keepassxc ^DOT' org</span>.</p>
 
 <script>
-(function (window) {
-  var team = document.getElementById("team");
-  var request = new XMLHttpRequest();
-  request.open('GET', 'https://api.github.com/orgs/keepassxreboot/public_members');
+    $(function() {
+        var team = document.getElementById("team");
+        var request = new XMLHttpRequest();
+        request.open('GET', 'https://api.github.com/orgs/keepassxreboot/public_members');
 
-  request.onload = function (e) {
-    if (request.readyState === 4) {
-      if (request.status === 200) {
-        var data = JSON.parse(request.responseText);
-        team.insertAdjacentHTML('beforeend', '<div class="row"></div>');
-        var team_row = team.children[0];
-        team_row.innerHTML = "";
-        data.forEach(function( value, index ) {
-          team_row.innerHTML += '<div class="col-xs-offset-3 col-xs-6 '+(index%2==0?'col-sm-offset-1':'col-sm-offset-0')+' col-sm-5 col-md-offset-0 col-md-3"> <div class="thumbnail"><a href="'+value.html_url+'"><img src="'+value.avatar_url+'" alt="'+value.login+'"></a><div class="caption"><h6>'+value.login+'</h6><p><a target="_blank" href="'+value.html_url+'" class="btn btn-primary" role="button">GitHub</a> <a target="_blank" href="https://github.com/keepassxreboot/keepassxc/commits?author='+value.login+'" class="btn btn-default" role="button">Contributions</a></p></div></div></div>';
-        });
-      } else {
-        console.error(request.statusText);
-        team.innerHTML += 'Error loading contributors... Connection issues?';
-      }
-    }
-  };
+        request.onload = function (e) {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    var data = JSON.parse(request.responseText);
+                    team.insertAdjacentHTML('beforeend', '<div class="row"></div>');
+                    var team_row = team.children[0];
+                    team_row.innerHTML = "";
+                    data.forEach(function (value, index) {
+                        team_row.innerHTML += '<div class="col-xs-offset-3 col-xs-6 ' + (index % 2 == 0 ? 'col-sm-offset-1' : 'col-sm-offset-0') + ' col-sm-5 col-md-offset-0 col-md-3"> <div class="thumbnail"><a href="' + value.html_url + '"><img src="' + value.avatar_url + '" alt="' + value.login + '"></a><div class="caption"><h6>' + value.login + '</h6><p><a target="_blank" href="' + value.html_url + '" class="btn btn-primary" role="button">GitHub</a> <a target="_blank" href="https://github.com/keepassxreboot/keepassxc/commits?author=' + value.login + '" class="btn btn-default" role="button">Contributions</a></p></div></div></div>';
+                    });
+                } else {
+                    console.error(request.statusText);
+                    team.innerHTML += 'Error loading contributors... Connection issues?';
+                }
+            }
+        };
 
-  // Catch errors:
-  request.onerror = function (e) {
-    console.error(request.statusText);
-    team.innerHTML += 'Error loading contributors... Connection issues?';
-  };
+        // Catch errors:
+        request.onerror = function (e) {
+            console.error(request.statusText);
+            team.innerHTML += 'Error loading contributors... Connection issues?';
+        };
 
-  request.send(null);
+        request.send(null);
 
-  var c = document.getElementById("c");
-  var a = c.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
-  c.innerHTML = '<a href="mailto:' + a + '">' + a + '<\/a>';
-}(this));
+        var c = document.getElementById("c");
+        var a = c.innerText.replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
+        c.innerHTML = '<a href="mailto:' + a + '">' + a + '<\/a>';
+    });
 </script>
