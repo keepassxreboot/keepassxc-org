@@ -22,8 +22,6 @@ layout: default
                         <i class="fa fa-info-circle" aria-hidden="true"></i> Learn More</a>
                     <a id="download_button" class="btn btn-secondary btn-lg" href="download" role="button">
                         Download</a>
-                    <a id="platform_button" class="btn btn-secondary btn-lg hide" href="download" role="button"><i
-                            class="fa fa-download" aria-hidden="true"></i> Other Platforms</a>
                 </p>
             </div>
         </div>
@@ -75,7 +73,6 @@ layout: default
             button.text(button.text().replace("Download", "Download for " + osName.capitalize()));
             button.html('<i class="fa fa-' + osName + '" aria-hidden="true"></i>' + button.html());
             button.attr("href", button.attr("href") + "#" + osName);
-            $("#platform_button").removeClass("hide");
         }
     });
 </script>
