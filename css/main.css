@@ -48,24 +48,24 @@ body > .wrapper {
 }
 
 .jumbotron .btn-primary {
-    color: #46596C;
-    background-color: #FFD200;
-    box-shadow: 1px 1px 2px #BA9900;
+    color: #46596c;
+    background-color: #ffd200;
+    box-shadow: 1px 1px 2px #ba9900;
 }
 
 .jumbotron .btn-primary:hover, .jumbotron .btn-primary:focus {
-    background-color: #FFDE45;
+    background-color: #ffde45;
 }
 
 .jumbotron .btn-secondary {
     color: white;
-    background-color: #06799F;
-    box-shadow: -1px -1px 2px #499DB9;
+    background-color: #06799f;
+    box-shadow: 1px 1px 2px #26648e;
 }
 
 .jumbotron .btn-secondary:hover, .jumbotron .btn-secondary:focus {
     color: white;
-    background-color: #3391B0;
+    background-color: #3391b0;
 }
 
 .jumbotron-small {
