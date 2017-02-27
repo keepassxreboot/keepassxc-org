@@ -17,3 +17,4 @@ coverage
 tmp/*
 .jekyll-metadata
 /vendor
+.idea
