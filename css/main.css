@@ -377,6 +377,10 @@ a.btn {
     .navbar-header {
         text-align: left;
     }
+
+    .jumbotron .btn {
+        display: block;
+    }
 }
 
 @media (max-width: 500px) {

@@ -6,61 +6,51 @@ permalink: docs
 
 <div id="wiki">
     <h3>Wiki</h3>
-    You can read the official documentation, build/install instructions and many other guides in the <a
-        href="https://github.com/keepassxreboot/keepassxc/wiki">Wiki</a>
+    You can read the official documentation, build/install instructions and many other guides in the
+    <a href="https://github.com/keepassxreboot/keepassxc/wiki">Wiki</a>.
 </div>
-
-<hr>
 
 <div>
     <h3 id="contribute">Contribute</h3>
     You can contribute to the project by…
     <ul>
-        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#bug-reports">…reporting
-            bugs</a></li>
-        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#feature-requests">…proposing
-            new features</a></li>
-        <li>
-            <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#your-first-code-contribution">…writing
-                code</a></li>
-        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#translations">…translating</a>
-        </li>
+        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#bug-reports">…reporting bugs</a>
+        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#feature-requests">…proposing new features</a>
+        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#your-first-code-contribution">…writing code</a>
+        <li> <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#translations">…translating</a>
     </ul>
 </div>
-
-<hr>
 
 <div id="faq">
     <h3>FAQ</h3>
     <p class="faq"><span>Why KeePassXC instead of KeePassX?</span><br/>
         You can find the motivation behind our fork on the <a href="project">Project page</a>
-    </p>
+
     <p class="faq"><span>Why KeePassXC instead of KeePass?</span><br/>
         KeePass is a nice password manager that works fine but it's developed in C# and requires Microsoft's .NET
         framework.<br/>
         Platforms beside Windows must use Wine or Mono instead, but this won't provide the native look and feel.<br/>
         KeePassXC, on the other hand, is developed in C++ with the Qt library and it is cross-platform.
-    </p>
+
     <p class="faq"><span>Is Auto-Type supported on OS X or Windows?</span><br/>
         Yes, Auto-Type works cross-platform.
-    </p>
+
     <p class="faq"><span>Which password database formats are compatible with KeePassXC?</span><br/>
         KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native format.
         It can also import KeePass 1.x (.kdb) databases.
-    </p>
+
     <p class="faq"><span>Why do I get an error when I try to build from source for this platform?</span><br/>
         Please follow every step on the <a
                 href="https://github.com/keepassxreboot/keepassxc/wiki/Install-Instruction-from-Source">Wiki:Install-Instruction-from-Source</a>
         page
-    </p>
+
     <p class="faq"><span>Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</span><br/>
         This is a bug caused by the <code>appmenu-qt5</code> package.<br/>
-        You have 3 options:<br/>
+        You have 3 options:
     <ol>
         <li>Remove the <code>appmenu-qt5</code> package</li>
         <li>Set the environment variable <code>UBUNTU_MENUPROXY=''</code></li>
         <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code></li>
     </ol>
     <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look&amp;feel.
-    </p>
 </div>

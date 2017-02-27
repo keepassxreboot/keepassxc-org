@@ -4,14 +4,12 @@ title: "The Project"
 permalink: project
 ---
 
-
-<strong>KeePassXC</strong> is a community fork of <a href="https://www.keepassx.org/">KeePassX</a> which
-<a href="https://github.com/keepassxreboot/keepassx/issues/43">aims to incorporate stalled pull requests, features, and
-    bug fixes that have never made it into the main KeePassX repository</a>.
-The project repository is available <a href="https://github.com/keepassxreboot">on Github</a></p>
+<p><strong>KeePassXC</strong> is a community fork of <a href="https://www.keepassx.org/">KeePassX</a> with the goal
+to revive its stalled development and provide a feature-rich, fully cross-platform and modern
+open-source password manager.
+<p>The project repository is available <a href="https://github.com/keepassxreboot">on Github</a>.
 
 <div id="features">
-    <hr>
     <h5>Additional Features</h5>
 
     <ul>
@@ -32,26 +30,28 @@ The project repository is available <a href="https://github.com/keepassxreboot">
             href="https://github.com/keepassxreboot/keepassxc/blob/master/CHANGELOG">full KeePassXC changelog</a>.
     </div>
 
-    <h6>A note about KeePassHTTP</h6>
-    <p>KeePassHTTP is not a highly secure protocol and has certain flaws which allow an attacker to decrypt your
-        passwords if they manage to intercept communication between a KeePassHTTP server and PassIFox/chromeIPass over a
-        network connection (see <a href="https://github.com/pfn/keepasshttp/issues/258">here</a> and <a
-                href="https://github.com/keepassxreboot/keepassxc/issues/147">here</a>). KeePassXC therefore strictly
-        limits communication between itself and the browser plugin to your local computer. As long as your computer is
-        not compromised, your passwords are fairly safe that way, but still use it at your own risk!
+    <div class="info">
+        <h6>A note about KeePassHTTP</h6>
+        <p>KeePassHTTP is not a highly secure protocol and has certain flaws which allow an attacker to decrypt your
+            passwords if they manage to intercept communication between a KeePassHTTP server and PassIFox/chromeIPass over a
+            network connection (see <a href="https://github.com/pfn/keepasshttp/issues/258">here</a> and <a
+                    href="https://github.com/keepassxreboot/keepassxc/issues/147">here</a>). KeePassXC therefore strictly
+            limits communication between itself and the browser plugin to your local computer. As long as your computer is
+            not compromised, your passwords are fairly safe that way, but still use it at your own risk!
+    </div>
 </div>
 
 <div id="requirements">
-    <hr>
     <h5>Requirements</h5>
 
     <p>KeePassXC has the following runtime requirements:
 
     <ul>
-        <li>Qt5 (&gt;= 5.2): qtbase and qttools5</li>
-        <li>libgcrypt (&gt;= 1.6)</li>
-        <li>zlib</li>
-        <li>libxi, libxtst, qtx11extras (optional for auto-type on X11/Linux)</li>
+        <li>Qt5 (&gt;= 5.2): qtbase and qttools5
+        <li>libgcrypt (&gt;= 1.6)
+        <li>zlib
+        <li>libxi, libxtst, qtx11extras (optional for Auto-Type on X11/Linux)
+        <li>libyubikey,  libykpers-1 (optional for YubiKey support)
     </ul>
 
     <p>When using the AppImage or Snap Package release, these dependencies are already
@@ -60,8 +60,9 @@ The project repository is available <a href="https://github.com/keepassxreboot">
     <p>For building KeePassXC from source code, the following build-time dependencies are required:
 
     <ul>
-        <li>make</li>
-        <li>cmake (&gt;= 2.8.12)</li>
-        <li>g++ (&gt;= 4.7) or clang++ (&gt;= 3.0)</li>
+        <li>make
+        <li>cmake (&gt;= 2.8.12)
+        <li>g++ (&gt;= 4.7) or clang++ (&gt;= 3.0)
+        <li>headers for any runtime dependencies (*-dev or *-devel packages)
     </ul>
 </div>
