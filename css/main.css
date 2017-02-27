@@ -53,6 +53,8 @@ body > .wrapper {
 
 .navbar {
     margin-bottom: 0;
+    border-radius: 0;
+    z-index: 10000;
 }
 
 .navbar-nav {

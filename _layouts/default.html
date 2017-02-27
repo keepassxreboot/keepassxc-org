@@ -45,9 +45,48 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script>
-            // execute queued functions
-            $.each(q, function(index, f){
-                $(f)
+            $(function() {
+                // execute queued functions
+                $.each(q, function(index, f){
+                    $(f)
+                });
+
+                var navFixed = false;
+                var nav = $(".navbar");
+                var content = $(".wrapper > .jumbotron");
+
+                function animateNavbar() {
+                    $(window).scroll(function () {
+                        var navHeight = nav.height();
+                        if ($(this).scrollTop() > navHeight * .8) {
+                            if (!navFixed) {
+                                navFixed = true;
+
+                                content.css({
+                                    "margin-top": navHeight + "px"
+                                });
+                                nav.css({
+                                    "position": "fixed",
+                                    "top": -navHeight + "px",
+                                    "width": "100%"
+                                });
+                                nav.stop().animate({"top": 0}, 350);
+                            }
+                        } else if ($(this).scrollTop() == 0) {
+                            nav.css({
+                                "position": "relative",
+                                "top": 0
+                            });
+                            content.css({
+                                "margin-top": 0
+                            });
+                            navFixed = false;
+                        }
+                    });
+                }
+
+                $(window).bind("scroll", animateNavbar);
+                animateNavbar();
             });
         </script>
 
