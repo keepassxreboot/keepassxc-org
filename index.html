@@ -17,9 +17,9 @@ layout: default
                KeePassXC can store your passwords safely and auto-type them into your everyday websites and applications.
             </p>
             <p>
-              <a class="btn btn-warning btn-lg" href="project" role="button"><i class="fa fa-info-circle" aria-hidden="true"></i>Learn more &raquo;</a>
-              <a id="download_button" class="btn btn-info btn-lg" href="download" role="button">Download &raquo;</a>
-              <a id="platform_button" class="btn btn-info btn-lg" href="download" role="button"><i class="fa fa-download" aria-hidden="true"></i>Other Platforms &raquo;</a>
+              <a class="btn btn-primary btn-lg" href="project" role="button"><i class="fa fa-info-circle" aria-hidden="true"></i> Learn more &raquo;</a>
+              <a id="download_button" class="btn btn-secondary btn-lg" href="download" role="button"> Download &raquo;</a>
+              <a id="platform_button" class="btn btn-secondary btn-lg hide" href="download" role="button"><i class="fa fa-download" aria-hidden="true"></i> Other Platforms &raquo;</a>
             </p>
           </div>
         </div>
@@ -60,16 +60,15 @@ layout: default
         return this.charAt(0).toUpperCase() + this.slice(1);
     };
 
-    (function (window) {
-      var OSName = OSDetect();
+    $(function () {
+      var osName = OSDetect();
 
-      if (OSName != "unknown") {
-        var button = document.getElementById("download_button");
-        button.innerText = button.innerText.replace("Download","Download for "+OSName.capitalize());
-        button.innerHTML = '<i class="fa fa-'+OSName+'" aria-hidden="true"></i>' + button.innerHTML;
-        button.href = button.href+"#"+OSName;
-        var other_platform = document.getElementById("platform_button");
-        other_platform.style.display = "inline-block";
+      if (osName != "unknown") {
+        var button = $("#download_button");
+        button.text(button.text().replace("Download","Download for " + osName.capitalize()));
+        button.html('<i class="fa fa-' + osName + '" aria-hidden="true"></i>' + button.html());
+        button.attr("href", button.attr("href") + "#" + osName);
+        $("#platform_button").removeClass("hide");
       }
-    }(this));
+    });
     </script>

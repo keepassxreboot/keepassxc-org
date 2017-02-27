@@ -43,6 +43,31 @@ body > .wrapper {
     color: #fff;
 }
 
+.jumbotron .btn:first-child {
+    margin-left: 0;
+}
+
+.jumbotron .btn-primary {
+    color: #46596C;
+    background-color: #FFD200;
+    box-shadow: 1px 1px 2px #BA9900;
+}
+
+.jumbotron .btn-primary:hover, .jumbotron .btn-primary:focus {
+    background-color: #FFDE45;
+}
+
+.jumbotron .btn-secondary {
+    color: white;
+    background-color: #06799F;
+    box-shadow: -1px -1px 2px #499DB9;
+}
+
+.jumbotron .btn-secondary:hover, .jumbotron .btn-secondary:focus {
+    color: white;
+    background-color: #3391B0;
+}
+
 .jumbotron-small {
     padding: 24px 0;
 }
@@ -103,10 +128,6 @@ body > .wrapper {
 
 .btn {
     margin-left: 20px;
-}
-
-#platform_button {
-    display: none;
 }
 
 .download.nav-tabs > li .platform {
@@ -178,9 +199,10 @@ body > .wrapper {
 }
 
 .official-packages .label {
+    border: 5px solid white;
     position: absolute;
     right: 1rem;
-    bottom: -.95rem;
+    bottom: -1.4rem;
 }
 
 .official-packages .download-links {
@@ -207,6 +229,7 @@ body > .wrapper {
 .official-packages .links a:not(:first-child):before {
     content: " – ";
     color: #3f8c3f;
+    cursor: default;
 }
 
 .official-packages .hint {
@@ -289,6 +312,13 @@ a.btn {
     40%,
     80% {
         transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 1200px) {
+    .jumbotron .btn {
+        display: inline-block;
+        margin-left: 0;
     }
 }
 
