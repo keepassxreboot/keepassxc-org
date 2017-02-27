@@ -6,7 +6,7 @@ permalink: docs
 
 <div id="wiki">
     <h3>Wiki</h3>
-    You can read the official documentation, build/install instructions and many other guides in the
+    You can find the official documentation, build/install instructions and many other guides in the
     <a href="https://github.com/keepassxreboot/keepassxc/wiki">Wiki</a>.
 </div>
 
@@ -23,34 +23,44 @@ permalink: docs
 
 <div id="faq">
     <h3>FAQ</h3>
-    <p class="faq"><span>Why KeePassXC instead of KeePassX?</span><br/>
-        You can find the motivation behind our fork on the <a href="project">Project page</a>
+    <p class="faq">
+        <span>Why KeePassXC instead of KeePassX?</span><br>
+        KeePassX is an amazing password manager, but hasn't seen much active development for quite a while. Many
+        good pull requests were never merged and the original project is missing some features which users
+        can expect from a modern password manager. Hence, we decided to fork KeePassX to continue its development
+        and provide you with everything you love about KeePassX plus many new <a href="/project">features and bugfixes</a>.
 
-    <p class="faq"><span>Why KeePassXC instead of KeePass?</span><br/>
-        KeePass is a nice password manager that works fine but it's developed in C# and requires Microsoft's .NET
-        framework.<br/>
-        Platforms beside Windows must use Wine or Mono instead, but this won't provide the native look and feel.<br/>
-        KeePassXC, on the other hand, is developed in C++ with the Qt library and it is cross-platform.
+    <p class="faq">
+    <span>Why KeePassXC instead of KeePass?</span><br/>
+        KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong with it.
+        However, it is written in C# and therefore requires Microsoft's .NET platform.
+        On systems other than Windows, you can run KeePass using the Mono runtime libraries, but you won't get
+        the native look and feel which you are used to.<br>
+        KeePassXC, on the other hand, is developed in C++ and runs natively on all platforms giving you the best-possible
+        platform integration.
 
-    <p class="faq"><span>Is Auto-Type supported on OS X or Windows?</span><br/>
-        Yes, Auto-Type works cross-platform.
+    <p class="faq">
+    <span>Is Auto-Type supported on OS X and Windows?</span><br/>
+        Yes, Auto-Type works on all three supported platforms.
 
-    <p class="faq"><span>Which password database formats are compatible with KeePassXC?</span><br/>
-        KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native format.
-        It can also import KeePass 1.x (.kdb) databases.
+    <p class="faq">
+    <span>Which password database formats are compatible with KeePassXC?</span><br/>
+        KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file eormat.
+        It can also import KeePass 1.x (.kdb) databases, but this is a one-way-process.
 
-    <p class="faq"><span>Why do I get an error when I try to build from source for this platform?</span><br/>
-        Please follow every step on the <a
-                href="https://github.com/keepassxreboot/keepassxc/wiki/Install-Instruction-from-Source">Wiki:Install-Instruction-from-Source</a>
-        page
+    <p class="faq">
+    <span>Why do I get an error when I try to build from source for this platform?</span><br/>
+        Please follow every step from our
+        <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
 
-    <p class="faq"><span>Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</span><br/>
-        This is a bug caused by the <code>appmenu-qt5</code> package.<br/>
+    <p class="faq">
+    <span>Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</span><br/>
+        This is a bug caused by <code>appmenu-qt5</code>.<br/>
         You have 3 options:
     <ol>
-        <li>Remove the <code>appmenu-qt5</code> package</li>
-        <li>Set the environment variable <code>UBUNTU_MENUPROXY=''</code></li>
-        <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code></li>
+        <li>Remove the <code>appmenu-qt5</code> package
+        <li>Set the environment variable <code>UBUNTU_MENUPROXY=''</code><
+        <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
     </ol>
-    <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look&amp;feel.
+    <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
 </div>

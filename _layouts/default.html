@@ -98,6 +98,14 @@
 
                 $(window).bind("scroll", animateNavbar);
                 animateNavbar();
+
+                $(".eobfs").each(function() {
+                    $(this).text($(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.'));
+                });
+                $(".eobfsl").each(function() {
+                    var e = $(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
+                    $(this).html('<a href="mailto:' + e + '">' + e + '</a>');
+                });
             });
         </script>
 
