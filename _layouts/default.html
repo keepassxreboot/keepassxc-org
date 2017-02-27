@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,48 +14,64 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/flat-ui.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/font-linux.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="canonical" href="https://keepassxc.org{{ page.url }}" />
+    <link href="css/main.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://keepassxc.org{{ page.url }}"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
 
-  <body>
+    <script>
+        // stub document read function
+        window.q = [];
+        window.$ = function(f) {
+            q.push(f);
+        };
+    </script>
+</head>
 
-    {% include navbar.html %}
+<body>
 
-    {{ content }}
+{% include navbar.html %}
 
-    {% include footer.html %}
+{{ content }}
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!--script src="js/main.js"></script-->
-    
-    <!-- Piwik -->
-    <script type="text/javascript">
+{% include footer.html %}
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    // execute queued functions
+    $.each(q, function(index, f){
+        $(f)
+    });
+</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
     var _paq = _paq || [];
     // tracker methods like "setCustomDimension" should be called before "trackPageView"
     _paq.push(["setCookieDomain", "*.keepassxc.org"]);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
-    (function() {
-        var u="https://tracking.keepassxc.org/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
+    (function () {
+        var u = "https://tracking.keepassxc.org/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
         _paq.push(['setSiteId', '4']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
     })();
-    </script>
-    <noscript><p><img src="https://tracking.keepassxc.org/piwik.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
-  </body>
+</script>
+<noscript><p><img src="https://tracking.keepassxc.org/piwik.php?idsite=4&rec=1" style="border:0;" alt=""/></p>
+</noscript>
+<!-- End Piwik Code -->
+</body>
 </html>
