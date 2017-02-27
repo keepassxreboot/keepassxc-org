@@ -70,7 +70,7 @@ body {
 }
 
 .fa, .fl {
-    padding: 0 5px 0 0;
+    padding-right: .4em;
 }
 
 .btn {
@@ -159,6 +159,26 @@ body {
     padding: 1.7rem;
     margin-top: 0;
     border-radius: 0 0 3px 3px;
+}
+
+.official-packages .links:before, .dist-packages .links:before  {
+    content: "\f1b3";
+    width: 1.8em;
+    text-align: center;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.official-packages .links.sig:before, .dist-packages .links.sig:before {
+    content: "\f023";
+}
+
+.official-packages .links a:not(:first-child):before {
+    content: " – ";
+    color: #3f8c3f;
 }
 
 .official-packages .hint {
@@ -258,17 +278,12 @@ a.btn {
     .github-corner svg {
         top: 55px !important;
     }
+}
 
+@media (max-width: 1000px) {
     #tabs li {
         float: none;
         margin: 0;
         padding: 0;
-    }
-}
-
-@media (max-width: 1000px) {
-    .navbar-nav > li > a {
-        padding-left: 5px;
-        padding-right: 5px;
     }
 }
