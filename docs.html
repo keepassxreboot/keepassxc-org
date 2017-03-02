@@ -31,7 +31,7 @@ permalink: docs
         and provide you with everything you love about KeePassX plus many new <a href="/project">features and bugfixes</a>.
 
     <p class="faq">
-    <span>Why KeePassXC instead of KeePass?</span><br/>
+    <span>Why KeePassXC instead of KeePass?</span><br>
         KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong with it.
         However, it is written in C# and therefore requires Microsoft's .NET platform.
         On systems other than Windows, you can run KeePass using the Mono runtime libraries, but you won't get
@@ -40,8 +40,15 @@ permalink: docs
         platform integration.
 
     <p class="faq">
-    <span>Is Auto-Type supported on OS X and Windows?</span><br/>
+    <span>Is Auto-Type supported on OS X and Windows?</span><br>
         Yes, Auto-Type works on all three supported platforms.
+
+    <p class="faq">
+    <span>Why is there no cloud synchronization feature built into KeePassXC?</span><br>
+        Cloud synchronization with Dropbox, Google Drive, OneDrive, Nextcloud etc. can be easily accomplished by
+        simply storing your KeePassXC database inside your shared cloud folder and letting your desktop synchronization client
+        do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider and keeps
+        the complexity of our code low.
 
     <p class="faq">
     <span>Which password database formats are compatible with KeePassXC?</span><br/>
@@ -49,18 +56,18 @@ permalink: docs
         It can also import KeePass 1.x (.kdb) databases, but this is a one-way-process.
 
     <p class="faq">
-    <span>Why do I get an error when I try to build from source for this platform?</span><br/>
+    <span>Why do I get an error when I try to build from source for this platform?</span><br>
         Please follow every step from our
         <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
 
     <p class="faq">
-    <span>Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</span><br/>
-        This is a bug caused by <code>appmenu-qt5</code>.<br/>
+    <span>Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</span><br>
+        This is a bug caused by <code>appmenu-qt5</code>.<br>
         You have 3 options:
-    <ol>
+    <ul>
         <li>Remove the <code>appmenu-qt5</code> package
-        <li>Set the environment variable <code>UBUNTU_MENUPROXY=''</code><
+        <li>Set the environment variable <code>UBUNTU_MENUPROXY=''</code>
         <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
-    </ol>
+    </ul>
     <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
 </div>
