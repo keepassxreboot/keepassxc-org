@@ -331,6 +331,7 @@ a.btn {
 .post-content p img:first-child:last-child {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 .shariff a {
