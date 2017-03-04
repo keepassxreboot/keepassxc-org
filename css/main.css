@@ -328,6 +328,11 @@ a.btn {
     border-top: 1px solid rgba(86, 61, 124, 0.15);
 }
 
+.post-content p img:first-child:last-child {
+    display: block;
+    margin: 0 auto;
+}
+
 .shariff a {
     padding-left: 15px;
 }
