@@ -17,9 +17,10 @@ an unknown (and possibly untrustworthy) vendor:
 ![Windows UAC, no trusted certificate]({{ site.baseurl }}/blog/images/windows-uac-no-cert.png)
 
 Unfortunately, code signing certificates aren't fee and to collect the needed funds for such a certificate, we need
-your financial support. We need to raise **$265** in order to be able to buy the certificate.
-To allow you to help, we started a [Pledgie campaign](https://pledgie.com/campaigns/33487) where you can back us via PayPal.
+your financial support. We need to raise **$265** in order to be able to buy the certificate. The certificate
+will be used to sign our Windows binaries and binaries on other platforms that support Authenticode (primarily Mac OS X).
 
+To allow you to help, we started a [Pledgie campaign](https://pledgie.com/campaigns/33487) where you can back us via PayPal.
 We would really appreciate if you would be willing to support us with a few dollars and spread the word, so others
 can support us, too.
 
