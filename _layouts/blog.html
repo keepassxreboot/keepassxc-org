@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="jumbotron jumbotron-small">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 jumbotron-title">
+                <h4>KeePassXC Blog</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container post">
+    <article>
+        <header class="post-header">
+            <h4>{{ page.title }}</h4>
+            <p class="meta">
+                {% if page.author %} By {{ page.author }}<br>{% endif %}
+                Posted on <em class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ page.date | date: "%b %-d, %Y - %R %Z" }}</em>
+                in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> {{ page.category }}</em></p>
+        </header>
+
+        <div class="post-content">
+            {{ content }}
+        </div>
+
+        <footer>
+            <div data-lang="en" data-theme="grey"
+                 data-services="[&quot;twitter&quot;,&quot;facebook&quot;,&quot;googleplus&quot;,&quot;reddit&quot;,&quot;disapora&quot;]"
+                 class="shariff"></div>
+        </footer>
+    </article>
+</div> <!-- /container -->

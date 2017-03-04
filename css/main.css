@@ -8,6 +8,10 @@ body > .wrapper {
     position: relative;
 }
 
+footer {
+    background: none;
+}
+
 .wrapper > .container {
     padding-bottom: 8rem;
 }
@@ -299,6 +303,38 @@ a.btn {
 
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
+}
+
+.post {
+    margin: 2em auto;
+}
+
+.post header .meta {
+    font-size: .8em;
+}
+
+.post header .meta em {
+    font-weight: bold;
+    padding: 0 .4em;
+}
+
+.post header .meta em .fa {
+    padding-right: .3em;
+}
+
+.post footer {
+    margin: 2em 0;
+    padding: 2em 0;
+    border-top: 1px solid rgba(86, 61, 124, 0.15);
+}
+
+.shariff a {
+    padding-left: 15px;
+}
+
+/* need to redefine this, because ad blockers like to block *rss* classes */
+.fa-feed-square:before {
+    content: "\f143";
 }
 
 @keyframes octocat-wave {

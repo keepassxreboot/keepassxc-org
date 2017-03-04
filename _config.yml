@@ -1,7 +1,7 @@
 # Site settings
 title: "KeePassXC Password Manager"
 baseurl: ""
-url: ""
+url: "https://keepassxc.org"
 
 github: keepassx-reboot
 
