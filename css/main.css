@@ -28,6 +28,14 @@ footer {
     line-height: 20px;
 }
 
+.footer li:first-child {
+    padding-left: 0;
+}
+
+.footer > .container {
+    padding: 0;
+}
+
 .footer .container > ul, .footer > .container > p {
     padding: 1.8rem;
     margin: 0;
@@ -80,10 +88,23 @@ footer {
     text-align: center;
 }
 
+.back > img {
+    position: absolute;
+    height: 55rem;
+}
+
+#logo {
+    padding-top: 4rem;
+}
+
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
     z-index: 10000;
+}
+
+.navbar > .container {
+    padding: 0;
 }
 
 .navbar-nav {
@@ -101,16 +122,6 @@ footer {
 .navbar-default .navbar-nav > li > a:focus {
     color: #30782f !important;
 }
-
-.back > img {
-    position: absolute;
-    height: 55rem;
-}
-
-#logo {
-    padding-top: 4rem;
-}
-
 .navbar-brand {
     color: #30782f !important;
     height: auto;
@@ -124,6 +135,14 @@ footer {
 .navbar-brand > img {
     display: inline-block;
     margin-right: .5em;
+}
+
+.navbar > .container .navbar-brand {
+    margin-left: 0;
+}
+
+.navbar-collapse {
+    padding: 0;
 }
 
 .fa, .fl {
@@ -305,7 +324,7 @@ a.btn {
     animation: octocat-wave 560ms ease-in-out;
 }
 
-.post {
+.post-list .post {
     margin: 2em auto;
 }
 
@@ -404,8 +423,13 @@ a.btn {
         text-align: left;
     }
 
-    .navbar .container {
+    .navbar > .container {
         display: block;
+        padding: 0 21px;
+    }
+
+    .navbar-nav {
+        margin: 0;
     }
 
     .navbar .container > .navbar-header {
@@ -432,5 +456,29 @@ a.btn {
 
     .github-corner .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
+    }
+
+    .wrapper > .container {
+        padding-bottom: 12rem;
+    }
+
+    .footer .pull-right {
+        float: none !important;
+    }
+
+    .footer li:last-child {
+        padding-right: 0;
+    }
+
+    .footer ul, .footer p {
+        text-align: right;
+    }
+
+    .footer .container > ul {
+        padding-bottom: .2rem;
+    }
+
+    .footer .container > p {
+        padding-top: .2rem;
     }
 }
