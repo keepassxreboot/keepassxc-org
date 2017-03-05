@@ -482,3 +482,9 @@ a.btn {
         padding-top: .2rem;
     }
 }
+
+@media (max-width: 360px) {
+    .shariff a {
+        padding-left: 4px;
+    }
+}
