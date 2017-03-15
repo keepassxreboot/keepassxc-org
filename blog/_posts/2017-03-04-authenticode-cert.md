@@ -2,7 +2,7 @@
 layout: blog
 title:  "Funding an Authenticode code signing certificate"
 date:   2017-03-04 17:00 +0100
-category: "Fund-Raising"
+category: "Fundraising"
 permalink: /:path/
 author: Janek Bevendorff
 ---
