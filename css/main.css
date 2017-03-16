@@ -291,6 +291,10 @@ footer {
     font-weight: bold;
 }
 
+.faq dt a {
+    color: #34495e;
+}
+
 .faq dt:before {
     content: "Q: ";
 }
