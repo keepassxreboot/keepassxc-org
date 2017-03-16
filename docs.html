@@ -21,64 +21,65 @@ permalink: docs
     </ul>
 </div>
 
-<div id="faq">
+<div class="faq">
     <h3>FAQ</h3>
-    <p class="faq">
-        <span>Why KeePassXC instead of KeePassX?</span><br>
-        KeePassX is an amazing password manager, but hasn't seen much active development for quite a while. Many
-        good pull requests were never merged and the original project is missing some features which users
-        can expect from a modern password manager. Hence, we decided to fork KeePassX to continue its development
-        and provide you with everything you love about KeePassX plus many new <a href="/project">features and bugfixes</a>.
+    <dl>
+        <dt>Why KeePassXC instead of KeePassX?</dt>
+        <dd>KeePassX is an amazing password manager, but hasn't seen much active development for quite a while. Many
+            good pull requests were never merged and the original project is missing some features which users
+            can expect from a modern password manager. Hence, we decided to fork KeePassX to continue its development
+            and provide you with everything you love about KeePassX plus many new <a href="/project">features and bugfixes</a>.
+        </dd>
 
-    <p class="faq">
-    <span>Why KeePassXC instead of KeePass?</span><br>
-        KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong with it.
-        However, it is written in C# and therefore requires Microsoft's .NET platform.
-        On systems other than Windows, you can run KeePass using the Mono runtime libraries, but you won't get
-        the native look and feel which you are used to.<br>
-        KeePassXC, on the other hand, is developed in C++ and runs natively on all platforms giving you the best-possible
-        platform integration.
+        <dt>Why KeePassXC instead of KeePass?</dt>
+        <dd>KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong with it.
+            However, it is written in C# and therefore requires Microsoft's .NET platform.
+            On systems other than Windows, you can run KeePass using the Mono runtime libraries, but you won't get
+            the native look and feel which you are used to.<br>
+            KeePassXC, on the other hand, is developed in C++ and runs natively on all platforms giving you the best-possible
+            platform integration.
+        </dd>
 
-    <p class="faq">
-    <span>Is Auto-Type supported on OS X and Windows?</span><br>
-        Yes, Auto-Type works on all three supported platforms.
+        <dt>Is Auto-Type supported on OS X and Windows?</dt>
+        <dd>Yes, Auto-Type works on all three supported platforms.</dd>
 
-    <p class="faq">
-    <span>Why is there no cloud synchronization feature built into KeePassXC?</span><br>
-        Cloud synchronization with Dropbox, Google Drive, OneDrive, Nextcloud etc. can be easily accomplished by
-        simply storing your KeePassXC database inside your shared cloud folder and letting your desktop synchronization client
-        do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider and keeps
-        the complexity of our code low.
+        <dt>Why is there no cloud synchronization feature built into KeePassXC?</dt>
+        <dd>Cloud synchronization with Dropbox, Google Drive, OneDrive, Nextcloud etc. can be easily accomplished by
+            simply storing your KeePassXC database inside your shared cloud folder and letting your desktop synchronization client
+            do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider and keeps
+            the complexity of our code low.
+        </dd>
 
-    <p class="faq">
-    <span>Which password database formats are compatible with KeePassXC?</span><br>
-        KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
-        It can also import KeePass 1.x (.kdb) databases, but this is a one-way process.
+        <dt>Which password database formats are compatible with KeePassXC?</dt>
+        <dd>KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
+            It can also import KeePass 1.x (.kdb) databases, but this is a one-way process.
+        </dd>
 
-    <p class="faq">
-    <span>Why do I get an error when I try to build from source for this platform?</span><br>
-        Please follow every step from our
-        <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
+        <dt>Why do I get an error when I try to build from source for this platform?</dt>
+        <dd>Please follow every step from our
+            <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
+        </dd>
 
-    <p class="faq">
-    <span>Why can't I copy advanced attributes to the clipboard or use certain shortcuts on KDE?</span><br>
-        This is a “feature” in KDE's platform theme. It automatically adds ampersand (&amp;) characters on-screen text
-        to allow you to trigger an action by pressing Alt+HOTKEY on your keyboard. Unfortunately, this “feature”
-        causes more trouble than it does good. You can disable it by adding the following two lines to
-        <code>~/.config/kdeglobals</code>:
-        <pre><code>[Development]
+        <dt>Why can't I copy advanced attributes to the clipboard or use certain shortcuts on KDE?</dt>
+        <dd>This is a “feature” in KDE's platform theme. It automatically adds ampersand (&amp;) characters to on-screen text
+            to allow you to trigger an action by pressing Alt+HOTKEY on your keyboard. Unfortunately, this “feature”
+            causes more trouble than it does good. You can disable it by adding the following two lines to
+            <code>~/.config/kdeglobals</code>:
+            <pre><code>[Development]
 AutoCheckAccelerators=false</code></pre>
-        If you are like us and think this is a stupid feature, please consider voicing your concerns to the
-        <a href="https://bugs.kde.org/show_bug.cgi?id=337491">KDE guys</a>.
+            If you are like us and think this is a stupid feature, please consider voicing your concerns to the
+            <a href="https://bugs.kde.org/show_bug.cgi?id=337491">KDE guys</a>.
+        </dd>
 
-    <p class="faq">
-    <span>Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</span><br>
-        This is a bug caused by <code>appmenu-qt5</code>.<br>
-        You have 3 options:
-    <ul>
-        <li>Remove the <code>appmenu-qt5</code> package
-        <li>Set the environment variable <code>UBUNTU_MENUPROXY=''</code>
-        <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
-    </ul>
-    <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
+        <dt>Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</dt>
+        <dd>This is a bug caused by <code>appmenu-qt5</code>.<br>
+            You have 3 options:
+            <ul>
+                <li>Remove the <code>appmenu-qt5</code> package
+                <li>Set the environment variable <code>UBUNTU_MENUPROXY=''</code>
+                <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
+            </ul>
+            <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
+        </dd>
+    </dl>
 </div>

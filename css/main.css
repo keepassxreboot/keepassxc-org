@@ -287,8 +287,20 @@ footer {
     margin-bottom: 0;
 }
 
-.faq span {
+.faq dt {
     font-weight: bold;
+}
+
+.faq dt:before {
+    content: "Q: ";
+}
+
+.faq dd {
+    margin-bottom: 1.5em;
+}
+
+.faq dd:before {
+    content: "A: ";
 }
 
 a.btn {
