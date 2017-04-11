@@ -1,14 +1,14 @@
 stable:
   linux:
-    appimage: 2.1.3
+    appimage: 2.1.4
     snap: 2.1.3
 
   mac:
-    dmg: 2.1.3
+    dmg: 2.1.4
 
   windows:
-    portable: 2.1.3
-    installer: 2.1.3
+    portable: 2.1.4
+    installer: 2.1.4
 
   source:
-    tarball: 2.1.3
+    tarball: 2.1.4
