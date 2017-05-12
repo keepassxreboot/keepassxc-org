@@ -64,7 +64,7 @@ gpg: Good signature from "KeePassXC Release &lt;<span
     <p>In addition, there is a <em>*.DIGEST</em> file that contains the SHA-256 digest for a release file.
         You can verify the <strong>integrity</strong> of a package by checking its hash digest with the following command:</p>
 
-    <pre><code><strong>$ sha256sum -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST</strong>
+    <pre><code><strong>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST</strong>
 KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
 </div>
 
