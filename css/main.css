@@ -370,6 +370,31 @@ a.btn {
     max-width: 100%;
 }
 
+.thumbs {
+    margin: 0;
+    padding: 0;
+}
+
+.thumbs li {
+    list-style-type: none;
+    float: left;
+    padding: 1rem 1rem 0 0;
+    height: 20rem;
+    width: 25rem;
+    text-align: center;
+}
+
+.thumbs li img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.thumbs:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 .shariff a {
     padding-left: 15px;
 }
@@ -400,7 +425,7 @@ a.btn {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     #logo, .jumbotron .container {
         text-align: center;
     }
