@@ -50,10 +50,27 @@ permalink: docs
             do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider and keeps
             the complexity of our code low.
         </dd>
+        
+        <dt id="faq-audit"><a href="#faq-audit">Has KeePassXC ever had an external security audit? Why?</a></dt>
+        <dd>At the time of writing (KeePassXC v2.2.0), No.
+            Having a third-party security audit comes with a considerable price and at the moment, KeePassXC is a purely community-driven project.
+            There is no company or business behind KeePassXC and we have other expenses. We receive some donations, but those are not enough to finance an audit.
+            Maybe you can beg <a href="https://ostif.org/">OSTIF</a> or <a href="https://www.opentech.fund/">OTF</a> for funding a KeePassXC audit.
+            <br/>
+            In any case, keep in mind that:
+            <ul>
+                <li>An audit is not a 100% proof that a software is safe and secure. Some flaws can be overlooked even by the best auditors.</li>
+                <li>An audit is valid only for a “snapshot” of the code. If new code is added, new vulnerabilities can be introduced.</li>
+            </ul>
+        </dd>
 
         <dt id="faq-format"><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></dt>
         <dd>KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
             It can also import KeePass 1.x (.kdb) databases, but this is a one-way process.
+        </dd>
+        
+        <dt id="faq-kdbx4"><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></dt>
+        <dd>We are working on it! There is a <a href="https://github.com/keepassxreboot/keepassxc/issues/148">pull request</a>, but dotting the i's and crossing the t's will take some time.
         </dd>
 
         <dt id="faq-builderror"><a href="#faq-builderror">Why do I get an error when I try to build from source for this platform?</a></dt>
