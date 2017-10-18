@@ -26,7 +26,9 @@ permalink: verifying-signatures
 
     <p>Each of these files has a related <em>*.sig</em> sidecar file that you
        should download as well. These contain a GPG <em>signature</em> created with
-        <em>one of the release sub keys</em>. If you have trusted the master GPG key, the release sub keys are also trusted.</p>
+       one of our <em>release keys</em>. Signing the installable file with
+       any other key will give a different signature, so you can use the signature
+       and our public key to check the installable file really came from us.</p>
 
     <h4>Importing the Public Master Key</h4>
     <p>The KeePassXC public master key can be retrieved as follows:</p>
