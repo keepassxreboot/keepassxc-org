@@ -14,6 +14,20 @@ permalink: verifying-signatures
 </div>
 
 <div id="how-to-verify-signatures">
+    <h4>Download Options</h4>
+    <p>Every KeePassXC release comes with a variety of files:</p>
+    <ul>
+        <li>a <em>*.dmg</em> drag-and-drop installer for OS X</li>
+        <li>an <em>*.exe</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
+        <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
+        <li>a <em>*.tar.xz</em> source tarball</li>
+    </ul>
+
+    <p>Each of these files has a <em>*.sig</em> sidecar file containing a detached GPG signature created with
+        <em>one of the release sub keys</em>. If you have trusted the master GPG key, the release sub keys are also trusted.</p>
+    <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
+        signature by running the following command:</p>
+
     <h4>Importing the Public Master Key</h4>
     <p>The KeePassXC public master key can be retrieved as follows:</p>
 
@@ -41,18 +55,6 @@ sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
             website repository</a>.</p>
     </p>
     <h4>Verifying Releases</h4>
-    <p>Every KeePassXC release comes with a variety of files:</p>
-    <ul>
-        <li>a <em>*.dmg</em> drag-and-drop installer for OS X</li>
-        <li>an <em>*.exe</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
-        <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
-        <li>a <em>*.tar.xz</em> source tarball</li>
-    </ul>
-
-    <p>Each of these files has a <em>*.sig</em> sidecar file containing a detached GPG signature created with
-        <em>one of the release sub keys</em>. If you have trusted the master GPG key, the release sub keys are also trusted.</p>
-    <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
-        signature by running the following command:</p>
 
     <pre><code>$ gpg --verify KeePassXC-$VERSION-x86_64.AppImage.sig
 gpg: assuming signed data in 'KeePassXC-$VERSION-x86_64.AppImage'
