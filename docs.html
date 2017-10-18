@@ -45,6 +45,7 @@ permalink: docs
         <li><a href="#faq-audit">Has KeePassXC ever had an external security audit? Why not?</a></li>
         <li><a href="#faq-security-network">I see that KeePassXC requires network access. What for?</a></li>
         <li><a href="#faq-security-no-network">Can I get a KeePassXC version without any networking code?</a></li>
+        <li><a href="#faq-security-wordlist">How can I add additional word lists to the passphrase generator?</a></li>
     </ul>
 
     <h5>YubiKey</h5>
@@ -181,6 +182,15 @@ permalink: docs
         <dd>
             Yes, you can compile KeePassXC without any networking code. Simply configure CMake with <code>-DWITH_XC_HTTP=OFF</code>
             (see <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">Building KeePassXC</a>).
+        </dd>
+        
+        <dt id="faq-security-wordlist"><a href="#faq-security-wordlist">How can I add additional word lists to the passphrase generator?</a></dt>
+        <dd>
+            You can add additional word lists to the passphrase generator by copying the word list file to the <code>share/wordlists</code>
+            folder inside your KeePassXC installation directory and then restarting KeePassXC.<br>
+            On Linux, the default install location is <code>/usr/share/keepassxc</code>, on macOS it's
+            <code>/Applications/KeePassXC.app/Contents/Resources</code> and on Windows <code>C:\Program Files\KeePassXC</code>
+            (or <code>C:\Program Files (x86)\KeePassXC</code> for 32-bit).
         </dd>
     </dl>
 
