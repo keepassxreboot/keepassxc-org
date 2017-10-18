@@ -34,21 +34,37 @@ permalink: docs
         <li><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></li>
         <li><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></li>
         <li><a href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a></li>
+        <li><a href="#faq-general-plugins">Does KeePassXC support (KeePass2) plugins?</a></li>
     </ul>
 
     <h5>Security</h5>
     <ul class="faq-questions">
+        <li><a href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this alleviate any advantage of
+        two-factor authentication?</a></li>
+        <li><a href="#faq-security-why-pm">Why would I use a password manager? Isn't it totally insecure to use one password for everything?</a></li>
         <li><a href="#faq-audit">Has KeePassXC ever had an external security audit? Why not?</a></li>
+        <li><a href="#faq-security-network">I see that KeePassXC requires network access. What for?</a></li>
+        <li><a href="#faq-security-no-network">Can I get a KeePassXC version without any networking code?</a></li>
     </ul>
 
     <h5>YubiKey</h5>
     <ul class="faq-questions">
-
+        <li><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys?</a></li>
+        <li><a href="#faq-yubikey-howto">How do I configure my YubiKey for use with KeePassXC?</a></li>
+        <li><a href="#faq-yubikey-no-extra-file">When I use KeeChallenge with KeePass2, it creates an extra file. Why do
+            I have no such file when using KeePassXC?</a></li>
+        <li><a href="#faq-yubikey-incompatible">When I secure my database in KeePass2 with a YubiKey, I can't open it in
+            KeePassXC (or vice versa), why?</a></li>
+        <li><a href="#faq-yubikey-why-hmac-sha1">Why only HMAC-SHA1? Why not FIDO-U2F or TOTP?</a></li>
+        <li><a href="#faq-yubikey-otp">But the feature list says KeePassXC supports TOTP. I am confused.</a></li>
+        <li><a href="#faq-yubikey-broken-yubikey">What happens if I break my YubiKey? Can I create backup keys?</a></li>
+        <li><a href="#faq-yubikey-multiple-yubikeys">Can I register multiple YubiKeys with my KeePassXC database?</a></li>
     </ul>
 
     <h5>Platform-specific</h5>
     <ul class="faq-questions">
         <li><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></li>
+        <li><a href="#faq-platform-mobile">Does KeePassXC work on mobile phones? If not, which app would you recommend?</a></li>
         <li><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
             or use certain shortcuts on KDE?</a></li>
         <li><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></li>
@@ -64,14 +80,16 @@ permalink: docs
     <h5>General</h5>
     <dl>
         <dt id="faq-keepassx"><a href="#faq-keepassx">Why KeePassXC instead of KeePassX?</a></dt>
-        <dd>KeePassX is an amazing password manager, but hasn't seen much active development for quite a while. Many
+        <dd>
+            KeePassX is an amazing password manager, but hasn't seen much active development for quite a while. Many
             good pull requests were never merged and the original project is missing some features which users
             can expect from a modern password manager. Hence, we decided to fork KeePassX to continue its development
             and provide you with everything you love about KeePassX plus many new <a href="/project">features and bugfixes</a>.
         </dd>
 
         <dt id="faq-keepass"><a href="#faq-keepass">Why KeePassXC instead of KeePass?</a></dt>
-        <dd>KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong with it.
+        <dd>
+            KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong with it.
             However, it is written in C# and therefore requires Microsoft's .NET platform.
             On systems other than Windows, you can run KeePass using the Mono runtime libraries, but you won't get
             the native look and feel which you are used to.<br>
@@ -80,42 +98,162 @@ permalink: docs
         </dd>
 
         <dt id="faq-format"><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></dt>
-        <dd>KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
+        <dd>
+            KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
             It can also import KeePass 1.x (.kdb) databases, but this is a one-way process.
         </dd>
 
         <dt id="faq-kdbx4"><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></dt>
-        <dd>We are working on it! There is a <a href="https://github.com/keepassxreboot/keepassxc/issues/148">pull request</a>,
+        <dd>
+            We are working on it! There is a <a href="https://github.com/keepassxreboot/keepassxc/issues/148">pull request</a>,
             but dotting the i's and crossing the t's will take some time.
         </dd>
 
         <dt id="faq-cloudsync"><a href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a></dt>
-        <dd>Cloud synchronization with Dropbox, Google Drive, OneDrive, Nextcloud etc. can be easily accomplished by
+        <dd>
+            Cloud synchronization with Dropbox, Google Drive, OneDrive, Nextcloud etc. can be easily accomplished by
             simply storing your KeePassXC database inside your shared cloud folder and letting your desktop synchronization client
             do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider and keeps
             the complexity of our code low.
+        </dd>
+
+        <dt id="faq-general-plugins"><a href="#faq-general-plugins">Does KeePassXC support (KeePass2) plugins?</a></dt>
+        <dd>
+            No, KeePassXC does not support plugins at the moment. We are thinking about providing some kind of
+            plugin infrastructure or external API in the future, but cannot specify how it will work or when it will
+            be ready.
         </dd>
     </dl>
 
     <h5>Security</h5>
     <dl>
+        <dt id="faq-security-totp"><a href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this alleviate any advantage of
+            two-factor authentication?</a></dt>
+        <dd>
+            Yes. But only if you store them in the same database as your password. We believe that storing both together
+            can still be more secure than not using 2FA at all, but to maximize the security gain from using 2FA,
+            you should always store TOTP secrets in a separate database, secured with a different password, possibly
+            even on a different computer.
+        </dd>
+
+
+        <dt id="faq-security-why-pm"><a href="#faq-security-why-pm">Why would I use a password manager? Isn't it totally insecure to use
+            one password for everything?</a></dt>
+        <dd>
+            Password reuse and simple, easy-to-guess passwords are the biggest problems when using online services.
+            If one service gets compromised (either by guessing your password or by exploiting a security vulnerability
+            in the service's infrastructure), an attacker may gain access to all of your other accounts.
+            But using different passwords for all websites is difficult without a way of storing them somewhere safe.
+            Especially with arbitrary password rules for various services, it becomes increasingly hard to use both strong
+            and diverse passwords. KeePassXC stores your passwords for you in an encrypted database file, so you only
+            need to remember one master password. Of course, the security of all your services depends on the strength
+            of your master password now, but with a sufficiently strong password, the password database should be
+            infeasible to crack. The database is encrypted with either the industry-standard AES256 or the Twofish
+            block cipher and the master password is strengthened by a configurable number of key transformations
+            to harden it against brute force attacks. Additionally, you can use a key file filled with an arbitrary
+            number of random bytes or a YubiKey to further enhance your master key.
+        </dd>
+
         <dt id="faq-audit"><a href="#faq-audit">Has KeePassXC ever had an external security audit? Why not?</a></dt>
-        <dd>At the time of writing, No.
+        <dd>
+            At the time of writing, No.
             Having a third-party security audit comes with a considerable price and at the moment, KeePassXC is a purely community-driven project.
             There is no company or business behind KeePassXC and we have other expenses. We receive some donations, but those are not enough to finance an audit.
             Maybe you can beg <a href="https://ostif.org/">OSTIF</a> or <a href="https://www.opentech.fund/">OTF</a> for funding a KeePassXC audit.
-            <br/>
+            <br>
             In any case, keep in mind that:
             <ul>
                 <li>An audit is not a 100% proof that a software is safe and secure. Some flaws can be overlooked even by the best auditors.</li>
                 <li>An audit is valid only for a “snapshot” of the code. If new code is added, new vulnerabilities can be introduced.</li>
             </ul>
         </dd>
+
+        <dt id="faq-security-network"><a href="#faq-security-network">I see that KeePassXC requires network access. What for?</a></dt>
+        <dd>
+            KeePassXC needs network access for downloading website icons (favicons) for password entries and for
+            providing KeePassHTTP-compatible browser extensions with access to your database. Both features are optional
+            and opt-in. KeePassXC will never access any network resource without your explicit prior consent. If you
+            don't use either of these features, you may also compile KeePassXC without any networking code (see
+            next question).
+        </dd>
+
+        <dt id="faq-security-no-network"><a href="#faq-security-no-network">Can I get a KeePassXC version without any networking code?</a></dt>
+        <dd>
+            Yes, you can compile KeePassXC without any networking code. Simply configure CMake with <code>-DWITH_XC_HTTP=OFF</code>
+            (see <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">Building KeePassXC</a>).
+        </dd>
     </dl>
 
     <h5>YubiKey</h5>
     <dl>
+        <dt id="faq-yubikey-2fa"><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys?</a></dt>
+        <dd>
+            Yes and no. KeePassXC supports YubiKeys for securing a database, but strictly speaking, it's not two-factor
+            authentication. KeePassXC generates a challenge and uses the YubiKey's response to this challenge to
+            enhance the encryption key of your database. So in a sense, it makes your password stronger,
+            but technically it doesn't qualify as a separate second factor, since the expected response doesn't change every time
+            you try to decrypt your database. It does, however, change every time you save your database.
+        </dd>
 
+        <dt id="faq-yubikey-howto"><a href="#faq-yubikey-howto">How do I configure my YubiKey for use with KeePassXC?</a></dt>
+        <dd>
+            To use a YubiKey for securing your KeePassXC database, you have to configure one of your YubiKey slots
+            for HMAC-SHA1 Challenge Response mode (see this
+            <a href="https://www.yubico.com/products/services-software/personalization-tools/challenge-response/">video</a>
+            for how to do this). Once your YubiKey is set up, open your database in KeePassXC, go to
+            <em>File / Change master key</em>, enable <em>Challenge Response</em> and then save the database.<br>
+            <strong>Important:</strong> Always make a copy of the secret that is programmed into your YubiKey while
+            you configure it for HMAC-SHA1 and store it in a secure location. If you lose or brick the key or accidentally
+            reprogram it with a different secret, you will permanently lose access to your database!
+        </dd>
+
+        <dt id="faq-yubikey-no-extra-file"><a href="#faq-yubikey-no-extra-file">When I use KeeChallenge with KeePass2, it creates an extra file. Why do
+            I have no such file when using KeePassXC?</a></dt>
+        <dd>
+            Our implementation differs from how KeeChallenge handles YubiKeys. KeeChallenge uses the HMAC secret
+            directly to enhance the database. To make this work, they need to store the secret in a side-car file,
+            encrypted with the response of a challenge-response pair that is calculated ahead of time. In KeePassXC,
+            we do not require any knowledge of the HMAC secret. We use the database's master key as challenge
+            and then use the response to encrypt the database. That way we do not need an extra file and also gain
+            the advantage that the required response changes every time you save the database, which resembles
+            actual two-factor authentication more closely.
+        </dd>
+
+        <dt id="faq-yubikey-incompatible"><a href="#faq-yubikey-incompatible">When I secure my database in KeePass2 with a YubiKey, I can't open it in
+            KeePassXC (or vice versa), why?</a></dt>
+        <dd>
+            Due to the fact that our YubiKey implementation differs from KeeChallenge's, they are inherently incompatible
+            (see question above). If you need compatibility between KeePass2 and KeePassXC, you cannot use YubiKeys
+            at the moment.
+        </dd>
+
+        <dt id="faq-yubikey-why-hmac-sha1"><a href="#faq-yubikey-why-hmac-sha1">Why only HMAC-SHA1? Why not FIDO-U2F or TOTP?</a></dt>
+        <dd>
+            Both FIDO-U2F and TOTP require a dynamic component (i.e., a counter or timestamp) for successful authentication.
+            This is perfect for authenticating at an online service, but doesn't work for an offline database which needs
+            to be encrypted with a fixed key. HMAC-SHA1, on the other hand, can be computed ahead of time
+            as it only needs a fixed secret and no dynamic component of any kind.
+        </dd>
+
+        <dt id="faq-yubikey-otp"><a href="#faq-yubikey-otp">But the feature list says KeePassXC supports TOTP. I am confused.</a></dt>
+        <dd>
+            We do support generation of timed one-time passwords (TOTP), but do not (and cannot) support it for securing
+            your KeePassXC database. KeePassXC allows you to store TOTP secrets for online services inside a database
+            and generates the corresponding timed one-time passwords for you. For TOTP, see also the question
+            <a href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this alleviate any advantage of
+                two-factor authentication?</a>
+        </dd>
+
+        <dt id="faq-yubikey-broken-yubikey"><a href="#faq-yubikey-broken-yubikey">What happens if I break my YubiKey? Can I create backup keys?</a></dt>
+        <dd>
+            You should always make a copy of the HMAC secret that is stored on the YubiKey and keep it in a secure
+            location. This can be an analog paper copy, but since the YubiKey personalization tool allows you to
+            program a custom secret into the key, you may as well program a second key with the same secret.
+        </dd>
+
+        <dt id="faq-yubikey-multiple-yubikeys"><a href="#faq-yubikey-multiple-yubikeys">Can I register multiple YubiKeys with my KeePassXC database?</a></dt>
+        <dd>You can only use a single secret for encrypting the database. So you can use multiple YubiKeys, but they
+        all have to be programmed with the same secret (see question above).</dd>
     </dl>
 
     <h5>Platform-specific</h5>
@@ -123,9 +261,24 @@ permalink: docs
         <dt id="faq-autotype"><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></dt>
         <dd>Yes, Auto-Type works on all three supported platforms.</dd>
 
+        <dt id="faq-platform-mobile"><a href="#faq-platform-mobile">Does KeePassXC work on mobile phones? If not, which app would you recommend?</a></dt>
+        <dd>
+            No, KeePassXC only works on desktop systems. Porting it properly to mobile platforms would require a full rewrite.
+            You may be able to compile it for the mobile OS of your choice, but KeePassXC isn't at all optimized
+            for mobile screen sizes and form factors, let alone multi-touch input. We also don't see any advantage in
+            providing a mobile version of KeePassXC when there are excellent alternatives, already. For Android we
+            recommend <a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android">KeePass2Android</a>
+            and for iOS <a href="https://itunes.apple.com/us/app/minikeepass/id451661808?mt=8">MiniKeePass</a> or
+            <a href="https://itunes.apple.com/us/app/keepass-touch/id966759076?mt=8">KeePass Touch</a>.<br>
+            <strong>Note:</strong> KeePass2Android does support YubiKeys via NFC, but its challenge-response
+            implementation is incompatible with KeePassXC at the moment. <a href="https://github.com/keepassxreboot/keepassxc/issues/1060">
+            We are working on a solution, though.</a>
+        </dd>
+
         <dt id="faq-kdeaccelerators"><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
             or use certain shortcuts on KDE?</a></dt>
-        <dd>This is a “feature” in KDE's platform theme. It automatically adds ampersand (&amp;) characters to on-screen text
+        <dd>
+            This is a “feature” in KDE's platform theme. It automatically adds ampersand (&amp;) characters to on-screen text
             to allow you to trigger an action by pressing Alt+HOTKEY on your keyboard. Unfortunately, this “feature”
             causes more trouble than it does good. You can disable it by adding the following two lines to
             <code>~/.config/kdeglobals</code>:
@@ -136,7 +289,8 @@ AutoCheckAccelerators=false</code></pre>
         </dd>
 
         <dt id="faq-ubuntushortcuts"><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></dt>
-        <dd>This is a bug caused by <code>appmenu-qt5</code>.<br>
+        <dd>
+            This is a bug caused by <code>appmenu-qt5</code>.<br>
             You have 3 options:
             <ul>
                 <li>Remove the <code>appmenu-qt5</code> package
@@ -150,7 +304,8 @@ AutoCheckAccelerators=false</code></pre>
     <h5>Development</h5>
     <dl>
         <dt id="faq-builderror"><a href="#faq-builderror">Why do I get an error when I try to build from source for this platform?</a></dt>
-        <dd>Please follow every step from our
+        <dd>
+            Please follow every step from our
             <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
         </dd>
     </dl>
