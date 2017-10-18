@@ -18,14 +18,14 @@ permalink: verifying-signatures
     <p>The KeePassXC public master key can be retrieved as follows:</p>
 
     <strong>From a specific keyserver</strong>
-    <pre><code><strong>gpg --keyserver pool.sks-keyservers.net --recv-keys 0xBF5A669F2272CF4324C1FDA8CFB4C2166397D0D2</strong></code></pre>
+    <pre><code>gpg --keyserver pool.sks-keyservers.net --recv-keys 0xBF5A669F2272CF4324C1FDA8CFB4C2166397D0D2</code></pre>
 
     <strong>Manual download from <a href="https://keepassxc.org/keepassxc_master_signing_key.asc">our website</a> and import
         with gpg</strong>
-    <pre><code><strong>gpg --import ./keepassxc_master_signing_key.asc</strong></code></pre>
+    <pre><code>gpg --import ./keepassxc_master_signing_key.asc</code></pre>
 
     <strong>Fetch via gpg</strong>
-    <pre><code><strong>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</strong></code></pre>
+    <pre><code>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</code></pre>
 
     <p>These are the fingerprints of the master key and the current signing sub keys:</p>
     <div><pre><code>pub   rsa4096/CFB4C2166397D0D2 2017-01-03 [SC]
@@ -54,7 +54,7 @@ sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
     <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
         signature by running the following command:</p>
 
-    <pre><code><strong>$ gpg --verify KeePassXC-$VERSION-x86_64.AppImage.sig</strong>
+    <pre><code>$ gpg --verify KeePassXC-$VERSION-x86_64.AppImage.sig
 gpg: assuming signed data in 'KeePassXC-$VERSION-x86_64.AppImage'
 gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
 gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
@@ -64,7 +64,7 @@ gpg: Good signature from "KeePassXC Release &lt;<span
     <p>In addition, there is a <em>*.DIGEST</em> file that contains the SHA-256 digest for a release file.
         You can verify the <strong>integrity</strong> of a package by checking its hash digest with the following command:</p>
 
-    <pre><code><strong>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST</strong>
+    <pre><code>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
 KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
 </div>
 

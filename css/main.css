@@ -12,6 +12,31 @@ footer {
     background: none;
 }
 
+h3 {
+    border-bottom: 1px solid #e7e9ec;
+    padding-bottom: .2em;
+}
+
+h5, h6 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+code {
+    background: none;
+    color: #34495e;
+}
+
+pre {
+    border: none;
+    border-top: 1px solid #e7e9ec;
+    border-bottom: 1px solid #e7e9ec;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    background: none;
+    color: #34495e;
+}
+
 .wrapper > .container {
     padding-bottom: 8rem;
 }
@@ -287,6 +312,18 @@ footer {
     margin-bottom: 0;
 }
 
+.faq dl, .faq-questions {
+    border: 1px solid #ecf0f1;
+    padding: 1.5rem;
+    list-style: none;
+}
+
+.faq h5 {
+    background-color: #ecf0f1;
+    padding: 1.5rem;
+    margin-bottom: 0;
+}
+
 .faq dt {
     font-weight: bold;
 }
@@ -402,6 +439,17 @@ a.btn {
 /* need to redefine this, because ad blockers like to block *rss* classes */
 .fa-feed-square:before {
     content: "\f143";
+}
+
+#team .thumbnail {
+    height: 40rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+#team .thumbnail .caption {
+    position: absolute;
+    bottom: 0;
 }
 
 @keyframes octocat-wave {

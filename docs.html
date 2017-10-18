@@ -1,6 +1,6 @@
 ---
 layout: pages
-title: Docs
+title: Documentation and FAQ
 permalink: docs
 ---
 
@@ -23,7 +23,45 @@ permalink: docs
 </div>
 
 <div class="faq" id="faq">
-    <h3>FAQ</h3>
+    <h3>Frequently Asked Questions</h3>
+
+    <h4>Questions</h4>
+
+    <h5>General</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-keepassx">Why KeePassXC instead of KeePassX?</a></li>
+        <li><a href="#faq-keepass">Why KeePassXC instead of KeePass?</a></li>
+        <li><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></li>
+        <li><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></li>
+        <li><a href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a></li>
+    </ul>
+
+    <h5>Security</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-audit">Has KeePassXC ever had an external security audit? Why not?</a></li>
+    </ul>
+
+    <h5>YubiKey</h5>
+    <ul class="faq-questions">
+
+    </ul>
+
+    <h5>Platform-specific</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></li>
+        <li><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
+            or use certain shortcuts on KDE?</a></li>
+        <li><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></li>
+    </ul>
+
+    <h5>Development</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-builderror">Why do I get an error when I try to build from source for this platform?</a></li>
+    </ul>
+
+    <h4>Answers</h4>
+
+    <h5>General</h5>
     <dl>
         <dt id="faq-keepassx"><a href="#faq-keepassx">Why KeePassXC instead of KeePassX?</a></dt>
         <dd>KeePassX is an amazing password manager, but hasn't seen much active development for quite a while. Many
@@ -41,8 +79,15 @@ permalink: docs
             platform integration.
         </dd>
 
-        <dt id="faq-autotype"><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></dt>
-        <dd>Yes, Auto-Type works on all three supported platforms.</dd>
+        <dt id="faq-format"><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></dt>
+        <dd>KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
+            It can also import KeePass 1.x (.kdb) databases, but this is a one-way process.
+        </dd>
+
+        <dt id="faq-kdbx4"><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></dt>
+        <dd>We are working on it! There is a <a href="https://github.com/keepassxreboot/keepassxc/issues/148">pull request</a>,
+            but dotting the i's and crossing the t's will take some time.
+        </dd>
 
         <dt id="faq-cloudsync"><a href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a></dt>
         <dd>Cloud synchronization with Dropbox, Google Drive, OneDrive, Nextcloud etc. can be easily accomplished by
@@ -50,9 +95,12 @@ permalink: docs
             do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider and keeps
             the complexity of our code low.
         </dd>
-        
-        <dt id="faq-audit"><a href="#faq-audit">Has KeePassXC ever had an external security audit? Why?</a></dt>
-        <dd>At the time of writing (KeePassXC v2.2.0), No.
+    </dl>
+
+    <h5>Security</h5>
+    <dl>
+        <dt id="faq-audit"><a href="#faq-audit">Has KeePassXC ever had an external security audit? Why not?</a></dt>
+        <dd>At the time of writing, No.
             Having a third-party security audit comes with a considerable price and at the moment, KeePassXC is a purely community-driven project.
             There is no company or business behind KeePassXC and we have other expenses. We receive some donations, but those are not enough to finance an audit.
             Maybe you can beg <a href="https://ostif.org/">OSTIF</a> or <a href="https://www.opentech.fund/">OTF</a> for funding a KeePassXC audit.
@@ -63,20 +111,17 @@ permalink: docs
                 <li>An audit is valid only for a “snapshot” of the code. If new code is added, new vulnerabilities can be introduced.</li>
             </ul>
         </dd>
+    </dl>
 
-        <dt id="faq-format"><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></dt>
-        <dd>KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
-            It can also import KeePass 1.x (.kdb) databases, but this is a one-way process.
-        </dd>
-        
-        <dt id="faq-kdbx4"><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></dt>
-        <dd>We are working on it! There is a <a href="https://github.com/keepassxreboot/keepassxc/issues/148">pull request</a>, but dotting the i's and crossing the t's will take some time.
-        </dd>
+    <h5>YubiKey</h5>
+    <dl>
 
-        <dt id="faq-builderror"><a href="#faq-builderror">Why do I get an error when I try to build from source for this platform?</a></dt>
-        <dd>Please follow every step from our
-            <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
-        </dd>
+    </dl>
+
+    <h5>Platform-specific</h5>
+    <dl>
+        <dt id="faq-autotype"><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></dt>
+        <dd>Yes, Auto-Type works on all three supported platforms.</dd>
 
         <dt id="faq-kdeaccelerators"><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
             or use certain shortcuts on KDE?</a></dt>
@@ -99,6 +144,14 @@ AutoCheckAccelerators=false</code></pre>
                 <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
             </ul>
             <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
+        </dd>
+    </dl>
+
+    <h5>Development</h5>
+    <dl>
+        <dt id="faq-builderror"><a href="#faq-builderror">Why do I get an error when I try to build from source for this platform?</a></dt>
+        <dd>Please follow every step from our
+            <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
         </dd>
     </dl>
 </div>
