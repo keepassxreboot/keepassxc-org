@@ -68,7 +68,11 @@ sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
     <p>Notice that we have a <em>master</em> key and some <em>sub</em> keys.
        For improved security we actually create the signatures with one of the <em>sub keys</em>.
        As the naming implies, they are closely related to one another -
-       if you trust the master GPG key, the release sub keys are also trusted.
+       if you import the master GPG key, the release sub keys are also.
+    </p>
+    <p>Once you have imported the key, you can decide whether you want to mark it as <em>trusted</em>.
+       This is not necessary for the checks we are making here. For more information, see the
+       <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
     </p>
 
     <h4>Verifying Releases</h4>
