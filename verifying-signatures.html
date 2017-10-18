@@ -15,15 +15,17 @@ permalink: verifying-signatures
 
 <div id="how-to-verify-signatures">
     <h4>Download Options</h4>
-    <p>Every KeePassXC release comes with a variety of files:</p>
+    <p>Every KeePassXC release is published in a variety of formats:</p>
     <ul>
         <li>a <em>*.dmg</em> drag-and-drop installer for OS X</li>
         <li>an <em>*.exe</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
         <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
         <li>a <em>*.tar.xz</em> source tarball</li>
     </ul>
+    <p>You will select one of these to install on your machine.</p>
 
-    <p>Each of these files has a <em>*.sig</em> sidecar file containing a detached GPG signature created with
+    <p>Each of these files has a related <em>*.sig</em> sidecar file that you
+       should download as well. These contain a GPG <em>signature</em> created with
         <em>one of the release sub keys</em>. If you have trusted the master GPG key, the release sub keys are also trusted.</p>
 
     <h4>Importing the Public Master Key</h4>
