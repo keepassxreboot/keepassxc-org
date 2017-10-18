@@ -51,6 +51,11 @@ sub   rsa2048/AFF235EEFB5A2517 2017-01-03 [S] [expires: 2019-01-03]
 sub   rsa2048/D8538E98A26FD9C4 2017-01-03 [S] [expires: 2019-01-03]
 sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
     </div>
+    <p>Notice that we have a <em>master</em> key and some <em>sub</em> keys.
+       For improved security we actually create the signatures with one of the <em>sub keys</em>.
+       As the naming implies, they are closely related to one another -
+       if you trust the master GPG key, the release sub keys are also trusted.
+    </p>
 
     <p>The full public master key can also be downloaded from the
         <a href="https://github.com/keepassxreboot/keepassxreboot.github.io/blob/master/keepassxc_master_signing_key.asc">KeePassXC
