@@ -22,14 +22,14 @@ permalink: verifying-signatures
         <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
         <li>a <em>*.tar.xz</em> source tarball</li>
     </ul>
-    <p>You will select one of these to install on your machine.</p>
+    <p>You will need to download one of these to install on your machine.</p>
 
     <h4>Sidecar files</h4>
     <p>Each of these files has a related <em>*.sig</em> sidecar file that you
        should download as well. These contain a GPG <em>signature</em> created with
        one of our <em>release keys</em>. Signing the installable file with
        any other key will give a different signature, so you can use the signature
-       and our public key to check the installable file really came from us.</p>
+       and our public key to check the package file really came from us.</p>
 
     <p>Each release package also has a related <em>*.DIGEST</em> file. Grab that too.
        We will use it to check the package file and has not been changed since it was
@@ -71,7 +71,7 @@ sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
        if you import the master GPG key, the release sub keys are also.
     </p>
     <p>Once you have imported the key, you can decide whether you want to mark it as <em>trusted</em>.
-       This is not necessary for the checks we are making here. For more information, see the
+       This is not strictly necessary for the checks we are making here. For more information, see the
        <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
     </p>
 
@@ -92,7 +92,7 @@ Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
     <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
        the AppImage file by the key with fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
     </p>
-    <p>The warning is there because we have not taken that extra step of <em>trusting</em> that key.
+    <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
     </p>
  
     <p>Remember the <em>*.DIGEST</em> file?
