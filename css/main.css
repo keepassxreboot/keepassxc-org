@@ -270,8 +270,31 @@ pre {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.download-links {
+    overflow: hidden; /* clearfix */
+}
+
+.official-packages .links.sig, .official-packages .links.digest, .download-links li > code {
+    font-size: .8em;
+    float: left;
+    margin: .4em 2em 0 0;
+}
+
+.download-links li > code {
+    float: none;
+}
+
+.download-links .note {
+    clear: left;
+}
+
 .official-packages .links.sig:before, .dist-packages .links.sig:before {
     content: "\f023";
+}
+
+.official-packages .links.digest:before, .dist-packages .links.digest:before {
+    content: "\f292";
 }
 
 .official-packages .links a:not(:first-child):before {
@@ -290,6 +313,10 @@ pre {
     border-top: 1px solid rgba(86, 61, 124, 0.15);
     padding-top: 2em;
     margin-top: .7em;
+}
+
+.dist-packages .download-links {
+    margin-top: -.3em;
 }
 
 .tab-pane {
@@ -505,6 +532,7 @@ a.btn {
         float: none;
         margin: 0;
         padding: 0;
+        width: auto;
     }
 }
 
