@@ -89,7 +89,6 @@
                     $(f)
                 });
 
-                var initialAnimation = true;
                 var navFixed = false;
                 var nav = $(".navbar");
                 var navHeight = nav.height();
@@ -124,16 +123,36 @@
                     });
                 }
 
-                setTimeout(function() {
-                    // correct offset due to fixed header
+                // correct scroll offset due to fixed navigation after page load
+                function pollRenderEvent() {
+                    if (!nav.size()) {
+                        window.requestAnimationFrame(pollRenderEvent);
+                        return;
+                    }
+                    navHeight = nav.height();   // update height, just in case...
                     var st = $(window).scrollTop();
                     var offset = $(location.hash).offset();
 
                     if (st > navHeight * .8 && offset) {
                         $(window).scrollTop(offset.top - navHeight - 10);
                     }
-                }, 100);
+                }
 
+                // enable smooth scrolling for anchor links
+                $("a[href^='#']").bind('click', function(e) {
+                    e.preventDefault();
+                    var target = $(this).attr("href");
+                    var offset = ((target === '#') ? 0 : $(target).offset().top) - navHeight - 10;
+                    $('html, body').animate({scrollTop: offset}, 500, function() {
+                        if(history.pushState) {
+                            history.pushState(null, "", target);
+                        } else {
+                            location.hash = target;
+                        }
+                    });
+                });
+
+                pollRenderEvent();
                 $(window).bind("scroll", animateNavbar);
                 animateNavbar();
 
