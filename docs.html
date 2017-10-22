@@ -48,6 +48,17 @@ permalink: docs
         <li><a href="#faq-security-no-network">Can I get a KeePassXC version without any networking code?</a></li>
     </ul>
 
+    <h5>AppImage and Snap package</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-appsnap-run-appimage">How do I execute an AppImage?</a></li>
+        <li><a href="#faq-appsnap-appimage-support">What systems can I use the AppImage or Snap package on?</a></li>
+        <li><a href="#faq-appsnap-appimage-cli">How do I use the KeePassXC CLI tool with the AppImage?</a></li>
+        <li><a href="#faq-appsnap-theme">Why doesn't my theme work?</a></li>
+        <li><a href="#faq-appsnap-yubikey">How do I get my YubiKey to work with the Snap?</a></li>
+        <li><a href="#faq-appsnap-homedir">Why can't I see anything outside my home directory?</a></li>
+        <li><a href="#faq-appsnap-open-url">Opening a URL (Ctrl+U) doesn't work!</a></li>
+    </ul>
+
     <h5>YubiKey</h5>
     <ul class="faq-questions">
         <li><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys?</a></li>
@@ -191,6 +202,59 @@ permalink: docs
         <dd>
             Yes, you can compile KeePassXC without any networking code. Simply configure CMake with <code>-DWITH_XC_HTTP=OFF</code>
             (see <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">Building KeePassXC</a>).
+        </dd>
+    </dl>
+
+    <h5>AppImage and Snap package</h5>
+    <dl>
+        <dt id="faq-appsnap-run-appimage"><a href="#faq-appsnap-run-appimage">How do I execute an AppImage?</a></dt>
+        <dd>
+            The AppImage is a self-contained executable archive, comparable to an Android APK or macOS DMG. To execute
+            it, simply give the downloaded <code>*.AppImage</code> file execution permissions:
+            <pre><code>chmod +x ./KeePassXC-*.AppImage</code></pre>
+            After that you can execute it either from the terminal or by double clicking it just like any other program.
+        </dd>
+
+        <dt id="faq-appsnap-appimage-support"><a href="#faq-appsnap-appimage-support">What systems can I use the AppImage or Snap package on?</a></dt>
+        <dd>
+            The AppImage should run out of the box on almost any moderately modern Linux distribution. The Snap is supported on all
+            systems, which have <code>snapd</code> installed. This is primarily Ubuntu, but also Debian, Fedora, OpenSUSE,
+            Arch Linux and many more. For a full list and more information visit <a href="https://snapcraft.io/">snapcraft.io</a>. Note
+            that not all systems that can run Snaps also support confinement via AppArmor.
+        </dd>
+
+        <dt id="faq-appsnap-appimage-cli"><a href="#faq-appsnap-appimage-cli">How do I use the KeePassXC CLI tool with the AppImage?</a></dt>
+        <dd>
+            Starting with version 2.2.2, you can run the KeePassXC CLI tool from the AppImage by executing it with the
+            <code>cli</code> argument:
+            <pre><code>./KeePassXC-*.AppImage cli</code></pre>
+        </dd>
+
+        <dt id=faq-appsnap-theme""><a href="#faq-appsnap-theme">Why doesn't my theme work?</a></dt>
+        <dd>
+            Since Snaps and AppImages are self-contained and mostly isolated from your system, they cannot know what
+            theme you are currently running. This is a known issue with both Snaps and AppImages.
+        </dd>
+
+        <dt id="faq-appsnap-yubikey"><a href="#faq-appsnap-yubikey">How do I get my YubiKey to work with the Snap?</a></dt>
+        <dd>
+            Due to a Snap's isolation and security settings, you must manually enable the <code>raw-usb</code> interface in order
+            to use your YubiKey. Issue the following command from a terminal to enable this interface:
+            <pre><code>sudo snap connect keepassxc:raw-usb core:raw-usb</code></pre>
+        </dd>
+
+        <dt id="faq-appsnap-homedir"><a href="#faq-appsnap-homedir">Why can't I see anything outside my home directory?</a></dt>
+        <dd>
+            Due to Snap's isolation and security settings, you cannot access any files outside your home directory.
+            Furthermore, you cannot access any hidden files within your home directory. The only exception is mounted
+            USB drives, but you must type in <code>/media/</code> into the file open dialog to see them.
+        </dd>
+
+        <dt id="faq-appsnap-open-url"><a href="#faq-appsnap-open-url">Opening a URL (Ctrl+U) doesn't work!</a></dt>
+        <dd>
+            In order for the Snap to communicate with the system's dbus, you have to install an extra package.
+            If you want to open URL's from within keepassxc, install the <code>snapd-xdg-open</code> package using the following command:
+            <pre><code>sudo apt-get install snapd-xdg-open</code></pre>
         </dd>
     </dl>
 
