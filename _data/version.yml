@@ -11,8 +11,8 @@ stable:
     installer: 2.2.2
 
   windows32:
-    portable: 2.2.1
-    installer: 2.2.1
+    portable: 2.2.2
+    installer: 2.2.2
 
   source:
     tarball: 2.2.2
