@@ -125,11 +125,20 @@
                 }
 
                 // correct scroll offset due to fixed navigation after page load
+                var isPageLoad = true;
                 function fixScrollOffset() {
                     if (!nav.size()) {
                         window.requestAnimationFrame(fixScrollOffset);
                         return;
                     }
+
+                    // only fix once after page has loaded
+                    if (isPageLoad) {
+                        isPageLoad = false;
+                    } else {
+                        return;
+                    }
+
                     navHeight = nav.height();   // update height, just in case...
                     var st = $(window).scrollTop();
                     var offset = $(location.hash).offset();
