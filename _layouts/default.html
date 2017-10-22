@@ -108,9 +108,10 @@
                                     "top": -navHeight + "px",
                                     "width": "100%"
                                 });
+                                fixScrollOffset();
                                 nav.stop().animate({"top": 0}, 350);
                             }
-                        } else if ($(this).scrollTop() == 0) {
+                        } else if ($(this).scrollTop() === 0) {
                             nav.css({
                                 "position": "relative",
                                 "top": 0
@@ -124,9 +125,9 @@
                 }
 
                 // correct scroll offset due to fixed navigation after page load
-                function pollRenderEvent() {
+                function fixScrollOffset() {
                     if (!nav.size()) {
-                        window.requestAnimationFrame(pollRenderEvent);
+                        window.requestAnimationFrame(fixScrollOffset);
                         return;
                     }
                     navHeight = nav.height();   // update height, just in case...
@@ -134,7 +135,7 @@
                     var offset = $(location.hash).offset();
 
                     if (st > navHeight * .8 && offset) {
-                        $(window).scrollTop(offset.top - navHeight - 10);
+                        $(window).scrollTop(offset.top - navHeight - 15);
                     }
                 }
 
@@ -142,9 +143,10 @@
                 $("a[href^='#']").bind('click', function(e) {
                     e.preventDefault();
                     var target = $(this).attr("href");
-                    var offset = ((target === '#') ? 0 : $(target).offset().top) - navHeight - 10;
+                    var offset = Math.max(0, ((target === '#') ? 0 : $(target).offset().top) - navHeight - 15);
+                    console.log(offset);
                     $('html, body').animate({scrollTop: offset}, 500, function() {
-                        if(history.pushState) {
+                        if (history.pushState) {
                             history.pushState(null, "", target);
                         } else {
                             location.hash = target;
@@ -152,7 +154,6 @@
                     });
                 });
 
-                pollRenderEvent();
                 $(window).bind("scroll", animateNavbar);
                 animateNavbar();
 

@@ -125,6 +125,7 @@ pre {
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
+    border-bottom: 3px solid #6cac4d;
     z-index: 10000;
 }
 
