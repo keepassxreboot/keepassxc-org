@@ -153,7 +153,6 @@
                     e.preventDefault();
                     var target = $(this).attr("href");
                     var offset = Math.max(0, ((target === '#') ? 0 : $(target).offset().top) - navHeight - 15);
-                    console.log(offset);
                     $('html, body').animate({scrollTop: offset}, 500, function() {
                         if (history.pushState) {
                             history.pushState(null, "", target);
