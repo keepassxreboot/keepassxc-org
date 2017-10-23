@@ -23,6 +23,9 @@ permalink: verifying-signatures
         <li>a <em>*.tar.xz</em> source tarball</li>
     </ul>
     <p>You will need to download one of these to install on your machine.</p>
+    <p>Each of these package files has two related sidecar files, a <em>*.DIGEST</em> and a <em>*.sig</em>.
+       We explain how to use these below.</p>
+
 
     <h4>Basic integrity check</h4>
     <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
@@ -35,16 +38,11 @@ KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
        was downloaded without errors.</p>
 
 
-    <h4>Sidecar files</h4>
-    <p>Each of these files has a related <em>*.sig</em> sidecar file that you
-       should download as well. These contain a GPG <em>signature</em> created with
-       one of our <em>release keys</em>. Signing the installable file with
-       any other key will give a different signature, so you can use the signature
-       and our public key to check the package file really came from us.</p>
-
-    <p>Each release package also has a related <em>*.DIGEST</em> file. Grab that too.
-       We will use it to check the package file has not been changed since it was
-       uploaded to the KeePassXC website, and that it downloaded correctly.</p>
+    <h4>Checking integrity and <em>authenticity</em></h4>
+    <p>A more thorough check can be made using the <em>*.sig</em> sidecar file.
+       This contains a GPG <em>signature</em> created with one of our <em>release keys</em>.
+       Signing the installable file with any other key will give a different signature,
+       so you can use the signature and our public key to check the package file really came from us.</p>
 
     <h4>Importing the Public Master Key</h4>
     <p>We will use the <code>gpg</code> program to check the signatures.
