@@ -14,8 +14,42 @@ permalink: verifying-signatures
 </div>
 
 <div id="how-to-verify-signatures">
+    <h4>Download Options</h4>
+    <p>Every KeePassXC release is published in a variety of package formats:</p>
+    <ul>
+        <li>a <em>*.dmg</em> drag-and-drop installer for macOS</li>
+        <li>an <em>*.exe</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
+        <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
+        <li>a <em>*.tar.xz</em> source tarball</li>
+    </ul>
+    <p>You will need to download one of these to install on your machine.</p>
+    <p>Each of these package files has two related sidecar files, a <em>*.DIGEST</em> and a <em>*.sig</em>.
+       We explain how to use these below.</p>
+
+
+    <h4>Basic integrity check</h4>
+    <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
+       with the following command:</p>
+
+    <pre><code>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
+KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
+    <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
+       and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
+       was downloaded without errors.</p>
+
+
+    <h4>Checking integrity and <em>authenticity</em></h4>
+    <p>A more thorough check can be made using the <em>*.sig</em> sidecar file.
+       This contains a GPG <em>signature</em> created with one of our <em>release keys</em>.
+       Signing the installable file with any other key will give a different signature,
+       so you can use the signature and our public key to check the package file really came from us.</p>
+
     <h4>Importing the Public Master Key</h4>
-    <p>The KeePassXC public master key can be retrieved as follows:</p>
+    <p>We will use the <code>gpg</code> program to check the signatures.
+       Before you can do that you need to tell <code>gpg</code> about our public key,
+       by <em>importing</em> it.
+    </p>
+    <p>The KeePassXC public key can be retrieved in any of the ways shown below:</p>
 
     <strong>From a specific keyserver</strong>
     <pre><code>gpg --keyserver pool.sks-keyservers.net --recv-keys 0xBF5A669F2272CF4324C1FDA8CFB4C2166397D0D2</code></pre>
@@ -27,6 +61,11 @@ permalink: verifying-signatures
     <strong>Fetch via gpg</strong>
     <pre><code>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</code></pre>
 
+    <strong>Manual download from the
+        <a href="https://github.com/keepassxreboot/keepassxreboot.github.io/blob/master/keepassxc_master_signing_key.asc">KeePassXC
+            website repository</a> and import with gpg</strong>
+    <pre><code><strong>gpg --import ./keepassxc_master_signing_key.asc</strong></code></pre>
+
     <p>These are the fingerprints of the master key and the current signing sub keys:</p>
     <div><pre><code>pub   rsa4096/CFB4C2166397D0D2 2017-01-03 [SC]
       Key fingerprint = BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
@@ -35,22 +74,18 @@ sub   rsa2048/AFF235EEFB5A2517 2017-01-03 [S] [expires: 2019-01-03]
 sub   rsa2048/D8538E98A26FD9C4 2017-01-03 [S] [expires: 2019-01-03]
 sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
     </div>
-
-    <p>The full public master key can also be downloaded from the
-        <a href="https://github.com/keepassxreboot/keepassxreboot.github.io/blob/master/keepassxc_master_signing_key.asc">KeePassXC
-            website repository</a>.</p>
+    <p>Notice that we have a <em>master</em> key and some <em>sub</em> keys.
+       The actual signatures are created with one of the <em>sub keys</em>.
+       As the naming implies, they are closely related to one another -
+       importing the master GPG key is sufficient for verifying signatures
+       made with any of its sub keys.
     </p>
-    <h4>Verifying Releases</h4>
-    <p>Every KeePassXC release comes with a variety of files:</p>
-    <ul>
-        <li>a <em>*.dmg</em> drag-and-drop installer for OS X</li>
-        <li>an <em>*.exe</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
-        <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
-        <li>a <em>*.tar.xz</em> source tarball</li>
-    </ul>
+    <p>Once you have imported the key, you can decide whether you want to mark it as <em>trusted</em>.
+       This is not strictly necessary for the checks we are making here. For more information, see the
+       <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
+    </p>
 
-    <p>Each of these files has a <em>*.sig</em> sidecar file containing a detached GPG signature created with
-        <em>one of the release sub keys</em>. If you have trusted the master GPG key, the release sub keys are also trusted.</p>
+    <h4>Verifying Releases</h4>
     <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
         signature by running the following command:</p>
 
@@ -59,12 +94,20 @@ gpg: assuming signed data in 'KeePassXC-$VERSION-x86_64.AppImage'
 gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
 gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
 gpg: Good signature from "KeePassXC Release &lt;<span
-                class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]</code></pre>
-
-    <p>In addition, there is a <em>*.DIGEST</em> file that contains the SHA-256 digest for a release file.
-        You can verify the <strong>integrity</strong> of a package by checking its hash digest with the following command:</p>
-
-    <pre><code>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
-KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
+                class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
+     Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8</code></pre>
+    <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
+       the AppImage file by the sub key with the fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
+    </p>
+    <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
+    </p>
+ 
+    <h4>Verification fails!</h4>
+    <p>Don't install the package. First, try downloading again and rechecking. If it is still not working,
+       please let us know about the problem by opening an <a href="https://github.com/keepassxreboot/keepassxc/issues">issue</a>.
+    </p>
 </div>
 
