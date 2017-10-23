@@ -24,6 +24,17 @@ permalink: verifying-signatures
     </ul>
     <p>You will need to download one of these to install on your machine.</p>
 
+    <h4>Basic integrity check</h4>
+    <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
+       with the following command:</p>
+
+    <pre><code>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
+KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
+    <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
+       and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
+       was downloaded without errors.</p>
+
+
     <h4>Sidecar files</h4>
     <p>Each of these files has a related <em>*.sig</em> sidecar file that you
        should download as well. These contain a GPG <em>signature</em> created with
@@ -96,15 +107,6 @@ Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
     <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
     </p>
  
-    <p>Remember the <em>*.DIGEST</em> file?
-        You can verify the <strong>integrity</strong> of the package you downloaded with the following command:</p>
-
-    <pre><code>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
-KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
-    <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
-       and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
-       was downloaded without errors.</p>
-
     <h4>Verification fails!</h4>
     <p>Don't install the package. First, try downloading again and rechecking. If it is still not working,
        please let us know about the problem by opening an <a href="https://github.com/keepassxreboot/keepassxc/issues">issue</a>.
