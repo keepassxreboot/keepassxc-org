@@ -1,6 +1,6 @@
 stable:
   linux:
-    appimage: 2.2.2
+    appimage: 2.2.2-2
     snap: 2.2.2
 
   mac:
