@@ -15,10 +15,10 @@ layout: default
 <div class="container">
     <p><a href="{{ site.baseurl }}/blog/feed.xml" target="_blank"><i class="fa fa-feed-square" aria-hidden="true"></i>  Subscribe</a></p>
 
+    <section class="post-list">
     {% for post in site.posts %}
     {% if post.categories contains 'blog' %}
-    <section class="post-list">
-        <article class="post">
+        <article class="post" style="clear: left;">
             <header>
             <h4 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
                 <p class="meta">
@@ -27,11 +27,11 @@ layout: default
                     in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> {{ post.category }}</em></p>
             </header>
             <div class="post-content">
-                {{ post.excerpt }}
+                {{ post.excerpt  }}
                 <a href="{{ post.url }}">Read more…</a>
             </div>
         </article>
-    </section>
     {% endif %}
     {% endfor %}
+    </section>
 </div> <!-- /container -->
