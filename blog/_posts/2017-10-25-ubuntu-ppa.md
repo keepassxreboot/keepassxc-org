@@ -5,6 +5,7 @@ date:   2017-10-25 14:51 +0200
 category: "Packages"
 permalink: /:path/
 author: Janek Bevendorff
+excerpt_separator: <!--more-->
 ---
 
 <div style="float: left; margin: 0 4rem 4rem 0;">
@@ -14,7 +15,7 @@ author: Janek Bevendorff
 With our AppImage and Snap release, KeePassXC runs on almost any desktop Linux platform
 today. While especially the AppImage is extremely versatile and portable, we
 fully understand if users prefer a package that integrates better with their
-desktop system. Many Linux distributions already ship KeePassXC as a native package,
+desktop system. <!--more--> Many Linux distributions already ship KeePassXC as a native package,
 but the largest player, Ubuntu, is still left out in the rain.
 While [a Debian package has been submitted](https://ftp-master.debian.org/new/keepassxc_2.2.0-1.html),
 it is still hanging in the review queue and will possibly continue to do so for
