@@ -44,6 +44,9 @@ apt install keepassxc
 From now on, you will always get the latest KeePassXC version directly through
 your package manager, whenever you do an `apt upgrade`.
 
+The source packages within the PPA are
+[signed with our official release key](/verifying-signatures).
+
 Please be aware that at the moment, YubiKeys don't work with 14.04 Trusty Tahr,
 because of its outdated YubiKey libraries. We will address this issue soon
 by providing more recent versions of the required libraries through the Trusty
