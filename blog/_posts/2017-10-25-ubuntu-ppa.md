@@ -53,3 +53,5 @@ because of its outdated YubiKey libraries. We will address this issue soon
 by providing more recent versions of the required libraries through the Trusty
 PPA (the same which we are already bundling with our AppImage, which is also
 build on Trusty Tahr).
+
+**Update:** The issue has been resolved, YubiKeys now fully work on Trusty.
