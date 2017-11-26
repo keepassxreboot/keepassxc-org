@@ -1,0 +1,63 @@
+---
+layout: pages
+title: Quickstart Guide
+permalink: quickstart
+---
+
+
+<div id="quickstart">
+    <h3>Quickstart Guide for KeePassXC</h3>
+    <p>This procedure gets KeePassXC running on your computer with browser integration,
+        using the pre-built binaries available for <a href="https://keepassxc.org/download">download</a>
+        from our website.
+
+    <p><strong>TL;DR</strong> KeePassXC saves your passwords securely.
+        When you double-click a URL in KeePassXC, it launches your default browser to that URL.
+        With browser integration configured, KeePassXC automatically enters
+        username/password credentials into web page fields.
+
+    <h4>Installing and starting KeePassXC</h4>
+
+    <ul>
+        <li><a href="https://keepassxc.org/download">Download the native installer</a> and install
+            KeePassXC for your  Windows, macOS, or Linux computer in the usual way for your platform.
+        <li>Open the KeePassXC application.
+        <li>Create a new database and give it a master key that's used to unlock the database file.
+            This database holds entries (usernames, passwords, account numbers, notes)
+            for all your websites, programs, etc.
+        <li>Create a few entries – enter the username, password, URL, and optionally notes about the entry.
+        <li>KeePassXC securely stores those entries in the database.
+    </ul>
+
+    <h4>Setting up browser integration with KeePassXC</h4>
+
+    <ul>
+        <li><em>Within KeePassXC</em>, go to <strong>Tools-&gt;Settings</strong>
+            (on macOS, go to <strong>KeePassXC-&gt;Preferences</strong>).
+        <li>In <strong>Browser Integration</strong>, check <strong>Enable KeePassHTTP server</strong>
+            Leave the other options at their defaults.
+        <li><em>In your default web browser,</em> install the KeePassHTTP-Connector extension/add-on.
+            Instructions for <a href="https://addons.mozilla.org/en-US/firefox/addon/keepasshttp-connector/?src=api">
+            Firefox</a> or
+            <a href="https://chrome.google.com/webstore/detail/keepasshttp-connector/dafgdjggglmmknipkhngniifhplpcldb?utm_source=chrome-app-launcher-info-dialog">Chrome</a>
+        <li>Click the KeePassXC icon in the upper-right corner. You'll see the dialog below.
+        <li>Click the blue Connect button to make the browser extension connect to the KeePassXC application.
+            <div><img src="{{ site.baseurl }}/images/quickstart/KeePassXC-Connect.png" height="200" alt="KeePassXC Connect dialog"></div>
+        <li><em>Switch back to KeePassXC.</em> You'll see a dialog (below) indicating that a request to connect has arrived.
+        <li>Give the connection a name (perhaps <em>Keepass-Browsername</em>, any unique name will suffice) and click OK to accept it.
+        <li>This one-time operation connects KeePassXC and your browser.
+            <div><img src="{{ site.baseurl }}/images/quickstart/KeePassXC-Accept-Button.png" height="200" alt="KeePassXC accept connection dialog"></div>
+    </ul>
+
+    <h4>Using browser integration</h4>
+
+    <ul>
+        <li><em>Within KeePassXC</em>, double-click the URL of an entry,
+            or select it and type Ctrl+U (Cmd+U on macOS).
+        <li>Your browser opens to that URL.
+        <li>If there are username/password fields on that page, you will see the dialog below.
+            Click "Allow" to confirm that KeePassXC may access the credentials to auto-fill the fields.
+        <li>Check <em>Remember this decision</em> to allow this each time you visit the page.
+            <div><img src="{{ site.baseurl }}/images/quickstart/KeePassXC-Confirm.png" height="200" alt="KeePassCX Confirm Access dialog"></div>
+    </ul>
+</div>
