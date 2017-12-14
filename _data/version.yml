@@ -1,18 +1,18 @@
 stable:
   linux:
-    appimage: 2.2.2
-    snap: 2.2.3
+    appimage: 2.2.4
+    snap: 2.2.4
 
   mac:
-    dmg: 2.2.2
+    dmg: 2.2.4
 
   windows:
-    portable: 2.2.3
-    installer: 2.2.3
+    portable: 2.2.4
+    installer: 2.2.4
 
   windows32:
-    portable: 2.2.3
-    installer: 2.2.3
+    portable: 2.2.4
+    installer: 2.2.4
 
   source:
-    tarball: 2.2.3
+    tarball: 2.2.4
