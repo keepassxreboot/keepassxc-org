@@ -37,23 +37,23 @@ permalink: download
             <div class="row">
                 <div class="col-md-6">
                     <div class="heading">
-                        <span class="label label-success">v{{ site.data.version.stable.linux.appimage }}</span>
+                        <span class="label label-success">v{{ site.data.version.stable.linux.appimage.version }}</span>
                         <h5><i class="fa fa-linux" aria-hidden="true"></i> AppImage
                             <i class="hint fa fa-question-circle" title="Portable Linux executable, no installation required." data-toggle="tooltip"></i>
                         </h5>
                     </div>
                     <ul class="download-links">
                         <li class="links">
-                            <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage }}/KeePassXC-{{ site.data.version.stable.linux.appimage }}-x86_64.AppImage">
+                            <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage.version }}/KeePassXC-{{ site.data.version.stable.linux.appimage.version }}{{ site.data.version.stable.linux.appimage.suffix }}-x86_64.AppImage">
                                 Official AppImage
                             </a>
                         </li>
                         <li class="links sig">
-                            <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage }}/KeePassXC-{{ site.data.version.stable.linux.appimage }}-x86_64.AppImage.sig">
+                            <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage.version }}/KeePassXC-{{ site.data.version.stable.linux.appimage.version }}{{ site.data.version.stable.linux.appimage.suffix }}-x86_64.AppImage.sig">
                                  GPG signature</a>
                         </li>
                         <li class="links digest">
-                            <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage }}/KeePassXC-{{ site.data.version.stable.linux.appimage }}-x86_64.AppImage.digest">
+                            <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage.version }}/KeePassXC-{{ site.data.version.stable.linux.appimage.version }}{{ site.data.version.stable.linux.appimage.suffix }}-x86_64.AppImage.digest">
                                 SHA-256 digest</a>
                         </li>
                     </ul>
@@ -61,7 +61,7 @@ permalink: download
 
                 <div class="col-md-6">
                     <div class="heading">
-                        <span class="label label-success">v{{ site.data.version.stable.linux.snap }}</span>
+                        <span class="label label-success">v{{ site.data.version.stable.linux.snap.version }}</span>
                         <h5><i class="fa fa-linux" aria-hidden="true"></i> Snap Package</h5>
                     </div>
                     <ul class="download-links">
@@ -179,21 +179,21 @@ permalink: download
         <div class="official-packages">
             <div>
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.mac.dmg }}</span>
+                    <span class="label label-success">v{{ site.data.version.stable.mac.dmg.version }}</span>
                     <h5><i class="fa fa-mac" aria-hidden="true"></i> DMG Installer</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg }}/KeePassXC-{{ site.data.version.stable.mac.dmg }}.dmg">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg">
                              Binary bundle for macOS 10.10 and later
                         </a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg }}/KeePassXC-{{ site.data.version.stable.mac.dmg }}.dmg.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg.sig">
                             GPG signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg }}/KeePassXC-{{ site.data.version.stable.mac.dmg }}.dmg.digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg.digest">
                             SHA-256 digest</a>
                     </li>
                 </ul>
@@ -207,20 +207,20 @@ permalink: download
         <div class="row official-packages">
             <div class="col-md-6">
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows.portable }}</span>
+                    <span class="label label-success">v{{ site.data.version.stable.windows.portable.version }}</span>
                     <h5><i class="fa fa-windows" aria-hidden="true"></i> Portable</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable }}/KeePassXC-{{ site.data.version.stable.windows.portable }}-Win64-Portable.zip">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64-Portable.zip">
                             Portable ZIP archive</a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable }}/KeePassXC-{{ site.data.version.stable.windows.portable }}-Win64-Portable.zip.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64-Portable.zip.sig">
                             GPG signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable }}/KeePassXC-{{ site.data.version.stable.windows.portable }}-Win64-Portable.zip.digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64-Portable.zip.digest">
                             SHA-256 digest</a>
                     </li>
                 </ul>
@@ -228,20 +228,20 @@ permalink: download
 
             <div class="col-md-6">
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows.installer }}</span>
+                    <span class="label label-success">v{{ site.data.version.stable.windows.installer.version }}</span>
                     <h5><i class="fa fa-windows" aria-hidden="true"></i> Installer</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.installer }}/KeePassXC-{{ site.data.version.stable.windows.installer }}-Win64.exe">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.installer.version }}/KeePassXC-{{ site.data.version.stable.windows.installer.version }}{{ site.data.version.stable.windows.installer.suffix }}-Win64.exe">
                             Executable installer</a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.installer }}/KeePassXC-{{ site.data.version.stable.windows.installer }}-Win64.exe.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.installer.version }}/KeePassXC-{{ site.data.version.stable.windows.installer.version }}{{ site.data.version.stable.windows.installer.suffix }}-Win64.exe.sig">
                             GPG signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.installer }}/KeePassXC-{{ site.data.version.stable.windows.installer }}-Win64.exe.digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.installer.version }}/KeePassXC-{{ site.data.version.stable.windows.installer.version }}{{ site.data.version.stable.windows.installer.suffix }}-Win64.exe.digest">
                             SHA-256 digest</a>
                     </li>
                 </ul>
@@ -251,20 +251,20 @@ permalink: download
         <div class="row official-packages">
             <div class="col-md-6">
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows32.portable }}</span>
+                    <span class="label label-success">v{{ site.data.version.stable.windows32.portable.version }}</span>
                     <h5><i class="fa fa-windows" aria-hidden="true"></i> Portable (32-bit)</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable }}/KeePassXC-{{ site.data.version.stable.windows32.portable }}-Win32-Portable.zip">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable.version }}/KeePassXC-{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}-Win32-Portable.zip">
                             Portable ZIP archive</a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable }}/KeePassXC-{{ site.data.version.stable.windows32.portable }}-Win32-Portable.zip.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable.version }}/KeePassXC-{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}-Win32-Portable.zip.sig">
                             GPG signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable }}/KeePassXC-{{ site.data.version.stable.windows32.portable }}-Win32-Portable.zip.digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable.version }}/KeePassXC-{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}-Win32-Portable.zip.digest">
                             SHA-256 digest</a>
                     </li>
                 </ul>
@@ -272,20 +272,20 @@ permalink: download
 
             <div class="col-md-6">
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows32.installer }}</span>
+                    <span class="label label-success">v{{ site.data.version.stable.windows32.installer.version }}</span>
                     <h5><i class="fa fa-windows" aria-hidden="true"></i> Installer (32-bit)</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.installer }}/KeePassXC-{{ site.data.version.stable.windows32.installer }}-Win32.exe">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.installer.version }}/KeePassXC-{{ site.data.version.stable.windows32.installer.version }}{{ site.data.version.stable.windows32.installer.suffix }}-Win32.exe">
                             Executable installer</a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.installer }}/KeePassXC-{{ site.data.version.stable.windows32.installer }}-Win32.exe.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.installer.version }}/KeePassXC-{{ site.data.version.stable.windows32.installer.version }}{{ site.data.version.stable.windows32.installer.suffix }}-Win32.exe.sig">
                             GPG signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.installer }}/KeePassXC-{{ site.data.version.stable.windows32.installer }}-Win32.exe.digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.installer.version }}/KeePassXC-{{ site.data.version.stable.windows32.installer.version }}{{ site.data.version.stable.windows32.installer.suffix }}-Win32.exe.digest">
                             SHA-256 digest</a>
                     </li>
                 </ul>
@@ -299,21 +299,21 @@ permalink: download
         <div class="official-packages">
             <div>
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.source.tarball }}</span>
+                    <span class="label label-success">v{{ site.data.version.stable.source.tarball.version }}</span>
                     <h5><i class="fa fa-code-fork" aria-hidden="true"></i> Source Code</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.source.tarball }}/keepassxc-{{ site.data.version.stable.source.tarball }}-src.tar.xz">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.source.tarball.version }}/keepassxc-{{ site.data.version.stable.source.tarball.version }}{{ site.data.version.stable.source.tarball.suffix }}-src.tar.xz">
                             Source code release
                         </a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.source.tarball }}/keepassxc-{{ site.data.version.stable.source.tarball }}-src.tar.xz.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.source.tarball.version }}/keepassxc-{{ site.data.version.stable.source.tarball.version }}{{ site.data.version.stable.source.tarball.suffix }}-src.tar.xz.sig">
                             GPG signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.source.tarball }}/keepassxc-{{ site.data.version.stable.source.tarball }}-src.tar.xz.digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.source.tarball.version }}/keepassxc-{{ site.data.version.stable.source.tarball.version }}{{ site.data.version.stable.source.tarball.suffix }}-src.tar.xz.digest">
                             SHA-256 digest</a>
                     </li>
                     <li class="note">
