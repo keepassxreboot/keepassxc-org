@@ -405,6 +405,11 @@ a.btn {
     animation: octocat-wave 560ms ease-in-out;
 }
 
+.blog-teaser-img {
+    float: left;
+    margin: 0 4rem 4rem 0;
+}
+
 .post-list .post {
     margin: 2em auto;
 }

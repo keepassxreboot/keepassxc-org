@@ -8,8 +8,8 @@ author: Janek Bevendorff
 excerpt_separator: <!--more-->
 ---
 
-<div style="float: left; margin: 0 4rem 4rem 0;">
-<img src="/blog/images/ubuntu-logo.png" alt="Ubuntu logo">
+<div class="blog-teaser-img">
+<img src="{{ site.baseurl }}/blog/images/ubuntu-logo.png" alt="Ubuntu logo">
 </div>
 
 With our AppImage and Snap release, KeePassXC runs on almost any desktop Linux platform
