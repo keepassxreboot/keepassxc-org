@@ -57,7 +57,6 @@ permalink: docs
         <li><a href="#faq-appsnap-theme">Why doesn't my theme work?</a></li>
         <li><a href="#faq-appsnap-yubikey">How do I get my YubiKey to work with the Snap?</a></li>
         <li><a href="#faq-appsnap-homedir">Why can't I see anything outside my home directory?</a></li>
-        <li><a href="#faq-appsnap-open-url">Opening a URL (Ctrl+U) doesn't work!</a></li>
     </ul>
 
     <h5 id="faq-cat-yubikey">YubiKey</h5>
@@ -249,13 +248,6 @@ permalink: docs
             Due to Snap's isolation and security settings, you cannot access any files outside your home directory.
             Furthermore, you cannot access any hidden files within your home directory. The only exception is mounted
             USB drives, but you must type in <code>/media/</code> into the file open dialog to see them.
-        </dd>
-
-        <dt id="faq-appsnap-open-url"><a href="#faq-appsnap-open-url">Opening a URL (Ctrl+U) doesn't work!</a></dt>
-        <dd>
-            In order for the Snap to communicate with the system's dbus, you have to install an extra package.
-            If you want to open URL's from within keepassxc, install the <code>snapd-xdg-open</code> package using the following command:
-            <pre><code>sudo apt-get install snapd-xdg-open</code></pre>
         </dd>
     </dl>
 
