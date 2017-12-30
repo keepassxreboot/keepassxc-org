@@ -19,12 +19,18 @@ stable:
     installer:
       version: 2.2.4
       suffix:
+    msi:
+      version: 2.2.4
+      suffix:
 
   windows32:
     portable:
       version: 2.2.4
       suffix:
     installer:
+      version: 2.2.4
+      suffix:
+    msi:
       version: 2.2.4
       suffix:
 
