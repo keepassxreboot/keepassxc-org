@@ -1,4 +1,8 @@
+AcceptPathInfo Off
+DirectorySlash Off
+
 RewriteEngine on
+RewriteOptions AllowNoSlash
 RewriteBase /
 RewriteCond %{HTTPS} !=on
 RewriteCond %{ENV:HTTPS} !=on
@@ -7,10 +11,14 @@ RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-RewriteRule ^index$ / [R=301,L]
+RewriteRule ^index/?$ / [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !.*/$
+RewriteRule !^.*/$ %{REQUEST_URI}/ [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.+)$ $1.html [L]
+RewriteRule ^.+$ %{REQUEST_FILENAME}.html [L]
 
 AddType application/xml .xml
