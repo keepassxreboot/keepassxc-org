@@ -172,7 +172,18 @@ pre {
 }
 
 .fa, .fl {
+    padding-right: .2em;
+    padding-left: .2em;
+}
+
+nav .fa, nav .fl, .btn .fa, .btn .fl {
     padding-right: .4em;
+}
+
+.footer .fa, .footer .fl,
+h4 > .fa, h4 > .fl,
+.btn .fa, .btn .fl {
+    padding-left: 0;
 }
 
 .btn {
