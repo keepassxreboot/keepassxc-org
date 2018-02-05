@@ -60,7 +60,7 @@ layout: default
     </div>
 </div> <!-- /container -->
 
-<script src="js/os-detect.js"></script>
+<script src="{{ site.baseurl }}/js/os-detect.js"></script>
 <script>
     String.prototype.capitalize = function () {
         return this.charAt(0).toUpperCase() + this.slice(1);
@@ -69,7 +69,7 @@ layout: default
     $(function () {
         var osName = OSDetect();
 
-        if (osName != "unknown") {
+        if (osName !== "unknown") {
             var button = $("#download_button");
             button.text(button.text().replace("Download", "Download for " + osName.capitalize()));
             button.html('<i class="fa fa-' + osName + '" aria-hidden="true"></i>' + button.html());

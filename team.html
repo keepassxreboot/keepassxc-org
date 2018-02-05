@@ -30,7 +30,7 @@ permalink: team
             team.html('<div class="row"></div>');
             var row = team.find(".row:first-child");
             data.forEach(function (value, index) {
-                row.html(row.html() + '<div class="col-xs-offset-3 col-xs-6 ' + (index % 2 == 0 ? 'col-sm-offset-1' : 'col-sm-offset-0') +
+                row.html(row.html() + '<div class="col-xs-offset-3 col-xs-6 ' + (index % 2 === 0 ? 'col-sm-offset-1' : 'col-sm-offset-0') +
                     ' col-sm-5 col-md-offset-0 col-md-3"> <div class="thumbnail"><a href="' + value.html_url + '"><img src="' +
                     value.avatar_url + '" alt="' + value.login + '"></a><div class="caption"><h6>' + value.login +
                     '</h6><p><a target="_blank" href="' + value.html_url +

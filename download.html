@@ -328,17 +328,17 @@ permalink: download
 </div>
 
 <div class="info">
-    <h4><a href="/verifying-signatures">Verifying signatures</a></h4>
-    <p>Before installing KeePassXC, you should <strong>always</strong> <a href="/verifying-signatures">verify</a> that
+    <h4><a href="{{ site.baseurl }}/verifying-signatures">Verifying signatures</a></h4>
+    <p>Before installing KeePassXC, you should <strong>always</strong> <a href="{{ site.baseurl }}/verifying-signatures">verify</a> that
         your download matches the signature that is published alongside the release package!
     </p>
 </div>
 
-<script src="js/os-detect.js"></script>
+<script src="{{ site.baseurl }}/js/os-detect.js"></script>
 <script>
     $(function() {
         var osName = OSDetect();
-        if (osName == "unknown") {
+        if (osName === "unknown") {
             osName = "linux";
         }
 
