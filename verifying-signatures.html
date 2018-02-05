@@ -40,7 +40,7 @@ KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
 
     <h4>Checking integrity and <em>authenticity</em></h4>
     <p>A more thorough check can be made using the <em>*.sig</em> sidecar file.
-       This contains a GPG <em>signature</em> created with one of our <em>release keys</em>.
+       This contains an OpenPGP (GPG) <em>signature</em> created with one of our <em>release keys</em>.
        Signing the installable file with any other key will give a different signature,
        so you can use the signature and our public key to check the package file really came from us.</p>
 
@@ -77,7 +77,7 @@ sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
     <p>Notice that we have a <em>master</em> key and some <em>sub</em> keys.
        The actual signatures are created with one of the <em>sub keys</em>.
        As the naming implies, they are closely related to one another -
-       importing the master GPG key is sufficient for verifying signatures
+       importing the master PGP key is sufficient for verifying signatures
        made with any of its sub keys.
     </p>
     <p>Once you have imported the key, you can decide whether you want to mark it as <em>trusted</em>.
