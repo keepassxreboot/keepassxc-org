@@ -34,6 +34,9 @@ permalink: project
             <a href="https://addons.mozilla.org/en-US/firefox/addon/keepasshttp-connector/">Mozilla Firefox</a> and
             <a href="https://chrome.google.com/webstore/detail/keepasshttp-connector/dafgdjggglmmknipkhngniifhplpcldb">Google Chrome</a>,
             and <a href="https://github.com/mmichaa/passafari.safariextension/">passafari</a> for Safari.
+        <li>Support for the KeePassXC-Browser browser extension. It is available for
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a> and
+            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/iopaggbpplllidnfmcghoonnokmjoicf">Google Chrome / Chromium / Vivaldi</a>.
     </ul>
 
     <p> For a full list of new features and changes, have a look at the
@@ -55,11 +58,12 @@ permalink: project
 
     <p>KeePassXC has the following runtime requirements:
     <ul>
-        <li>Qt5 (5.2 or newer): qtbase and qttools5
+        <li>Qt5 (5.2 or newer, 5.3 or newer with the Browser Integration support): qtbase and qttools5
         <li>libgcrypt (1.6 or newer)
         <li>zlib
         <li>libxi, libxtst, qtx11extras (optional for Auto-Type on X11/Linux)
         <li>libyubikey,  libykpers-1 (optional for YubiKey support)
+        <li>libsodium (optional for Browser Integration support)
     </ul>
 
     <p>When using the AppImage or Snap Package release, these dependencies are already
