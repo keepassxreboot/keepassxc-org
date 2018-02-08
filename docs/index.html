@@ -72,6 +72,13 @@ title: Documentation and FAQ
         <li><a href="#faq-yubikey-multiple-yubikeys">Can I register multiple YubiKeys with my KeePassXC database?</a></li>
     </ul>
 
+    <h5 id="faq-cat-browser">Browser extensions</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-browser">Does KeePassXC support browser extensions?</a></li>
+        <li><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></li>
+        <li><a href="#faq-browser-diff">How the new browser integration differs from the old?</a></li>
+    </ul>
+
     <h5 id="faq-cat-platform">Platform-specific</h5>
     <ul class="faq-questions">
         <li><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></li>
@@ -320,6 +327,35 @@ title: Documentation and FAQ
         <dt id="faq-yubikey-multiple-yubikeys"><a href="#faq-yubikey-multiple-yubikeys">Can I register multiple YubiKeys with my KeePassXC database?</a></dt>
         <dd>You can only use a single secret for encrypting the database. So you can use multiple YubiKeys, but they
         all have to be programmed with the same secret (see question above).</dd>
+    </dl>
+
+    <h5>Browser extensions</h5>
+    <dl>
+        <dt id="faq-browser"><a href="#faq-browser">Does KeePassXC support browser extensions?</a></dt>
+        <dd>
+            Yes. KeePassXC supports KeePassHTTP-Connector as a legacy browser integration and a newer extension KeePassXC-Browser. While
+            KeePassHTTP-Connector still uses KeePassHTTP (which is going to be deprecated in the future), KeePassXC-Browser handles the
+            connection with KeePassXC through <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging">native messaging</a>.
+            Both extensions are WebExtension compatible and also work with every Chromium-based browser.
+            You can download KeePassXC-Browser for <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a> and
+            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/iopaggbpplllidnfmcghoonnokmjoicf">Google Chrome / Chromium / Vivaldi</a>.
+        </dd>
+
+        <dt id="faq-browser-howto"><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></dt>
+        <dd>
+            You can enable Browser Integration (KeePassXC-Browser) or Legacy Browser Integration (KeePassHTTP-Connector) from KeePassXC settings.
+            A guide for KeePassHTTP-Connector is available <a href="https://github.com/smorks/keepasshttp-connector/blob/master/documentation/KeePassHttp-Connector.md">
+            here</a>. See the page <a href="https://keepassxc.org/docs/keepassxc-browser-migration.md">How to connect KeePassXC-Browser with KeePassXC</a> for more
+            detailed information for the new Browser Integration.
+        </dd>
+
+        <dt id="faq-browser-diff"><a href="#faq-browser-diff">How the new browser integration differs from the old?</a></dt>
+        <dd>
+            Older TCP socket based KeePassHTTP has been replaced with native messaging, and traffic is encrypted with libsodium's
+            <a href="https://download.libsodium.org/doc/public-key_cryptography/authenticated_encryption.html">Public-key authenticated encryption</a>.
+            Native messaging ensures that KeePassXC-Browser can only communicate with a specified application. Also, it is possible to use multiple browsers
+            simultaneously. For more detailed info, please see the project's <a href="https://github.com/keepassxreboot/keepassxc-browser">GitHub</a> page.
+        </dd>
     </dl>
 
     <h5>Platform-specific</h5>
