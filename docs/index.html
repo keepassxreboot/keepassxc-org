@@ -76,7 +76,7 @@ title: Documentation and FAQ
     <ul class="faq-questions">
         <li><a href="#faq-browser">Does KeePassXC support browser extensions?</a></li>
         <li><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></li>
-        <li><a href="#faq-browser-diff">How the new browser integration differs from the old?</a></li>
+        <li><a href="#faq-browser-diff">How does the new browser integration differs from the old?</a></li>
     </ul>
 
     <h5 id="faq-cat-platform">Platform-specific</h5>
@@ -333,10 +333,7 @@ title: Documentation and FAQ
     <dl>
         <dt id="faq-browser"><a href="#faq-browser">Does KeePassXC support browser extensions?</a></dt>
         <dd>
-            Yes. KeePassXC supports KeePassHTTP-Connector as a legacy browser integration and a newer extension KeePassXC-Browser. While
-            KeePassHTTP-Connector still uses KeePassHTTP (which is going to be deprecated in the future), KeePassXC-Browser handles the
-            connection with KeePassXC through <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging">native messaging</a>.
-            Both extensions are WebExtension compatible and also work with every Chromium-based browser.
+            Yes. KeePassXC supports KeePassHTTP-Connector as a legacy browser integration and a newer extension KeePassXC-Browser.
             You can download KeePassXC-Browser for <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a> and
             <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/iopaggbpplllidnfmcghoonnokmjoicf">Google Chrome / Chromium / Vivaldi</a>.
         </dd>
@@ -349,9 +346,10 @@ title: Documentation and FAQ
             detailed information for the new Browser Integration.
         </dd>
 
-        <dt id="faq-browser-diff"><a href="#faq-browser-diff">How the new browser integration differs from the old?</a></dt>
+        <dt id="faq-browser-diff"><a href="#faq-browser-diff">How does the new browser integration differs from the old?</a></dt>
         <dd>
-            Older TCP socket based KeePassHTTP has been replaced with native messaging, and traffic is encrypted with libsodium's
+            Older TCP socket based KeePassHTTP has been replaced with <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging">native messaging</a>,
+            and traffic is encrypted with libsodium's
             <a href="https://download.libsodium.org/doc/public-key_cryptography/authenticated_encryption.html">Public-key authenticated encryption</a>.
             Native messaging ensures that KeePassXC-Browser can only communicate with a specified application. Also, it is possible to use multiple browsers
             simultaneously. For more detailed info, please see the project's <a href="https://github.com/keepassxreboot/keepassxc-browser">GitHub</a> page.
