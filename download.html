@@ -178,8 +178,8 @@ permalink: download
     <div class="tab-pane active fade in" id="mac">
         <h3><i class="fa fa-mac" aria-hidden="true"></i> macOS</h3>
 
-        <div class="official-packages">
-            <div>
+        <div class="row official-packages">
+            <div class="col-md-6">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.mac.dmg.version }}</span>
                     <h5><i class="fa fa-mac" aria-hidden="true"></i> DMG Installer</h5>
@@ -200,6 +200,23 @@ permalink: download
                     </li>
                 </ul>
             </div>
+
+            <div class="col-md-6">
+                <div class="heading">
+                    <h5><i class="fa fa-mac" aria-hidden="true"></i> Homebrew Cask</h5>
+                </div>
+                <ul class="download-links">
+                    <li class="links">
+                        <a href="https://github.com/caskroom/homebrew-cask/blob/master/Casks/keepassxc.rb">
+                            Homebrew Cask 
+                        </a>
+                    </li>
+                    <li>
+                        <code>brew cask install keepassxc</code>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
