@@ -14,7 +14,7 @@ After installing KeePassXC-Browser and KeePassXC, you must first start KeePassXC
 
 #### Step 1 - Enable browser integration
 Go to the KeePassXC settings and enable browser integration support under *Browser Integration / Enable KeePassXC Browser Integration*. Without this, the browser extension cannot communicate with KeePassXC:
-![KeePassXC-Browser settings](https://i.imgur.com/Bg3M51p.png)
+![KeePassXC-Browser settings]({{ site.baseurl }}/images/browser-migration/settings.png)
 
 If enabled, the old KeePassHTTP interface can be disabled by unticking the checkbox *Legacy Browser Integration / Enable KeePassHTTP server*. Any installed corresponding browser add-on (KeePassHttp-Connector etc.) can be uninstalled.
 
@@ -26,15 +26,15 @@ Open KeePassXC and unlock your database (this is important, the following steps 
 
 Switch to your browser and click the KeePassXC icon next to your address bar. A popup appears telling you that KeePassXC-Browser has not been configured (if you see another error message, click *Refresh* and wait a few seconds).
 
-![Connect KeePassXC-Browser to your database](https://i.imgur.com/gLmyxMs.png)
+![Connect KeePassXC-Browser to your database]({{ site.baseurl }}/images/browser-migration/connect.png)
 
 Press the *Connect* button. A window appears asking you to enter a name and grant access:
 
-![Give a name to your browser's key](https://i.imgur.com/LcKpfax.png)
+![Give a name to your browser's key]({{ site.baseurl }}/images/browser-migration/connect-name.png)
 
 Enter a name of your choice (ideally one that identifies your browser) and click *Save and allow access*. Congratulations! Your browser is now connected to KeePassXC.
 
-![KeePassXC-Browser has been configured](https://i.imgur.com/0QnWpkV.png)
+![KeePassXC-Browser has been configured]({{ site.baseurl }}/images/browser-migration/browser-ready.png)
 
 
 ### Advanced configuration
@@ -53,4 +53,4 @@ To configure KeePassXC for use with a custom proxy, go to *Browser Integration /
 
 A handy setting is also *Update native messaging manifest files at startup* which automatically updates the browser manifest containing the list of browser extensions which are allowed to connect to KeePassXC and the configured proxy location on startup.
 
-![KeePassXC browser integration advanced settings](https://i.imgur.com/QCdSgJ4.png)
+![KeePassXC browser integration advanced settings]({{ site.baseurl }}/images/browser-migration/advanced-settings.png)
