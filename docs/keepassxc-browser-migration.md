@@ -3,7 +3,7 @@ layout: pages
 title: KeePassXC-Browser Migration
 ---
 
-Starting wth version 2.3, KeePassXC offers a new browser plugin called KeePassXC-Browser. It is compatible with Google Chrome, Chromium, Firefox and Vivaldi and available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk?utm_source=chrome-ntp-icon)
+Starting with version 2.3, KeePassXC offers a new browser plugin called KeePassXC-Browser. It is compatible with Google Chrome, Chromium, Firefox and Vivaldi and available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk?utm_source=chrome-ntp-icon)
 and the [Mozilla Add-ons repository](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/).
 
 The new add-on replaces the old KeePassHTTP add-ons (KeePassHttp-Connector,
