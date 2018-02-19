@@ -24,7 +24,7 @@ To allow your browser to access KeePassXC, you need to tell it where to find the
 #### Step 3 - Connect to the database
 Open KeePassXC and unlock your database (this is important, the following steps won't work if your database is locked or KeePassXC isn't running).
 
-Switch to your browser and click the KeePassXC icon next to your address bar. A popup appears telling you that KeePassXC-Browser has not been configured (if you see another error message, click *Refresh* and wait a few seconds).
+Switch to your browser and click the KeePassXC icon next to your address bar. A popup appears telling you that KeePassXC-Browser has not been configured (if you see a different error message, click *Refresh* and wait a few seconds).
 
 ![Connect KeePassXC-Browser to your database]({{ site.baseurl }}/images/browser-migration/connect.png)
 
@@ -44,7 +44,7 @@ By default, the browser connects to KeePassXC through a small application called
 
 You can also use KeePassXC without the proxy. That way you have direct communication between KeePassXC and your browser. The disadvantage is that your browsers starts a new KeePassXC instance when you connect. For that to work, you need to close any running KeePassXC instance before you click *Connect*.
 
-**Important!** If you are not using a proxy application, it is recommended that you enable the KeePassXC option *Automatically save after every change* or manually save every time you make a change to the database. In some environments (for example on macOS) closing the browser can close will also close KeePassXC without saving any settings, causing data loss.
+**Important!** If you are not using a proxy application, it is recommended that you enable the KeePassXC option *Automatically save after every change* or manually save every time you make a change to the database. In some environments (for example on macOS) closing the browser will also close KeePassXC without saving any settings, causing data loss.
 
 #### Using a custom proxy application
 KeePassXC comes with a proxy application written in C++ and Qt. There are also other working proxy applications, which you can use instead: [keepassxc-proxy](https://github.com/varjolintu/keepassxc-proxy) (Python, C++, Qt) and [keepassxc-proxy-rust](https://github.com/varjolintu/keepassxc-proxy-rust) (Rust) and you can also write and use your own proxy.
