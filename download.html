@@ -10,7 +10,7 @@ permalink: download
             <span class="platform"><i class="fa fa-linux" aria-hidden="true"></i> Linux</span>
         </a>
     </li>
-    <li class="col-md-3">
+    <li class="col-md-2">
         <a href="#mac" data-toggle="tab">
             <span class="platform"><i class="fa fa-apple" aria-hidden="true"></i> macOS</span>
         </a>
@@ -18,6 +18,11 @@ permalink: download
     <li class="col-md-3">
         <a href="#windows" data-toggle="tab">
             <span class="platform"><i class="fa fa-windows" aria-hidden="true"></i> Windows</span>
+        </a>
+    </li>
+    <li class="col-md-2">
+        <a href="#bsd" data-toggle="tab">
+            <span class="platform"><i class="fa fa-bsd" aria-hidden="true"></i> Source Code</span>
         </a>
     </li>
     <li class="col-md-3">
@@ -58,7 +63,6 @@ permalink: download
                         </li>
                     </ul>
                 </div>
-
                 <div class="col-md-6">
                     <div class="heading">
                         <span class="label label-success">v{{ site.data.version.stable.linux.snap.version }}</span>
@@ -72,6 +76,24 @@ permalink: download
                         </li>
                         <li>
                             <code>sudo snap install keepassxc</code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="heading">
+                        <span class="label label-success">v{{ site.data.version.stable.linux.flatpak.version }}</span>
+                        <h5><i class="fa fa-linux" aria-hidden="true"></i> Flatpak Package</h5>
+                    </div>
+                    <ul class="download-links">
+                        <li class="links">
+                            <a href="https://flathub.org/repo/appstream/org.keepassxc.KeePassXC.flatpakref"><!--Alternate link: https://github.com/flathub/org.keepassxc.KeePassXC-->
+                                Official Flatpak Package
+                            </a>
+                        </li>
+                        <li>
+                            <code>flatpak install --from https://flathub.org/repo/appstream/org.keepassxc.KeePassXC.flatpakref</code>
                         </li>
                     </ul>
                 </div>
@@ -169,6 +191,17 @@ permalink: download
                         </li>
                     </ul>
                 </div>
+                <div class="col-md-6">
+                    <h5><i class="fl fl-opensuse" aria-hidden="true"></i> Solus</h5>
+                    <ul class="download-links">
+                        <li class="links">
+                            <a href="https://dev.solus-project.com/source/keepassx/">Solus package</a>
+                        </li>
+                        <li>
+                            <code># sudo eopkg install keepassx</code>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -217,6 +250,23 @@ permalink: download
                 </ul>
             </div>
 
+        </div>
+        <div class="row official-packages">
+            <div class="col-md-6">
+                <div class="heading">
+                    <h5><i class="fa fa-mac" aria-hidden="true"></i> Mac Ports</h5>
+                </div>
+                <ul class="download-links">
+                    <li class="links">
+                        <a href="https://www.macports.org/ports.php?by=name&substr=keepassxc"> <!--Possible alternative link: https://github.com/macports/macports-ports/blob/master/security/KeePassXC/Portfile -->
+                            Mac Ports 
+                        </a>
+                    </li>
+                    <li>
+                        <code>sudo port install keepassxc</code>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -309,6 +359,27 @@ permalink: download
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+    
+    <div class="tab-pane active fade in" id="bsd">
+        <h3><i class="fa fa-mac" aria-hidden="true"></i> macOS</h3>
+
+        <div class="row official-packages">
+            <div class="col-md-6">
+                <div class="heading">
+                    <span class="label label-success">v{{ site.data.version.stable.bsd.version }}</span>
+                    <h5><i class="fa fa-mac" aria-hidden="true"></i> DMG Installer</h5>
+                </div>
+                <ul class="download-links">
+                    <li class="links">
+                        <a href="https://cvsweb.openbsd.org/cgi-bin/cvsweb/ports/security/keepassxc/">
+                             Online CVS view
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
