@@ -22,7 +22,7 @@ stable:
     installer:
       version: 2.2.4
       suffix:
-      
+
   bsd:
     open:
       version: 2.2.4
@@ -39,4 +39,4 @@ stable:
   source:
     tarball:
       version: 2.2.4
-suffix:
+      suffix:
