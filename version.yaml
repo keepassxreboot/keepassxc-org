@@ -1,0 +1,42 @@
+stable:
+  linux:
+    appimage:
+      version: 2.2.4
+      suffix:
+    snap:
+      version: 2.2.4
+      suffix:
+    flatpak:
+      version: 2.2.4
+      suffix:
+
+  mac:
+    dmg:
+      version: 2.2.4
+      suffix: -2
+
+  windows:
+    portable:
+      version: 2.2.4
+      suffix:
+    installer:
+      version: 2.2.4
+      suffix:
+
+  bsd:
+    open:
+      version: 2.2.4
+      suffix: 1.6
+
+  windows32:
+    portable:
+      version: 2.2.4
+      suffix:
+    installer:
+      version: 2.2.4
+      suffix:
+
+  source:
+    tarball:
+      version: 2.2.4
+      suffix:
