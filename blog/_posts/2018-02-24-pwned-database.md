@@ -18,8 +18,9 @@ The database contains the SHA-1 hashes of half a billion leaked passwords. So
 if you want a new and secure password, you can now easily check it against a
 fairly large collection of known bad and compromised passwords. Neat, right?
 
-Well, let me explain why you really don't need this database and why you shouldn't
-even try using it.
+Well..., we do appreciate the *have i been pwned?* service to check if one of your
+accounts has been stolen immensely, but let me explain why you really don't need a
+database of bad passwords.
 
 <!--more-->
 
@@ -32,7 +33,7 @@ Each line in the file contains the SHA-1 hash of a password and usage counts.
 A quick first test of the top [10 most-popular passwords](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords)
 of 2017 gave no surprising results. All 10 were found fairly easily towards the top
 of the file. The first fun fact: adding whitespace to the end of the passwords tends
-to defeat the search. " 12345678" can be found in line 4778908, but "12345678 "
+fails to return results. " 12345678" can be found in line 4778908, but "12345678 "
 does not exist.
 
 So here we directly have our problem: despite the (seemingly) huge mass of half a billion
@@ -70,8 +71,8 @@ There are only two answers for this:
     (stop using them!)
 
 The second point probably needs a little explanation. When you create an account at an
-online service, your password isn't stored in plain text. Instead, a hash function
-is run on it (hopefully one that is slow) to create a fixed-length representation
+online service, your password (hopefully) isn't stored in plain text. Instead, a hash
+function is run on it (hopefully one that is slow) to create a fixed-length representation
 of your password. This representation is always the same for the same input password.
 To make it impossible to pre-calculate a large number of hashes and compare them,
 a so-called salt is added to the password before hashing, which is stored in plaintext
