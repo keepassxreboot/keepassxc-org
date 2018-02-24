@@ -23,7 +23,7 @@ even try using it.
 
 <!--more-->
 
-##### Trivial defeat
+##### A few quick tests
 
 For testing purposes, I downloaded the [database dump](https://haveibeenpwned.com/Passwords),
 which has a compressed size of about 8GB and decompresses to 30GB of plain text.
@@ -40,7 +40,9 @@ passwords, it's surprisingly trivial to create password variants that are not in
 the database. Neither of "password ", "pass>word", or "pass}word" could be found and
 they are all within edit distance of 1 to the original "password".
 Permutations are also reasonably effective. "dRowssap" is "password" spelled backwards
-with a capitalized R and it cannot be found.
+with a capitalized R and it cannot be found. People are creative when they have to
+update their passwords and many variants are in the database, but you will always
+find a very simple one that isn't.
 
 ##### The math
 
@@ -57,7 +59,7 @@ random 8-character combination of letters and numbers we have a chance of roughl
 With chances of finding trivial 8-character passwords in the database already being
 so low, here comes the paradox part: How does a password manager, whose one and only
 purpose is to securely store arbitrarily many and complex passwords, so you as a
-human being don't have have to remember them, find it useful to check your password
+human being don't have to remember them, find it useful to check your password
 against half a billion of those passwords?
 
 There are only two answers for this:
