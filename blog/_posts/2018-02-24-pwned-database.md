@@ -18,9 +18,9 @@ The database contains the SHA-1 hashes of half a billion leaked passwords. So
 if you want a new and secure password, you can now easily check it against a
 fairly large collection of known bad and compromised passwords. Neat, right?
 
-Well..., we do appreciate the *have i been pwned?* service to check if one of your
-accounts has been stolen immensely, but let me explain why you really don't need a
-database of bad passwords.
+Well..., we do appreciate the [';--have i been pwned?](https://haveibeenpwned.com/)
+service to check if one of your accounts has been stolen immensely, but let me
+explain why you really don't need a database of bad passwords.
 
 <!--more-->
 
