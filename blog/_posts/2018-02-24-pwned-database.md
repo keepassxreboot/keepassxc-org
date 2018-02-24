@@ -92,11 +92,11 @@ guess the correct password by brute force. The amount of time needed depends lar
 on two factors:
 
 - the number of possible password candidates
-- speed memory requirements of the password hashing scheme
+- speed and memory requirements of the password hashing scheme
 
 The number of possible password candidates is controlled by the complexity of your
 password. The other factor is probably out of your reach when you are using an online
-service. It determines how many guesses an attacker can make per seconds. You want this
+service. It determines how many guesses an attacker can make per second. You want this
 to be slow. This is why we use Argon2 in KeePassXC 2.3 (or the older
 AES-KDF for KDBX 3.1 in KeePassXC 2.2).
 
@@ -124,4 +124,4 @@ I'm being generous). I guess you can see that the chances of one of those passwo
 being in the Pwned database are very, veeeery low and that's only with letters and
 numbers. If we take the full ASCII set (excluding the NULL character), we have
 *127^30* possible candidates, which is not quite the number of atoms in the universe,
-but at least Archimedes' estimate for how many grains of sand would fill it.
+but at least Archimedes' estimate of how many grains of sand would fill it.
