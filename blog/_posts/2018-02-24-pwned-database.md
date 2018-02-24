@@ -32,9 +32,9 @@ Each line in the file contains the SHA-1 hash of a password and usage counts.
 
 A quick first test of the top [10 most-popular passwords](https://en.wikipedia.org/wiki/List_of_the_most_common_passwords)
 of 2017 gave no surprising results. All 10 were found fairly easily towards the top
-of the file. The first fun fact: adding whitespace to the end of the passwords tends
-fails to return results. " 12345678" can be found in line 4778908, but "12345678 "
-does not exist.
+of the file. But here's the fun fact: adding whitespace to the end of the
+passwords more often than not fails to return results. " 12345678" can be found in
+line 4778908, but "12345678 " does not exist.
 
 So here we directly have our problem: despite the (seemingly) huge mass of half a billion
 passwords, it's surprisingly trivial to create password variants that are not in
