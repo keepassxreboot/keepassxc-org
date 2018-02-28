@@ -32,7 +32,6 @@ title: Documentation and FAQ
         <li><a href="#faq-keepassx">Why KeePassXC instead of KeePassX?</a></li>
         <li><a href="#faq-keepass">Why KeePassXC instead of KeePass?</a></li>
         <li><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></li>
-        <li><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></li>
         <li><a href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a></li>
         <li><a href="#faq-general-plugins">Does KeePassXC support (KeePass2) plugins?</a></li>
         <li><a href="#faq-general-wordlist">How can I add additional word lists to the passphrase generator?</a></li>
@@ -117,14 +116,9 @@ title: Documentation and FAQ
 
         <dt id="faq-format"><a href="#faq-format">Which password database formats are compatible with KeePassXC?</a></dt>
         <dd>
-            KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format.
-            It can also import KeePass 1.x (.kdb) databases, but this is a one-way process.
-        </dd>
-
-        <dt id="faq-kdbx4"><a href="#faq-kdbx4">Why doesn't KeePassXC support KDBX4?</a></dt>
-        <dd>
-            We are working on it! There is a <a href="https://github.com/keepassxreboot/keepassxc/issues/148">pull request</a>,
-            but dotting the i's and crossing the t's will take some time.
+            KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format in versions
+            3.1 and 4. Database files in version 2 can be opened, but will be upgraded to a newer format.
+            KeePass 1.x (.kdb) databases can be imported into a .kdbx file, but this process is one-way.
         </dd>
 
         <dt id="faq-cloudsync"><a href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a></dt>
