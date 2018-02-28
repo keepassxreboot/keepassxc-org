@@ -1,34 +1,34 @@
 stable:
   linux:
     appimage:
-      version: 2.2.4
+      version: 2.3.0
       suffix:
     snap:
-      version: 2.2.4
+      version: 2.3.0
       suffix:
 
   mac:
     dmg:
-      version: 2.2.4
-      suffix: -2
+      version: 2.3.0
+      suffix:
 
   windows:
     portable:
-      version: 2.2.4
+      version: 2.3.0
       suffix:
     installer:
-      version: 2.2.4
+      version: 2.3.0
       suffix:
 
   windows32:
     portable:
-      version: 2.2.4
+      version: 2.3.0
       suffix:
     installer:
-      version: 2.2.4
+      version: 2.3.0
       suffix:
 
   source:
     tarball:
-      version: 2.2.4
+      version: 2.3.0
       suffix:

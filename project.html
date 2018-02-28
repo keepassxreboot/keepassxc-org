@@ -17,12 +17,13 @@ permalink: project
 <div id="features">
     <h5>Main Features</h5>
     <ul>
-        <li>Secure storage of passwords and other private data with AES or Twofish encryption
+        <li>Secure storage of passwords and other private data with AES, Twofish or ChaCha20 encryption
         <li>Cross-platform, runs on Linux, Windows and macOS without modifications
-        <li>File format compatibility with KeePass2, KeePassX, MacPass, KeeWeb and others
+        <li>File format compatibility with KeePass2, KeePassX, MacPass, KeeWeb and many others (KDBX 3.1 and 4.0)
+        <li>SSH Agent integration
         <li>Auto-Type on all supported platforms for automagically filling in login forms
         <li>Key file and YubiKey challenge-response support for additional security
-        <li>TOTP generation
+        <li>TOTP generation (including Steam Guard)
         <li>CSV import from other password managers (e.g., LastPass)
         <li>Command line interface
         <li>Stand-alone password and passphrase generator
@@ -30,13 +31,13 @@ permalink: project
         <li>Custom icons for database entries and download of website favicons
         <li>Database merge functionality
         <li>Automatic reload when the database was changed externally
-        <li>KeePassHTTP support for use with KeePassHTTP-Connector available for 
+        <li>Browser integration with KeePassXC-Browser for
+            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk">Google Chrome,
+            Chromium, Vivaldi</a>, and <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a>.
+        <li>(Legacy) KeePassHTTP support for use with KeePassHTTP-Connector available for
             <a href="https://addons.mozilla.org/en-US/firefox/addon/keepasshttp-connector/">Mozilla Firefox</a> and
             <a href="https://chrome.google.com/webstore/detail/keepasshttp-connector/dafgdjggglmmknipkhngniifhplpcldb">Google Chrome</a>,
             and <a href="https://github.com/mmichaa/passafari.safariextension/">passafari</a> for Safari.
-        <li>Support for the KeePassXC-Browser browser extension. It is available for
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a> and
-            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk">Google Chrome / Chromium / Vivaldi</a>.
     </ul>
 
     <p> For a full list of new features and changes, have a look at the
@@ -50,6 +51,9 @@ permalink: project
                     href="https://github.com/keepassxreboot/keepassxc/issues/147">here</a>). KeePassXC therefore strictly
             limits communication between itself and the browser plugin to your local computer. As long as your computer is
             not compromised, your passwords are fairly safe that way, but use it at your own risk!
+        <p><strong>As of KeePassXC 2.3</strong>, we deprecated KeePassHTTP in favor of KeePassXC-Browser. If you are still
+            using KeePassHTTP, please <a href="{{ site.baseurl }}/docs/keepassxc-browser-migration/">migrate to KeePassXC-Browser</a>.
+            Support for KeePassHTTP will be removed in the future.
     </div>
 </div>
 
@@ -58,12 +62,14 @@ permalink: project
 
     <p>KeePassXC has the following runtime requirements:
     <ul>
-        <li>Qt5 (5.2 or newer, 5.3 or newer with Browser Integration support): qtbase and qttools5
-        <li>libgcrypt (1.6 or newer)
+        <li>Qt5 (5.2 or newer, 5.3 or newer for compiling browser integration): qtbase and qttools5
+        <li>libgcrypt (1.7 or newer)
+        <li>libargon2
         <li>zlib
-        <li>libxi, libxtst, qtx11extras (optional for Auto-Type on X11/Linux)
-        <li>libyubikey,  libykpers-1 (optional for YubiKey support)
-        <li>libsodium (optional for Browser Integration support)
+        <li>libxi, libxtst, qtx11extras (optional, for Auto-Type on X11/Linux)
+        <li>libyubikey, libykpers-1 (optional, for YubiKey support)
+        <li>libsodium (optional, for Browser Integration support)
+        <li>libcurl4 (optional, for downloading website favicons)
     </ul>
 
     <p>When using the AppImage or Snap Package release, these dependencies are already
