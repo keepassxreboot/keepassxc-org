@@ -20,7 +20,8 @@ Go to the KeePassXC settings and enable browser integration support under *Brows
 Integration*. Without this, the browser extension cannot communicate with KeePassXC:
 
 <div style="text-align: center;">
-<img alt="KeePassXC-Browser settings" src="{{ site.baseurl }}/images/browser-migration/settings.png">
+<img alt="KeePassXC-Browser settings" style="max-width: 100%;"
+src="{{ site.baseurl }}/images/browser-migration/settings.png">
 </div>
 
 If enabled, the old KeePassHTTP interface can be disabled by unticking the checkbox *Legacy Browser Integration / Enable
@@ -39,20 +40,23 @@ Switch to your browser and click the KeePassXC icon next to your address bar. A 
 KeePassXC-Browser has not been configured (if you see a different error message, click *Refresh* and wait a few seconds).
 
 <div style="text-align: center;">
-<img alt="Connect KeePassXC-Browser to your database" src="{{ site.baseurl }}/images/browser-migration/connect.png">
+<img alt="Connect KeePassXC-Browser to your database" style="max-width: 100%;"
+src="{{ site.baseurl }}/images/browser-migration/connect.png">
 </div>
 
 Press the *Connect* button. A window appears asking you to enter a name and grant access:
 
 <div style="text-align: center;">
-<img alt="Give a name to your browser's key" src="{{ site.baseurl }}/images/browser-migration/connect-name.png">
+<img alt="Give a name to your browser's key" style="max-width: 100%;"
+src="{{ site.baseurl }}/images/browser-migration/connect-name.png">
 </div>
 
 Enter a name of your choice (ideally one that identifies your browser) and click *Save and allow access*.
 Congratulations! Your browser is now connected to KeePassXC.
 
 <div style="text-align: center;">
-<img alt="KeePassXC-Browser has been configured" src="{{ site.baseurl }}/images/browser-migration/browser-ready.png">
+<img alt="KeePassXC-Browser has been configured" style="max-width: 100%;"
+src="{{ site.baseurl }}/images/browser-migration/browser-ready.png">
 </div>
 
 #### Advanced configuration
@@ -86,5 +90,6 @@ manifest containing the list of browser extensions which are allowed to connect 
 location on startup.
 
 <div style="text-align: center;">
-<img alt="KeePassXC browser integration advanced settings" src="{{ site.baseurl }}/images/browser-migration/advanced-settings.png">
+<img alt="KeePassXC browser integration advanced settings" style="max-width: 100%;"
+src="{{ site.baseurl }}/images/browser-migration/advanced-settings.png">
 </div>
