@@ -125,3 +125,14 @@ being in the Pwned database are very, veeeery low and that's only with letters a
 numbers. If we take the full ASCII set (excluding the NULL character), we have
 *127^30* possible candidates, which is not quite the number of atoms in the universe,
 but at least Archimedes' estimate of how many grains of sand would fill it.
+
+##### Summary
+
+If you made it to this point, then congratulations. Let me sum things up.
+
+Checking your (strong) password against a database is only useful if (and that's a very big *if*)
+your account was hacked **and** the service didn't hash your password properly. But in that case,
+it's almost certain that your username was leaked, too, so better check that against a database.
+It's simply the more logical thing to do. If your account was hacked, but the service
+hashed and salted your password, you wouldn't find it in a password database anyway, even if it were
+in there. On the other hand, you will always be able to find your username.
