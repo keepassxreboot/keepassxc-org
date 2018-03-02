@@ -79,6 +79,16 @@ title: Documentation and FAQ
         <li><a href="#faq-browser-diff">How does the new browser integration differs from the old?</a></li>
     </ul>
 
+    <h5 id="faq-ssh-agent">SSH Agent</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-ssh-agent-how">How does the SSH Agent work?</a></li>
+        <li><a href="#faq-ssh-agent-keys">What SSH key types are supported?</a></li>
+        <li><a href="#faq-ssh-agent-not-working">Why are the agent buttons greyed out / why doesn't it work?</a></li>
+        <li><a href="#faq-ssh-agent-passphrase">How do I set up a passphrase for encrypted keys?</a></li>
+        <li><a href="#faq-ssh-agent-comment">Why does the public key (seem to) have no comment?</a></li>
+        <li><a href="#faq-ssh-agent-keeagent">I'm already using KeeAgent, is KeePassXC compatible with it?</a><li>
+    </ul>
+
     <h5 id="faq-cat-platform">Platform-specific</h5>
     <ul class="faq-questions">
         <li><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></li>
@@ -354,6 +364,69 @@ title: Documentation and FAQ
             <a href="https://download.libsodium.org/doc/public-key_cryptography/authenticated_encryption.html">Public-key authenticated encryption</a>.
             Native messaging ensures that KeePassXC-Browser can only communicate with a specified application. Also, it is possible to use multiple browsers
             simultaneously. For more detailed info, please see the project's <a href="https://github.com/keepassxreboot/keepassxc-browser">GitHub</a> page.
+        </dd>
+    </dl>
+
+    <h5>SSH Agent</h5>
+    <dl>
+        <dt id="faq-ssh-agent-how"><a href="#faq-ssh-agent-how">How does the SSH Agent work?</a></dt>
+        <dd>
+            The SSH Agent feature is supported on all target platforms (Linux, macOS and Windows) and it acts as a client
+            for an existing agent. It can automatically add SSH keys from your KeePassXC database to a running SSH agent
+            when unlocked and remove when locked.<br>
+            <br>
+            On Linux, most desktops are already running an agent without any set up required.<br>
+            On Windows, you need to have <i>Pageant</i> running. It is part of the
+            <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY suite</a>.<br>
+            On macOS, <code>ssh-agent</code> is running by default and no further setup is required.
+        </dd>
+    </dl>
+    <dl>
+        <dt id="faq-ssh-agent-keys"><a href="#faq-ssh-agent-keys">What SSH key types are supported?</a></dt>
+        <dd>
+            Most SSHv2 key types are supported (DSA, RSA and Ed25519), including encrypted keys. ECDSA keys are only
+            supported with the new OpenSSH file format. 3DES encrypted keys are not supported and we highly recommend
+            upgrading them for external storage or decrypted for in-database use.<br>
+            <br>
+            SSHv1 keys are <strong>not</strong> supported.<br>
+            PuTTY format key files (.ppk) are <strong>not</strong> supported. You can use <em>PuTTY Key Generator
+            (puttygen.exe)</em> to convert your keys to OpenSSH format.<br>
+            RFC4716 format key files are <strong>not</strong> supported.
+        </dd>
+    </dl>
+    <dl>
+        <dt id="faq-ssh-agent-not-working"><a href="#faq-ssh-agent-not-working">Why are the agent buttons greyed out / why doesn't it work?</a></dt>
+        <dd>
+            On Linux or macOS, you need to have <code>ssh-agent</code> running and the <em>SSH_AUTH_SOCK</em> environment
+            variable available for KeePassXC at launch.
+            <a href="https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents">Arch Linux wiki</a> has a generic guide
+            how to manually run <code>ssh-agent</code> if it's not already set up. Sometimes other applications like
+            <em>Gnome Keyring</em> or <code>gpg-agent</code> already provide a compatible agent that also works with
+            KeePassXC.<br>
+            On Windows, Pageant needs to be running, see <a href="#faq-ssh-agent-how">How does the SSH Agent work?</a>.
+        </dd>
+    </dl>
+    <dl>
+        <dt id="faq-ssh-agent-passphrase"><a href="#faq-ssh-agent-passphrase">How do I set up a passphrase for encrypted keys?</a></dt>
+        <dd>
+            The SSH Agent feature uses the entry password field as the decryption key.
+        </dd>
+    </dl>
+    <dl>
+        <dt id="faq-ssh-agent-comment"><a href="#faq-ssh-agent-comment">Why does the public key (seem to) have no comment?</a></dt>
+        <dd>
+            When using normal DSA or RSA keys, the private key file does not contain any embedded text. In that case,
+            the entry username field is used as the public key comment. It is also sent to the agent when adding a key
+            and is visible in the agent when listing keys.<br>
+            If you are using Ed25519 keys or have converted your old key to the new OpenSSH file format, the comment is
+            embedded in the key file which is then used by KeePassXC. You can use <code>ssh-keygen</code> to modify the comment.
+        </dd>
+    </dl>
+    <dl>
+        <dt id="faq-ssh-agent-keeagent"><a href="#faq-ssh-agent-keeagent">I'm already using KeeAgent, is KeePassXC compatible with it?</a></dt>
+        <dd>
+            Yes, mostly. KeeAgent supports more key types and provides a custom agent, but otherwise you can use the
+            same database with KeeAgent and KeePassXC.
         </dd>
     </dl>
 
