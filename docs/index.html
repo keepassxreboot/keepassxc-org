@@ -347,6 +347,11 @@ title: Documentation and FAQ
             Yes. KeePassXC supports KeePassHTTP-Connector as a legacy browser integration and a newer extension KeePassXC-Browser.
             You can download KeePassXC-Browser for <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a> and
             <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk">Google Chrome / Chromium / Vivaldi</a>.
+            Firefox ESR (52.x) is supported, but the following features are disabled because of WebExtension API limitations:
+            <ul>
+                <li>Showing context menus on password fields (<code>menus.ContextType</code>)
+                <li>HTTP Auth support (<code>webRequest.onAuthRequired</code>)
+            </ul>
         </dd>
 
         <dt id="faq-browser-howto"><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></dt>
