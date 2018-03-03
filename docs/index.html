@@ -35,11 +35,11 @@ title: Documentation and FAQ
         <li><a href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a></li>
         <li><a href="#faq-general-plugins">Does KeePassXC support (KeePass2) plugins?</a></li>
         <li><a href="#faq-general-wordlist">How can I add additional word lists to the passphrase generator?</a></li>
-        <li><a href="#faq-general-kdbx4">How can I migrate my database to KDBX 4?</a></li>
     </ul>
 
     <h5 id="faq-cat-security">Security</h5>
     <ul class="faq-questions">
+        <li><a href="#faq-security-kdbx4">How can I migrate my database to KDBX 4?</a></li>
         <li><a href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this alleviate any advantage of
         two-factor authentication?</a></li>
         <li><a href="#faq-security-why-pm">Why would I use a password manager? Isn't it totally insecure to use one password for everything?</a></li>
@@ -155,16 +155,16 @@ title: Documentation and FAQ
             <code>/Applications/KeePassXC.app/Contents/Resources</code> and on Windows <code>C:\Program Files\KeePassXC</code>
             (or <code>C:\Program Files (x86)\KeePassXC</code> for 32-bit).
         </dd>
-	
-	<dt id="faq-general-kdbx4"><a href="#faq-general-kdbx4">How can I migrate my database to KDBX 4?</a></dt>
-        <dd>
-	    Go to <em>Database / Database settings</em>, select <em>Encryption</em> and choose a <em>Key Derivation Function</em> that is marked
-	    with <em>KDBX 4</em>, then save the database.
-	</dd>
     </dl>
 
     <h5>Security</h5>
     <dl>
+        <dt id="faq-security-kdbx4"><a href="#faq-security-kdbx4">How can I migrate my database to KDBX 4?</a></dt>
+        <dd>
+            Go to <em>Database / Database settings</em>, select <em>Encryption</em> and choose a <em>Key Derivation Function</em> that is marked
+            with <em>KDBX 4</em>, then save the database.
+        </dd>
+
         <dt id="faq-security-totp"><a href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this alleviate any advantage of
             two-factor authentication?</a></dt>
         <dd>
