@@ -96,6 +96,7 @@ title: Documentation and FAQ
         <li><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
             or use certain shortcuts on KDE?</a></li>
         <li><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></li>
+        <li><a href="#faq-trusty-browser">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></li>
     </ul>
 
     <h5>Development</h5>
@@ -472,6 +473,12 @@ AutoCheckAccelerators=false</code></pre>
                 <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
             </ul>
             <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
+        </dd>
+
+        <dt id="faq-trusty-browser"><a href="#faq-trusty-browser">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></dt>
+        <dd>
+            KeePassXC-Browser requires Qt 5.3, which is not available on Ubuntu 14.04 Trusty. If you need browser integration,
+            you need to use our AppImage release or upgrade to Ubuntu 16.04 Xenial or newer.
         </dd>
     </dl>
 
