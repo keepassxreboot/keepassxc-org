@@ -72,11 +72,12 @@ title: Documentation and FAQ
         <li><a href="#faq-yubikey-multiple-yubikeys">Can I register multiple YubiKeys with my KeePassXC database?</a></li>
     </ul>
 
-    <h5 id="faq-cat-browser">Browser extensions</h5>
+    <h5 id="faq-cat-browser">Browser integration</h5>
     <ul class="faq-questions">
         <li><a href="#faq-browser">Does KeePassXC support browser extensions?</a></li>
         <li><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></li>
-        <li><a href="#faq-browser-diff">How does the new browser integration differs from the old?</a></li>
+        <li><a href="#faq-browser-diff">How does the new browser integration differ from the old?</a></li>
+        <li><a href="#faq-browser-trusty">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></li>
     </ul>
 
     <h5 id="faq-ssh-agent">SSH Agent</h5>
@@ -96,7 +97,6 @@ title: Documentation and FAQ
         <li><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
             or use certain shortcuts on KDE?</a></li>
         <li><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></li>
-        <li><a href="#faq-trusty-browser">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></li>
     </ul>
 
     <h5>Development</h5>
@@ -341,7 +341,7 @@ title: Documentation and FAQ
         all have to be programmed with the same secret (see question above).</dd>
     </dl>
 
-    <h5>Browser extensions</h5>
+    <h5>Browser integration</h5>
     <dl>
         <dt id="faq-browser"><a href="#faq-browser">Does KeePassXC support browser extensions?</a></dt>
         <dd>
@@ -363,13 +363,19 @@ title: Documentation and FAQ
             detailed information for the new Browser Integration.
         </dd>
 
-        <dt id="faq-browser-diff"><a href="#faq-browser-diff">How does the new browser integration differs from the old?</a></dt>
+        <dt id="faq-browser-diff"><a href="#faq-browser-diff">How does the new browser integration differ from the old?</a></dt>
         <dd>
             Older TCP socket based KeePassHTTP has been replaced with <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging">native messaging</a>,
             and traffic is encrypted with libsodium's
             <a href="https://download.libsodium.org/doc/public-key_cryptography/authenticated_encryption.html">Public-key authenticated encryption</a>.
             Native messaging ensures that KeePassXC-Browser can only communicate with a specified application. Also, it is possible to use multiple browsers
             simultaneously. For more detailed info, please see the project's <a href="https://github.com/keepassxreboot/keepassxc-browser">GitHub</a> page.
+        </dd>
+
+        <dt id="faq-browser-trusty"><a href="#faq-browser-trusty">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></dt>
+        <dd>
+            KeePassXC-Browser requires Qt 5.3, which is not available on Ubuntu 14.04 Trusty. If you need browser integration,
+            you need to use our AppImage release or upgrade to Ubuntu 16.04 Xenial or newer.
         </dd>
     </dl>
 
@@ -473,12 +479,6 @@ AutoCheckAccelerators=false</code></pre>
                 <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
             </ul>
             <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
-        </dd>
-
-        <dt id="faq-trusty-browser"><a href="#faq-trusty-browser">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></dt>
-        <dd>
-            KeePassXC-Browser requires Qt 5.3, which is not available on Ubuntu 14.04 Trusty. If you need browser integration,
-            you need to use our AppImage release or upgrade to Ubuntu 16.04 Xenial or newer.
         </dd>
     </dl>
 
