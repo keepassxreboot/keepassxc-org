@@ -171,18 +171,19 @@ pre {
     padding: 0;
 }
 
-.fa, .fl {
+.fa, .fab, .fal, .far, .fas, .fl {
     padding-right: .2em;
     padding-left: .2em;
 }
 
-nav .fa, nav .fl, .btn .fa, .btn .fl {
+nav .fa, nav .fab, nav .fal, nav .far, nav .fas, nav .fl,
+.btn .fa, .btn .fab, .btn .fal, .btn .far, .btn .fas, .btn .fl {
     padding-right: .4em;
 }
 
-.footer .fa, .footer .fl,
-h4 > .fa, h4 > .fl,
-.btn .fa, .btn .fl {
+.footer .fa, .footer .fab, .footer .fal, .footer .far, .footer .fas, .footer .fl,
+h4 > .fa, h4 > .fab, h4 > .fal, h4 > .far, h4 > .fas, h4 > .fl,
+.btn .fa, .btn .fab, .btn .fal, .btn .far, .btn .fas, .btn .fl {
     padding-left: 0;
 }
 
@@ -276,7 +277,8 @@ h4 > .fa, h4 > .fl,
     width: 1.8em;
     text-align: center;
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
+    /*font: normal normal normal 14px/1 'Font Awesome 5 Free';*/
+    font-family: Font Awesome\ 5 Free;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -394,7 +396,7 @@ a.btn {
 
 .navbar-toggle::before {
     content: "\f0c9";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Free";
 }
 
 .github-corner svg {
@@ -435,7 +437,11 @@ a.btn {
     padding: 0 .4em;
 }
 
-.post header .meta em .fa {
+.post header .meta em .fa,
+.post header .meta em .fab, 
+.post header .meta em .fal,
+.post header .meta em .far,
+.post header .meta em .fas {
     padding-right: .3em;
 }
 
@@ -482,7 +488,7 @@ a.btn {
 
 /* need to redefine this, because ad blockers like to block *rss* classes */
 .fa-feed-square:before {
-    content: "\f143";
+    content: "\f09e";
 }
 
 #team .thumbnail {
