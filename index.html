@@ -12,8 +12,8 @@ layout: default
             <div class="col-md-8">
                 <h4>KeePassXC</h4>
                 <h6>KeePass Cross-Platform Community Edition</h6>
-                <p>The thing computers can do best is storing information.<br/>
-                    You shouldn't waste your time trying to remember and type your passwords.<br/>
+                <p>The thing computers can do best is store information.<br/>
+                    You shouldn't waste time trying to remember and type your passwords.<br/>
                     KeePassXC can store your passwords safely and auto-type them into your everyday websites and
                     applications.
                 </p>
@@ -72,7 +72,7 @@ layout: default
         if (osName !== "unknown") {
             var button = $("#download_button");
             button.text(button.text().replace("Download", "Download for " + osName.capitalize()));
-            button.html('<i class="fa fa-' + osName + '" aria-hidden="true"></i>' + button.html());
+            button.html('<i class="fab fa-' + osName + '"></i>' + button.html());
             button.attr("href", button.attr("href") + "#" + osName);
         }
     });
