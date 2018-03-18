@@ -88,6 +88,9 @@ title: Documentation and FAQ
         <li><a href="#faq-ssh-agent-passphrase">How do I set up a passphrase for encrypted keys?</a></li>
         <li><a href="#faq-ssh-agent-comment">Why does the public key (seem to) have no comment?</a></li>
         <li><a href="#faq-ssh-agent-keeagent">I'm already using KeeAgent, is KeePassXC compatible with it?</a><li>
+        <li><a href="#faq-ssh-agent-pageant">Why is Pageant refusing my keys?</a></li>
+        <li><a href="#faq-ssh-agent-openssh">Why is OpenSSH ssh-agent refusing my keys?</a></li>
+        <li><a href="#faq-ssh-agent-errors">I'm getting protocol or connection errors, what's wrong?</a></li>
     </ul>
 
     <h5 id="faq-cat-platform">Platform-specific</h5>
@@ -411,7 +414,7 @@ title: Documentation and FAQ
             variable available for KeePassXC at launch.
             <a href="https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents">Arch Linux wiki</a> has a generic guide
             how to manually run <code>ssh-agent</code> if it's not already set up. Sometimes other applications like
-            <em>Gnome Keyring</em> or <code>gpg-agent</code> already provide a compatible agent that also works with
+            <em>GNOME Keyring</em> or <code>gpg-agent</code> already provide a compatible agent that also works with
             KeePassXC.<br>
             On Windows, Pageant needs to be running, see <a href="#faq-ssh-agent-how">How does the SSH Agent work?</a>.
         </dd>
@@ -434,6 +437,28 @@ title: Documentation and FAQ
         <dd>
             Yes, mostly. KeeAgent supports more key types and provides a custom agent, but otherwise you can use the
             same database with KeeAgent and KeePassXC.
+        </dd>
+
+        <dt id="faq-ssh-agent-pageant"><a href="#faq-ssh-agent-pageant">Why is Pageant refusing my keys?</a></dt>
+        <dd>
+            Pageant does not support confirm-on-use or automatic removal of key after a timeout. There doesn't seem to be
+            any alternative to Pageant for Windows that supports both of them.
+        </dd>
+
+        <dt id="faq-ssh-agent-openssh"><a href="#faq-ssh-agent-openssh">Why is OpenSSH ssh-agent refusing my keys?</a></dt>
+        <dd>
+            If you are using confirm-on-use option for your keys, <code>ssh-agent</code> needs to have a "ssh-askpass" program available.<br>
+            On Linux it depends on your distribution and desktop environment how to install and configure one as there are several available.<br>
+            On macOS, you need a third party program like <a href="https://github.com/theseal/ssh-askpass">theseal/ssh-askpass</a>.
+        </dd>
+
+        <dt id="faq-ssh-agent-errors"><a href="#faq-ssh-agent-errors">I'm getting protocol or connection errors, what's wrong?</a></dt>
+        <dd>
+            If you are using <em>GNOME Keyring</em>, it is known to be buggy and the SSH Agent implementation fairly incomplete
+            prior to release <strong>3.27.92</strong>. You are encouraged to use OpenSSH <code>ssh-agent</code> if you are stuck with
+            an older version.<br>
+            Known limitations of older versions include no support for Ed25519 keys, no support for confirm-on-use and incorrect
+            implementation of the agent protocol causing protocol errors.
         </dd>
     </dl>
 
