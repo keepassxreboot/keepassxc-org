@@ -227,7 +227,7 @@ permalink: download
         <h3><i class="fab fa-windows"></i> Windows</h3>
 
         <div class="row official-packages">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows.portable.version }}</span>
                     <h5><i class="fab fa-windows"></i> Portable</h5>
@@ -248,7 +248,7 @@ permalink: download
                 </ul>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows.installer.version }}</span>
                     <h5><i class="fab fa-windows"></i> Installer</h5>
@@ -268,10 +268,31 @@ permalink: download
                     </li>
                 </ul>
             </div>
+
+            <div class="col-md-4">
+                <div class="heading">
+                    <span class="label label-success">v{{ site.data.version.stable.windows.msi.version }}</span>
+                    <h5><i class="fa fa-windows" aria-hidden="true"></i> MSI</h5>
+                </div>
+                <ul class="download-links">
+                    <li class="links">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi">
+                            MSI package</a>
+                    </li>
+                    <li class="links sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi.sig">
+                            GPG signature</a>
+                    </li>
+                    <li class="links digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi.DIGEST">
+                            SHA-256 digest</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="row official-packages">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows32.portable.version }}</span>
                     <h5><i class="fab fa-windows"></i> Portable (32-bit)</h5>
@@ -292,7 +313,7 @@ permalink: download
                 </ul>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows32.installer.version }}</span>
                     <h5><i class="fab fa-windows"></i> Installer (32-bit)</h5>
@@ -312,6 +333,36 @@ permalink: download
                     </li>
                 </ul>
             </div>
+
+            <div class="col-md-4">
+                <div class="heading">
+                    <span class="label label-success">v{{ site.data.version.stable.windows32.msi.version }}</span>
+                    <h5><i class="fa fa-windows" aria-hidden="true"></i> MSI (32-bit)</h5>
+                </div>
+                <ul class="download-links">
+                    <li class="links">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi">
+                            MSI package</a>
+                    </li>
+                    <li class="links sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.sig">
+                            GPG signature</a>
+                    </li>
+                    <li class="links digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.DIGEST">
+                            SHA-256 digest</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info">
+            <h4><a href="windows-installers">Switching installers</a></h4>
+            <p>The MSI packages are <strong>not compatible</strong> with the EXE installer, so a
+                direct upgrade is not possible. Please be sure to manually
+                <strong>uninstall</strong> any version installed with a different installer when
+                switching installer types (EXE to MSI or MSI to EXE).
+            </p>
         </div>
     </div>
 

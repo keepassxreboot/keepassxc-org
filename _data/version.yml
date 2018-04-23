@@ -19,6 +19,9 @@ stable:
     installer:
       version: 2.3.1
       suffix:
+    msi:
+      version: 2.2.4
+      suffix:
 
   windows32:
     portable:
@@ -26,6 +29,9 @@ stable:
       suffix:
     installer:
       version: 2.3.1
+      suffix:
+    msi:
+      version: 2.2.4
       suffix:
 
   source:
