@@ -1,15 +1,15 @@
 stable:
   linux:
     appimage:
-      version: 2.3.2
+      version: 2.3.1
       suffix:
     snap:
-      version: 2.3.2
+      version: 2.3.1
       suffix:
 
   mac:
     dmg:
-      version: 2.3.2
+      version: 2.3.1
       suffix:
 
   windows:
@@ -36,5 +36,5 @@ stable:
 
   source:
     tarball:
-      version: 2.3.2
+      version: 2.3.1
       suffix:
