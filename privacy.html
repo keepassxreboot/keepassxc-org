@@ -6,12 +6,14 @@ permalink: privacy
 
 <div id="privacy">
     <h3>Privacy Policy</h3>
-    <p>When visiting our website, we collect the following data:
+    <p>When you visit our website, we collect the following data:
 
     <ul>
-        <li>Your anonymized IP address (the last two bytes are deleted)
+        <li>Your anonymized IP address (we store only the first 2 byte for IPv4 and the first 6 byte for IPv6)
         <li>Your browser user agent and plugin configuration
+        <li>Your HTTP referrer if coming from another website
         <li>Your screen size configuration
+        <li>Your geo location as far as we can determine it from the anonymized IP address
     </ul>
 
     <p>The browser user agent usually contains the following information:
@@ -22,12 +24,18 @@ permalink: privacy
         <li>Your processor architecture
     </ul>
 
-    <p>All collected data are used for statistical purposes only and are not shared with any
+    <p>All collected data is used for statistical purposes only, does not allow personal identification and is not shared with any
         third parties. Statistics are generated using a self-hosted <a href="https://piwik.org/">Piwik</a>
         installation.
+    
+    <p>Visitor logs are deleted after 90 days and detailed reports after 12 months. Only basic trend metrics are kept after this time.
 
-    <p>You can opt out of data collection at any time by clicking this
+    <p>You can opt out of browser data collection at any time by clicking this
     <a href="https://analytics.keepassxc.org/index.php?module=CoreAdminHome&action=optOut&language=en">opt-out link</a>
     and following the instructions. Alternatively, you can also configure your browser to send a
     <a href="http://donottrack.us/">Do Not Track</a> header.
+    
+    <p>The website and all data related to it is hosted at <a href="https://uberspace.de/">uberspace.de</a>, which is also
+        where your email will land when you send us one. Uberspace.de are only responsible for providing the needed IT
+        infrastructure and do not access or use your data directly.
 </div>
