@@ -22,12 +22,11 @@ permalink: verifying-signatures
         <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
         <li>a <em>*.tar.xz</em> source tarball</li>
     </ul>
-    <p>You will need to download one of these to install on your machine.</p>
-    <p>Each of these package files has two related sidecar files, a <em>*.DIGEST</em> and a <em>*.sig</em>.
-       We explain how to use these below.</p>
+    <p>Each of these package files has two related sidecar files, a <em>*.DIGEST</em> and a <em>*.sig</em> 
+       that need to be downloaded to the same directory in order for verification to succeed.</p>
 
-
-    <h4>Basic integrity check</h4>
+    <h4>Basic integrity check - Linux/macOS</h4>
+    <p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd /home/username/Downloads</code></p>
     <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
        with the following command:</p>
 
@@ -37,8 +36,24 @@ KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
        and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
        was downloaded without errors.</p>
 
+    <h4>Basic integrity check - Windows</h4>
+    <p>Open a PowerShell window (WIN+R, type in <em>powershell</em>, press &lt;enter&gt;) and 
+       change directory to the folder you downloaded the files to, e.g. <code>cd C:\Users\username\Downloads</code></p>
+    <p>Copy/Paste the following command into the PowerShell window:</p>
 
-    <h4>Checking integrity and <em>authenticity</em></h4>
+    <pre><code>(Get-FileHash .\KeePassXC-$VERSION-Win64.exe).Hash -eq (Get-Content .\KeePassXC-$VERSION-Win64.exe.DIGEST).split(" ")[0].ToUpper()</code></pre>
+
+    <p>You should see <code>True</code> appear, if not then the download is invalid or your files are not together.</p>
+
+    <h4>Verifying Releases - Windows</h4>
+    <p>The Windows installation file (exe or msi) is protected by authenticode signature, this means that <strong>authenticity and integrity</strong> 
+       checks are verified directly by Windows when you run the program.</p>
+    <p>You should see the following dialog with <strong>DroidMonkey Apps, LLC</strong> as the verified publisher:</p>
+    <p><img src="/images/KeePassXC_UAC.png"></p>
+
+    <p>To verify a zip file, you must download <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a> and use the directions below in a Windows Command Prompt.</p>
+
+    <h4>Checking integrity and <em>authenticity</em> - Linux/macOS, Windows ZIP</h4>
     <p>A more thorough check can be made using the <em>*.sig</em> sidecar file.
        This contains an OpenPGP (GPG) <em>signature</em> created with one of our <em>release keys</em>.
        Signing the installable file with any other key will give a different signature,
@@ -85,11 +100,12 @@ sub   rsa2048/B7A66F03B59076A8 2017-01-03 [S] [expires: 2019-01-03]</code></pre>
        <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
     </p>
 
-    <h4>Verifying Releases</h4>
+    <h4>Verifying Releases - Linux/macOS</h4>
     <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
         signature by running the following command:</p>
 
     <pre><code>$ gpg --verify KeePassXC-$VERSION-x86_64.AppImage.sig
+
 gpg: assuming signed data in 'KeePassXC-$VERSION-x86_64.AppImage'
 gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
 gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
@@ -101,6 +117,26 @@ Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
      Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8</code></pre>
     <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
        the AppImage file by the sub key with the fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
+    </p>
+    <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
+    </p>
+
+    <h4>Verifying Releases - Windows ZIP</h4>
+    <p>You can verify the <strong>authenticity and integrity</strong> of the Windows ZIP file by running the following command in the Windows Command Prompt:</p>
+
+    <pre><code>gpg --verify KeePassXC-$VERSION-Win64-Portable.zip.sig
+        
+gpg: assuming signed data in 'KeePassXC-$VERSION-Win64-Portable.zip'
+gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
+gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
+gpg: Good signature from "KeePassXC Release &lt;<span
+                class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
+     Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8</code></pre>
+    <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
+       the Windows ZIP file by the sub key with the fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
     </p>
     <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
     </p>
