@@ -28,7 +28,7 @@ permalink: verifying-signatures
     <h4>Basic integrity check - Linux/macOS</h4>
     <p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd /home/username/Downloads</code></p>
     <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
-       with the following command:</p>
+       with the following command (replace the filename with the actual name of your downloaded file):</p>
 
     <pre><code>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
 KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
