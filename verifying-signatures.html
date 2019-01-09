@@ -28,10 +28,10 @@ permalink: verifying-signatures
     <h4>Basic integrity check - Linux/macOS</h4>
     <p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd /home/username/Downloads</code></p>
     <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
-       with the following command (replace the filename with the actual name of your downloaded file):</p>
+       with the following command:</p>
 
-    <pre><code>$ shasum -a 256 -c KeePassXC-$VERSION-x86_64.AppImage.DIGEST
-KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
+    <pre><code>$ shasum -a 256 -c KeePassXC-*-x86_64.AppImage.DIGEST
+KeePassXC-*-x86_64.AppImage: OK</code></pre>
     <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
        and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
        was downloaded without errors.</p>
@@ -41,7 +41,7 @@ KeePassXC-$VERSION-x86_64.AppImage: OK</code></pre>
        change directory to the folder you downloaded the files to, e.g. <code>cd C:\Users\username\Downloads</code></p>
     <p>Copy/Paste the following command into the PowerShell window:</p>
 
-    <pre><code>(Get-FileHash .\KeePassXC-$VERSION-Win64.exe).Hash -eq (Get-Content .\KeePassXC-$VERSION-Win64.exe.DIGEST).split(" ")[0].ToUpper()</code></pre>
+    <pre><code>(Get-FileHash .\KeePassXC-*-Win64.exe).Hash -eq (Get-Content .\KeePassXC-*-Win64.exe.DIGEST).split(" ")[0].ToUpper()</code></pre>
 
     <p>You should see <code>True</code> appear, if not then the download is invalid or your files are not together.</p>
 
@@ -103,9 +103,9 @@ sub   rsa2048 2017-01-03 [S] [expires: 2021-01-07]
     <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
         signature by running the following command:</p>
 
-    <pre><code>$ gpg --verify KeePassXC-$VERSION-x86_64.AppImage.sig
+    <pre><code>$ gpg --verify KeePassXC-*-x86_64.AppImage.sig
 
-gpg: assuming signed data in 'KeePassXC-$VERSION-x86_64.AppImage'
+gpg: assuming signed data in 'KeePassXC-2.X.X-x86_64.AppImage'
 gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
 gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
 gpg: Good signature from "KeePassXC Release &lt;<span
@@ -123,9 +123,9 @@ Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
     <h4>Verifying Releases - Windows ZIP</h4>
     <p>You can verify the <strong>authenticity and integrity</strong> of the Windows ZIP file by running the following command in the Windows Command Prompt:</p>
 
-    <pre><code>gpg --verify KeePassXC-$VERSION-Win64-Portable.zip.sig
+    <pre><code>gpg --verify KeePassXC-*-Win64-Portable.zip.sig
         
-gpg: assuming signed data in 'KeePassXC-$VERSION-Win64-Portable.zip'
+gpg: assuming signed data in 'KeePassXC-2.X.X-Win64-Portable.zip'
 gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
 gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
 gpg: Good signature from "KeePassXC Release &lt;<span
