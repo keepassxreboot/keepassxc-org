@@ -58,6 +58,27 @@ layout: default
             </p>
         </div>
     </div>
+    
+    <div class="row mt-7"><hr/></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h4><i class="fa fa-rss" aria-hidden="true"></i> Recent Blog Posts</h4>
+            {% for post in site.posts limit:3 %}
+            {% if post.categories contains 'blog' %}
+            <article class="post" style="clear: left;">
+                <header>
+                <h4 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <p class="meta">
+                        {% if post.author %} By {{ post.author }}<br>{% endif %}
+                        Posted on <em class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ post.date | date: "%b %-d, %Y - %R %Z" }}</em>
+                        in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> {{ post.category }}</em></p>
+                </header>
+            </article>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 </div> <!-- /container -->
 
 <script src="{{ site.baseurl }}/js/os-detect.js"></script>
