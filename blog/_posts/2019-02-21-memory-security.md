@@ -41,7 +41,7 @@ We are currently exploring these methods to enhance memory security:
 
 * Clear sensitive data structures after use
 * Investigate Trusted Platform Module (TPM) to encrypt/decrypt sensitive memory
-* Investigate Intel SGX (encrypted memory enclaves); we do not meet their development requirements and this is only for Windows
+* Investigate Intel SGX (encrypted memory enclaves); only available for Windows and Linux (unofficial)
 
 #### Details for the curious
 Since KeePassXC is an open source application, we encourage everyone with the appropriate knowledge to review our code. The above memory protection techniques are all applied during the initial Bootstrap process before any data is loaded in to the application. You can see the code for this here: [src/core/Bootstrap.cpp#L45](https://github.com/keepassxreboot/keepassxc/blob/develop/src/core/Bootstrap.cpp#L45)
