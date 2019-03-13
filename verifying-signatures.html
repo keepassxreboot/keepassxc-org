@@ -25,7 +25,7 @@ permalink: verifying-signatures
     <p>Each of these package files has two related sidecar files, a <em>*.DIGEST</em> and a <em>*.sig</em> 
        that need to be downloaded to the same directory in order for verification to succeed.</p>
 
-    <h4>Basic integrity check - Linux/macOS</h4>
+    <h4>Basic integrity check - Linux</h4>
     <p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd /home/username/Downloads</code></p>
     <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
        with the following command:</p>
@@ -35,6 +35,17 @@ KeePassXC-*-x86_64.AppImage: OK</code></pre>
     <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
        and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
        was downloaded without errors.</p>
+
+   <h4>Basic integrity check - macOS</h4>
+   <p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd /Users/username/Downloads</code></p>
+   <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
+      with the following command:</p>
+
+   <pre><code>$ shasum -a 256 -c KeePassXC-*.dmg.DIGEST
+KeePassXC-*.dmg.AppImage: OK</code></pre>
+   <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
+      and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
+      was downloaded without errors.</p>
 
     <h4>Basic integrity check - Windows</h4>
     <p>Open a PowerShell window (WIN+R, type in <em>powershell</em>, press &lt;enter&gt;) and 
@@ -51,19 +62,22 @@ KeePassXC-*-x86_64.AppImage: OK</code></pre>
     <p>You should see the following dialog with <strong>DroidMonkey Apps, LLC</strong> as the verified publisher:</p>
     <p><img src="/images/KeePassXC_UAC.png"></p>
 
-    <p>To verify a zip file, you must download <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a> and use the directions below in a Windows Command Prompt.</p>
+    <p>To verify a zip file, you must download and install <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a>.
+        Then follow the verification directions below.</p>
 
-    <h4>Checking integrity and <em>authenticity</em> - Linux/macOS, Windows ZIP</h4>
+    <h4>Checking integrity and <em>authenticity</em> - Linux, macOS, and Windows ZIP</h4>
     <p>A more thorough check can be made using the <em>*.sig</em> sidecar file.
        This contains an OpenPGP (GPG) <em>signature</em> created with one of our <em>release keys</em>.
-       Signing the installable file with any other key will give a different signature,
-       so you can use the signature and our public key to check the package file really came from us.</p>
+       Signing files with any other key will give a different signature. Following these verification
+       instructions will ensure the downloaded files really came from us.</p>
 
     <h4>Importing the Public Master Key</h4>
     <p>We will use the <code>gpg</code> program to check the signatures.
        Before you can do that you need to tell <code>gpg</code> about our public key,
-       by <em>importing</em> it.
-    </p>
+       by <em>importing</em> it.</p>
+    <p>On Windows and macOS you will need to install the <code>gpg</code> program. On Windows, we recommend 
+        <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a>. On macOS we recommend 
+        <a href="https://gpgtools.org/" target="_blank">GPG Tools</a> or gnupg installed via HomeBrew.</p>
     <p>The KeePassXC public key can be retrieved in any of the ways shown below:</p>
 
     <strong>From a specific keyserver</strong>
