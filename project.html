@@ -34,26 +34,14 @@ permalink: project
         <li>Browser integration with KeePassXC-Browser for
             <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk">Google Chrome,
             Chromium, Vivaldi</a>, and <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a>.
-        <li>(Legacy) KeePassHTTP support for use with KeePassHTTP-Connector available for
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/keepasshttp-connector/">Mozilla Firefox</a> and
-            <a href="https://chrome.google.com/webstore/detail/keepasshttp-connector/dafgdjggglmmknipkhngniifhplpcldb">Google Chrome</a>,
-            and <a href="https://github.com/mmichaa/passafari.safariextension/">passafari</a> for Safari.
     </ul>
 
     <p> For a full list of new features and changes, have a look at the
         <a href="https://github.com/keepassxreboot/keepassxc/wiki/KeePassXC-Changelog">full KeePassXC changelog</a>.
 
     <div class="info">
-        <h6>A note about KeePassHTTP</h6>
-        <p>KeePassHTTP is not a highly secure protocol and has certain flaws which allow an attacker to decrypt your
-            passwords if they manage to intercept communication between a KeePassHTTP server and KeePassHTTP-Connector over a
-            network connection (see <a href="https://github.com/pfn/keepasshttp/issues/258">here</a> and <a
-                    href="https://github.com/keepassxreboot/keepassxc/issues/147">here</a>). KeePassXC therefore strictly
-            limits communication between itself and the browser plugin to your local computer. As long as your computer is
-            not compromised, your passwords are fairly safe that way, but use it at your own risk!
-        <p><strong>As of KeePassXC 2.3</strong>, we deprecated KeePassHTTP in favor of KeePassXC-Browser. If you are still
-            using KeePassHTTP, please <a href="{{ site.baseurl }}/docs/keepassxc-browser-migration/">migrate to KeePassXC-Browser</a>.
-            Support for KeePassHTTP will be removed in the future.
+        <h6>KeePassHTTP Deprecation</h6>
+        <p>KeePassHTTP has been deprecated as of KeePassXC 2.3, and has been removed completely as of version 2.4. Please <a href="{{ site.baseurl }}/docs/keepassxc-browser-migration/">migrate to KeePassXC-Browser</a> if you are still using this feature.</p>
     </div>
 </div>
 
