@@ -18,7 +18,7 @@ permalink: verifying-signatures
     <p>Every KeePassXC release is published in a variety of package formats:</p>
     <ul>
         <li>a <em>*.dmg</em> drag-and-drop installer for macOS</li>
-        <li>an <em>*.exe</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
+        <li>an <em>*.msi</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
         <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
         <li>a <em>*.tar.xz</em> source tarball</li>
     </ul>
@@ -52,12 +52,12 @@ KeePassXC-*.dmg.AppImage: OK</code></pre>
        change directory to the folder you downloaded the files to, e.g. <code>cd C:\Users\username\Downloads</code></p>
     <p>Copy/Paste the following command into the PowerShell window:</p>
 
-    <pre><code>(Get-FileHash .\KeePassXC-*-Win64.exe).Hash -eq (Get-Content .\KeePassXC-*-Win64.exe.DIGEST).split(" ")[0].ToUpper()</code></pre>
+    <pre><code>(Get-FileHash .\KeePassXC-*-Win64.msi).Hash -eq (Get-Content .\KeePassXC-*-Win64.msi.DIGEST).split(" ")[0].ToUpper()</code></pre>
 
     <p>You should see <code>True</code> appear, if not then the download is invalid or your files are not together.</p>
 
     <h4>Verifying Releases - Windows</h4>
-    <p>The Windows installation file (exe or msi) is protected by authenticode signature, this means that <strong>authenticity and integrity</strong> 
+    <p>The Windows installation file is protected by authenticode signature, this means that <strong>authenticity and integrity</strong> 
        checks are verified directly by Windows when you run the program.</p>
     <p>You should see the following dialog with <strong>DroidMonkey Apps, LLC</strong> as the verified publisher:</p>
     <p><img src="/images/KeePassXC_UAC.png"></p>
