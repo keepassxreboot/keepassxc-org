@@ -113,7 +113,7 @@ sub   rsa2048 2017-01-03 [S] [expires: 2021-01-07]
        <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
     </p>
 
-    <h4>Verifying Releases - Linux/macOS</h4>
+    <h4>Verifying Releases - Linux</h4>
     <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
         signature by running the following command:</p>
 
@@ -134,6 +134,27 @@ Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
     <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
     </p>
 
+    <h4>Verifying Releases - macOS</h4>
+    <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
+        signature by running the following command:</p>
+
+    <pre><code>$ gpg --verify KeePassXC-*.dmg.sig
+
+gpg: assuming signed data in 'KeePassXC-2.X.X.dmg'
+gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
+gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
+gpg: Good signature from "KeePassXC Release &lt;<span
+                class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
+     Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8</code></pre>
+    <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
+       the AppImage file by the sub key with the fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
+    </p>
+    <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
+    </p>
+    
     <h4>Verifying Releases - Windows ZIP</h4>
     <p>You can verify the <strong>authenticity and integrity</strong> of the Windows ZIP file by running the following command in the Windows Command Prompt:</p>
 
