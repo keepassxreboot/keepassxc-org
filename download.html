@@ -190,6 +190,8 @@ permalink: download
     <div class="tab-pane active fade in" id="mac">
         <h3><i class="fa fa-mac" aria-hidden="true"></i> macOS</h3>
 
+        <h4>Official Packages:</h4>
+        <p>Supported on macOS 10.12 and later</p>
         <div class="row official-packages">
             <div class="col-md-6">
                 <div class="heading">
@@ -199,7 +201,7 @@ permalink: download
                 <ul class="download-links">
                     <li class="links">
                         <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg">
-                             Binary bundle for macOS 10.12 and later
+                             Binary bundle
                         </a>
                     </li>
                     <li class="links sig">
@@ -237,7 +239,29 @@ permalink: download
         <h3><i class="fa fa-windows" aria-hidden="true"></i> Windows</h3>
 
         <h4>Official Packages:</h4>
+        <p>Supported on Windows 7, Windows 8.1, and Windows 10</p>
         <div class="row official-packages">
+            <div class="col-md-6">
+                <div class="heading">
+                    <span class="label label-success">v{{ site.data.version.stable.windows.msi.version }}</span>
+                    <h5><i class="fa fa-windows" aria-hidden="true"></i> Installed (64-bit)</h5>
+                </div>
+                <ul class="download-links">
+                    <li class="links">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi">
+                            MSI installer</a>
+                    </li>
+                    <li class="links sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi.sig">
+                            PGP signature</a>
+                    </li>
+                    <li class="links digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi.DIGEST">
+                            SHA-256 digest</a>
+                    </li>
+                </ul>
+            </div>
+
             <div class="col-md-6">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows.portable.version }}</span>
@@ -258,30 +282,30 @@ permalink: download
                     </li>
                 </ul>
             </div>
+        </div>
 
+        <div class="row official-packages">
             <div class="col-md-6">
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows.msi.version }}</span>
-                    <h5><i class="fa fa-windows" aria-hidden="true"></i> MSI Installer (64-bit)</h5>
+                    <span class="label label-success">v{{ site.data.version.stable.windows32.msi.version }}</span>
+                    <h5><i class="fa fa-windows" aria-hidden="true"></i> Installed (32-bit)</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi">
                             MSI installer</a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.sig">
                             PGP signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi.DIGEST">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.DIGEST">
                             SHA-256 digest</a>
                     </li>
                 </ul>
             </div>
-        </div>
 
-        <div class="row official-packages">
             <div class="col-md-6">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows32.portable.version }}</span>
@@ -298,27 +322,6 @@ permalink: download
                     </li>
                     <li class="links digest">
                         <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable.version }}/KeePassXC-{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}-Win32-Portable.zip.DIGEST">
-                            SHA-256 digest</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-6">
-                <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows32.msi.version }}</span>
-                    <h5><i class="fa fa-windows" aria-hidden="true"></i> MSI Installer (32-bit)</h5>
-                </div>
-                <ul class="download-links">
-                    <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi">
-                            MSI installer</a>
-                    </li>
-                    <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.sig">
-                            PGP signature</a>
-                    </li>
-                    <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.DIGEST">
                             SHA-256 digest</a>
                     </li>
                 </ul>
