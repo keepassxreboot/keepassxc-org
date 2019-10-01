@@ -78,6 +78,7 @@ title: Documentation and FAQ
         <li><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></li>
         <li><a href="#faq-browser-diff">How does the new browser integration differ from the old?</a></li>
         <li><a href="#faq-browser-trusty">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></li>
+        <li><a href="#faq-browser-string-fields">How do I fill in additional values using String Fields?</a></li>
     </ul>
 
     <h5 id="faq-ssh-agent">SSH Agent</h5>
@@ -379,6 +380,29 @@ title: Documentation and FAQ
         <dd>
             KeePassXC-Browser requires Qt 5.3, which is not available on Ubuntu 14.04 Trusty. If you need browser integration,
             you need to use our AppImage release or upgrade to Ubuntu 16.04 Xenial or newer.
+        </dd>
+
+        <dt id="faq-browser-string-fields"><a href="#faq-string-fields">How do I fill in additional values using String Fields?</a></dt>
+        <dd>
+            It is possible to fill additional information by defining String Fields on a page.
+            <br>
+            <ul>
+              <li>Use "Choose custom login fields" for this page from the popup. Username and password fields can be skipped if not needed.</li>
+              <li>Now additional fields called String Fields can be chosen.  Note that they are numbered sequentially.  Dropdown elements can be choosed also. Remember the order they are selected.</li>
+              <li>After choosing the String Fields, go to your KeePassXC client and create in attributes prefixed with 'KPH: ' in the order you chose them above.  The attribute values you supply will be filled in that order.</li>
+              <li>If you wish, you may add a further characters after the 'KPH: ' attribute name to help you remember its purpose.  It is ignored by the extension.  Only the sequential order of 'KPH: ' attributes matches the fields, not the further charatcters you can add.</li>
+            </ul>
+          <ul>
+            An example using the page https://meine.deutsche-bank.de/trxm/db/:
+            <li>Choose custom login fields for this page and select Branch, Account and Sub-account as String Fields after selecting or skipping username and password field.</li>
+            <ul>
+            Go to your entry, Advanced and add the following attributes (in this order):
+              <li>KPH: Account</li>
+              <li>KPH: Branch</li>
+              <li>KPH: Sub-account</li>
+            </ul>
+              Then add the values to those attributes.
+          </ul>
         </dd>
     </dl>
 
