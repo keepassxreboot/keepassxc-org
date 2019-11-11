@@ -302,7 +302,7 @@ title: Documentation and FAQ
             rule, you should never use a key file without an actual password, because it is harder to keep your key file
             secret than a memorized password that only you know. However, a key file can be very strong additional
             protection if kept separately from the database file, such as on an external thumb drive. If you sync your database
-            via a cloud provider (Dropbox, Google Drive, Nextcloud, ...), you should only sync the KDBX file and distribute the key file to
+            via a cloud provider (Dropbox, Google Drive, Nextcloud, &hellip;), you should only sync the KDBX file and distribute the key file to
             your computers by different means, such as said thumb drive. But whatever you do, <strong>keep a backup in a safe location!</strong>
             If you lose your key file, you lose your database. Keep in mind that USB thumb drives are notoriously unreliable,
             break easily, or get lost. If you can afford it, we recommend you use a hardware token such as a YubiKey or OnlyKey
@@ -323,10 +323,10 @@ title: Documentation and FAQ
 
         <dt id="faq-yubikey-howto"><a href="#faq-yubikey-howto">How do I configure my YubiKey / OnlyKey for use with KeePassXC?</a></dt>
         <dd>
-            To use a YubiKey for securing your KeePassXC database, you have to configure one of your YubiKey slots
+            To use a YubiKey or OnlyKey for securing your KeePassXC database, you have to configure one of your YubiKey / OnlyKey slots
             for HMAC-SHA1 Challenge Response mode (see this
             <a href="https://www.yubico.com/products/services-software/personalization-tools/challenge-response/">video</a>
-            for how to do this). Once your YubiKey is set up, open your database in KeePassXC, go to
+            for how to do this). Once your YubiKey (or OnlyKey, you got the point&hellip;) is set up, open your database in KeePassXC, go to
             <em>File / Change master key</em>, enable <em>Challenge Response</em> and then save the database.<br>
             <strong>Important:</strong> Always make a copy of the secret that is programmed into your YubiKey while
             you configure it for HMAC-SHA1 and store it in a secure location. If you lose or brick the key or accidentally
