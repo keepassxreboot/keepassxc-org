@@ -58,10 +58,16 @@ title: Documentation and FAQ
         <li><a href="#faq-appsnap-homedir">Why can't I see anything outside my home directory?</a></li>
     </ul>
 
-    <h5 id="faq-cat-yubikey">YubiKey</h5>
+    <h5 id="faq-cat-keyfile">Key Files</h5>
     <ul class="faq-questions">
-        <li><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys?</a></li>
-        <li><a href="#faq-yubikey-howto">How do I configure my YubiKey for use with KeePassXC?</a></li>
+        <li><a href="#faq-keyfile-howto">What is a key file and how can I get one?</a></li>
+        <li><a href="#faq-keyfile-security">How secure is a key file and how can I sync it to other devices?</a></li>
+    </ul>
+
+    <h5 id="faq-cat-yubikey">YubiKey / OnlyKey</h5>
+    <ul class="faq-questions">
+        <li><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys or OnlyKeys?</a></li>
+        <li><a href="#faq-yubikey-howto">How do I configure my YubiKey / OnlyKey for use with KeePassXC?</a></li>
         <li><a href="#faq-yubikey-no-extra-file">When I use KeeChallenge with KeePass2, it creates an extra file. Why do
             I have no such file when using KeePassXC?</a></li>
         <li><a href="#faq-yubikey-incompatible">When I secure my database in KeePass2 with a YubiKey, I can't open it in
@@ -273,9 +279,40 @@ title: Documentation and FAQ
         </dd>
     </dl>
 
-    <h5>YubiKey</h5>
+
+    <h5>Key Files</h5>
     <dl>
-        <dt id="faq-yubikey-2fa"><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys?</a></dt>
+        <dt id="faq-keyfile-howto"><a href="#faq-keyfile-howto">What is a key file and how can I get one?</a></dt>
+        <dd>
+            A key file is a file containing random bytes that can be added to your master key for additional security.
+            Think of it as a really complicated and long password that is read from a file, so you don't have to remember
+            or type it into your master password field. You can basically use any file you want as a key file, but <strong>it
+            is of utmost importance that a) the file never changes and b) it actually contains unpredictable data.</strong> If the file
+            changes, it is as if you forgot your password and you will lose access to your database. On the other hand, if the data
+            is not random enough, then it's a really bad password. So, for instance, a static and never-changing holiday picture
+            is okay, your personal notes file is not. Generally, we recommend you let KeePassXC generate a dedicated key file for you.
+            Go to <em>Database -&gt; Database Settings -&gt; Security</em>. There you click on <em>Add Key File</em> and then
+            on <em>Generate</em>. Select the location where to save the key file, make sure the path to the new file
+            is inserted into the Key File field, and save your database. Don't forget the keep a backup of the key file in
+            a safe place!
+        </dd>
+        <dt id="faq-keyfile-security"><a href="#faq-keyfile-security">How secure is a key file and how can I sync it to other devices?</a></dt>
+        <dd>
+            A key file is only as secure as you keep it. It is basically a password that you've written down. As a general
+            rule, you should never use a key file without an actual password, because it is harder to keep your key file
+            secret than a memorized password that only you know. However, a key file can be very strong additional
+            protection if kept separately from the database file, such as on an external thumb drive. If you sync your database
+            via a cloud provider (Dropbox, Google Drive, Nextcloud, ...), you should only sync the KDBX file and distribute the key file to
+            your computers by different means, such as said thumb drive. But whatever you do, <strong>keep a backup in a safe location!</strong>
+            If you lose your key file, you lose your database. Keep in mind that USB thumb drives are notoriously unreliable,
+            break easily, or get lost. If you can afford it, we recommend you use a hardware token such as a YubiKey or OnlyKey
+            instead of a key file (see next section). Such a key adds an even greater amount of security, but with fewer potential pitfalls.
+        </dd>
+    </dl>
+
+    <h5>YubiKey / OnlyKey</h5>
+    <dl>
+        <dt id="faq-yubikey-2fa"><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys or OnlyKeys?</a></dt>
         <dd>
             Yes and no. KeePassXC supports YubiKeys for securing a database, but strictly speaking, it's not two-factor
             authentication. KeePassXC generates a challenge and uses the YubiKey's response to this challenge to
@@ -284,7 +321,7 @@ title: Documentation and FAQ
             you try to decrypt your database. It does, however, change every time you save your database.
         </dd>
 
-        <dt id="faq-yubikey-howto"><a href="#faq-yubikey-howto">How do I configure my YubiKey for use with KeePassXC?</a></dt>
+        <dt id="faq-yubikey-howto"><a href="#faq-yubikey-howto">How do I configure my YubiKey / OnlyKey for use with KeePassXC?</a></dt>
         <dd>
             To use a YubiKey for securing your KeePassXC database, you have to configure one of your YubiKey slots
             for HMAC-SHA1 Challenge Response mode (see this
