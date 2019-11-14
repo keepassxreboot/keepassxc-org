@@ -98,6 +98,7 @@ title: Documentation and FAQ
         <li><a href="#faq-ssh-agent-pageant">Why is Pageant refusing my keys?</a></li>
         <li><a href="#faq-ssh-agent-openssh">Why is OpenSSH ssh-agent refusing my keys?</a></li>
         <li><a href="#faq-ssh-agent-errors">I'm getting protocol or connection errors, what's wrong?</a></li>
+        <li><a href="#faq-ssh-agent-auth-errors">I'm getting a "Too many authentication failures" error, what shall I do?</a></li>
     </ul>
 
     <h5 id="faq-cat-platform">Platform-specific</h5>
@@ -520,6 +521,21 @@ title: Documentation and FAQ
             an older version.<br>
             Known limitations of older versions include no support for Ed25519 keys, no support for confirm-on-use and incorrect
             implementation of the agent protocol causing protocol errors.
+        </dd>
+
+        <dt id="faq-ssh-agent-auth-errors"><a href="#faq-ssh-agent-auth-errors">I'm getting a "Too many authentication failures" error, what shall I do?</a></dt>
+        <dd>
+            SSH will try all available identity files in sequence when connecting to a server. If you export many SSH
+            keys at a time, you'll very likely experience a <em>"Received disconnect from {port}: Too many
+            authentication failures"</em> error. To solve this issue, you'll have to tell SSH which identity file to
+            use. Either use the <code>-i</code> command line option or the <code>IdentityFile</code> directive in your
+            OpenSSH config file (<code>~/.ssh/config</code>) to pass the path to the respective private key file.<br/><br/>
+            If you use the <code>IdentityFile</code> directive, you likely want to use the <code>IdentitiesOnly</code>
+            directive, too. The <a href="https://wiki.archlinux.org/index.php/SSH_keys#Managing_multiple_keys">
+            Arch Linux wiki</a> has a generic guide on how to manage multiple keys.<br/><br/>
+            If you prefer storing your private key inside your database using an attachment, you can still do so.
+            Instead of letting the <code>IdentityFile</code> directive point to a private key file, let it point to
+            your public key file. The SSH Agent will use the provided information to select the correct private key.
         </dd>
     </dl>
 
