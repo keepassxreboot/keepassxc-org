@@ -376,6 +376,9 @@ title: Documentation and FAQ
             You should always make a copy of the HMAC secret that is stored on the YubiKey and keep it in a secure
             location. This can be an analog paper copy, but since the YubiKey personalization tool allows you to
             program a custom secret into the key, you may as well program a second key with the same secret.
+		
+	    <a href="https://github.com/keepassxreboot/keepassxc/tree/develop/utils/keepassxc-cr-recovery">Challenge-response recovery tool</a> can then be used to generate a key file.
+	    The database can be opened with the password and the generated key file. 
         </dd>
 
         <dt id="faq-yubikey-multiple-yubikeys"><a href="#faq-yubikey-multiple-yubikeys">Can I register multiple YubiKeys with my KeePassXC database?</a></dt>
