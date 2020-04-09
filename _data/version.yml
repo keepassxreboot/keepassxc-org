@@ -1,37 +1,37 @@
 stable:
   linux:
     appimage:
-      version: 2.5.3
+      version: 2.5.4
       suffix:
     snap:
-      version: 2.5.3
+      version: 2.5.4
       suffix:
 
   mac:
     dmg:
-      version: 2.5.3
-      suffix: -2
+      version: 2.5.4
+      suffix:
     sierraDmg:
-      version: 2.5.3
+      version: 2.5.4
       suffix: -Sierra
 
   windows:
     portable:
-      version: 2.5.3
+      version: 2.5.4
       suffix:
     msi:
-      version: 2.5.3
+      version: 2.5.4
       suffix:
 
   windows32:
     portable:
-      version: 2.5.3
+      version: 2.5.4
       suffix:
     msi:
-      version: 2.5.3
+      version: 2.5.4
       suffix:
 
   source:
     tarball:
-      version: 2.5.3
+      version: 2.5.4
       suffix:
