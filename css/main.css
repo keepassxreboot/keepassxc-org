@@ -120,6 +120,13 @@ pre {
 
 #logo {
     padding-top: 4rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.logo-graphic {
+  width: 20rem;
 }
 
 .navbar {
@@ -156,11 +163,14 @@ pre {
 .navbar-brand {
     padding: .2em;
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
-.navbar-brand > img {
-    display: inline-block;
+.navbar-logo {
+    width: 4.8rem;
     margin-right: .5em;
+    pointer-events: none;
 }
 
 .navbar > .container .navbar-brand {
@@ -419,6 +429,7 @@ a.btn {
 .blog-teaser-img {
     float: left;
     margin: 0 4rem 4rem 0;
+    width: 20rem;
 }
 
 .post-list .post {
@@ -538,7 +549,8 @@ a.btn {
     .navbar > .container .navbar-brand {
         margin: 0;
         float: none;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
     }
 
     .navbar-right {
