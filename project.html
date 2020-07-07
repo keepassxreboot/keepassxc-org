@@ -4,45 +4,49 @@ title: "The Project"
 permalink: project
 ---
 
-<p><strong>KeePassXC</strong> is a community fork of <a href="https://www.keepassx.org/">KeePassX</a>,
-    a native cross-platform port of <a href="http://keepass.info">KeePass Password Safe</a>, with the goal
+<p><strong>KeePassXC</strong> is a community fork of <a href="https://www.keepassx.org/" target="_blank">KeePassX</a>,
+    a native cross-platform port of <a href="https://keepass.info" target="_blank">KeePass Password Safe</a>, with the goal
     to extend and improve it with new features and bugfixes to provide a feature-rich, fully cross-platform and modern
     open-source password manager.
 
-<p>The project repository is available on <a href="https://github.com/keepassxreboot">
+<p>The project repository is available on <a href="https://github.com/keepassxreboot/keepassxc" target="_blank">
     <i class="fa fa-github" aria-hidden="true"></i>GitHub</a>.<br>
     To stay up to date with news about the project, you can also follow us on
-    <a href="https://twitter.com/KeePassXC"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>.
+    <a href="https://twitter.com/KeePassXC" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>.
+
+<p> For a full list of new features and changes, have a look at the
+    <a href="https://github.com/keepassxreboot/keepassxc/blob/master/CHANGELOG.md" target="_blank">full KeePassXC changelog</a>.
 
 <div id="features">
     <h5>Main Features</h5>
     <ul>
-        <li>Secure storage of passwords and other private data with AES, Twofish or ChaCha20 encryption
-        <li>Cross-platform, runs on Linux, Windows and macOS without modifications
-        <li>File format compatibility with KeePass2, KeePassX, MacPass, KeeWeb and many others (KDBX 3.1 and 4.0)
-        <li>SSH Agent integration
-        <li>Auto-Type on all supported platforms for automagically filling in login forms
-        <li>Key file and YubiKey challenge-response support for additional security
-        <li>TOTP generation (including Steam Guard)
-        <li>CSV import from other password managers (e.g., LastPass)
-        <li>Command line interface
-        <li>Stand-alone password and passphrase generator
-        <li>Password strength meter
-        <li>Custom icons for database entries and download of website favicons
-        <li>Database merge functionality
-        <li>Automatic reload when the database was changed externally
-        <li>Browser integration with KeePassXC-Browser for
-            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk">Google Chrome,
-            Chromium, Vivaldi</a>, and <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/">Mozilla Firefox</a>.
+        <li>Create, open, and save databases in the KDBX format (KeePass Compatible)</li><li>Store sensitive information in entries that are organized by groups</li>
+        <li>Search for entries</li>
+        <li>Password generator</li>
+        <li>Auto-Type passwords into applications</li>
+        <li>Browser integration with Google Chrome, Mozilla Firefox, Microsoft Edge, Chromium, Vivaldi, Brave, and Tor-Browser</li>
+        <li>Entry icon download</li>
+        <li>Import databases from CSV, 1Password, and KeePass1 formats</li>
     </ul>
 
-    <p> For a full list of new features and changes, have a look at the
-        <a href="https://github.com/keepassxreboot/keepassxc/wiki/KeePassXC-Changelog">full KeePassXC changelog</a>.
+    <h5>Advanced Features</h5>
+    <ul>
+        <li>Database reports (password health, HIBP, and statistics)</li>
+        <li>Database export to CSV and HTML formats</li>
+        <li>TOTP storage and generation</li>
+        <li>Field references between entries</li>
+        <li>File attachments and custom attributes</li>
+        <li>Entry history and data restoration</li>
+        <li>YubiKey/OnlyKey challenge-response support</li>
+        <li>Command line interface (keepassxc-cli)</li>
+        <li>Auto-Open databases</li>
+        <li>KeeShare shared databases (import, export, and synchronize)</li>
+        <li>SSH Agent</li>
+        <li>FreeDesktop.org Secret Service (replace Gnome keyring, etc.)</li>
+        <li>Additional encryption choices: Twofish and ChaCha20</li>
+    </ul>
 
-    <div class="info">
-        <h6>KeePassHTTP Deprecation</h6>
-        <p>KeePassHTTP has been deprecated as of KeePassXC 2.3, and has been removed completely as of version 2.4. Please <a href="{{ site.baseurl }}/docs/keepassxc-browser-migration/">migrate to KeePassXC-Browser</a> if you are still using this feature.</p>
-    </div>
+    
 </div>
 
 <div id="requirements">
