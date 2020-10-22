@@ -30,6 +30,11 @@ layout: default
                     in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> {{ post.category }}</em></p>
             </header>
             <div class="post-content">
+                {% if post.teaser_image %}
+                <div class="blog-teaser-img">
+                  <img src="{{ post.teaser_image | prepend: site.baseurl }}" alt="{{ post.teaser_image_alt }}">
+                </div>
+                {% endif %}
                 {{ post.excerpt  }}
                 <a href="{{ post.url }}">Read more…</a>
             </div>
