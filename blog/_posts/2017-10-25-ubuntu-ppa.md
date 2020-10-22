@@ -5,12 +5,10 @@ date:   2017-10-25 14:51 +0200
 category: "Packages"
 permalink: /:path/
 author: Janek Bevendorff
+teaser_image: /blog/images/ubuntu-logo.png
+teaser_image_alt: "Ubuntu logo"
 excerpt_separator: <!--more-->
 ---
-
-<div class="blog-teaser-img">
-<img src="{{ site.baseurl }}/blog/images/ubuntu-logo.png" alt="Ubuntu logo">
-</div>
 
 With our AppImage and Snap release, KeePassXC runs on almost any desktop Linux platform
 today. While especially the AppImage is extremely versatile and portable, we
