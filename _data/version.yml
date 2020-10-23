@@ -10,10 +10,7 @@ stable:
   mac:
     dmg:
       version: 2.6.2
-      suffix:
-    sierraDmg:
-      version: 2.5.4
-      suffix: -Sierra
+      suffix: -2
 
   windows:
     portable:
