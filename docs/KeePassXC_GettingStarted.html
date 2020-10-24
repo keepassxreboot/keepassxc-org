@@ -465,6 +465,8 @@ p{font-family: "Noto Sans",sans-serif !important}
 blockquote{color:var(--quotecolor) !important}
 .quoteblock{color:var(--textcolor)}
 code{color:var(--textcoloralt);background-color: var(--sidebarbackground) !important}
+pre,pre>code{line-height:1.25; color:var(--textcoloralt);}
+.keyseq{color:var(--textcoloralt);}
 
 
 /* Table styles */
@@ -478,13 +480,6 @@ td{background-color: var(--background);color: var(--textcoloralt) !important;}
 /* Responsiveness fixes */
 video {
   max-width: 100%;
-}
-
-@media all and (max-width: 600px) {
-  table {
-    width: 55vw!important;
-    font-size: 3vw;
-  }
 }
 
 .exampleblock > .content {
@@ -549,6 +544,7 @@ a:hover {color: var(--linkhovercolor);}
 .subtitle {
   font-size: 1.5em;
 }
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -558,7 +554,7 @@ a:hover {color: var(--linkhovercolor);}
 <div class="details">
 <span id="author" class="author">KeePassXC Team</span><br>
 <span id="email" class="email"><a href="mailto:team@keepassxc.org">team@keepassxc.org</a></span><br>
-<span id="revnumber">version 2.6.0</span>
+<span id="revnumber">version 2.6.2</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -669,19 +665,15 @@ Team KeePassXC</p>
 <h2 id="_welcome">Welcome</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>KeePassXC is a modern open-source password manager. It is used to store and manage information such as URLs, usernames, passwords, and so on for various accounts on your web applications. KeePassXC stores all data in an encrypted format while still providing secure access to your information.</p>
+<p>KeePassXC is a modern, secure, and open-source password manager that stores and manages your most sensitive information. You can run KeePassXC on Windows, macOS, and Linux systems.</p>
 </div>
 <div class="paragraph">
-<p>KeePassXC is helpful for people with extremely high demands of secure personal data management. It saves many different information, such as user names, passwords, URLs, attachments, and comments in one single database. For a better management, user-defined titles and icons can be specified for different entries in KeePassXC. In addition, the entries are sorted in customizable groups. The integrated search function allows to search in a single group or the complete database.</p>
-</div>
-<div class="paragraph">
-<p>KeePassXC also provides a secure, customizable, fast, and easy-to-use password generator utility. This utility is very helpful to those who generate passwords frequently.</p>
+<p>KeePassXC is for people with extremely high demands of secure personal data management. It saves many different types of information, such as usernames, passwords, URLs, attachments, and notes in an offline, encrypted file that can be stored in any location, including private and public cloud solutions. For easy identification and management, user-defined titles and icons can be specified for entries. In addition, entries are sorted in customizable groups. An integrated search function allows you to use advanced patterns to easily find any entry in your database. A customizable, fast, and easy-to-use password generator utility allows you to create passwords with any combination of characters or easy to remember passphrases.</p>
 </div>
 <div class="sect2">
 <h3 id="_overview">Overview</h3>
 <div class="paragraph">
-<p>You can store an unlimited number of passwords and information in a KeePassXC database. Every piece of information you store in your database is encrypted at all times within the <code>kdbx</code> file. When you are accessing your database from within KeePassXC, your information in decrypted and stored in your computer&#8217;s memory. KeePassXC places controls over the access to this data so other applications cannot read it (unless they have administrative rights). The interface is designed to let you quickly access your passwords, search for the right entry, perform Auto-Type or copy/paste
-operations, make and save changes, and then get out of your way.</p>
+<p>You can store an unlimited number of passwords and information in a KeePassXC database. Every piece of information you store in your database is encrypted at all times within the <code>kdbx</code> file. When you are accessing your database from within KeePassXC, your information in decrypted and stored in your computer&#8217;s memory. KeePassXC places controls over the access to this data so other applications cannot read it (unless they have administrative rights). The interface is designed to let you quickly access your passwords, search for the right entry, perform Auto-Type or copy/paste operations, make and save changes, and then get out of your way.</p>
 </div>
 <div class="paragraph">
 <p>KeePassXC ships with light and dark themes specifically designed to meet accessibility standards. In most cases, the appropriate theme for your system will be determined automatically, but you can always set a specific theme in the application settings.</p>
@@ -907,6 +899,18 @@ KeePassXC is open-source software and may be available on other websites that ar
 <div class="paragraph">
 <p>The Snap and Flatpak options are sandboxed applications (more secure). The Native option is installed with the operating system files. Read more about the limitations of these options here: <a href="https://keepassxc.org/docs/#faq-appsnap-yubikey">KeePassXC Snap FAQ</a></p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+KeePassXC stores a configuration file in <code>~/.cache</code> to remember window position, recent files, and other local settings. If you mount this folder to a tmpdisk you will lose settings after reboot.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_macos">macOS</h3>
@@ -1010,6 +1014,18 @@ Double clicking on the text in the entries list copies that field to the clipboa
 </div>
 <div class="sect2">
 <h3 id="_keyboard_shortcuts">Keyboard Shortcuts</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+On macOS please substitute <code>Ctrl</code> with <code>Cmd</code> (aka <code>⌘</code>).
+</td>
+</tr>
+</table>
+</div>
 <table class="tableblock frame-none grid-rows" style="width: 75%;">
 <colgroup>
 <col style="width: 50%;">
@@ -1119,6 +1135,10 @@ Double clicking on the text in the entries list copies that field to the clipboa
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + Tab ; Ctrl + PageUp</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the nth database</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + n, where n is the number of the database tab</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Toggle Passwords Hidden</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + C</p></td>
 </tr>
@@ -1127,8 +1147,16 @@ Double clicking on the text in the entries list copies that field to the clipboa
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + Shift + B</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Focus Groups (edit if focused)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Focus Entries (edit if focused)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F2</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Focus Search</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ctrl + F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F3 ; Ctrl + F</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Clear Search</p></td>
@@ -1596,8 +1624,8 @@ If you reuse a connection name in a database, the previous browser connection wi
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 2.6.0<br>
-Last updated 2020-07-03 17:46:39 -0400
+Version 2.6.2<br>
+Last updated 2020-10-23 21:36:45 -0400
 </div>
 </div>
 </body>
