@@ -54,14 +54,16 @@ permalink: project
 
     <p>KeePassXC has the following runtime requirements:
     <ul>
-        <li>Qt5 (5.2 or newer, 5.3 or newer for compiling browser integration): qtbase and qttools5
-        <li>libgcrypt (1.7 or newer)
-        <li>libargon2
-        <li>zlib
-        <li>libxi, libxtst, qtx11extras (optional, for Auto-Type on X11/Linux)
-        <li>libyubikey, libykpers-1 (optional, for YubiKey support)
-        <li>libsodium (optional, for Browser Integration support)
-        <li>libcurl4 (optional, for downloading website favicons)
+        <li>Qt5 (5.6 or newer)</li>
+        <li>libgcrypt (1.8 or newer)</li>
+        <li>libargon2</li>
+        <li>libquazip5</li>
+        <li>libqrencode</li>
+        <li>libsodium</li>
+        <li>zlib1g</li>
+        <li>zlib</li>
+        <li>libxi, libxtst, qtx11extras (optional, for Auto-Type on X11/Linux)</li>
+        <li>libyubikey, libykpers-1 (optional, for YubiKey support)</li>
     </ul>
 
     <p>When using the AppImage or Snap Package release, these dependencies are already
@@ -69,9 +71,11 @@ permalink: project
 
     <p>For building KeePassXC from source code, the following build-time dependencies are also required:
     <ul>
-        <li>make
-        <li>cmake (3.1 or newer)
-        <li>g++ (4.7 or newer) or clang++ (3.0 or newer)
-        <li>headers for all runtime dependencies (*-dev or *-devel packages)
+        <li>make</li>
+        <li>cmake (3.1 or newer)</li>
+        <li>g++ (5.3 or newer) or clang++ (4.0 or newer)</li>
+        <li>headers for all runtime dependencies (*-dev or *-devel packages)</li>
     </ul>
+
+    <p>For detailed and up-to-date build instructions (also for other platforms), visit our <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">GitHub wiki</a>.</p>
 </div>
