@@ -111,8 +111,6 @@ title: Documentation and FAQ
     <ul class="faq-questions">
         <li><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></li>
         <li><a href="#faq-platform-mobile">Does KeePassXC work on mobile phones? If not, which app would you recommend?</a></li>
-        <li><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
-            or use certain shortcuts on KDE?</a></li>
         <li><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></li>
     </ul>
 
@@ -574,21 +572,6 @@ title: Documentation and FAQ
             for mobile screen sizes and form factors, let alone multi-touch input. We also don't see any advantage in
 						providing a mobile version of KeePassXC when there are excellent alternatives (as mentioned above), already. 
 						<br>
-        </dd>
-
-        <dt id="faq-kdeaccelerators"><a href="#faq-kdeaccelerators">Why can't I copy advanced attributes to the clipboard
-            or use certain shortcuts on KDE?</a></dt>
-        <dd>
-            This is a “feature” in KDE's platform theme. It automatically adds ampersand (&amp;) characters to on-screen text
-            to allow you to trigger an action by pressing Alt+HOTKEY on your keyboard. Unfortunately, this “feature”
-            causes more trouble than it does good. You can disable it by adding the following two lines to
-            <code>~/.config/kdeglobals</code>:
-            <pre><code>[Development]
-AutoCheckAccelerators=false</code></pre>
-            If you are like us and think this is a stupid feature, please consider voicing your concerns to the
-            <a href="https://bugs.kde.org/show_bug.cgi?id=337491">KDE guys</a>.
-        </dd>
-
         <dt id="faq-ubuntushortcuts"><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></dt>
         <dd>
             This is a bug caused by <code>appmenu-qt5</code>.<br>
