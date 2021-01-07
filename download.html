@@ -39,7 +39,8 @@ permalink: download
                     <div class="heading">
                         <span class="label label-success">v{{ site.data.version.stable.linux.appimage.version }}{{ site.data.version.stable.linux.appimage.suffix }}</span>
                         <h5><i class="fa fa-linux" aria-hidden="true"></i> AppImage
-                            <i class="hint fa fa-question-circle" title="Portable Linux executable, no installation required." data-toggle="tooltip"></i>
+                            <i class="hint fa fa-question-circle"
+                               title="Portable Linux executable, no installation required." data-toggle="tooltip"></i>
                         </h5>
                     </div>
                     <ul class="download-links">
@@ -50,7 +51,7 @@ permalink: download
                         </li>
                         <li class="links sig">
                             <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage.version }}/KeePassXC-{{ site.data.version.stable.linux.appimage.version }}{{ site.data.version.stable.linux.appimage.suffix }}-x86_64.AppImage.sig">
-                                 GPG signature</a>
+                                GPG signature</a>
                         </li>
                         <li class="links digest">
                             <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.linux.appimage.version }}/KeePassXC-{{ site.data.version.stable.linux.appimage.version }}{{ site.data.version.stable.linux.appimage.suffix }}-x86_64.AppImage.DIGEST">
@@ -73,7 +74,7 @@ permalink: download
                         <li>
                             <code>sudo snap install keepassxc</code>
                         </li>
-                        <br />
+                        <br/>
                         <li class="links">
                             <a href="https://raw.githubusercontent.com/keepassxreboot/keepassxc/master/utils/keepassxc-snap-helper.sh">
                                 KeePassXC-Browser Helper Script
@@ -113,7 +114,8 @@ permalink: download
                             <a href="https://packages.debian.org/sid/keepassxc">Debian package</a>
                         </li>
                         <li class="links">
-                            <a href="https://github.com/magkopian/keepassxc-debian/releases">Unofficial Debian package (wheezy, jessie &amp; stretch)</a>
+                            <a href="https://github.com/magkopian/keepassxc-debian/releases">Unofficial Debian package
+                                (wheezy, jessie &amp; stretch)</a>
                         </li>
                     </ul>
                 </div>
@@ -163,7 +165,8 @@ permalink: download
                     <h5><i class="fl fl-centos" aria-hidden="true"></i> CentOS</h5>
                     <ul class="download-links">
                         <li class="links">
-                            <a href="https://copr.fedorainfracloud.org/coprs/bugzy/keepassxc/">Unofficial CentOS package</a>
+                            <a href="https://copr.fedorainfracloud.org/coprs/bugzy/keepassxc/">Unofficial CentOS
+                                package</a>
                         </li>
                     </ul>
                 </div>
@@ -183,8 +186,6 @@ permalink: download
                 </div>
             </div>
         </div>
-
-        <p class="package-warning"><strong>Warning:</strong> Please do not download unofficial packages from sources you don't trust!</p>
     </div>
 
     <div class="tab-pane active fade in" id="mac">
@@ -201,7 +202,7 @@ permalink: download
                 <ul class="download-links">
                     <li class="links">
                         <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg">
-                             Binary bundle (macOS 10.13+)
+                            Binary bundle (macOS 10.13+)
                         </a>
                     </li>
                     <li class="links sig">
@@ -368,8 +369,6 @@ permalink: download
         </div>
 
     </div>
-        <p class="package-warning"><strong>Warning:</strong> Please do not download unofficial packages from sources you don't trust!</p>
-    </div>
 
     <div class="tab-pane active fade in" id="source">
         <h3><i class="fa fa-code-fork" aria-hidden="true"></i> Source Code</h3>
@@ -401,12 +400,16 @@ permalink: download
             </div>
         </div>
     </div>
+
+    <p class="package-warning"><strong>Warning:</strong> Please do not download unofficial packages from sources you
+        don't trust!</p>
 </div>
 
 <div class="info">
     <h4>Pre-Releases and Snapshots</h4>
     <p>We offer the ability to easily test upcoming releases without having to setup your own build environment.
-        Pre-Releases will be posted to our <a href="https://github.com/keepassxreboot/keepassxc/releases">GitHub releases page</a>.
+        Pre-Releases will be posted to our <a href="https://github.com/keepassxreboot/keepassxc/releases">GitHub
+            releases page</a>.
         Snapshots of the develop branch can be downloaded <a href="https://snapshot.keepassxc.org">here</a>.
         These builds contain unknown bugs and may cause database corruption. Use at your own risk!
     </p>
@@ -414,21 +417,24 @@ permalink: download
 
 <div class="info">
     <h4><a href="{{ site.baseurl }}/verifying-signatures">Verifying signatures</a></h4>
-    <p>Before installing KeePassXC, you should <strong>always</strong> <a href="{{ site.baseurl }}/verifying-signatures">verify</a> that
+    <p>Before installing KeePassXC, you should <strong>always</strong> <a
+            href="{{ site.baseurl }}/verifying-signatures">verify</a> that
         your download matches the signature that is published alongside the release package!
     </p>
 </div>
 
 <div class="info">
     <h4><a href="{{ site.baseurl }}/donate">Donate</a></h4>
-    <p>If you would like to support development and incidental expenses that the team encounters providing you this free software,
+    <p>If you would like to support development and incidental expenses that the team encounters providing you this free
+        software,
         please feel free to check our <a href="{{ site.baseurl }}/donate">donations page</a> to see different options!
     </p>
 </div>
 
+
 <script src="{{ site.baseurl }}/js/os-detect.js"></script>
 <script>
-    $(function() {
+    $(function () {
         var osName = OSDetect();
         if (osName === "unknown") {
             osName = "linux";

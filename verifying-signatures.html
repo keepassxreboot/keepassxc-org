@@ -13,171 +13,133 @@ permalink: verifying-signatures
         project documentation</a>.</p>
 </div>
 
-<div id="how-to-verify-signatures">
-    <h4>Download Options</h4>
-    <p>Every KeePassXC release is published in a variety of package formats:</p>
-    <ul>
-        <li>a <em>*.dmg</em> drag-and-drop installer for macOS</li>
-        <li>an <em>*.msi</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
-        <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
-        <li>a <em>*.tar.xz</em> source tarball</li>
-    </ul>
-    <p>Each of these package files has two related sidecar files, a <em>*.DIGEST</em> and a <em>*.sig</em> 
-       that need to be downloaded to the same directory in order for verification to succeed.</p>
+<p id="how-to-verify-signatures">
+<h4>Download Options</h4>
+<p>Every KeePassXC release is published in a variety of package formats:</p>
+<ul>
+    <li>a <em>*.dmg</em> drag-and-drop installer for macOS</li>
+    <li>an <em>*.msi</em> installer and a <em>*.zip</em> archive with binaries for Windows</li>
+    <li>a self-contained executable <em>*.AppImage</em> for GNU/Linux.</li>
+    <li>a <em>*.tar.xz</em> source tarball</li>
+</ul>
+<p>Each of these package files has two related sidecar files, a <em>*.sig</em> containing a PGP signature and
+    a <em>*.DIGEST</em> containing the SHA-256 hash for basic integrity checks.</p>
 
-    <h4>Basic integrity check - Linux</h4>
-    <p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd /home/username/Downloads</code></p>
-    <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
-       with the following command:</p>
+<h4>Verifying Releases &mdash; Windows</h4>
+<p>The Windows MSI installation file is protected by an authenticode signature, this means that <strong>authenticity and
+    integrity</strong>
+    checks are verified directly by Windows when you run the program.</p>
+<p>You should see the following dialog with <strong>DroidMonkey Apps, LLC</strong> as the verified publisher:</p>
+<p><img src="/images/KeePassXC_UAC.png"></p>
 
-    <pre><code>$ shasum -a 256 -c KeePassXC-*-x86_64.AppImage.DIGEST
-KeePassXC-*-x86_64.AppImage: OK</code></pre>
-    <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
-       and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
-       was downloaded without errors.</p>
+<p>To verify the portal ZIP file, you must download and install <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a>.
+    Then follow the verification instructions below.</p>
 
-   <h4>Basic integrity check - macOS</h4>
-   <p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd /Users/username/Downloads</code></p>
-   <p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
-      with the following command:</p>
+<h4>Verifying Releases &mdash; macOS</h4>
+<p>The macOS release is signed with our Apple Developer ID, which is checked by the operating system on launch. You
+    won't be able
+    to open KeePassXC after the installation if the signature check fails.</p>
 
-   <pre><code>$ shasum -a 256 -c KeePassXC-*.dmg.DIGEST
-KeePassXC-*.dmg.AppImage: OK</code></pre>
-   <p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
-      and compares it with the value in the <em>.DIGEST</em> file. If they match, this shows the package
-      was downloaded without errors.</p>
+<h4>Verifying Releases via PGP &mdash; Linux, macOS, and Windows</h4>
+<p>A more thorough check can be made using the <em>*.sig</em> sidecar file.
+    This contains an OpenPGP (GPG) <em>signature</em> created with one of our <em>release keys</em>.
+    Signing files with any other key will give a different signature. Following these verification
+    instructions will ensure the downloaded files really came from us.</p>
 
-    <h4>Basic integrity check - Windows</h4>
-    <p>Open a PowerShell window (WIN+R, type in <em>powershell</em>, press &lt;enter&gt;) and 
-       change directory to the folder you downloaded the files to, e.g. <code>cd C:\Users\username\Downloads</code></p>
-    <p>Copy/Paste the following command into the PowerShell window:</p>
+<h5>Step 1: Import the public key</h5>
+<p>We will use the <code>gpg</code> program to check the signatures.
+    Before you can do that you need to tell <code>gpg</code> about our public key,
+    by <em>importing</em> it.</p>
+<p>On Windows and macOS you will need to install the <code>gpg</code> program. On Windows, we recommend
+    <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a>. On macOS we recommend
+    <a href="https://gpgtools.org/" target="_blank">GPG Tools</a> or gnupg installed via HomeBrew.</p>
+<p>The KeePassXC public key can be retrieved in any of the ways shown below:</p>
 
-    <pre><code>(Get-FileHash .\KeePassXC-*-Win64.msi).Hash -eq (Get-Content .\KeePassXC-*-Win64.msi.DIGEST).split(" ")[0].ToUpper()</code></pre>
+<strong>From a keyserver:</strong>
+<pre><code>gpg --keyserver keys.openpgp.org --recv-keys CFB4C2166397D0D2</code></pre>
 
-    <p>You should see <code>True</code> appear, if not then the download is invalid or your files are not together.</p>
+<strong>From <a href="{{ site.baseurl }}/keepassxc_master_signing_key.asc">our website</a>:</strong>
+<pre><code>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</code></pre>
 
-    <h4>Verifying Releases - Windows</h4>
-    <p>The Windows installation file is protected by authenticode signature, this means that <strong>authenticity and integrity</strong> 
-       checks are verified directly by Windows when you run the program.</p>
-    <p>You should see the following dialog with <strong>DroidMonkey Apps, LLC</strong> as the verified publisher:</p>
-    <p><img src="/images/KeePassXC_UAC.png"></p>
-
-    <p>To verify a zip file, you must download and install <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a>.
-        Then follow the verification directions below.</p>
-
-    <h4>Checking integrity and <em>authenticity</em> - Linux, macOS, and Windows ZIP</h4>
-    <p>A more thorough check can be made using the <em>*.sig</em> sidecar file.
-       This contains an OpenPGP (GPG) <em>signature</em> created with one of our <em>release keys</em>.
-       Signing files with any other key will give a different signature. Following these verification
-       instructions will ensure the downloaded files really came from us.</p>
-
-    <h4>Importing the Public Master Key</h4>
-    <p>We will use the <code>gpg</code> program to check the signatures.
-       Before you can do that you need to tell <code>gpg</code> about our public key,
-       by <em>importing</em> it.</p>
-    <p>On Windows and macOS you will need to install the <code>gpg</code> program. On Windows, we recommend 
-        <a href="https://www.gpg4win.org/" target="_blank">Gpg4win</a>. On macOS we recommend 
-        <a href="https://gpgtools.org/" target="_blank">GPG Tools</a> or gnupg installed via HomeBrew.</p>
-    <p>The KeePassXC public key can be retrieved in any of the ways shown below:</p>
-
-    <strong>From a specific keyserver</strong>
-    <pre><code>gpg --keyserver keyserver.ubuntu.com --recv-keys CFB4C2166397D0D2</code></pre>
-
-    <strong>Manual download from <a href="{{ site.baseurl }}/keepassxc_master_signing_key.asc">our website</a> and import
-        with gpg</strong>
-    <pre><code>gpg --import ./keepassxc_master_signing_key.asc</code></pre>
-
-    <strong>Fetch via gpg</strong>
-    <pre><code>gpg --fetch-keys https://keepassxc.org/keepassxc_master_signing_key.asc</code></pre>
-
-    <p>These are the fingerprints of the master key and the current signing sub keys:</p>
-    <div><pre><code>pub   rsa4096 2017-01-03 [SC]
+<p>These are the fingerprints of the master key and the current signing sub keys:</p>
+<div><pre><code>pub   rsa4096 2017-01-03 [SC]
       BF5A669F2272CF4324C1FDA8CFB4C2166397D0D2
-uid           [ultimate] KeePassXC Release &lt;<span class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;
+uid           [ unknown] KeePassXC Release &lt;<span class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;
 sub   rsa2048 2017-01-03 [S] [expires: 2021-01-07]
       71D4673D73C7F83C17DAE6A2D8538E98A26FD9C4
 sub   rsa2048 2017-01-03 [S] [expires: 2021-01-07]
-      AF0AEA44ABAC8F1047733EA7AFF235EEFB5A2517
-sub   rsa2048 2017-01-03 [S] [expires: 2021-01-07]
       C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
 </code></pre>
-    </div>
-    <p>Notice that we have a <em>master</em> key and some <em>sub</em> keys.
-       The actual signatures are created with one of the <em>sub keys</em>.
-       As the naming implies, they are closely related to one another -
-       importing the master PGP key is sufficient for verifying signatures
-       made with any of its sub keys.
-    </p>
-    <p>Once you have imported the key, you can decide whether you want to mark it as <em>trusted</em>.
-       This is not strictly necessary for the checks we are making here. For more information, see the
-       <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
-    </p>
-
-    <h4>Verifying Releases - Linux</h4>
-    <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
-        signature by running the following command:</p>
-
-    <pre><code>$ gpg --verify KeePassXC-*-x86_64.AppImage.sig
-
-gpg: assuming signed data in 'KeePassXC-2.X.X-x86_64.AppImage'
-gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
-gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
-gpg: Good signature from "KeePassXC Release &lt;<span
-                class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
-     Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8</code></pre>
-    <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
-       the AppImage file by the sub key with the fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
-    </p>
-    <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
-    </p>
-
-    <h4>Verifying Releases - macOS</h4>
-    <p>You can verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
-        signature by running the following command:</p>
-
-    <pre><code>$ gpg --verify KeePassXC-*.dmg.sig
-
-gpg: assuming signed data in 'KeePassXC-2.X.X.dmg'
-gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
-gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
-gpg: Good signature from "KeePassXC Release &lt;<span
-                class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
-     Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8</code></pre>
-    <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
-       the AppImage file by the sub key with the fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
-    </p>
-    <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
-    </p>
-    
-    <h4>Verifying Releases - Windows ZIP</h4>
-    <p>You can verify the <strong>authenticity and integrity</strong> of the Windows ZIP file by running the following command in the Windows Command Prompt:</p>
-
-    <pre><code>gpg --verify KeePassXC-*-Win64-Portable.zip.sig
-        
-gpg: assuming signed data in 'KeePassXC-2.X.X-Win64-Portable.zip'
-gpg: Signature made Fri 17 Feb 2017 05:20:55 PM CET
-gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
-gpg: Good signature from "KeePassXC Release &lt;<span
-                class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]
-gpg: WARNING: This key is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
-     Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8</code></pre>
-    <p>You want to see that "Good signature" line. It shows the .sig file must have been created from
-       the Windows ZIP file by the sub key with the fingerprint <code>C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8</code>.
-    </p>
-    <p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
-    </p>
- 
-    <h4>Verification fails!</h4>
-    <p>Don't install the package. First, try downloading again and rechecking. If it is still not working,
-       please let us know about the problem by opening an <a href="https://github.com/keepassxreboot/keepassxc/issues">issue</a>.
-    </p>
 </div>
+<p>Notice that we have a <em>master</em> key and some <em>sub</em> keys.
+    The actual signatures are created with one of the <em>sub keys</em>.
+    As the naming implies, they are closely related to one another -
+    importing the master PGP key is sufficient for verifying signatures
+    made with any of its sub keys.
+</p>
 
+<h5>Step 2: Verify the PGP signature</h5>
+<p>Once you have imported the key, you can decide whether you want to mark it as <em>trusted</em>.
+    This is not strictly necessary for the checks we are making here. For more information, see the
+    <a href="https://www.qubes-os.org/doc/verifying-signatures/">Qubes-OS project documentation</a>.
+</p>
+
+<p>You can then verify the <strong>authenticity and integrity</strong> of a downloaded package from its detached
+    signature by running the following command:</p>
+
+<pre><code>$ gpg --verify KeePassXC-*.sig</code></pre>
+
+<p>The output should look like this (the file name will differ obviously):</p>
+
+<pre><code>gpg: assuming signed data in 'KeePassXC-X.X.X-Win64-Portable.zip'
+gpg: Signature made Thu 22 Oct 2020 01:57:33 CEST
+gpg:                using RSA key C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
+gpg: Good signature from "KeePassXC Release &lt;<span class="eobfs">release 'AT` keepassxc ^DOT' org</span>&gt;" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: BF5A 669F 2272 CF43 24C1  FDA8 CFB4 C216 6397 D0D2
+     Subkey fingerprint: C1E4 CBA3 AD78 D3AF D894  F9E0 B7A6 6F03 B590 76A8
+</code></pre>
+
+<p>You want to see that "Good signature" line. It shows that the <em>.sig</em> file must have been created from
+    the downloaded file with a PGP key with the fingerprint <code>BF5A669F2272CF4324C1FDA8CFB4C2166397D0D2</code>.
+</p>
+<p>The warning is there because in this example we have not taken the extra step of <em>trusting</em> that key.
+    It can be ignored if (and only if) you see that the fingerprints are correct (see above).</p>
+
+<h4>Verification fails or fingerprint does not match!</h4>
+<p>Do NOT install the package. First, try downloading it again. If the checks are still failing,
+    let us know about the problem by opening an <a href="https://github.com/keepassxreboot/keepassxc/issues">issue</a>.
+</p>
+
+<hr>
+
+<h4>Basic integrity check</h4>
+<p>If you know what you are doing, can skip the authenticity check and perform only a simple integrity check of the file
+    using the <em>.DIGEST</em>
+    sidecar file. This will ONLY tell you that the file has been downloaded correctly without errors. It will NOT tell
+    you
+    if you can TRUST the download! If you have already followed any of the verification steps above, you do not need
+    this.</p>
+
+<h5>Linux and macOS</h5>
+<p>Open a terminal window and change directory to the folder you downloaded the files to, e.g. <code>cd
+    /home/username/Downloads</code></p>
+<p>The <em>*.DIGEST</em> file can be used to check your package downloaded correctly,
+    with the following command:</p>
+
+<pre><code>$ shasum -a 256 -c KeePassXC-*.DIGEST
+KeePassXC-XXX: OK</code></pre>
+<p>The <code>shasum</code> program recalculates the SHA-256 hash digest of the package file
+    and compares it with the value in the <em>.DIGEST</em> file. If they match (output is "OK"), the package
+    was downloaded without errors.</p>
+
+<h5>Windows</h5>
+<p>Open a PowerShell window (hit <em>WIN+R</em>, type in <em>powershell</em>, press <em>Enter</em>) and
+    change directory to the folder you downloaded the files to, e.g. <code>cd C:\Users\username\Downloads</code></p>
+<p>Copy/Paste the following command into the PowerShell window:</p>
+
+<pre><code>(Get-FileHash .\KeePassXC-*-Win64.msi).Hash -eq (Get-Content .\KeePassXC-*-Win64.msi.DIGEST).split(" ")[0].ToUpper()</code></pre>
+
+<p>You should see <code>True</code> appear, if not then the download is invalid or your files are not together.</p>
+</div>
