@@ -349,8 +349,8 @@ title: Documentation and FAQ
             Our implementation differs from how KeeChallenge handles YubiKeys. KeeChallenge uses the HMAC secret
             directly to enhance the database. To make this work, they need to store the secret in a side-car file,
             encrypted with the response of a challenge-response pair that is calculated ahead of time. In KeePassXC,
-            we do not require any knowledge of the HMAC secret. We use the database's master key as challenge
-            and then use the response to encrypt the database. That way we do not need an extra file and also gain
+            we do not require any knowledge of the HMAC secret. We use the database's master seed (a random byte string that is part of your database)
+	    as challenge and then use the response to encrypt the database. That way we do not need an extra file and also gain
             the advantage that the required response changes every time you save the database, which resembles
             actual two-factor authentication more closely.
         </dd>
