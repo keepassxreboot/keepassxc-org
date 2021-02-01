@@ -198,25 +198,48 @@ permalink: download
             <div class="col-md-6">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}</span>
-                    <h5><i class="fa fa-mac" aria-hidden="true"></i> DMG Installer</h5>
+                    <h5><i class="fa fa-mac" aria-hidden="true"></i> DMG Installer (Intel)</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}-x86_64.dmg">
                             Binary bundle (macOS 10.13+)
                         </a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}-x86_64.dmg.sig">
                             PGP signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}.dmg.DIGEST">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}-x86_64.dmg.DIGEST">
                             SHA-256 digest</a>
                     </li>
                 </ul>
             </div>
 
+            <div class="col-md-6">
+                <div class="heading">
+                    <span class="label label-success">v{{ site.data.version.stable.mac.dmg-arm64.version }}{{ site.data.version.stable.mac.dmg-arm64.suffix }}</span>
+                    <h5><i class="fa fa-mac" aria-hidden="true"></i> DMG Installer (Apple Silicon)</h5>
+                </div>
+                <ul class="download-links">
+                    <li class="links">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg-arm64.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg-arm64.version }}{{ site.data.version.stable.mac.dmg-arm64.suffix }}-arm64.dmg">
+                            Binary bundle (macOS 11.1+)
+                        </a>
+                    </li>
+                    <li class="links sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg-arm64.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg-arm64.version }}{{ site.data.version.stable.mac.dmg-arm64.suffix }}-arm64.dmg.sig">
+                            PGP signature</a>
+                    </li>
+                    <li class="links digest">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg-arm64.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg-arm64.version }}{{ site.data.version.stable.mac.dmg-arm64.suffix }}-arm64.dmg.DIGEST">
+                            SHA-256 digest</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row official-packages">
             <div class="col-md-6">
                 <div class="heading">
                     <h5><i class="fa fa-mac" aria-hidden="true"></i> Homebrew Cask</h5>
@@ -232,7 +255,6 @@ permalink: download
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
 
