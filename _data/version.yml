@@ -13,7 +13,7 @@ stable:
       suffix:
     dmg-arm64:
       version: 2.6.4
-      suffix:
+      suffix: -2
 
   windows:
     portable:
