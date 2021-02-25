@@ -5,27 +5,25 @@ title: Documentation and FAQ
 
 <div id="wiki">
     <h3>Documentation</h3>
-    <p>New to KeePassXC? We have an excellent <a href="KeePassXC_GettingStarted.html" target="_blank">Getting Started Guide</a> that brings you from 
-        download to browser integration in no time. If you just need help troubleshooting the browser connection, head straight to 
-        <a href="KeePassXC_GettingStarted.html#_setup_browser_integration" target="_blank">Setup Browser Integration</a>.</p>
+    <p>New to KeePassXC? We have an excellent <b><a href="KeePassXC_GettingStarted.html" target="_blank">Getting Started Guide</a></b> that will get you
+        up and running quickly. If you need help troubleshooting the browser connection, please read the 
+        <b><a href="KeePassXC_GettingStarted.html#_setup_browser_integration" target="_blank">Setup Browser Integration</a></b> section.</p>
 
-    <p>Looking for more comprehensive documentation? This is found in the <a href="KeePassXC_UserGuide.html" target="_blank">User Guide</a>. 
+    <p>Looking for more comprehensive documentation? This is found in the <b><a href="KeePassXC_UserGuide.html" target="_blank">User Guide</a></b>. 
         All major features are documented here including Auto-Type, SSH Agent, and KeeShare</p>
 
     <p>Build and install instructions, and other technical guides, can be found in the 
-        <a href="https://github.com/keepassxreboot/keepassxc/wiki" target="_blank">Wiki</a>.</p>
+        <b><a href="https://github.com/keepassxreboot/keepassxc/wiki" target="_blank">Wiki</a></b>.</p>
 </div>
 
 <div>
     <h3 id="contribute">Contribute</h3>
-    You can contribute to the project by…
-    <ul>
-        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#bug-reports">…reporting bugs</a>
-        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#feature-requests">…proposing new features</a>
-        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#your-first-code-contribution">…writing code</a>
-        <li><a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#translations">…translating</a>
-        <li><a href="{{site.baseurl}}/donate/">…donating</a></li>
-    </ul>
+    You can contribute to the project by 
+    <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#bug-reports">reporting bugs</a>,
+    <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#feature-requests">proposing new features</a>,
+    <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#your-first-code-contribution">writing code</a>,
+    <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#translations">translating</a>, and/or
+    <a href="{{site.baseurl}}/donate/">donating</a>.
 </div>
 
 <div class="faq" id="faq">
@@ -112,11 +110,6 @@ title: Documentation and FAQ
         <li><a href="#faq-autotype">Is Auto-Type supported on macOS and Windows?</a></li>
         <li><a href="#faq-platform-mobile">Does KeePassXC work on mobile phones? If not, which app would you recommend?</a></li>
         <li><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></li>
-    </ul>
-
-    <h5>Development</h5>
-    <ul class="faq-questions">
-        <li><a href="#faq-builderror">Why do I get an error when I try to build from source for this platform?</a></li>
     </ul>
 
     <h4>Answers</h4>
@@ -429,26 +422,26 @@ title: Documentation and FAQ
             you need to use our AppImage release or upgrade to Ubuntu 16.04 Xenial or newer.
         </dd>
 
-        <dt id="faq-browser-string-fields"><a href="#faq-string-fields">How do I fill in additional values using String Fields?</a></dt>
+        <dt id="faq-browser-string-fields"><a href="#faq-string-fields">How do I fill in additional values on a webpage?</a></dt>
         <dd>
-            It is possible to fill additional information by defining String Fields on a page.
+            It is possible to fill additional information beyond username, password, and TOTP by defining String Fields on a page.
             <br>
             <ul>
-              <li>Use "Choose custom login fields" for this page from the popup. Username and password fields can be skipped if not needed.</li>
-              <li>Now additional fields called String Fields can be chosen.  Note that they are numbered sequentially.  Dropdown elements can be choosed also. Remember the order they are selected.</li>
-              <li>After choosing the String Fields, go to your KeePassXC client and create in attributes prefixed with 'KPH: ' in the order you chose them above.  The attribute values you supply will be filled in that order.</li>
-              <li>If you wish, you may add a further characters after the 'KPH: ' attribute name to help you remember its purpose.  It is ignored by the extension.  Only the sequential order of 'KPH: ' attributes matches the fields, not the further charatcters you can add.</li>
+              <li>From the extension popup menu, click "Choose custom login fields". You can skip the Username, Password, and TOTP fields if not needed.</li>
+              <li>On Step 4 (Confirm Selection), choose the additional string fields you need to fill.  Note that they are numbered sequentially.</li>
+              <li>After choosing the String Fields, go to your KeePassXC client and create advanced attributes with a prefix of 'KPH: ' in the order you chose them above.  NOTE: The space after the colon is required.</li>
+              <li>If you wish, you may add a short name after the prefix to help you remember its purpose.</li>
             </ul>
           <ul>
-            An example using the page https://meine.deutsche-bank.de/trxm/db/:
-            <li>Choose custom login fields for this page and select Branch, Account and Sub-account as String Fields after selecting or skipping username and password field.</li>
+            An example using the page https://meine.deutsche-bank.de/trxm/db/init.do
+            <li>Choose custom login fields for this page and select Branch, Account and Sub-account as String Fields when you reach step 4.</li>
             <ul>
-            Go to your entry, Advanced and add the following attributes (in this order):
-              <li>KPH: Account</li>
+            Go to your entry and add the following advanced attributes (the order is critical):
               <li>KPH: Branch</li>
+              <li>KPH: Account</li>
               <li>KPH: Sub-account</li>
             </ul>
-              Then add the values to those attributes.
+              Test the filling of the string fields by refreshing the page and using the extension.
           </ul>
         </dd>
     </dl>
@@ -555,26 +548,27 @@ title: Documentation and FAQ
 
         <dt id="faq-platform-mobile"><a href="#faq-platform-mobile">Does KeePassXC work on mobile phones? If not, which app would you recommend?</a></dt>
         <dd>
-						We don't have our own mobile app, but you can have the same functionality on both Android and iOS!
-						<br>
-						<ul>
-							<li>
-								For Android, we recommend <a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android">KeePass2Android</a>
-								(it's <a href="https://github.com/PhilippC/keepass2android">open-sourced on GitHub</a>)
-							</li>
-							<li>
-								And for iOS, we suggest <a href="https://itunes.apple.com/us/app/strongbox-password-safe/id897283731">Strongbox</a>
-								(also <a href="https://github.com/mmcguill/StrongBox">open-sourced on GitHub</a>) 
-							</li>
-						</ul>
+            We don't have our own mobile app, but you can have the same functionality on both Android and iOS!
+            <br>
+            <ul>
+                <li>
+                    For Android, we recommend <a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.free">KeePassDX</a> and 
+                    <a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android">KeePass2Android</a>.
+                </li>
+                <li>
+                    And for iOS, we suggest <a href="https://itunes.apple.com/us/app/strongbox-password-safe/id897283731">Strongbox</a> and 
+                    <a href="https://apps.apple.com/us/app/keepassium-keepass-passwords/id1435127111">KeePassium</a>.
+                </li>
+            </ul>
             For KeePassXC, porting it properly to mobile platforms would require a full rewrite.
             You may be able to compile KeePassXC for the mobile OS of your choice, but it isn't at all optimized
             for mobile screen sizes and form factors, let alone multi-touch input. We also don't see any advantage in
-						providing a mobile version of KeePassXC when there are excellent alternatives (as mentioned above), already. 
-						<br>
+            providing a mobile version of KeePassXC when there are already excellent options. 
+            <br>
+        </dd>
         <dt id="faq-ubuntushortcuts"><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></dt>
         <dd>
-            This is a bug caused by <code>appmenu-qt5</code>.<br>
+            This is a bug caused by <code>appmenu-qt5</code><br>
             You have 3 options:
             <ul>
                 <li>Remove the <code>appmenu-qt5</code> package
@@ -582,15 +576,6 @@ title: Documentation and FAQ
                 <li>Set the environment variable <code>QT_QPA_PLATFORMTHEME=''</code>
             </ul>
             <strong>Note:</strong> When you choose the first or third option, KeePassXC will lose the Unity look and feel.
-        </dd>
-    </dl>
-
-    <h5>Development</h5>
-    <dl>
-        <dt id="faq-builderror"><a href="#faq-builderror">Why do I get an error when I try to build from source for this platform?</a></dt>
-        <dd>
-            Please follow every step from our
-            <a href="https://github.com/keepassxreboot/keepassxc/wiki/Building-KeePassXC">wiki page</a>.
         </dd>
     </dl>
 </div>
