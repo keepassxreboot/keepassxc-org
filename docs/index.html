@@ -86,8 +86,6 @@ title: Documentation and FAQ
     <ul class="faq-questions">
         <li><a href="#faq-browser">Does KeePassXC support browser extensions?</a></li>
         <li><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></li>
-        <li><a href="#faq-browser-diff">How does the new browser integration differ from the old?</a></li>
-        <li><a href="#faq-browser-trusty">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></li>
         <li><a href="#faq-browser-string-fields">How do I fill in additional values using String Fields?</a></li>
     </ul>
 
@@ -328,7 +326,7 @@ title: Documentation and FAQ
         <dd>
             To use a YubiKey or OnlyKey for securing your KeePassXC database, you have to configure one of your YubiKey / OnlyKey slots
             for HMAC-SHA1 Challenge Response mode (see this
-            <a href="https://www.yubico.com/products/services-software/challenge-response/">video</a>
+            <a href="https://www.youtube.com/watch?v=r6Qe9Z-kOH0">video</a>
             for how to do this). Once your YubiKey (or OnlyKey, you got the point&hellip;) is set up, open your database in KeePassXC, go to
             <em>File / Change master key</em>, enable <em>Challenge Response</em> and then save the database.<br>
             <strong>Important:</strong> Always make a copy of the secret that is programmed into your YubiKey while
@@ -401,25 +399,9 @@ title: Documentation and FAQ
 
         <dt id="faq-browser-howto"><a href="#faq-browser-howto">How do I connect browser extensions with KeePassXC?</a></dt>
         <dd>
-            You can enable Browser Integration (KeePassXC-Browser) or Legacy Browser Integration (KeePassHTTP-Connector) from KeePassXC settings.
-            A guide for KeePassHTTP-Connector is available <a href="https://github.com/smorks/keepasshttp-connector/blob/master/documentation/KeePassHttp-Connector.md">
-            here</a>. See the page <a href="https://keepassxc.org/docs/KeePassXC_GettingStarted.html#_configure_keepassxc_browser">How to connect KeePassXC-Browser with KeePassXC</a> for more
+            You can enable Browser Integration (KeePassXC-Browser) from the application settings.
+            See the page <a href="https://keepassxc.org/docs/KeePassXC_GettingStarted.html#_configure_keepassxc_browser">How to connect KeePassXC-Browser with KeePassXC</a> for more
             detailed information for the new Browser Integration. For troubleshooting see the following <a href="https://github.com/keepassxreboot/keepassxc-browser/wiki/Troubleshooting-guide">wiki page</a>.
-        </dd>
-
-        <dt id="faq-browser-diff"><a href="#faq-browser-diff">How does the new browser integration differ from the old?</a></dt>
-        <dd>
-            Older TCP socket based KeePassHTTP has been replaced with <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging">native messaging</a>,
-            and traffic is encrypted with libsodium's
-            <a href="https://download.libsodium.org/doc/public-key_cryptography/authenticated_encryption.html">Public-key authenticated encryption</a>.
-            Native messaging ensures that KeePassXC-Browser can only communicate with a specified application. Also, it is possible to use multiple browsers
-            simultaneously. For more detailed info, please see the project's <a href="https://github.com/keepassxreboot/keepassxc-browser">GitHub</a> page.
-        </dd>
-
-        <dt id="faq-browser-trusty"><a href="#faq-browser-trusty">Where are the KeePassXC-Browser settings on Ubuntu 14.04 Trusty?</a></dt>
-        <dd>
-            KeePassXC-Browser requires Qt 5.3, which is not available on Ubuntu 14.04 Trusty. If you need browser integration,
-            you need to use our AppImage release or upgrade to Ubuntu 16.04 Xenial or newer.
         </dd>
 
         <dt id="faq-browser-string-fields"><a href="#faq-string-fields">How do I fill in additional values on a webpage?</a></dt>
