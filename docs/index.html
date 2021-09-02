@@ -6,19 +6,19 @@ title: Documentation and FAQ
 <div id="wiki">
     <h3>Documentation</h3>
     <p>New to KeePassXC? We have an excellent <b><a href="KeePassXC_GettingStarted.html" target="_blank">Getting Started Guide</a></b> that will get you
-        up and running quickly. If you need help troubleshooting the browser connection, please read the 
+        up and running quickly. If you need help troubleshooting the browser connection, please read the
         <b><a href="KeePassXC_GettingStarted.html#_setup_browser_integration" target="_blank">Setup Browser Integration</a></b> section.</p>
 
-    <p>Looking for more comprehensive documentation? This is found in the <b><a href="KeePassXC_UserGuide.html" target="_blank">User Guide</a></b>. 
+    <p>Looking for more comprehensive documentation? This is found in the <b><a href="KeePassXC_UserGuide.html" target="_blank">User Guide</a></b>.
         All major features are documented here including Auto-Type, SSH Agent integration, and KeeShare</p>
 
-    <p>Build and install instructions, and other technical guides, can be found in the 
+    <p>Build and install instructions, and other technical guides, can be found in the
         <b><a href="https://github.com/keepassxreboot/keepassxc/wiki" target="_blank">Wiki</a></b>.</p>
 </div>
 
 <div>
     <h3 id="contribute">Contribute</h3>
-    You can contribute to the project by 
+    You can contribute to the project by
     <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#bug-reports">reporting bugs</a>,
     <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#feature-requests">proposing new features</a>,
     <a href="https://github.com/keepassxreboot/keepassxc/blob/develop/.github/CONTRIBUTING.md#your-first-code-contribution">writing code</a>,
@@ -101,6 +101,7 @@ title: Documentation and FAQ
         <li><a href="#faq-ssh-agent-openssh">Why is OpenSSH ssh-agent refusing my keys?</a></li>
         <li><a href="#faq-ssh-agent-errors">I'm getting protocol or connection errors, what's wrong?</a></li>
         <li><a href="#faq-ssh-agent-auth-errors">I'm getting a "Too many authentication failures" error, what shall I do?</a></li>
+        <li><a href="#faq-ssh-agent-git-bash">How do I use KeePassXC SSH Agent integration with Git (Bash) on Windows?</a></li>
     </ul>
 
     <h5 id="faq-cat-platform">Platform-specific</h5>
@@ -168,7 +169,7 @@ title: Documentation and FAQ
     <dl>
         <dt id="faq-security-kdbx4"><a href="#faq-security-kdbx4">How can I migrate my database to KDBX 4?</a></dt>
         <dd>
-            In the <em>Database</em> application menu, select <em>Database security...</em>. Select the <em>Encryption Settings</em> tab 
+            In the <em>Database</em> application menu, select <em>Database security...</em>. Select the <em>Encryption Settings</em> tab
             and choose <em>KDBX 4.0 (recommended)</em>. Press OK and save the database.
         </dd>
 
@@ -439,9 +440,16 @@ title: Documentation and FAQ
             when unlocked and remove them when locked.<br>
             <br>
             On Linux, most desktops are already running an agent without any set up required.<br>
-            On Windows, you need to have <i>Pageant</i> running. It is part of the
-            <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY suite</a>.<br>
-            On macOS, <code>ssh-agent</code> is running by default and no further setup is required.
+            On macOS, <code>ssh-agent</code> is running by default and no further setup is required.<br/>
+            On Windows, you have multiple options:
+            <ul>
+                <li>One is to have <i>Pageant</i> running. It is part of the
+                    <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY suite</a>.</li>
+                <li>An alternative is to use e.g. <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">Win32 OpenSSH</a>
+                    which may come preinstalled with your Windows 10 version.</li>
+                <li>The MSYS2 ssh-agent socket offered by Git for Windows's bundled OpenSSH is
+                    <a href="https://github.com/keepassxreboot/keepassxc/issues/4681" target="_blank"><strong>not supported</strong></a></li>
+            </ul>
         </dd>
 
         <dt id="faq-ssh-agent-keys"><a href="#faq-ssh-agent-keys">What SSH key types are supported?</a></dt>
@@ -464,7 +472,11 @@ title: Documentation and FAQ
             how to manually run <code>ssh-agent</code> if it's not already set up. Sometimes other applications like
             <em>GNOME Keyring</em> or <code>gpg-agent</code> already provide a compatible agent that also works with
             KeePassXC.<br>
-            On Windows, Pageant needs to be running, see <a href="#faq-ssh-agent-how">How does the SSH Agent integration work?</a>.
+            On Windows, either Pageant needs to be running, see <a href="#faq-ssh-agent-how">How does the SSH Agent integration work?</a>
+            or, alternatively, you need to enable and start the Windows <code>OpenSSH Authentication Agent</code>
+            (commonly referred to as <code>ssh-agent</code>). This process is documented in
+            <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation">Microsoft's documentation for user keys</a>.<br>
+            The MSYS2 ssh-agent socket offered by Git for Windows's bundled OpenSSH is <a href="https://github.com/keepassxreboot/keepassxc/issues/4681" target="_blank">not supported</a>.
         </dd>
 
         <dt id="faq-ssh-agent-passphrase"><a href="#faq-ssh-agent-passphrase">How do I set up a passphrase for encrypted keys?</a></dt>
@@ -495,9 +507,12 @@ title: Documentation and FAQ
 
         <dt id="faq-ssh-agent-openssh"><a href="#faq-ssh-agent-openssh">Why is OpenSSH ssh-agent refusing my keys?</a></dt>
         <dd>
-            If you are using confirm-on-use option for your keys, <code>ssh-agent</code> needs to have a "ssh-askpass" program available.<br>
+            You may experience an <q>Agent protocol error</q> if you are using confirm-on-use option for your keys
+            (e.g. set via the environment variable <code>SSH_ASKPASS_REQUIRE</code>). In that case <code>ssh-agent</code>
+            needs to have a <q>ssh-askpass</q> program available.<br>
             On Linux it depends on your distribution and desktop environment how to install and configure one as there are several available.<br>
-            On macOS, you need a third party program like <a href="https://github.com/theseal/ssh-askpass">theseal/ssh-askpass</a>.
+            On macOS, you need a third party program like <a href="https://github.com/theseal/ssh-askpass">theseal/ssh-askpass</a>.<br>
+            On Windows the default Windows OpenSSH installation does not support confirm-on-use or automatic removal of key after a timeout.
         </dd>
 
         <dt id="faq-ssh-agent-errors"><a href="#faq-ssh-agent-errors">I'm getting protocol or connection errors, what's wrong?</a></dt>
@@ -523,6 +538,21 @@ title: Documentation and FAQ
             Instead of letting the <code>IdentityFile</code> directive point to a private key file, let it point to
             your public key file. The SSH Agent will use the provided information to select the correct private key.
         </dd>
+
+        <dt id="faq-ssh-agent-git-bash"><a href="#faq-ssh-agent-git-bash">How do I use KeePassXC SSH Agent integration with Git (Bash) on Windows?</a></dt>
+        <dd>
+            KeePassXC on Windows can be used with <a href="KeePassXC_UserGuide.html#_pageant_agent_on_windows" target="_blank">Pageant</a>
+            or with Windows OpenSSH.<br> Git for Windows supports both options since version
+            <a href="https://github.com/git-for-windows/git/releases/tag/v2.33.0.windows.1" target="_blank">2.33.0</a>.
+            You will be prompted during installation of Git for Windows to pick the option you prefer – depending on
+            your Windows version and whether PuTTY is installed.<br><br>
+            The MSYS2 ssh-agent socket offered by Git for Windows's bundled OpenSSH is
+            <a href="https://github.com/keepassxreboot/keepassxc/issues/4681" target="_blank"><strong>not supported</strong></a>.<br>
+            If you did not choose Windows OpenSSH during Git installation you can still do the following to make Git (Bash) use Windows OpenSSH:<br>
+            Prepend the the path to Windows OpenSSH to the <code>PATH</code> variable inside the Git Bash, e.g.
+            <code>export PATH="/c/Windows/System32/OpenSSH:$HOME/bin:$PATH"</code> or use the <code>GIT_SSH_COMMAND</code> environment variable
+            (<code>core.sshCommand</code> in the Git configuration file) to override the path to the SSH binary specifically for Git.
+        </dd>
     </dl>
 
     <h5>Platform-specific</h5>
@@ -536,18 +566,18 @@ title: Documentation and FAQ
             <br>
             <ul>
                 <li>
-                    For Android, we recommend <a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.free">KeePassDX</a> and 
+                    For Android, we recommend <a href="https://play.google.com/store/apps/details?id=com.kunzisoft.keepass.free">KeePassDX</a> and
                     <a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android">KeePass2Android</a>.
                 </li>
                 <li>
-                    And for iOS, we suggest <a href="https://itunes.apple.com/us/app/strongbox-password-safe/id897283731">Strongbox</a> and 
+                    And for iOS, we suggest <a href="https://itunes.apple.com/us/app/strongbox-password-safe/id897283731">Strongbox</a> and
                     <a href="https://apps.apple.com/us/app/keepassium-keepass-passwords/id1435127111">KeePassium</a>.
                 </li>
             </ul>
             For KeePassXC, porting it properly to mobile platforms would require a full rewrite.
             You may be able to compile KeePassXC for the mobile OS of your choice, but it isn't at all optimized
             for mobile screen sizes and form factors, let alone multi-touch input. We also don't see any advantage in
-            providing a mobile version of KeePassXC when there are already excellent options. 
+            providing a mobile version of KeePassXC when there are already excellent options.
             <br>
         </dd>
         <dt id="faq-ubuntushortcuts"><a href="#faq-ubuntushortcuts">Why do the tray menu and in-app shortcuts not work on Ubuntu/Unity?</a></dt>
