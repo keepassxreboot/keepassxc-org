@@ -320,8 +320,8 @@ title: Documentation and FAQ
 	    by use of a YubiKey in a slightly different way. KeePassXC generates a challenge and uses the YubiKey's response to this challenge to
             enhance the encryption key of your database. So in a sense, it makes your password stronger, but technically it doesn't qualify as a
 	    separate second factor, since this is not an authentication scheme and also because the expected response doesn't change every time you
-	    try to decrypt your database. It does, however, change every time you save your database. Be aware, however, that a previous version of your
-	    database can still be decrypted with the old challenge/response.
+	    try to decrypt your database. It does, however, change every time you save your database. Be aware, however, that the previous version of your
+	    database can still be decrypted with the old challenge/response (but no other version prior to that and no future version either).
         </dd>
 
         <dt id="faq-yubikey-howto"><a href="#faq-yubikey-howto">How do I configure my YubiKey / OnlyKey for use with KeePassXC?</a></dt>
