@@ -315,11 +315,13 @@ title: Documentation and FAQ
     <dl>
         <dt id="faq-yubikey-2fa"><a href="#faq-yubikey-2fa">Does KeePassXC support two-factor authentication (2FA) with YubiKeys or OnlyKeys?</a></dt>
         <dd>
-            Yes and no. KeePassXC supports YubiKeys for securing a database, but strictly speaking, it's not two-factor
-            authentication. KeePassXC generates a challenge and uses the YubiKey's response to this challenge to
-            enhance the encryption key of your database. So in a sense, it makes your password stronger,
-            but technically it doesn't qualify as a separate second factor, since the expected response doesn't change every time
-            you try to decrypt your database. It does, however, change every time you save your database.
+            Yes and no. No, because technically speaking, KeePassXC is not a service and therefore does not use "authentication". Instead,
+	    you are "decrypting" your database, which is different from "authentication". Nonetheless, you can improve the security of your database
+	    by use of a YubiKey in a slightly different way. KeePassXC generates a challenge and uses the YubiKey's response to this challenge to
+            enhance the encryption key of your database. So in a sense, it makes your password stronger, but technically it doesn't qualify as a
+	    separate second factor, since this is not an authentication scheme and also because the expected response doesn't change every time you
+	    try to decrypt your database. It does, however, change every time you save your database. Be aware, however, that a previous version of your
+	    database can still be decrypted with the old challenge/response.
         </dd>
 
         <dt id="faq-yubikey-howto"><a href="#faq-yubikey-howto">How do I configure my YubiKey / OnlyKey for use with KeePassXC?</a></dt>
