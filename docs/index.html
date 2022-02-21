@@ -10,7 +10,7 @@ title: Documentation and FAQ
         <b><a href="KeePassXC_GettingStarted.html#_setup_browser_integration" target="_blank">Setup Browser Integration</a></b> section.</p>
 
     <p>Looking for more comprehensive documentation? This is found in the <b><a href="KeePassXC_UserGuide.html" target="_blank">User Guide</a></b>. 
-        All major features are documented here including Auto-Type, SSH Agent, and KeeShare</p>
+        All major features are documented here including Auto-Type, SSH Agent integration, and KeeShare</p>
 
     <p>Build and install instructions, and other technical guides, can be found in the 
         <b><a href="https://github.com/keepassxreboot/keepassxc/wiki" target="_blank">Wiki</a></b>.</p>
@@ -89,9 +89,9 @@ title: Documentation and FAQ
         <li><a href="#faq-browser-string-fields">How do I fill in additional values using String Fields?</a></li>
     </ul>
 
-    <h5 id="faq-ssh-agent">SSH Agent</h5>
+    <h5 id="faq-ssh-agent">SSH Agent integration</h5>
     <ul class="faq-questions">
-        <li><a href="#faq-ssh-agent-how">How does the SSH Agent work?</a></li>
+        <li><a href="#faq-ssh-agent-how">How does the SSH Agent integration work?</a></li>
         <li><a href="#faq-ssh-agent-keys">What SSH key types are supported?</a></li>
         <li><a href="#faq-ssh-agent-not-working">Why are the agent buttons greyed out / why doesn't it work?</a></li>
         <li><a href="#faq-ssh-agent-passphrase">How do I set up a passphrase for encrypted keys?</a></li>
@@ -430,11 +430,11 @@ title: Documentation and FAQ
         </dd>
     </dl>
 
-    <h5>SSH Agent</h5>
+    <h5>SSH Agent integration</h5>
     <dl>
-        <dt id="faq-ssh-agent-how"><a href="#faq-ssh-agent-how">How does the SSH Agent work?</a></dt>
+        <dt id="faq-ssh-agent-how"><a href="#faq-ssh-agent-how">How does the SSH Agent integration work?</a></dt>
         <dd>
-            The SSH Agent feature is supported on all target platforms (Linux, macOS and Windows) and it acts as a client
+            The SSH Agent integration is supported on all target platforms (Linux, macOS and Windows) and it acts as a client
             for an existing agent. It can automatically add SSH keys from your KeePassXC database to a running SSH agent
             when unlocked and remove them when locked.<br>
             <br>
@@ -464,12 +464,12 @@ title: Documentation and FAQ
             how to manually run <code>ssh-agent</code> if it's not already set up. Sometimes other applications like
             <em>GNOME Keyring</em> or <code>gpg-agent</code> already provide a compatible agent that also works with
             KeePassXC.<br>
-            On Windows, Pageant needs to be running, see <a href="#faq-ssh-agent-how">How does the SSH Agent work?</a>.
+            On Windows, Pageant needs to be running, see <a href="#faq-ssh-agent-how">How does the SSH Agent integration work?</a>.
         </dd>
 
         <dt id="faq-ssh-agent-passphrase"><a href="#faq-ssh-agent-passphrase">How do I set up a passphrase for encrypted keys?</a></dt>
         <dd>
-            The SSH Agent feature uses the entry password field as the decryption key.
+            The SSH Agent integration uses the entry password field as the decryption key.
         </dd>
 
         <dt id="faq-ssh-agent-comment"><a href="#faq-ssh-agent-comment">Why does the public key (seem to) have no comment?</a></dt>
