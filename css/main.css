@@ -286,7 +286,8 @@ h4 > .fa, h4 > .fl,
     width: 1.8em;
     text-align: center;
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
+    font: normal normal normal 14px/1 "Font Awesome 6 Free";
+    font-weight: 900;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -404,7 +405,8 @@ a.btn {
 
 .navbar-toggle::before {
     content: "\f0c9";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
 }
 
 .github-corner svg {
