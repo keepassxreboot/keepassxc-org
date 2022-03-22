@@ -150,9 +150,14 @@ title: Documentation and FAQ
 
         <dt id="faq-general-plugins"><a href="#faq-general-plugins">Does KeePassXC support (KeePass2) plugins?</a></dt>
         <dd>
-            No, KeePassXC does not support plugins at the moment. We are thinking about providing some kind of
-            plugin infrastructure or external API in the future, but cannot specify how it will work or when it will
-            be ready.
+            No, KeePassXC does not support plugins at the moment and probably never will. KeePassXC already provides many of the features that
+            need third-party plugins in KeePass2 out of the box, so for most things you don't even need plugins, nor should you ever want them.
+            Plugins are inherently dangerous. Many KeePass2 plugins are barely maintained (if at all), some have known vulnerabilities that
+            have never been (and probably never will be) fixed, and none of them are as thoroughly tested and reviewed as we test and review
+            code that goes into our main application. We find that encouraging users to install untested (and often quickly-abandoned) third-party
+            plugins is inherently incompatible with the security demands of a password manager. If you really need external functionality not
+            available in KeePassXC, you can look for "plugins" that use the KeePassXC-Browser API, which is a much more secure way of sharing
+            passwords with third-party applications than loading those applications as plugins directly into KeePassXC.
         </dd>
 
         <dt id="faq-general-wordlist"><a href="#faq-general-wordlist">How can I add additional word lists to the passphrase generator?</a></dt>
