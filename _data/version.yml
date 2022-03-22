@@ -1,37 +1,29 @@
 stable:
   linux:
     appimage:
-      version: 2.6.6
+      version: 2.7.0
       suffix:
     snap:
-      version: 2.6.6
+      version: 2.7.0
       suffix:
 
   mac:
     dmg:
-      version: 2.6.6
+      version: 2.7.0
       suffix:
     dmg-arm64:
-      version: 2.6.6
+      version: 2.7.0
       suffix:
 
   windows:
     portable:
-      version: 2.6.6
+      version: 2.7.0
       suffix:
     msi:
-      version: 2.6.6
-      suffix:
-
-  windows32:
-    portable:
-      version: 2.6.6
-      suffix:
-    msi:
-      version: 2.6.6
+      version: 2.7.0
       suffix:
 
   source:
     tarball:
-      version: 2.6.6
+      version: 2.7.0
       suffix:
