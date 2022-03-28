@@ -3,8 +3,6 @@ title: "KeePassXC Password Manager"
 baseurl: ""
 url: "https://keepassxc.org"
 
-github: keepassx-reboot
-
 # Build settings
 markdown: kramdown
 permalink: /:title
@@ -13,3 +11,28 @@ permalink: /:title
 collections:
   downloads:
     output: true
+
+exclude:
+  - .idea
+  - Gemfile
+  - package.json
+  - package-lock.json
+
+include:
+  - .htaccess
+
+sass:
+  style: compressed
+  implementation: sass-embedded
+  sass_dir: _sass/
+  load_paths:
+    - _sass/
+    - node_modules/
+    - node_modules/cirrus-ui/
+
+copy_to_dest:
+  - source: node_modules/@fortawesome/fontawesome-free/webfonts/.
+    target: assets/webfonts/
+
+plugins:
+  - jekyll-sitemap

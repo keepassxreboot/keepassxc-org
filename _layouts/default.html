@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="KeePassXC Team">
@@ -17,22 +16,7 @@
     <title>{% if page.title %}{{ page.title }} - KeePassXC{% else %}{{ site.title }}{% endif %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ site.baseurl }}/css/bootstrap.min.css?202203010133" rel="stylesheet">
-    <link href="{{ site.baseurl }}/css/flat-ui.min.css?202203010133" rel="stylesheet">
-    <link href="{{ site.baseurl }}/css/font-linux.min.css?202203010133" rel="stylesheet">
-    <link href="{{ site.baseurl }}/fonts/fontawesome/css/all.min.css?202203010133" rel="stylesheet">
-    {% if page.path contains "blog" %}
-    <link href="{{ site.baseurl }}/css/shariff.min.css?202203010133" rel="stylesheet">
-    {% endif %}
-    {% if page.path contains "screenshots" %}
-    <link href="{{ site.baseurl }}/css/magnific-popup.min.css?202203010133" rel="stylesheet">
-    {% endif %}
-    <!-- Custom styles for this template -->
-    <link href="{{ site.baseurl }}/css/main.min.css?202203010133" rel="stylesheet">
-    <link rel="canonical" href="https://keepassxc.org{{ page.url }}/">
-    {% if page.path contains "blog" %}
-    <link type="application/atom+xml" rel="alternate" href="{{ site.baseurl }}/blog/feed.xml">
-    {% endif %}
+    <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet">
 
     <script>
         // stub document ready function

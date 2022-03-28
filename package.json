@@ -1,0 +1,20 @@
+{
+  "name": "keepassxc.org",
+  "version": "1.0.0",
+  "description": "KeePassXC Website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keepassxreboot/keepassxreboot.github.io.git"
+  },
+  "author": "KeePassXC Team",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/keepassxreboot/keepassxreboot.github.io/issues"
+  },
+  "homepage": "https://github.com/keepassxreboot/keepassxreboot.github.io#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "cirrus-ui": "^0.7.0",
+    "sass-true": "^6.1.0"
+  }
+}
