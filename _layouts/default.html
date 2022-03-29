@@ -3,186 +3,52 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="KeePassXC Password Manager">
     <meta name="author" content="KeePassXC Team">
-    <meta name="flattr:id" content="x7yqz0">
-    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon">
-    <link rel="icon" sizes="256x256" href="{{ site.baseurl }}/favicon-256x256.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="192x192" href="{{ site.baseurl }}/apple-touch-icon.png">
-    <link rel="mask-icon" href="{{ site.baseurl }}/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#9f00a7">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png">
+    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ site.baseurl }}/assets/img/apple-touch-icon.png">
+    <link rel="mask-icon" href="{{ site.baseurl }}/assets/img/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{% if page.title %}{{ page.title }} - KeePassXC{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} – KeePassXC{% else %}{{ site.title }}{% endif %}</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet">
-
-    <script>
-        // stub document ready function
-        window.q = [];
-        window.$ = function(f) {
-            q.push(f);
-        };
-    </script>
+    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 </head>
 <body>
     <section class="wrapper">
-
-        {% include navbar.html %}
-
-        {{ content }}
-
-        {% include footer.html %}
-
-        <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
-        <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
-        {% if page.path contains "screenshots" %}
-        <script src="{{ site.baseurl }}/js/magnific-popup.min.js"></script>
-        <script>
-            $(function() {
-                $(".thumbs").magnificPopup({
-                    delegate: 'a',
-                    type: 'image',
-                    closeOnContentClick: false,
-                    closeBtnInside: false,
-                    mainClass: 'mfp-with-zoom mfp-img-mobile',
-                    gallery: {
-                        enabled: true,
-                        navigateByImgClick: true,
-                        preload: [1, 1]
-                    },
-                    zoom: {
-                        enabled: true,
-                        duration: 300,
-                        opener: function(element) {
-                            return element.find('img');
-                        }
-                    }
-                })
-            });
-        </script>
-        {% endif %}
-        {% if page.path contains "blog" %}
-        <script src="{{ site.baseurl }}/js/shariff.min.js"></script>
-        {% endif %}
-        <script>
-            $(function() {
-                // execute queued functions
-                $.each(q, function(index, f){
-                    $(f)
-                });
-
-                var navFixed = false;
-                var nav = $(".navbar");
-                var navHeight = nav.height();
-                var content = $(".wrapper > .jumbotron");
-
-                function animateNavbar() {
-                    $(window).scroll(function () {
-                        if ($(this).scrollTop() > navHeight * .8) {
-                            if (!navFixed) {
-                                navFixed = true;
-
-                                content.css({
-                                    "margin-top": navHeight + "px"
-                                });
-                                nav.css({
-                                    "position": "fixed",
-                                    "top": -navHeight + "px",
-                                    "width": "100%"
-                                });
-                                fixScrollOffset();
-                                nav.stop().animate({"top": 0}, 350);
-                            }
-                        } else if ($(this).scrollTop() === 0) {
-                            nav.css({
-                                "position": "relative",
-                                "top": 0
-                            });
-                            content.css({
-                                "margin-top": 0
-                            });
-                            navFixed = false;
-                        }
-                    });
-                }
-
-                // correct scroll offset due to fixed navigation after page load
-                var isPageLoad = true;
-                function fixScrollOffset() {
-                    if (!nav.size()) {
-                        window.requestAnimationFrame(fixScrollOffset);
-                        return;
-                    }
-
-                    // only fix once after page has loaded
-                    if (isPageLoad) {
-                        isPageLoad = false;
-                    } else {
-                        return;
-                    }
-
-                    navHeight = nav.height();   // update height, just in case...
-                    var st = $(window).scrollTop();
-                    var offset = $(location.hash).offset();
-
-                    if (st > navHeight * .8 && offset) {
-                        $(window).scrollTop(offset.top - navHeight - 15);
-                    }
-                }
-
-                // enable smooth scrolling for anchor links
-                $("a[href^='#']").bind('click', function(e) {
-                    e.preventDefault();
-                    var target = $(this).attr("href");
-                    var offset = Math.max(0, ((target === '#') ? 0 : $(target).offset().top) - navHeight - 15);
-                    $('html, body').animate({scrollTop: offset}, 500, function() {
-                        if (history.pushState) {
-                            history.pushState(null, "", target);
-                        } else {
-                            location.hash = target;
-                        }
-                    });
-                });
-
-                $(window).bind("scroll", animateNavbar);
-                animateNavbar();
-
-                $(".eobfs").each(function() {
-                    $(this).text($(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.'));
-                });
-                $(".eobfsl").each(function() {
-                    var e = $(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
-                    $(this).html('<a href="mailto:' + e + '?body=Thank%20you%20for%20mailing%20us.%0APlease%20be%20sure%20to%20send%20only%20legal%20or%20security%20issues%20to%20this%20address.%0A%0AFor%20all%20non-confidential%20correspondence%20requiring%20no%20direct%20contact%20to%20a%20team%20member%2C%20please%20use%20%5Bmatrix%5D%2C%20IRC%2C%20or%20GitHub.%0A%0AOur%20PGP%20key%20is%20105D%208D57%20BB97%2046BD.">' + e + '</a>');
-                });
-
-                $("[title]").tooltip();
-            });
-        </script>
-
-        <!-- Piwik -->
-        <script type="text/javascript">
-            var _paq = _paq || [];
-            // tracker methods like "setCustomDimension" should be called before "trackPageView"
-            _paq.push(["setCookieDomain", "*.keepassxc.org"]);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (function () {
-                var u = "https://analytics.keepassxc.org/";
-                _paq.push(['setTrackerUrl', u + 'piwik.php']);
-                _paq.push(['setSiteId', '4']);
-                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-                g.type = 'text/javascript';
-                g.async = true;
-                g.defer = true;
-                g.src = u + 'piwik.js';
-                s.parentNode.insertBefore(g, s);
-            })();
-        </script>
-        <noscript><p><img src="https://analytics.keepassxc.org/piwik.php?idsite=4&rec=1" style="border:0;" alt=""/></p>
-        </noscript>
-        <!-- End Piwik Code -->
+{{ content }}
     </section>
+
+    <script src="{{ site.baseurl }}/assets/js/jquery.slim.min.js"></script>
+    <script>
+        $(function() {
+            $(".eobfs").each(function() {
+                $(this).text($(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.'));
+            });
+            $(".eobfsl").each(function() {
+                var e = $(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
+                $(this).html('<a href="mailto:' + e + '?body=Thank%20you%20for%20mailing%20us.%0APlease%20be%20sure%20to%20send%20only%20legal%20or%20security%20issues%20to%20this%20address.%0A%0AFor%20all%20non-confidential%20correspondence%20requiring%20no%20direct%20contact%20to%20a%20team%20member%2C%20please%20use%20%5Bmatrix%5D%2C%20IRC%2C%20or%20GitHub.%0A%0AOur%20PGP%20key%20is%20105D%208D57%20BB97%2046BD.">' + e + '</a>');
+            });
+        });
+    </script>
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.keepassxc.org"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="https://analytics.keepassxc.org/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '4']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <noscript><p><img src="https://tracking.jbev.net/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
 </body>
 </html>

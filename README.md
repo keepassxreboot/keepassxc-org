@@ -1,14 +1,13 @@
-# keepassxc_site
-Website files for KeePassXC
+# keepassxc.org
+Website sources for https://keepassxc.org.
 
-This website use **Jekyll** and **GithubPages**.
+This website use **Jekyll**.
 
 ## Usage
 
-- Install Jekyll from Ruby-Gem `gem install jekyll`
-- Navigate to the website folder
-- Execute the command `jekyll serve`
-- Visit the webpage stated in the output of the previous command
+- Install NPM dependencies: `npm install`
+- Install Jekyll dependencies from Gemfile: `bundle install`
+- Run Jekyll dev server: `jekyll serve`
 
 ### Contributing
 

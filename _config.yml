@@ -7,16 +7,12 @@ url: "https://keepassxc.org"
 markdown: kramdown
 permalink: /:title
 
-# Latest downloads
-collections:
-  downloads:
-    output: true
-
 exclude:
   - .idea
   - Gemfile
   - package.json
   - package-lock.json
+  - README.md
 
 include:
   - .htaccess
@@ -33,6 +29,8 @@ sass:
 copy_to_dest:
   - source: node_modules/@fortawesome/fontawesome-free/webfonts/.
     target: assets/webfonts/
+  - source: node_modules/jquery/dist/.
+    target: assets/js/
 
 plugins:
   - jekyll-sitemap
