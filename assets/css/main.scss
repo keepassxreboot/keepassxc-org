@@ -2,8 +2,17 @@
 # Force Jekyll processing.
 ---
 
-@use 'cirrus-ui/src/cirrus-all';
+// Configuration
+@use "variables" as *;
 
+// Bootstrap
+@use "bootstrap/scss/bootstrap" with (
+    $primary: $primary,
+    $secondary: $secondary,
+    $min-contrast-ratio: 3.5
+);
+
+// Fontawesome
 @use '@fortawesome/fontawesome-free/scss/fontawesome';
 @use '@fortawesome/fontawesome-free/scss/brands';
 @use '@fortawesome/fontawesome-free/scss/solid';

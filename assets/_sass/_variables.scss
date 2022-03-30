@@ -1,0 +1,27 @@
+// Colours
+$branding-color: #4C972B;
+
+$branding-100: mix(white, $branding-color, 60%);
+$branding-200: mix(white, $branding-color, 40%);
+$branding-300: mix(white, $branding-color, 20%);
+$branding-400: mix(white, $branding-color, 10%);
+$branding-500: $branding-color;
+$branding-600: mix(black, $branding-color, 20%);
+$branding-700: mix(black, $branding-color, 30%);
+$branding-800: mix(black, $branding-color, 40%);
+$branding-900: mix(black, $branding-color, 60%);
+
+$branding-colors: (
+    '100': $branding-100,
+    '200': $branding-200,
+    '300': $branding-300,
+    '400': $branding-400,
+    '500': $branding-500,
+    '600': $branding-600,
+    '700': $branding-700,
+    '800': $branding-800,
+    '900': $branding-900
+);
+
+$primary: $branding-color;
+$secondary: #FFD200;

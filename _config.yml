@@ -22,9 +22,8 @@ sass:
   implementation: sass-embedded
   sass_dir: _sass/
   load_paths:
-    - _sass/
+    - assets/_sass/
     - node_modules/
-    - node_modules/cirrus-ui/
 
 copy_to_dest:
   - source: node_modules/@fortawesome/fontawesome-free/webfonts/.
