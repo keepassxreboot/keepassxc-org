@@ -6,6 +6,9 @@ stable:
     snap:
       version: 2.7.0
       suffix:
+    flatpak:
+      version: 2.6.6
+      suffix:
 
   mac:
     dmg:
@@ -20,6 +23,9 @@ stable:
       version: 2.7.0
       suffix:
     msi:
+      version: 2.7.0
+      suffix:
+    legacy:
       version: 2.7.0
       suffix:
 
