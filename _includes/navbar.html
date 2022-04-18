@@ -1,24 +1,16 @@
-<nav class="navbar navbar-default navbar-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ site.baseurl }}/"><img class="navbar-logo" src="{{ site.baseurl }}/images/keepassxc-logo.svg"> KeePassXC</a>
+<nav class="navbar navbar-expand-lg p-0 fw-bold position-relative">
+    {% include corner.html %}
+    <div class="container-fluid p-2">
+        <a class="navbar-brand mx-4" href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/img/keepassxc-logo.svg" style="height: 2em" alt=""> <span class="d-inline mx-2">KeePassXC</span></a>
+        <div class="collapse navbar-collapse mx-5">
+            <ul class="navbar-nav ms-auto pt-0">
+                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/project">The Project</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/screenshots">Screenshots</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/download">Download</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/docs">Docs / FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/team">The Team</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="navbar" aria-expanded="false">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ site.baseurl }}/project"><i class="fa fa-flag" aria-hidden="true"></i>The Project</a></li>
-          <li><a href="{{ site.baseurl }}/screenshots"><i class="fa fa-desktop" aria-hidden="true"></i>Screenshots</a></li>
-          <li><a href="{{ site.baseurl }}/download"><i class="fa fa-download" aria-hidden="true"></i>Download</a></li>
-          <li><a href="{{ site.baseurl }}/blog"><i class="fa fa-feed" aria-hidden="true"></i>Blog</a></li>
-          <li><a href="{{ site.baseurl }}/docs"><i class="fa fa-question-circle" aria-hidden="true"></i>Docs / FAQ</a></li>
-          <li><a href="{{ site.baseurl }}/team"><i class="fa fa-users" aria-hidden="true"></i>The Team</a></li>
-         </ul>
-         {% include corner.html %}
-      </div><!-- /.navbar-collapse -->
-  </div>
 </nav>

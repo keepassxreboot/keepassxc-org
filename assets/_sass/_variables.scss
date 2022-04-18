@@ -23,5 +23,56 @@ $branding-colors: (
     '900': $branding-900
 );
 
+$min-contrast-ratio: 3.5;
 $primary: $branding-color;
 $secondary: #FFD200;
+
+$navbar-dark-color: rgba(white, .8);
+$navbar-dark-hover-color: rgba(white, .9);
+
+
+// Fonts
+$font-family-base: "Nunito Sans";
+$font-size-base: 1.2rem;
+
+$font-weight-light:  300;
+$font-weight-normal: 400;
+$font-weight-bold: 800;
+$headings-font-weight: 900;
+$btn-font-weight: 700;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size,
+    7: $h6-font-size * .9,
+    8: $h6-font-size * .8,
+    9: $h6-font-size * .75,
+);
+
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 4,
+    7: $spacer * 6,
+    8: $spacer * 8,
+    9: $spacer * 10,
+);
+
+// Layout
+$input-btn-padding-x: 1.2rem;
+$navbar-nav-link-padding-x: 1rem;

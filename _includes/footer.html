@@ -1,12 +1,27 @@
-<footer class="footer">    
+<footer class="page-footer bg-primary fw-light mt-auto pt-6 pb-4 fs-7" role="contentinfo">
     <div class="container">
-        <ul class="list-inline pull-right">
-            <li><a href="{{ site.baseurl }}/team#contact">Contact / Legal Info</a>
-            <li><a href="{{ site.baseurl }}/donate">Donate</a>
-            <li><a href="{{ site.baseurl }}/privacy">Privacy Policy</a>
-            <li><a href="https://twitter.com/KeePassXC"><i class="fa-brands fa-twitter" aria-hidden="true"></i> Twitter</a>
+        <div class="row">
+            <div class="col-4">
+                <p>
+                    <img src="{{ site.baseurl }}/assets/img/keepassxc-logo.svg" style="height: 2em" class="align-middle me-2" alt="">
+                    <strong>KeePassXC Password Manager</strong>
+                </p>
+                <p>KeePassXC is released under the GPLv3. </p>
+                <div class="fs-8 mt-5">&copy; 2016–{{ site.time | date: "%Y" }} KeePassXC Team</div>
+            </div>
+            <div class="col-4"></div>
+            <ul class="list-unstyled col-2">
+                <li><a href="{{ site.baseurl }}/donate">Donate</a>
+                <li><a href="{{ site.baseurl }}/blog">Blog</a>
+                <li><a href="{{ site.baseurl }}/privacy">Privacy Policy</a>
+                <li><a href="{{ site.baseurl }}/team#contact">Contact</a>
+                <li><a href="{{ site.baseurl }}/team#legal-info">Legal Info / Impressum</a>
+            </ul>
+            <ul class="list-unstyled col-2">
+                <li><a href="{{ site.baseurl }}/privacy"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+                <li><a href="https://twitter.com/KeePassXC"><i class="fa-brands fa-twitter" aria-hidden="true"></i> Twitter</a>
             <li><a rel="me" href="https://fosstodon.org/@keepassxc"><i class="fa-brands fa-mastodon" aria-hidden="true"></i> Mastodon</a>
         </ul>
-        <p>&copy; 2016–{{ site.time | date: "%Y" }} KeePassXC Team
+        </div>
     </div>
 </footer>

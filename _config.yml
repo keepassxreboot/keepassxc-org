@@ -30,6 +30,8 @@ copy_to_dest:
     target: assets/webfonts/
   - source: node_modules/jquery/dist/.
     target: assets/js/
+  - source: node_modules/bootstrap/dist/js/.
+    target: assets/js/
 
 plugins:
   - jekyll-sitemap

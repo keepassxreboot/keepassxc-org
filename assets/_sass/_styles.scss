@@ -1,0 +1,23 @@
+.font-page-banner {
+    background-image: url("../img/screenshots/database_view.png");
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-position: right center;
+}
+
+.page-footer {
+    color: $light;
+
+    li {
+        margin-bottom: .5em;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+}

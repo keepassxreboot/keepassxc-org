@@ -2,79 +2,64 @@
 layout: default
 ---
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
+<main class="jumbotron jumbotron-fluid vh-70 d-flex align-items-center font-page-banner">
     <div class="container">
-        <div class="row">
-            <div id="logo" class="col-md-3 col-md-offset-1">
-                <img class="logo-graphic" src="{{ site.baseurl }}/images/keepassxc-logo.svg" alt="KeePassXC logo">
-            </div>
-            <div class="col-md-8">
-                
-                <h4>KeePassXC - Cross-Platform Password Manager</h4>
-                <p>Never forget a password again.<br/>
-                    Securely store passwords using industry standard encryption, quickly auto-type them into desktop applications, and use our browser extension to log into websites.
-                </p>
-                <p>
-                    <a id="download_button" class="btn btn-primary btn-lg" href="{{ site.baseurl }}/download" role="button">
-                        Download</a>
-                    <a class="btn btn-secondary btn-lg" href="{{ site.baseurl }}/project" role="button">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i> Learn More</a>
-                    <a class="btn btn-secondary btn-lg" href="{{ site.baseurl }}/donate" role="button">
-                        <i class="fa fa-credit-card" aria-hidden="true"></i> Donate</a>
-                </p>
-            </div>
+        <div class="mw-50">
+            <h1 class="mb-0">KeePassXC</h1>
+            <p class="mt-0 fw-bolder">Cross-platform Password Manager</p>
+            <p>Never forget a password again. Instead, securely store and auto-fill them into your applications and webservices.</p>
+            <p>No data collection, completely open source, works on all desktop platforms.</p>
+            <p class="mt-4">
+                <a id="download_button" class="btn btn-primary" href="{{ site.baseurl }}/download" role="button">
+                    Download</a>
+                <a class="btn" href="{{ site.baseurl }}/project" role="button">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i> Learn More</a>
+                <a class="btn" href="{{ site.baseurl }}/donate" role="button">
+                    <i class="fa fa-credit-card" aria-hidden="true"></i> Donate</a>
+            </p>
+        </div>
+    </div>
+</main>
+
+<div class="container mt-7">
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="fs-4"><i class="fa-solid fa-lock" aria-hidden="true"></i> Secure</h2>
+            <p>Your passwords remain encrypted at all times and no data is stored on remote servers, so you stay in full control of your data. No cloud, no ads, no subscriptions.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2 class="fs-4"><i class="fa-solid fa-laptop" aria-hidden="true"></i> Cross-platform</h2>
+            <p>Every feature is thoroughly tested on Windows, macOS, and Linux, so you can expect a seamless experience no matter which operating system you use.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2 class="fs-4"><i class="fa-regular fa-heart" aria-hidden="true"></i> Open Source</h2>
+            <p>The source code is completely open source under the GPLv3 license and openly available on <a href="https://github.com/keepassxreboot/keepassxc" >GitHub</a>. Feel free to inspect, share, and contribute!</p>
         </div>
     </div>
 </div>
 
+<hr class="my-7">
+
 <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h4><i class="fa fa-lock" aria-hidden="true"></i> Encrypted</h4>
-            <p>Complete database encryption using industry standard 256-bit AES.
-                Fully compatible with KeePass Password Safe formats.
-                Your password database works offline and requires no internet connection.
+    <h2 class="fs-4 pb-3">Recent Blog Posts</h2>
+    {% for post in site.posts limit:3 %}
+    {% if post.categories contains 'blog' %}
+    <article class="card my-3">
+        <div class="card-body">
+            <h3 class="card-title fs-5"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="fs-6">
+                {% if post.author %} By {{ post.author }}<br>{% endif %}
+                Posted on <em class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ post.date | date: "%b %-d, %Y - %R %Z" }}</em>
+                in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> {{ post.category }}</em>
             </p>
         </div>
-        <div class="col-md-4">
-            <h4><i class="fa fa-laptop" aria-hidden="true"></i> Cross-Platform</h4>
-            <p>Every feature looks, feels, works, and is tested on Windows, macOS, and Linux.
-                You can expect a seamless experience no matter which operating system you are using.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h4><i class="fa fa-heart-o" aria-hidden="true"></i> Open Source</h4>
-            <p>The full source code is published under the terms of the GNU General Public License and made 
-                available on <a href="https://github.com/keepassxreboot/keepassxc" >GitHub</a>. Use, inspect, change, and share at will; contributions by everyone are welcome.
-            </p>
-        </div>
-    </div>
+    </article>
+    {% endif %}
+    {% endfor %}
+</div>
 
-    <div class="row mt-7"><hr/></div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <h4><i class="fa-solid fa-rss" aria-hidden="true"></i> Recent Blog Posts</h4>
-            {% for post in site.posts limit:3 %}
-            {% if post.categories contains 'blog' %}
-            <article class="post" style="clear: left;">
-                <header>
-                <h4 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
-                    <p class="meta">
-                        {% if post.author %} By {{ post.author }}<br>{% endif %}
-                        Posted on <em class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ post.date | date: "%b %-d, %Y - %R %Z" }}</em>
-                        in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> {{ post.category }}</em></p>
-                </header>
-            </article>
-            {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-</div> <!-- /container -->
-
-<script src="{{ site.baseurl }}/js/os-detect.js"></script>
 <script>
     String.prototype.capitalize = function () {
         return this.charAt(0).toUpperCase() + this.slice(1);

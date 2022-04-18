@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,12 +15,15 @@
 
     <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 </head>
-<body>
-    <section class="wrapper">
+<body class="d-flex flex-column h-100">
+{% include navbar.html %}
+<div class="mb-7">
 {{ content }}
-    </section>
+</div>
+{% include footer.html %}
 
     <script src="{{ site.baseurl }}/assets/js/jquery.slim.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
     <script>
         $(function() {
             $(".eobfs").each(function() {

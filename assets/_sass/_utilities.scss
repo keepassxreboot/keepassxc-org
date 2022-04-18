@@ -1,0 +1,50 @@
+$utilities: map-merge(
+    $utilities, (
+        "font-weight": (
+            property: font-weight,
+            class: fw,
+            values: (
+                lighter: $font-weight-lighter,
+                extralight: 100,
+                light: $font-weight-light,
+                normal: $font-weight-normal,
+                semibold: 700,
+                bold: $font-weight-bold,
+                black: 900,
+                bolder: $font-weight-bolder,
+            )
+        ),
+        "max-width": (
+            property: max-width,
+            class: mw,
+            values: (
+                10: 10%,
+                20: 20%,
+                30: 30%,
+                40: 40%,
+                50: 50%,
+                60: 60%,
+                70: 70%,
+                80: 80%,
+                90: 90%,
+                100: 100%
+            )
+        ),
+        "viewport-height": (
+            property: height,
+            class: vh,
+            values: (
+                10: 10vh,
+                20: 20vh,
+                30: 30vh,
+                40: 40vh,
+                50: 50vh,
+                60: 60vh,
+                70: 70vh,
+                80: 80vh,
+                90: 90vh,
+                100: 100vh
+            )
+        )
+    )
+);
