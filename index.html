@@ -60,19 +60,19 @@ layout: default
     {% endfor %}
 </div>
 
-<script>
-    String.prototype.capitalize = function () {
-        return this.charAt(0).toUpperCase() + this.slice(1);
-    };
+<!--<script>-->
+<!--    String.prototype.capitalize = function () {-->
+<!--        return this.charAt(0).toUpperCase() + this.slice(1);-->
+<!--    };-->
 
-    $(function () {
-        var osName = OSDetect();
+<!--    $(function () {-->
+<!--        var osName = OSDetect();-->
 
-        if (osName !== "unknown") {
-            var button = $("#download_button");
-            button.text(button.text().replace("Download", "Download for " + osName.capitalize()));
-            button.html('<i class="fa-brands fa-' + osName + '" aria-hidden="true"></i> ' + button.html());
-            button.attr("href", button.attr("href") + "#" + osName);
-        }
-    });
-</script>
+<!--        if (osName !== "unknown") {-->
+<!--            var button = $("#download_button");-->
+<!--            button.text(button.text().replace("Download", "Download for " + osName.capitalize()));-->
+<!--            button.html('<i class="fa-brands fa-' + osName + '" aria-hidden="true"></i> ' + button.html());-->
+<!--            button.attr("href", button.attr("href") + "#" + osName);-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->

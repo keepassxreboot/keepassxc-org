@@ -17,7 +17,7 @@
 </head>
 <body class="d-flex flex-column h-100">
 {% include navbar.html %}
-<div class="mb-7">
+<div class="content mb-7">
 {{ content }}
 </div>
 {% include footer.html %}
@@ -25,6 +25,15 @@
     <script src="{{ site.baseurl }}/assets/js/jquery.slim.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
     <script>
+        // Navbar scroll effect
+        $(function() {
+            const nav = $(".navbar.fixed-top");
+            nav.toggleClass('scrolled', $(this).scrollTop() > nav.height());
+            $(document).scroll(function() {
+                nav.toggleClass('scrolled', $(this).scrollTop() > nav.height());
+            });
+        });
+
         $(function() {
             $(".eobfs").each(function() {
                 $(this).text($(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.'));
@@ -35,6 +44,7 @@
             });
         });
     </script>
+
 
     <!-- Matomo -->
     <script>
