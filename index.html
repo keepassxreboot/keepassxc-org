@@ -2,47 +2,47 @@
 layout: default
 ---
 
-<main class="jumbotron jumbotron-fluid vh-70 d-flex align-items-center font-page-banner">
-    <div class="container">
-        <div class="mw-50">
-            <h1 class="mb-0">KeePassXC</h1>
-            <p class="mt-0 fw-bolder">Cross-platform Password Manager</p>
-            <p>Never forget a password again. Instead, securely store and auto-fill them into your applications and webservices.</p>
-            <p>No data collection, completely open source, works on all desktop platforms.</p>
-            <p class="mt-4">
-                <a id="download_button" class="btn btn-primary" href="{{ site.baseurl }}/download" role="button">
-                    Download</a>
-                <a class="btn" href="{{ site.baseurl }}/project" role="button">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i> Learn More</a>
-                <a class="btn" href="{{ site.baseurl }}/donate" role="button">
-                    <i class="fa fa-credit-card" aria-hidden="true"></i> Donate</a>
-            </p>
+<div class="font-page-hero pb-7">
+    <div class="jumbotron jumbotron-fluid vh-70 d-flex align-items-center font-page-banner">
+        <div class="container">
+            <div class="mw-50 pb-5">
+                <h1 class="mb-0">KeePassXC</h1>
+                <p class="mt-0 fw-bolder">Cross-platform Password Manager</p>
+                <p>Never forget a password again. Instead, securely store and auto-fill them into your applications and webservices.</p>
+                <p>No data collection, completely open source, works on all desktop platforms.</p>
+                <p class="mt-4">
+                    <a id="download_button" class="btn btn-primary" href="{{ site.baseurl }}/download" role="button">
+                        Download</a>
+                    <a class="btn" href="{{ site.baseurl }}/project" role="button">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i> Learn More</a>
+                    <a class="btn" href="{{ site.baseurl }}/donate" role="button">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i> Donate</a>
+                </p>
+            </div>
         </div>
     </div>
-</main>
 
-<div class="container mt-7">
-    <div class="row">
-        <div class="col-md-4">
-            <h2 class="fs-4"><i class="fa-solid fa-lock" aria-hidden="true"></i> Secure</h2>
-            <p>Your passwords remain encrypted at all times and no data is stored on remote servers, so you stay in full control of your data. No cloud, no ads, no subscriptions.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2 class="fs-4"><i class="fa-solid fa-laptop" aria-hidden="true"></i> Cross-platform</h2>
-            <p>Every feature is thoroughly tested on Windows, macOS, and Linux, so you can expect a seamless experience no matter which operating system you use.
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2 class="fs-4"><i class="fa-regular fa-heart" aria-hidden="true"></i> Open Source</h2>
-            <p>The source code is completely open source under the GPLv3 license and openly available on <a href="https://github.com/keepassxreboot/keepassxc" >GitHub</a>. Feel free to inspect, share, and contribute!</p>
+    <div class="container mt-7">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="fs-4"><i class="fa-solid fa-lock" aria-hidden="true"></i> Secure</h2>
+                <p>Your passwords remain encrypted at all times and no data is stored on remote servers, so you stay in full control of your data. No cloud, no ads, no subscriptions.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fs-4"><i class="fa-solid fa-laptop" aria-hidden="true"></i> Cross-platform</h2>
+                <p>Every feature is thoroughly tested on Windows, macOS, and Linux, so you can expect a seamless experience no matter which operating system you use.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="fs-4"><i class="fa-regular fa-heart" aria-hidden="true"></i> Open Source</h2>
+                <p>The source code is completely open source under the GPLv3 license and openly available on <a href="https://github.com/keepassxreboot/keepassxc" >GitHub</a>. Feel free to inspect, share, and contribute!</p>
+            </div>
         </div>
     </div>
 </div>
 
-<hr class="my-7">
-
-<div class="container">
+<div class="container mt-7">
     <h2 class="fs-4 pb-3">Recent Blog Posts</h2>
     {% for post in site.posts limit:3 %}
     {% if post.categories contains 'blog' %}
