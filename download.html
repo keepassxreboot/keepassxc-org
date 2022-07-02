@@ -86,6 +86,24 @@ permalink: download
                     </ul>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="heading">
+                        <span class="label label-success">v{{ site.data.version.stable.linux.flatpak.version }}{{ site.data.version.stable.linux.flatpak.suffix }}</span>
+                        <h5><i class="fa-brands fa-linux" aria-hidden="true"></i> Flatpak Package</h5>
+                    </div>
+                    <ul class="download-links">
+                        <li class="links">
+                            <a href="https://www.flathub.org/apps/details/org.keepassxc.KeePassXC">
+                                Flatpak Package
+                            </a>
+                        </li>
+                        <li>
+                            <code>flatpak install --user flathub org.keepassxc.KeePassXC</code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="dist-packages">
@@ -202,7 +220,7 @@ permalink: download
                 <ul class="download-links">
                     <li class="links">
                         <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.mac.dmg.version }}/KeePassXC-{{ site.data.version.stable.mac.dmg.version }}{{ site.data.version.stable.mac.dmg.suffix }}-x86_64.dmg">
-                            Binary bundle (macOS 10.13+)
+                            Binary bundle (macOS 10.15+)
                         </a>
                     </li>
                     <li class="links sig">
@@ -265,7 +283,7 @@ permalink: download
             <div class="col-md-6">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}</span>
-                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Installer (64-bit)</h5>
+                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Installer (64-bit, Windows 10/11)</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
@@ -280,26 +298,34 @@ permalink: download
                         <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.msi.version }}/KeePassXC-{{ site.data.version.stable.windows.msi.version }}{{ site.data.version.stable.windows.msi.suffix }}-Win64.msi.DIGEST">
                             SHA-256 digest</a>
                     </li>
+                    <br/>
+                    <li>
+                        <code>Requires <a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022">MSVC Support Libraries</a></code>
+                    </li>
                 </ul>
             </div>
 
             <div class="col-md-6">
                 <div class="heading">
                     <span class="label label-success">v{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}</span>
-                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Portable (64-bit)</h5>
+                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Portable (64-bit, Windows 10/11)</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64-Portable.zip">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64.zip">
                             Portable ZIP archive</a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64-Portable.zip.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64.zip.sig">
                             PGP signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64-Portable.zip.DIGEST">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.portable.version }}/KeePassXC-{{ site.data.version.stable.windows.portable.version }}{{ site.data.version.stable.windows.portable.suffix }}-Win64.zip.DIGEST">
                             SHA-256 digest</a>
+                    </li>
+                    <br/>
+                    <li>
+                        <code>Requires <a href="https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170#visual-studio-2015-2017-2019-and-2022">MSVC Support Libraries</a></code>
                     </li>
                 </ul>
             </div>
@@ -308,20 +334,20 @@ permalink: download
         <div class="row official-packages">
             <div class="col-md-6">
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}</span>
-                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Installer (32-bit)</h5>
+                    <span class="label label-success">v{{ site.data.version.stable.windows.legacy.version }}{{ site.data.version.stable.windows.legacy.suffix }}</span>
+                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Legacy Installer (64-bit, Windows 7/8/8.1)</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.legacy.version }}/KeePassXC-{{ site.data.version.stable.windows.legacy.version }}{{ site.data.version.stable.windows.legacy.suffix }}-Win64-LegacyWindows.msi">
                             MSI installer</a>
                     </li>
                     <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.sig">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.legacy.version }}/KeePassXC-{{ site.data.version.stable.windows.legacy.version }}{{ site.data.version.stable.windows.legacy.suffix }}-Win64-LegacyWindows.msi.sig">
                             PGP signature</a>
                     </li>
                     <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.msi.version }}/KeePassXC-{{ site.data.version.stable.windows32.msi.version }}{{ site.data.version.stable.windows32.msi.suffix }}-Win32.msi.DIGEST">
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows.legacy.version }}/KeePassXC-{{ site.data.version.stable.windows.legacy.version }}{{ site.data.version.stable.windows.legacy.suffix }}-Win64-LegacyWindows.msi.DIGEST">
                             SHA-256 digest</a>
                     </li>
                 </ul>
@@ -329,21 +355,16 @@ permalink: download
 
             <div class="col-md-6">
                 <div class="heading">
-                    <span class="label label-success">v{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}</span>
-                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Portable (32-bit)</h5>
+                    <span class="label label-success">deprecated</span>
+                    <h5><i class="fa-brands fa-windows" aria-hidden="true"></i> Legacy 32-bit Downloads</h5>
                 </div>
                 <ul class="download-links">
                     <li class="links">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable.version }}/KeePassXC-{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}-Win32-Portable.zip">
-                            Portable ZIP archive</a>
+                        <a href="https://github.com/keepassxreboot/keepassxc/releases/tag/2.6.6">
+                            GitHub Releases</a>
                     </li>
-                    <li class="links sig">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable.version }}/KeePassXC-{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}-Win32-Portable.zip.sig">
-                            PGP signature</a>
-                    </li>
-                    <li class="links digest">
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases/download/{{ site.data.version.stable.windows32.portable.version }}/KeePassXC-{{ site.data.version.stable.windows32.portable.version }}{{ site.data.version.stable.windows32.portable.suffix }}-Win32-Portable.zip.DIGEST">
-                            SHA-256 digest</a>
+                    <li>
+                        <code>32-bit Windows is no longer supported after v2.6.6</code>
                     </li>
                 </ul>
             </div>
