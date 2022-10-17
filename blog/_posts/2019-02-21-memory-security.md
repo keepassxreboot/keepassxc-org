@@ -17,7 +17,7 @@ However, unlike KeePass, KeePassXC is a cross-platform application written in C+
 
 <!--more-->
 
-Please Note: memory attacks are generally not possible unless an attacker has physical access to your machine or a malicious application is running. If your computer is compromised in this way, then there is very little a program can do to protect its data. Your best defense against this threat is to have an up-to-date virus scanner and keeping your computer physically secure. Nonetheless, here are the techniques KeePassXC uses to protect your data:
+Please Note: memory attacks are generally not possible unless an attacker has (physical) access to your machine or a malicious application is running. If your computer is compromised in this way, then there is very little a program can do to protect its data. Your best defense against this threat is to follow general digital hygiene, keeping your computer physically secure, and (maybe) having an up-to-date virus scanner. Nonetheless, here are the techniques KeePassXC uses to protect your data:
 
 ##### Windows Memory Protection
 KeePassXC uses modern Windows memory security techniques available to all processes. None of the other password managers featured in the ISE report have implemented this security. If they had, the ISE attacks would have failed outright! We specifically disable reading the memory of KeePassXC. (Note: it is not possible to prevent an administrator from accessing memory) We also disable "core dumps" which can expose secrets if the application crashes. Our memory protections can be readily tested by using [Process Hacker](https://processhacker.sourceforge.io/) as shown in the following screenshots comparing KeePassXC to KeePass:
@@ -26,7 +26,7 @@ KeePassXC uses modern Windows memory security techniques available to all proces
 
 ![Process Hacker KeePass]({{ site.baseurl }}/blog/images/process_hacker_keepass.png)
 
-KeePassXC currently does not encrypt data in memory nor explicitly clear sensitive data from deleted data structures. This is largely a limitation of using Qt which does not provide a manner to do this in their existing framework. KeePassXC also cannot prevent data extraction from a hibernation file which stores your computer's memory to disk when going to sleep.
+KeePassXC currently does not encrypt data in memory, but we do explicitly clear sensitive data from deleted data structures (so far as the operating system's memory management allows). KeePassXC also cannot prevent data extraction from a hibernation file which stores your computer's memory to disk when going to sleep.
 
 ##### Linux Memory Protection
 KeePassXC prevents the use of ptrace and generation of core dumps. This prevents anyone, except the root user, from accessing the memory of the process. Due to the significant variety in different Linux distributions, we encourage you to ensure their kernel is compiled and run with sufficient protections to process memory.
@@ -39,7 +39,7 @@ MacOS has similar protections to Linux: disabling the use of ptrace and core dum
 #### How can we be more secure?
 We are currently exploring these methods to enhance memory security:
 
-* Clear sensitive data structures after use
+* Use sandboxing on platforms where supported
 * Investigate Trusted Platform Module (TPM) to encrypt/decrypt sensitive memory
 * Investigate Intel SGX (encrypted memory enclaves); only available for Windows and Linux (unofficial)
 
