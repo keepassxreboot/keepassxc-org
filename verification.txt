@@ -1,0 +1,5 @@
+---
+layout: none
+permalink: .well-known/org.flathub.VerifiedApps.txt
+---
+1507a631-8346-4a63-8b04-f956e3ad1c72
