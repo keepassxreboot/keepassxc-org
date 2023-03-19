@@ -1,0 +1,13 @@
+// Global declarations
+@import 'variables';
+@import 'fonts';
+
+// Default variables and mixins
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
+
+// Mixin overrides
+@import "theme/navbar-mixins";
+
+// UIkit
+@import "uikit/src/scss/uikit-theme.scss";

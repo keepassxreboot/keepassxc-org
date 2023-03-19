@@ -1,0 +1,50 @@
+// Fonts
+$global-font-family: 'Nunito Sans', 'Open Sans', -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+$global-font-size: 18px;
+$base-body-font-weight: 400;
+$base-strong-font-weight: 800;
+$base-heading-font-weight: 400;
+
+// GLobal Colours
+$global-color: #333;
+$global-emphasis-color: #333;
+$global-inverse-color: #fff;
+$inverse-global-emphasis-color: #eee;
+$global-muted-color: #888;
+$branding-color: #4C972B;
+$secondary-color: #FFD200;
+
+$global-link-color: $branding-color;
+$global-link-hover-color: #0f6ecd;
+
+$global-background: #fff;
+$global-muted-background: #f8f8f8;
+$global-primary-background: $branding-color;
+$global-secondary-background: #222;
+
+$global-success-background: #32d296;
+$global-warning-background: #faa05a;
+$global-danger-background: #f0506e;
+
+// Navigation
+$navbar-nav-item-color: $global-muted-color;
+$navbar-nav-item-hover-color: $global-color;
+$navbar-nav-item-active-color: $global-color;
+
+$inverse-navbar-nav-item-color: rgba(#fff, .8);
+$inverse-navbar-nav-item-hover-color: #fff;
+$inverse-navbar-nav-item-active-color: #fff;
+
+$navbar-nav-item-padding-horizontal: 18px;
+$navbar-gap: 0;
+$navbar-gap-m: 0;
+$navbar-nav-gap-m: 0;
+
+$navbar-height: 6rem;
+$navbar-height-sticky: 4rem;
+$navbar-font-size: 1.2rem;
+$navbar-font-size-sticky: 1rem;
+$navbar-font-size-logo: 1.7rem;
+$navbar-font-size-logo-sticky: 1.2rem;
+$navbar-logo-size: $navbar-height;
+$navbar-logo-size-sticky: $navbar-height - 1;

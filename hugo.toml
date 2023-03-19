@@ -1,0 +1,12 @@
+title = 'KeePassXC Password Manager'
+baseURL = 'http://keepassxc.org'
+languageCode = 'en-us'
+
+[module]
+  [[module.mounts]]
+  source = "assets"
+  target = "assets"
+
+  [[module.mounts]]
+  source = "node_modules/"
+  target = "assets/node_modules"

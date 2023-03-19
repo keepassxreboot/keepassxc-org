@@ -1,13 +1,12 @@
 # keepassxc.org
 Website sources for https://keepassxc.org.
 
-This website use **Jekyll**.
+This website use **Hugo**.
 
 ## Usage
 
 - Install NPM dependencies: `npm install`
-- Install Jekyll dependencies from Gemfile: `bundle install`
-- Run Jekyll dev server: `jekyll serve`
+- Run Hugo dev server: `hugo serve`
 
 ### Contributing
 

@@ -1,9 +1,7 @@
 _site/
-.jekyll-metadata
-.jekyll-cache
+resources/
 .sass-cache
 node_modules/
-*.gem
 .bundle/
 .ruby-version
 .ruby-gemset

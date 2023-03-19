@@ -1,0 +1,83 @@
+@mixin hook-navbar() {
+    height: $navbar-height;
+    padding: .6rem 4rem .6rem 2rem;
+    position: relative;
+
+    .github-corner svg {
+        color: white;
+        fill: $global-color;
+        height: $navbar-height * .85;
+        width: $navbar-height * .85;
+
+        &:hover {
+            color: rgba(white, .9);
+            fill: lighten($global-color, 5);
+        }
+    }
+}
+
+@mixin hook-navbar-item() {
+    height: $navbar-logo-size;
+    min-height: auto;
+
+    &.uk-logo {
+        color: $global-color;
+        font-size: $navbar-font-size-logo;
+        margin-left: $navbar-logo-size + 1.5;
+
+        img, svg {
+            margin: .75rem 1rem .75rem 2rem;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-height: $navbar-logo-size;
+        }
+    }
+}
+
+@mixin hook-navbar-nav-item() {
+    min-height: auto;
+    font-size: $navbar-font-size;
+    font-weight: 600;
+}
+
+@mixin hook-inverse-navbar-nav-item-hover {
+    background-color: lighten($global-primary-background, 3);
+}
+
+@mixin hook-inverse-navbar-nav-item-active() {
+    border-bottom: 5px solid $inverse-navbar-nav-item-color;
+}
+
+@mixin hook-navbar-sticky() {
+    background-color: $global-primary-background !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    height: $navbar-height-sticky;
+    transition: 400ms linear, font-size 100ms linear;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .github-corner svg {
+        color: $inverse-navbar-nav-item-color;
+        fill: darken($global-primary-background, 23);
+        height: $navbar-height-sticky;
+        width: $navbar-height-sticky;
+        transition: 400ms linear, font-size 100ms linear;
+
+        &:hover, &:focus {
+            color: $inverse-navbar-nav-item-hover-color;
+            fill: darken($global-primary-background, 18);
+        }
+    }
+
+    li > a {
+        min-height: $navbar-height-sticky;
+        font-size: $navbar-font-size-sticky;
+    }
+
+    .uk-navbar-item.uk-logo {
+        height:  $navbar-height-sticky;
+        font-size: $navbar-font-size-logo-sticky;
+    }
+}
