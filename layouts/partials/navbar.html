@@ -1,16 +1,11 @@
-{{/*<div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="large">*/}}
-{{/*    <button class="menu-icon" type="button" data-toggle="main-nav"></button>*/}}
-{{/*    <div class="title-bar-title">Menu</div>*/}}
-{{/*</div>*/}}
-
 <div id="offcanvas-navigation" uk-offcanvas="flip: true">
     <div class="uk-offcanvas-bar">
         <ul class="uk-nav uk-nav-default"></ul>
     </div>
 </div>
 
-<div uk-sticky="start: 1; animation: uk-animation-fade; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-light; cls-inactive: uk-navbar-transparent">
-    <nav class="uk-navbar-container" id="main-nav" uk-navbar>
+<div uk-sticky="start: 10; animation: uk-animation-fade; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-light; cls-inactive: uk-navbar-transparent">
+    <nav class="uk-navbar uk-navbar-container" id="main-nav" uk-navbar>
         <div class="uk-navbar-left">
             <a class="uk-navbar-item uk-logo" href="{{ .Site.BaseURL }}/">
                 <img src="{{ .Site.BaseURL }}/assets/img/keepassxc-logo.svg" alt="">

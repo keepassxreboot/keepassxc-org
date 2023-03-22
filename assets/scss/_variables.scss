@@ -1,30 +1,46 @@
 // Fonts
-$global-font-family: 'Nunito Sans', 'Open Sans', -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+$webfont-base-path: "../fonts";
+$fa-font-path: "#{$webfont-base-path}/fontawesome";
+$global-font-family: 'Nunito Sans', -apple-system, "Segoe UI", Roboto, 'Open Sans', "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 $global-font-size: 18px;
 $base-body-font-weight: 400;
 $base-strong-font-weight: 800;
 $base-heading-font-weight: 400;
 
-// GLobal Colours
+// Global Colours
 $global-color: #333;
 $global-emphasis-color: #333;
 $global-inverse-color: #fff;
 $inverse-global-emphasis-color: #eee;
 $global-muted-color: #888;
-$branding-color: #4C972B;
-$secondary-color: #FFD200;
+$branding-color: #4c972B;
+$secondary-color: #ffd200;
 
 $global-link-color: $branding-color;
-$global-link-hover-color: #0f6ecd;
+$global-link-hover-color: lighten($branding-color, 10%);
 
 $global-background: #fff;
 $global-muted-background: #f8f8f8;
 $global-primary-background: $branding-color;
-$global-secondary-background: #222;
+$global-primary-background-gradient: #80c430;
+$global-secondary-background: #f4c153;
+$global-secondary-background-gradient: #ffd965;
 
 $global-success-background: #32d296;
 $global-warning-background: #faa05a;
 $global-danger-background: #f0506e;
+
+// Buttons
+$button-default-border: lighten($global-muted-color, 30%);
+$button-default-color: $global-color;
+$button-default-hover-color: lighten($global-color, 25%);
+$button-default-active-color:  $global-color;
+$button-primary-color: $global-inverse-color;
+$button-primary-hover-color: lighten($global-inverse-color, 10%);
+$button-primary-active-color: darken($global-inverse-color, 5%);
+$button-secondary-color: $global-color;
+$button-secondary-hover-color: lighten($global-color, 10%);
+$button-secondary-active-color: darken($global-color, 5%);
 
 // Navigation
 $navbar-nav-item-color: $global-muted-color;

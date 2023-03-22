@@ -29,11 +29,8 @@
     </div>
 </footer>
 
-{{ $jquery := resources.Get "node_modules/jquery/dist/jquery.min.js" }}
-{{ $uikit := resources.Get "node_modules/uikit/dist/js/uikit.min.js" }}
-{{ $uikitIcons := resources.Get "node_modules/uikit/dist/js/uikit-icons.min.js" }}
-{{ $js := slice $jquery $uikit $uikitIcons | resources.Concat "assets/js/main.min.js" | fingerprint }}
-<script src="{{ $js.RelPermalink }}"></script>
+{{ $jquery := resources.Get "node_modules/jquery/dist/jquery.min.js" | fingerprint }}
+<script src="{{ $jquery.RelPermalink }}"></script>
 {{/*<script>*/}}
 {{/*    // Navbar scroll effect*/}}
 {{/*    $(() => {*/}}

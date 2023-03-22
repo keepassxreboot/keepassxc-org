@@ -1,0 +1,83 @@
+@mixin hook-button() {
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+@mixin hook-button-hover() {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+}
+
+@mixin hook-button-active() {
+    opacity: .9;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .15);
+}
+
+// Legacy compatibility
+:root {
+    --primary-gradient-1: #{$global-primary-background};
+    --primary-gradient-2: #{darken($global-primary-background-gradient, 5)};
+    --secondary-gradient-1: #{$global-secondary-background};
+    --secondary-gradient-2: #{darken($global-secondary-background-gradient, 5)};
+}
+
+// Chrome and Edge can animate these
+@property --primary-gradient-1 {
+    syntax: '<color>';
+    initial-value: $global-primary-background;
+    inherits: false;
+}
+
+@property --primary-gradient-2 {
+    syntax: '<color>';
+    initial-value: darken($global-primary-background-gradient, 5);
+    inherits: false;
+}
+
+@property --secondary-gradient-1 {
+    syntax: '<color>';
+    initial-value: $global-secondary-background;
+    inherits: false;
+}
+
+@property --secondary-gradient-2 {
+    syntax: '<color>';
+    initial-value: darken($global-secondary-background-gradient, 5);
+    inherits: false;
+}
+
+@mixin hook-button-primary() {
+    border: 1px solid lighten($global-primary-background, 15%);
+    background: linear-gradient(180deg, var(--primary-gradient-1) 0%, var(--primary-gradient-2) 100%);
+    transition: --primary-gradient-1 300ms ease-in-out, --primary-gradient-2 300ms ease-in-out;
+}
+
+@mixin hook-button-primary-hover() {
+    --primary-gradient-1: #{lighten($global-primary-background, 5)};
+    --primary-gradient-2: #{lighten($global-primary-background-gradient, 5)};
+}
+
+@mixin hook-button-secondary() {
+    border: 1px solid lighten($global-secondary-background, 15%);
+    background: linear-gradient(180deg, var(--secondary-gradient-1) 0%, var(--secondary-gradient-2) 100%);
+    transition: --secondary-gradient-1 300ms ease-in-out, --secondary-gradient-2 300ms ease-in-out;
+}
+
+@mixin hook-button-secondary-hover() {
+    --secondary-gradient-1: #{lighten($global-secondary-background, 5)};
+    --secondary-gradient-2: #{lighten($global-secondary-background-gradient, 7)};
+}
+
+@mixin hook-button-default() {
+    color: $button-default-color;
+    border: $button-border-width solid $button-default-border;
+    transition: color 300ms, border-color 300ms;
+}
+
+@mixin hook-button-default-hover() {
+    color: $button-default-hover-color;
+    border-color: $button-default-hover-border;
+}
+
+@mixin hook-button-default-active(){
+    border-color: $button-default-active-border;
+}

@@ -10,3 +10,11 @@ languageCode = 'en-us'
   [[module.mounts]]
   source = "node_modules/"
   target = "assets/node_modules"
+
+  [[module.mounts]]
+  source = "static"
+  target = "static"
+
+  [[module.mounts]]
+  source = "node_modules/@fortawesome/fontawesome-free/webfonts"
+  target = "static/assets/fonts/fontawesome"

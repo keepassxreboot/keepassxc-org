@@ -14,14 +14,18 @@
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Page.Title }} – KeePassXC{{ end }}</title>
 
-    {{ $template := resources.Get "scss/style.scss" }}
-    {{ $style := $template | resources.ExecuteAsTemplate "assets/css/style.css" .
+    {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "assets/css/style.css" .
         | resources.ToCSS (dict
             "outputStyle" "compressed"
             "enableSourceMap" (not hugo.IsProduction)
             "includePaths" (slice "node_modules"))
         | fingerprint }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+
+    {{ $uikit := resources.Get "node_modules/uikit/dist/js/uikit.min.js" }}
+    {{ $uikitIcons := resources.Get "node_modules/uikit/dist/js/uikit-icons.min.js" }}
+    {{ $js := slice $uikit $uikitIcons | resources.Concat "assets/js/main.min.js" | fingerprint }}
+    <script src="{{ $js.RelPermalink }}"></script>
 </head>
 <body>
 {{ partial "navbar.html" . }}

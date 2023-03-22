@@ -7,6 +7,8 @@
 @import "uikit/src/scss/mixins-theme.scss";
 
 // Mixin overrides
+@import "theme/fontawesome";
+@import "theme/button-mixins";
 @import "theme/navbar-mixins";
 
 // UIkit
