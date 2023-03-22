@@ -7,15 +7,15 @@
                     <img src="{{ .Site.BaseURL }}/assets/img/keepassxc-logo.svg" class="footer-logo uk-text-middle" alt="">
                     <strong><a href="{{ .Site.BaseURL }}/">KeePassXC</a> Password Manager</strong>
                 </div>
-                <div class="copyright">
+                <div class="copyright uk-margin-small-bottom">
                     {{- block "footer-copyright" . }}
                     <div class="uk-margin-small-bottom uk-text-muted">KeePassXC is released under the GPLv3.</div>
                     <div class="uk-text-muted">&copy; 2016 &ndash; {{ dateFormat "2006" now }} KeePassXC Team</div>
                     {{- end }}
                 </div>
             </div>
-            <div class="uk-width-2-5">
-                <nav class="uk-grid uk-grid-large" uk-grid aria-label="Footer">
+            <div class="uk-width-2-5@s">
+                <nav class="uk-grid uk-child-width-expand uk-grid-large" uk-grid aria-label="Footer">
                     {{- block "footer-nav" . }}
                     <ul class="uk-list">
                         <li><a href="{{ .Site.BaseURL }}/donate">Donate</a>

@@ -1,0 +1,4 @@
+@mixin hook-offcanvas-bar {
+    background: linear-gradient(rgba(darken($global-primary-background, 12%), .99) 0%, rgba(darken($global-primary-background-gradient, 10%), .87) 100%);
+    backdrop-filter: blur(6px) ;
+}

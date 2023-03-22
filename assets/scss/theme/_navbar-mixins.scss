@@ -1,6 +1,8 @@
 @mixin hook-navbar() {
-    height: $navbar-height;
-    padding: .6rem 4rem .6rem 2rem;
+    @media (min-width: $breakpoint-medium) {
+        height: $navbar-height;
+        padding: .6rem 4rem .6rem 2rem;
+    }
     position: relative;
 
     .github-corner svg {
@@ -18,7 +20,9 @@
 }
 
 @mixin hook-navbar-item() {
-    height: $navbar-logo-size;
+    @media (min-width: $breakpoint-medium) {
+        height: $navbar-logo-size;
+    }
     min-height: auto;
 
     &.uk-logo {
@@ -32,9 +36,36 @@
             position: absolute;
             top: 0;
             left: 0;
-            max-height: $navbar-logo-size;
+            height: $navbar-logo-size;
             filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .2));
         }
+
+        @media (max-width: $breakpoint-medium) {
+            margin: 0;
+            padding: $container-padding-horizontal-s;
+            text-align: center;
+            font-size: 1.3rem;
+
+            img, svg {
+                margin: 0;
+                margin-right: .75rem;
+                height: $navbar-logo-size * .5;
+                position: static;
+            }
+        }
+
+        @media (max-width: $breakpoint-small) {
+            padding: $container-padding-horizontal;
+        }
+    }
+}
+
+@mixin hook-navbar-toggle() {
+    @media (max-width: $breakpoint-medium) {
+        padding: $container-padding-horizontal-s;
+    }
+    @media (max-width: $breakpoint-small) {
+        padding: $container-padding-horizontal;
     }
 }
 

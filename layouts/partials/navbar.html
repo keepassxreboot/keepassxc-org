@@ -10,7 +10,8 @@
 {{- end }}
 
 <div id="offcanvas-navigation" uk-offcanvas="flip: true">
-    <div class="uk-offcanvas-bar">
+    <div class="uk-offcanvas-bar uk-text-large uk-padding-large">
+        <button class="uk-offcanvas-close uk-padding-large" type="button" uk-close></button>
         <ul class="uk-nav uk-nav-default">
             {{- partial "nav-links.html" . }}
         </ul>

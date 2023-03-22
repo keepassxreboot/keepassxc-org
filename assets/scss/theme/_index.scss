@@ -1,3 +1,10 @@
+@media (max-width: $breakpoint-medium) {
+    .index-page-hero, main > .uk-section:first-child {
+        margin: 0 !important;
+        padding-top: 1rem !important;
+    }
+}
+
 @media (min-width: $breakpoint-large) {
     .index-page-hero {
         background-image: url("../img/frontpage-banner.png");
@@ -5,6 +12,5 @@
         background-size: 45%;
         background-position: right 2% center;
         min-height: clamp(0px, 36vw, 100vh);
-        //filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, .1));
     }
 }
