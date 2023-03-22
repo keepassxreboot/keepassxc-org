@@ -8,6 +8,7 @@
         fill: $global-color;
         height: $navbar-height * .85;
         width: $navbar-height * .85;
+        transition: color 300ms ease-in-out, fill 300ms ease-in-out;
 
         &:hover {
             color: rgba(white, .9);
