@@ -1,5 +1,5 @@
 title = 'KeePassXC Password Manager'
-baseURL = 'http://keepassxc.org'
+baseURL = 'https://keepassxc.org'
 languageCode = 'en-us'
 
 [module]

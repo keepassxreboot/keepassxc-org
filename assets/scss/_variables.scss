@@ -13,7 +13,7 @@ $global-emphasis-color: #333;
 $global-inverse-color: #fff;
 $inverse-global-emphasis-color: #eee;
 $global-muted-color: #888;
-$branding-color: #4c972B;
+$branding-color: #4c972b;
 $secondary-color: #ffd200;
 
 $global-link-color: $branding-color;
@@ -43,7 +43,7 @@ $button-secondary-hover-color: lighten($global-color, 10%);
 $button-secondary-active-color: darken($global-color, 5%);
 
 // Navigation
-$navbar-nav-item-color: $global-muted-color;
+$navbar-nav-item-color: darken($global-muted-color, 10%);
 $navbar-nav-item-hover-color: $global-color;
 $navbar-nav-item-active-color: $global-color;
 

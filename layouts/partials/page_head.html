@@ -22,10 +22,10 @@
         | fingerprint }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 
-    {{ $uikit := resources.Get "node_modules/uikit/dist/js/uikit.min.js" }}
+    {{ $uikitMain := resources.Get "node_modules/uikit/dist/js/uikit.min.js" }}
     {{ $uikitIcons := resources.Get "node_modules/uikit/dist/js/uikit-icons.min.js" }}
-    {{ $js := slice $uikit $uikitIcons | resources.Concat "assets/js/main.min.js" | fingerprint }}
-    <script src="{{ $js.RelPermalink }}"></script>
+    {{ $uikit := slice $uikitMain $uikitIcons | resources.Concat "assets/js/uikit.min.js" | fingerprint }}
+    <script src="{{ $uikit.RelPermalink }}"></script>
 </head>
 <body>
 {{ partial "navbar.html" . }}

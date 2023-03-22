@@ -1,80 +1,68 @@
 {{ partial "page_head.html" . }}
 
-<main class="uk-section">
-    <div class="uk-container">
-        <div class="container">
-            <div>
-                <h1>KeePassXC</h1>
-                <p >Cross-platform Password Manager</p>
-                <p>Never forget a password again. Instead, securely store and auto-fill them into your applications and webservices.</p>
+<main>
+    <div class="uk-section uk-margin-medium-top uk-margin-medium-bottom index-page-hero">
+        <div class="uk-container">
+            <div class="uk-width-xlarge@l">
+                <h1 class="uk-margin-remove-bottom">KeePassXC</h1>
+                <div class="uk-text-muted uk-margin-remove-top">Cross-platform Password Manager</div>
+                <p class="uk-margin-medium-top">Never forget a password again. Instead, securely store and auto-fill them into your applications and webservices.</p>
                 <p>No data collection, completely open source, works on all desktop platforms.</p>
-                <p>
-                    <a class="uk-button uk-button-large uk-button-primary" href="{{ .Site.BaseURL }}/download" role="button">Download</a>
-                    <a class="uk-button uk-button-large uk-button-secondary" href="{{ .Site.BaseURL }}/project" role="button">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i> Learn More</a>
-                    <a class="uk-button uk-button-large uk-button-default" href="{{ .Site.BaseURL }}/donate" role="button">
-                        <i class="fa fa-credit-card" aria-hidden="true"></i> Donate</a>
-                </p>
             </div>
+            <div class="uk-margin-large-top">
+                <a class="uk-button uk-button-large uk-button-primary" href="{{ .Site.BaseURL }}/download" role="button">
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+                <a class="uk-button uk-button-large uk-button-secondary" href="{{ .Site.BaseURL }}/project" role="button">
+                    <i class="fa-solid fa-circle-info"></i> Learn More
+                </a>
+                <a class="uk-button uk-button-large uk-button-default" href="{{ .Site.BaseURL }}/donate" role="button">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Donate
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section">
+        <div class="uk-container">
+            <div class="uk-grid uk-child-width-1-3@l" uk-grid>
+                <div>
+                    <h2><i class="fa-solid fa-shield-halved"></i> Secure</h2>
+                    <p>Your passwords remain encrypted at all times and no data is stored on remote servers, so you stay in full control of your data. No cloud, no ads, no subscriptions.
+                    </p>
+                </div>
+                <div>
+                    <h2><i class="fa-solid fa-universal-access"></i> Cross-platform</h2>
+                    <p>Every feature is thoroughly tested on Windows, macOS, and Linux, so you can expect a seamless experience no matter which operating system you use.
+                    </p>
+                </div>
+                <div>
+                    <h2><i class="fa-solid fa-heart"></i> Open Source</h2>
+                    <p>The source code is completely open source under the GPLv3 license and openly available on GitHub. Feel free to inspect, share, and contribute!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section">
+        <div class="uk-container">
+            <h2 class="fs-4 pb-3">Recent Blog Posts</h2>
+            {% for post in site.posts limit:3 %}
+            {% if post.categories contains 'blog' %}
+            <article class="card my-3">
+                <div class="card-body">
+                    <h3 class="card-title fs-5"><a href="{ post.url }">{ post.title }</a></h3>
+                    <p class="fs-6">
+                        {% if post.author %} By { post.author }<br>{% endif %}
+                        Posted on <em class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> { post.date | date: "%b %-d, %Y - %R %Z" }</em>
+                        in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> { post.category }</em>
+                    </p>
+                </div>
+            </article>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 </main>
-
-<div class="uk-section">
-    <div class="uk-container">
-        <div class="cell grid-x">
-            <div class="cell medium-4">
-                <h2 class="fs-4"><i class="fa-solid fa-lock" aria-hidden="true"></i> Secure</h2>
-                <p>Your passwords remain encrypted at all times and no data is stored on remote servers, so you stay in full control of your data. No cloud, no ads, no subscriptions.
-                </p>
-            </div>
-            <div class="cell medium-4">
-                <h2 class="fs-4"><i class="fa-solid fa-laptop" aria-hidden="true"></i> Cross-platform</h2>
-                <p>Every feature is thoroughly tested on Windows, macOS, and Linux, so you can expect a seamless experience no matter which operating system you use.
-                </p>
-            </div>
-            <div class="cell medium-4">
-                <h2 class="fs-4"><i class="fa-regular fa-heart" aria-hidden="true"></i> Open Source</h2>
-                <p>The source code is completely open source under the GPLv3 license and openly available on GitHub. Feel free to inspect, share, and contribute!</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="uk-container">
-        <h2 class="fs-4 pb-3">Recent Blog Posts</h2>
-        {% for post in site.posts limit:3 %}
-        {% if post.categories contains 'blog' %}
-        <article class="card my-3">
-            <div class="card-body">
-                <h3 class="card-title fs-5"><a href="{ post.url }">{ post.title }</a></h3>
-                <p class="fs-6">
-                    {% if post.author %} By { post.author }<br>{% endif %}
-                    Posted on <em class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> { post.date | date: "%b %-d, %Y - %R %Z" }</em>
-                    in category <em class="category"><i class="fa fa-tag" aria-hidden="true"></i> { post.category }</em>
-                </p>
-            </div>
-        </article>
-        {% endif %}
-        {% endfor %}
-    </div>
-
-</div>
-
-    <!--<script>-->
-    <!--    String.prototype.capitalize = function () {-->
-    <!--        return this.charAt(0).toUpperCase() + this.slice(1);-->
-    <!--    };-->
-
-    <!--    $(function () {-->
-    <!--        var osName = OSDetect();-->
-
-    <!--        if (osName !== "unknown") {-->
-    <!--            var button = $("#download_button");-->
-    <!--            button.text(button.text().replace("Download", "Download for " + osName.capitalize()));-->
-    <!--            button.html('<i class="fa-brands fa-' + osName + '" aria-hidden="true"></i> ' + button.html());-->
-    <!--            button.attr("href", button.attr("href") + "#" + osName);-->
-    <!--        }-->
-    <!--    });-->
-    <!--</script>-->
 
 {{ partial "page_foot.html" . }}
