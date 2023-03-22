@@ -33,6 +33,7 @@
             top: 0;
             left: 0;
             max-height: $navbar-logo-size;
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .2));
         }
     }
 }
@@ -44,8 +45,13 @@
     transition: background-color 350ms ease-in-out, color 150ms ease-in-out;
 }
 
+@mixin hook-navbar-nav-item-hover() {
+    text-shadow: rgba($global-color, .1) 0 0 3px;
+}
+
 @mixin hook-inverse-navbar-nav-item-hover() {
-    background-color: rgba(lighten($global-primary-background, 7%), .5);
+    background-color: desaturate(rgba(lighten($global-primary-background, 25%), .3), 20%);
+    text-shadow: rgba(255, 255, 255, .4) 0 0 5px;
 }
 
 @mixin hook-inverse-navbar-nav-item-active() {
@@ -53,8 +59,9 @@
 }
 
 @mixin hook-navbar-sticky() {
-    background: linear-gradient($global-primary-background 0%, darken($global-primary-background-gradient, 10) 100%);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    background: linear-gradient(rgba(darken($global-primary-background, 2%), .99) 0%, rgba(darken($global-primary-background-gradient, 8%), .85) 100%);
+    backdrop-filter: blur(6px) ;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
     height: $navbar-height-sticky;
     transition: 400ms linear, font-size 100ms ease-in-out;
     padding-top: 0;
