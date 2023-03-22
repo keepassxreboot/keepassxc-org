@@ -1,0 +1,40 @@
+{{ block "footer" . }}
+<footer class="uk-section uk-light global-footer uk-text-small" role="contentinfo">
+    <div class="uk-container">
+        <div class="uk-grid" uk-grid>
+            <div class="uk-width-expand">
+                <div class="uk-margin-large-bottom">
+                    <img src="{{ .Site.BaseURL }}/assets/img/keepassxc-logo.svg" class="footer-logo uk-text-middle" alt="">
+                    <strong><a href="{{ .Site.BaseURL }}/">KeePassXC</a> Password Manager</strong>
+                </div>
+                <div class="copyright">
+                    {{- block "footer-copyright" . }}
+                    <div class="uk-margin-small-bottom uk-text-muted">KeePassXC is released under the GPLv3.</div>
+                    <div class="uk-text-muted">&copy; 2016 &ndash; {{ dateFormat "2006" now }} KeePassXC Team</div>
+                    {{- end }}
+                </div>
+            </div>
+            <div class="uk-width-2-5">
+                <nav class="uk-grid uk-grid-large" uk-grid aria-label="Footer">
+                    {{- block "footer-nav" . }}
+                    <ul class="uk-list">
+                        <li><a href="{{ .Site.BaseURL }}/donate">Donate</a>
+                        <li><a href="{{ .Site.BaseURL }}/blog">Blog</a>
+                        <li><a href="{{ .Site.BaseURL }}/privacy">Privacy Policy</a>
+                        <li><a href="{{ .Site.BaseURL }}/team#contact">Contact</a>
+                        <li><a href="{{ .Site.BaseURL }}/team#legal-info">Legal Info / Impressum</a>
+                    </ul>
+                    <ul class="uk-list">
+                        <li><i class="fa-brands fa-github" aria-hidden="true"></i> <a href="{{ .Site.BaseURL }}/privacy">GitHub</a>
+                        <li><i class="fa-brands fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/KeePassXC">Twitter</a>
+                        <li><i class="fa-brands fa-mastodon" aria-hidden="true"></i> <a rel="me" href="https://fosstodon.org/@keepassxc">Mastodon</a>
+                    </ul>
+                </nav>
+                {{- end }}
+            </div>
+        </div>
+    </div>
+</footer>
+{{ end }}
+
+{{- partial "footer_js.html" . }}

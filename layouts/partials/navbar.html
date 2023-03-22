@@ -1,6 +1,19 @@
+{{- define "partials/nav-links.html" }}
+    {{- block "nav-links" . }}
+        <li><a href="{{ .Site.BaseURL }}/project">The Project</a></li>
+        <li><a href="{{ .Site.BaseURL }}/screenshots">Screenshots</a></li>
+        <li><a href="{{ .Site.BaseURL }}/download">Download</a></li>
+        <li><a href="{{ .Site.BaseURL }}/blog">Blog</a></li>
+        <li><a href="{{ .Site.BaseURL }}/docs">Docs / FAQ</a></li>
+        <li><a href="{{ .Site.BaseURL }}/team">The Team</a></li>
+    {{- end }}
+{{- end }}
+
 <div id="offcanvas-navigation" uk-offcanvas="flip: true">
     <div class="uk-offcanvas-bar">
-        <ul class="uk-nav uk-nav-default"></ul>
+        <ul class="uk-nav uk-nav-default">
+            {{- partial "nav-links.html" . }}
+        </ul>
     </div>
 </div>
 
@@ -14,12 +27,7 @@
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav uk-visible@l">
-                <li><a href="{{ .Site.BaseURL }}/project">The Project</a></li>
-                <li><a href="{{ .Site.BaseURL }}/screenshots">Screenshots</a></li>
-                <li><a href="{{ .Site.BaseURL }}/download">Download</a></li>
-                <li><a href="{{ .Site.BaseURL }}/blog">Blog</a></li>
-                <li><a href="{{ .Site.BaseURL }}/docs">Docs / FAQ</a></li>
-                <li><a href="{{ .Site.BaseURL }}/team">The Team</a></li>
+                {{- partial "nav-links.html" . }}
             </ul>
 
             <button class="uk-navbar-toggle uk-hidden@l" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-navigation" type="button"></button>
