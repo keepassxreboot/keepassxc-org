@@ -2,14 +2,19 @@
 @import 'variables';
 @import 'fonts';
 
-// Default variables and mixins
+// UIkit default variables and mixins
 @import "uikit/src/scss/variables-theme.scss";
 @import "uikit/src/scss/mixins-theme.scss";
 
-// Mixin overrides
+// Fontawesome overrides
 @import "theme/fontawesome";
+
+// Mixin overrides
 @import "theme/button-mixins";
 @import "theme/navbar-mixins";
 
 // UIkit
 @import "uikit/src/scss/uikit-theme.scss";
+
+// Custom layout components
+@import "theme/footer";

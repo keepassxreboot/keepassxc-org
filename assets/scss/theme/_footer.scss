@@ -1,0 +1,10 @@
+.global-footer {
+    border-top: 4px solid $branding-color;
+    background: linear-gradient(darken($global-color, 6%), darken($global-color, 5%));
+
+    .uk-nav li > a {
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+}

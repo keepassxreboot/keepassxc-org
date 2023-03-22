@@ -1,24 +1,24 @@
-<footer class="uk-section uk-light uk-background-secondary" role="contentinfo">
+<footer class="uk-section uk-light global-footer uk-text-small" role="contentinfo">
     <div class="uk-container">
         <div class="uk-grid" uk-grid>
             <div class="uk-width-expand">
-                <p>
-                    <img src="{{ .Site.BaseURL }}/assets/img/keepassxc-logo.svg" style="height: 2em" class="align-middle me-2" alt="">
+                <div class="uk-margin-large-bottom">
+                    <img src="{{ .Site.BaseURL }}/assets/img/keepassxc-logo.svg" style="height: 2em; margin-top: -2px; padding-right: .6em" class="uk-text-middle" alt="">
                     <strong><a href="{{ .Site.BaseURL }}/">KeePassXC</a> Password Manager</strong>
-                </p>
-                <p>KeePassXC is released under the GPLv3. </p>
-                <div>&copy; 2016–{{ .Site.LastChange.Format "2006" }} KeePassXC Team</div>
+                </div>
+                <div class="uk-margin-small-bottom uk-text-muted">KeePassXC is released under the GPLv3.</div>
+                <div class="uk-text-muted">&copy; 2016 &ndash; {{ dateFormat "2006" now }} KeePassXC Team</div>
             </div>
-            <div>
-                <div class="uk-grid" uk-grid>
-                    <ul class="uk-nav">
+            <div class="uk-width-2-5">
+                <div class="uk-grid uk-grid-large" uk-grid>
+                    <ul class="uk-list">
                         <li><a href="{{ .Site.BaseURL }}/donate">Donate</a>
                         <li><a href="{{ .Site.BaseURL }}/blog">Blog</a>
                         <li><a href="{{ .Site.BaseURL }}/privacy">Privacy Policy</a>
                         <li><a href="{{ .Site.BaseURL }}/team#contact">Contact</a>
                         <li><a href="{{ .Site.BaseURL }}/team#legal-info">Legal Info / Impressum</a>
                     </ul>
-                    <ul class="uk-nav">
+                    <ul class="uk-list">
                         <li><a href="{{ .Site.BaseURL }}/privacy"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
                         <li><a href="https://twitter.com/KeePassXC"><i class="fa-brands fa-twitter" aria-hidden="true"></i> Twitter</a>
                         <li><a rel="me" href="https://fosstodon.org/@keepassxc"><i class="fa-brands fa-mastodon" aria-hidden="true"></i> Mastodon</a>

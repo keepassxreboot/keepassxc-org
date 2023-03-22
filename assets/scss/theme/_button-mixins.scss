@@ -47,7 +47,7 @@
 
 @mixin hook-button-primary() {
     border: 1px solid lighten($global-primary-background, 15%);
-    background: linear-gradient(180deg, var(--primary-gradient-1) 0%, var(--primary-gradient-2) 100%);
+    background: linear-gradient(var(--primary-gradient-1) 0%, var(--primary-gradient-2) 100%);
     transition: --primary-gradient-1 300ms ease-in-out, --primary-gradient-2 300ms ease-in-out;
 }
 
@@ -58,7 +58,7 @@
 
 @mixin hook-button-secondary() {
     border: 1px solid lighten($global-secondary-background, 15%);
-    background: linear-gradient(180deg, var(--secondary-gradient-1) 0%, var(--secondary-gradient-2) 100%);
+    background: linear-gradient(var(--secondary-gradient-1) 0%, var(--secondary-gradient-2) 100%);
     transition: --secondary-gradient-1 300ms ease-in-out, --secondary-gradient-2 300ms ease-in-out;
 }
 
