@@ -1,11 +1,7 @@
 {{- define "partials/nav-links.html" }}
-    {{- block "nav-links" . }}
-        <li><a href="{{ .Site.BaseURL }}/project">The Project</a></li>
-        <li><a href="{{ .Site.BaseURL }}/screenshots">Screenshots</a></li>
-        <li><a href="{{ .Site.BaseURL }}/download">Download</a></li>
-        <li><a href="{{ .Site.BaseURL }}/blog">Blog</a></li>
-        <li><a href="{{ .Site.BaseURL }}/docs">Docs / FAQ</a></li>
-        <li><a href="{{ .Site.BaseURL }}/team">The Team</a></li>
+    {{- $currentPage := . }}
+    {{- range .Site.Menus.main }}
+        <li{{ if or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)  }} class="uk-active"{{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>
     {{- end }}
 {{- end }}
 

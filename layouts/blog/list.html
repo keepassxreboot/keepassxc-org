@@ -7,11 +7,7 @@
 
         {{ $paginator :=  .Paginate .Site.RegularPages.ByPublishDate.Reverse }}
         {{- range $paginator.Pages }}
-            <article class="uk-article">
-                <h2 class="uk-article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                {{ .Summary }}
-            </article>
-
+            {{ partial "article-teaser" . }}
         {{- end }}
 
         <div class="uk-margin-large">
