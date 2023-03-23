@@ -5,6 +5,7 @@
 
 @mixin hook-article-meta() {
     margin-top: $margin-small-margin;
+    line-height: 150%;
 
     em, time {
         font-weight: bold;

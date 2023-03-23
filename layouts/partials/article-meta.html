@@ -1,0 +1,13 @@
+<header class="uk-article-meta">
+    {{- if .Params.author }}By <em><i class="fa-solid fa-circle-user"></i> {{ .Params.author }}{{ end }}</em>
+    <span class="uk-visible@m">&ndash;</span>
+    <br class="uk-hidden@m">
+
+    Posted on <time datetime="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }}" class="blog-date">
+        <i class="fa-solid fa-clock"></i> {{ .PublishDate.Format "January 2 2006, 15:04" }}</time>
+
+    {{- if .Params.category }}
+        &ndash;
+        Category <em class="blog-category"><i class="fa-solid fa-tags"></i> {{ .Params.category }}</em>
+    {{- end }}
+</header>

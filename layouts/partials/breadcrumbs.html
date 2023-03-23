@@ -1,0 +1,13 @@
+<div class="uk-container">
+    <nav aria-label="Breadcrumb">
+        <ol class="uk-breadcrumb">
+            {{- range after 1 .Ancestors.Reverse }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{- end }}
+            <li class="uk-active" aria-current="page">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+        </ol>
+    </nav>
+    <hr>
+</div>
