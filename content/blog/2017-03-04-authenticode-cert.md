@@ -12,7 +12,7 @@ and for that we need your help.
 Without a code signing certificate, Windows and OS X will always warn users that they are about to install software from
 an unknown (and possibly untrustworthy) vendor:
 
-![Windows UAC, no trusted certificate]({{ site.baseurl }}/blog/images/windows-uac-no-cert.png)
+![Windows UAC, no trusted certificate]({{< baseurl >}}blog/images/windows-uac-no-cert.png)
 
 Unfortunately, code signing certificates aren't fee and to collect the needed funds for such a certificate, we need
 your financial support. We need to raise **$265** in order to be able to buy the certificate. The certificate

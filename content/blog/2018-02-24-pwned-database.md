@@ -21,7 +21,7 @@ explain why you really don't need a database of bad passwords.
 
 <!--more-->
 
-##### A few quick tests
+## A few quick tests
 
 For testing purposes, I downloaded the [database dump](https://haveibeenpwned.com/Passwords),
 which has a compressed size of about 8GB and decompresses to 30GB of plain text.
@@ -42,7 +42,7 @@ with a capitalized R and it cannot be found. People are creative when they have 
 update their passwords and many variants are in the database, but you will always
 find a very simple one that isn't.
 
-##### The math
+## The math
 
 The math behind this is rather simple. Assume, we have a password with only lowercase
 and uppercase letters and numbers. This gives us an alphabet size of *62* (*26 + 26 + 10*).
@@ -52,7 +52,7 @@ more than the *501,636,842* passwords contained in the database. So with any
 random 8-character combination of letters and numbers we have a chance of roughly
 *~2.3 × 10^-6* of finding it in the database.
 
-##### Password managers to the rescue
+## Password managers to the rescue
 
 With chances of finding trivial 8-character passwords in the database already being
 so low, here comes the paradox part: How does a password manager, whose one and only
@@ -82,7 +82,7 @@ can only get the salted hash and not your actual password. Unless..., the servic
 do their homework and stored your password in plain text nonetheless, in which case it
 will eventually end up in one of those Pwned databases.
 
-##### Complex passwords and brute force
+## Complex passwords and brute force
 
 Now let's assume an attacker got hold of your password's hash. They can still try to
 guess the correct password by brute force. The amount of time needed depends largely
@@ -123,7 +123,7 @@ numbers. If we take the full ASCII set (excluding the NULL character), we have
 *127^30* possible candidates, which is not quite the number of atoms in the universe,
 but at least Archimedes' estimate of how many grains of sand would fill it.
 
-##### Summary
+## Summary
 
 If you made it to this point, then congratulations. Let me sum things up.
 

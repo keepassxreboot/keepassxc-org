@@ -8,44 +8,8 @@ expiryDate = ['expiryDate']
 lastmod = [':git', 'lastmod', 'date', 'publishDate']
 publishDate = ['publishDate', 'date']
 
-#
-#[menu]
-#  [[menu.main]]
-#  name = "The Project"
-#  weight = 1
-#  identifier = "project"
-#  url = "/project/"
-#
-#  [[menu.main]]
-#  name = "Screenshots"
-#  weight = 2
-#  identifier = "screenshots"
-#  url = "/screenshots"
-#
-#  [[menu.main]]
-#  name = "Download"
-#  weight = 3
-#  identifier = "download"
-#  url = "/download"
-#
-#  [[menu.main]]
-#  name = "Blog"
-#  weight = 4
-#  identifier = "blog"
-#  url = "/blog"
-#
-#  [[menu.main]]
-#  name = "Docs / FAQ"
-#  weight = 5
-#  identifier = "docs"
-#  url = "/docs"
-#
-#  [[menu.main]]
-#  name = "Team"
-#  weight = 6
-#  identifier = "team"
-#  url = "/team"
-
+[markup.goldmark.renderer]
+unsafe = true
 
 [module]
   [[module.mounts]]

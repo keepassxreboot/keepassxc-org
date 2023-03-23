@@ -9,7 +9,7 @@ This article explains how to create a human-readable backup of your KeePassXC da
 
 <!--more-->
 
-### Why?
+## Why?
 
 People use KeePassXC to store all kinds of confidential information, including data beyond simple access credentials for online accounts. Your database may contain bank account numbers, tax/insurance/social security information, your Bitcoin wallet private key, or any other data that's vital in the digital as well as in the real world. KeePassXC makes sure (provided that your master key is sufficiently complex) that nobody else gets access to that information, but what happens if you lose access yourselves?
 
@@ -19,7 +19,7 @@ You might wake up with a head injury and no longer remember your master key. You
 
 Keeping backups of your database file in different physical locations remedies some of these issues. Backing up your database to sheets of paper that are readable by humans is another link in your safety chain.
 
-### How?
+## How?
 
 Paper backups are created with KeePassXC's "HTML Export" feature, which was introduced in KeePassXC 2.5.0. Although the name suggests a more general export facility (like CSV Export), HTML Export was implemented with the explicit intention of supplying paper backups. (Also, note that the result of HTML Export is designed to be human-readable, so there's no "HTML Import".)
 
@@ -35,9 +35,9 @@ In detail:
 6. Delete `paperbackup.html`. Make sure to really destroy the file, rather than moving it to the trash.
 7. Store the printed pages in a safe place.
 
-![Screenshot]({{ site.baseurl }}/blog/images/paper-backup.png)
+![Screenshot]({{< baseurl >}}blog/images/paper-backup.png)
 
-### How about security?
+## How about security?
 
 There's always a trade-off between safety (make sure you can access your data) and security (make sure nobody else can access your data). Paper backups improve safety but reduce security. There are several ways by which your passwords could be compromised when creating and keeping paper backups:
 
