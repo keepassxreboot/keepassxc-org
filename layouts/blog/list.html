@@ -6,7 +6,7 @@
         <h1>{{ .Title }}</h1>
         <hr class="uk-margin-medium-bottom">
 
-        {{ $paginator :=  .Paginate .Site.RegularPages.ByPublishDate.Reverse }}
+        {{ $paginator := .Paginate  (where .Site.RegularPages.ByPublishDate.Reverse "Section" .Page.Section ) }}
         {{- range $paginator.Pages }}
             {{ partial "article-teaser" . }}
         {{- end }}
