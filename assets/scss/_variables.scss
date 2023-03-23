@@ -44,6 +44,7 @@ $button-secondary-hover-color: lighten($global-color, 10%);
 $button-secondary-active-color: darken($global-color, 5%);
 
 // Navigation
+$navbar-background: transparent;
 $navbar-nav-item-color: darken($global-muted-color, 10%);
 $navbar-nav-item-hover-color: $global-color;
 $navbar-nav-item-active-color: $global-color;

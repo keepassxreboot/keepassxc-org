@@ -1,3 +1,7 @@
+@mixin hook-navbar-container() {
+    background: linear-gradient(rgba(darken($global-primary-background, 2%), .99) 0%, rgba(darken($global-primary-background-gradient, 8%), .85) 100%) !important;
+}
+
 @mixin hook-navbar() {
     @media (min-width: $breakpoint-medium) {
         height: $navbar-height;
@@ -90,7 +94,6 @@
 }
 
 @mixin hook-navbar-sticky() {
-    background: linear-gradient(rgba(darken($global-primary-background, 2%), .99) 0%, rgba(darken($global-primary-background-gradient, 8%), .85) 100%);
     backdrop-filter: blur(6px) ;
     box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
     height: $navbar-height-sticky;

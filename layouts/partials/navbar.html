@@ -9,17 +9,17 @@
     {{- end }}
 {{- end }}
 
-<div id="offcanvas-navigation" uk-offcanvas="flip: true">
-    <div class="uk-offcanvas-bar uk-text-large uk-padding-large">
-        <button class="uk-offcanvas-close uk-padding-large" type="button" uk-close></button>
-        <ul class="uk-nav uk-nav-default">
+<div id="offcanvas-navigation" uk-offcanvas="flip: true; mode: reveal">
+    <nav class="uk-offcanvas-bar uk-padding-large" aria-label="Main">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-primary uk-margin-large-top">
             {{- partial "nav-links.html" . }}
         </ul>
-    </div>
+    </nav>
 </div>
 
-<div uk-sticky="start: 10; animation: uk-animation-fade; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-light">
-    <nav class="uk-navbar uk-navbar-container uk-navbar-transparent" id="main-nav" uk-navbar aria-label="Main">
+<div uk-sticky="start: 10; animation: uk-animation-fade; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-light; cls-inactive: uk-navbar-transparent">
+    <nav class="uk-navbar uk-navbar-container" uk-navbar aria-label="Main">
         <div class="uk-navbar-left">
             <a class="uk-navbar-item uk-logo" href="{{ .Site.BaseURL }}/">
                 <img src="{{ .Site.BaseURL }}/assets/img/keepassxc-logo.svg" alt="">
