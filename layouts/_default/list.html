@@ -1,0 +1,16 @@
+{{- define "main" }}
+<section class="uk-section">
+    <div class="uk-container">
+        <h1 class="uk-margin-medium-bottom">KeePassXC Blog</h1>
+
+        {{ $paginator :=  .Paginate (where .Site.RegularPages "Section" "blog").ByPublishDate.Reverse }}
+        {{- range $paginator.Pages }}
+            {{ partial "article-teaser" . }}
+        {{- end }}
+
+        <div class="uk-margin-large">
+            {{ partial "pagination.html" . }}
+        </div>
+    </div>
+</section>
+{{ end }}

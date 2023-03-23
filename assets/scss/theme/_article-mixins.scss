@@ -1,0 +1,13 @@
+@mixin hook-article-title() {
+    font-weight: bold;
+    margin-bottom: $margin-small-margin;
+}
+
+@mixin hook-article-meta() {
+    margin-top: $margin-small-margin;
+
+    em, time {
+        font-weight: bold;
+        font-style: italic;
+    }
+}

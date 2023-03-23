@@ -1,5 +1,8 @@
-{{ partial "page_head.html" . }}
-<main class="content pb-7">
-    {{ .Content }}
-</main>
-{{ partial "page_foot.html" . }}
+{{- define "main" }}
+    <section class="uk-section">
+        <div class="uk-container">
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        </div>
+    </section>
+{{ end }}

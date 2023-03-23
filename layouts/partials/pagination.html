@@ -1,0 +1,78 @@
+{{- $page := . }}
+
+{{- if reflect.IsMap . }}
+    {{- with .page }}
+        {{- $page = . }}
+    {{- else }}
+        {{- errorf "When passing a map to the internal pagination template, one of the elements must be named 'page', and it must be set to the context of the current page." }}
+    {{- end }}
+{{- end }}
+
+<ul class="uk-pagination uk-flex-center">
+{{- with .Paginator }}
+    {{- $currentPageNumber := .PageNumber }}
+
+    {{- with .First }}
+        {{- if ne $currentPageNumber .PageNumber }}
+            <li>
+                <a href="{{ .URL }}" aria-label="First" role="button"><span aria-hidden="true" uk-pagination-previous></span><span aria-hidden="true" uk-pagination-previous></span></a>
+            </li>
+        {{- else }}
+            <li class="uk-disabled">
+                <a aria-disabled="true" aria-label="First" role="button" tabindex="-1"><span aria-hidden="true" uk-pagination-previous></span><span aria-hidden="true" uk-pagination-previous></span></a>
+            </li>
+        {{- end }}
+    {{- end }}
+
+    {{- with .Prev }}
+        <li>
+            <a href="{{ .URL }}" aria-label="Previous" role="button"><span aria-hidden="true" uk-pagination-previous></span></a>
+        </li>
+    {{- else }}
+        <li class="uk-disabled">
+            <a aria-disabled="true" aria-label="Previous" role="button" tabindex="-1"><span aria-hidden="true" uk-pagination-previous></span></a>
+        </li>
+    {{- end }}
+
+    {{- $slots := 5 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+        {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    {{- range $k := seq $start $end }}
+        {{- if eq $.Paginator.PageNumber $k }}
+            <li class="uk-active">
+                <a aria-current="page" aria-label="Page {{ $k }}" role="button">{{ $k }}</a>
+            </li>
+        {{- else }}
+            <li>
+                <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}" aria-label="Page {{ $k }}" role="button">{{ $k }}</a>
+            </li>
+        {{- end }}
+    {{- end }}
+
+    {{- with .Next }}
+        <li>
+            <a href="{{ .URL }}" aria-label="Next" role="button"><span aria-hidden="true" uk-pagination-next></span></a>
+        </li>
+    {{- else }}
+        <li class="uk-disabled">
+            <a aria-disabled="true" aria-label="Next" role="button" tabindex="-1"><span aria-hidden="true" uk-pagination-next></span></a>
+        </li>
+    {{- end }}
+
+    {{- with .Last }}
+        {{- if ne $currentPageNumber .PageNumber }}
+            <li>
+                <a href="{{ .URL }}" aria-label="Last" role="button"><span aria-hidden="true" uk-pagination-next><span aria-hidden="true" uk-pagination-next></a>
+            </li>
+        {{- else }}
+            <li class="uk-disabled">
+                <a aria-disabled="true" aria-label="Last" role="button" tabindex="-1"><span aria-hidden="true" uk-pagination-next><span aria-hidden="true" uk-pagination-next></a>
+            </li>
+        {{- end }}
+    {{- end }}
+{{- end }}
+</ul>

@@ -2,6 +2,12 @@ title = 'KeePassXC Password Manager'
 baseURL = 'https://keepassxc.org'
 languageCode = 'en-us'
 
+[frontmatter]
+date = ['publishDate', 'date', 'lastmod']
+expiryDate = ['expiryDate']
+lastmod = [':git', 'lastmod', 'date', 'publishDate']
+publishDate = ['publishDate', 'date']
+
 [module]
   [[module.mounts]]
   source = "assets"

@@ -15,6 +15,7 @@ $inverse-global-emphasis-color: #eee;
 $global-muted-color: #888;
 $branding-color: #4c972b;
 $secondary-color: #ffd200;
+$base-em-color: inherit;
 
 $global-link-color: $branding-color;
 $global-link-hover-color: lighten($branding-color, 10%);
@@ -64,3 +65,7 @@ $navbar-font-size-logo: 1.7rem;
 $navbar-font-size-logo-sticky: 1.2rem;
 $navbar-logo-size: $navbar-height;
 $navbar-logo-size-sticky: $navbar-height - 1;
+
+// Articles
+$article-title-font-size-m: 1.5rem;
+$article-margin-top: 2.5rem;
