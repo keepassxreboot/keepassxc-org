@@ -10,6 +10,8 @@ The KeePassXC team wants to thank all who have contributed to our Authenticode c
 support and additional generous funding from the [Linux Fund](http://www.linuxfund.org/) (thank you especially,
 Ilan), we managed to collect all the money needed for purchasing a four-year Authenticode certificate.
 
+<!--more-->
+
 The certificate has already been ordered and will be used to sign our next Windows and OS X releases. This will allow
 you to easily verify authenticity and integrity of our binary release and prevents warnings about potentially untrusted
 software during installation on both platforms. It also allows you to run KeePassXC on systems with a high security

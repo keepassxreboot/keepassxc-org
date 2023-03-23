@@ -9,6 +9,7 @@ To further ensure that you can really trust our Windows and OS X installer and a
 we [would like to acquire](https://github.com/keepassxreboot/keepassxc/issues/372) a 4-year
 [Authenticode code signing certificate](https://msdn.microsoft.com/en-us/library/ms537359(v=vs.85).aspx)
 and for that we need your help.
+<!--more-->
 Without a code signing certificate, Windows and OS X will always warn users that they are about to install software from
 an unknown (and possibly untrustworthy) vendor:
 
