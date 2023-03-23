@@ -66,11 +66,11 @@
     {{- with .Last }}
         {{- if ne $currentPageNumber .PageNumber }}
             <li>
-                <a href="{{ .URL }}" aria-label="Last" role="button"><span aria-hidden="true" uk-pagination-next><span aria-hidden="true" uk-pagination-next></a>
+                <a href="{{ .URL }}" aria-label="Last" role="button"><span aria-hidden="true" uk-pagination-next></span><span aria-hidden="true" uk-pagination-next></span></a>
             </li>
         {{- else }}
             <li class="uk-disabled">
-                <a aria-disabled="true" aria-label="Last" role="button" tabindex="-1"><span aria-hidden="true" uk-pagination-next><span aria-hidden="true" uk-pagination-next></a>
+                <a aria-disabled="true" aria-label="Last" role="button" tabindex="-1"><span aria-hidden="true" uk-pagination-next></span><span aria-hidden="true" uk-pagination-next></span></a>
             </li>
         {{- end }}
     {{- end }}
