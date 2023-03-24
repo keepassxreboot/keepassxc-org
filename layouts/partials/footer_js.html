@@ -1,28 +1,5 @@
-{{- $jquery := resources.Get "node_modules/jquery/dist/jquery.min.js" | fingerprint }}
-<script src="{{ $jquery.RelPermalink }}"></script>
-<script>
-    // Navbar scroll effect
-    // $(() => {
-    //     const nav = $(".navbar.fixed-top");
-    //     nav.toggleClass('scrolled', $(this).scrollTop() > nav.height());
-    //     $(document).scroll(() => {
-    //         nav.toggleClass('scrolled', $(this).scrollTop() > nav.height());
-    //     });
-    // });
-
-    $(() => {
-        $(".eobfs").each(() => {
-            $(this).text($(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.'));
-        });
-        $(".eobfsl").each(() => {
-            var e = $(this).text().replace(/ 'AT` /, '@').replace(/ \^DOT\' /, '.');
-            $(this).html('<a href="mailto:' + e + '?body=Thank%20you%20for%20mailing%20us.%0APlease%20be%20sure%20to%20send%20only%20legal%20or%20security%20issues%20to%20this%20address.%0A%0AFor%20all%20non-confidential%20correspondence%20requiring%20no%20direct%20contact%20to%20a%20team%20member%2C%20please%20use%20%5Bmatrix%5D%2C%20IRC%2C%20or%20GitHub.%0A%0AOur%20PGP%20key%20is%20105D%208D57%20BB97%2046BD.">' + e + '</a>');
-        });
-    });
-</script>
-
 <!-- Matomo -->
-<script>
+<script async>
     var _paq = window._paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(["setCookieDomain", "*.keepassxc.org"]);

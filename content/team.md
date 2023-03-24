@@ -1,0 +1,92 @@
+---
+title: The Team
+menu:
+  main:
+    weight: 6
+---
+
+The KeePassXC team is formed by
+
+<div id="team">
+    <ul>
+        <li><a href="https://github.com/droidmonkey">droidmonkey</a>
+        <li><a href="https://github.com/phoerious">phoerious</a>
+        <li><a href="https://github.com/hifi">hifi</a>
+        <li><a href="https://github.com/louib">louib</a>
+        <li><a href="https://github.com/varjolintu">varjolintu</a>
+    </ul>
+</div>
+
+## Contact
+
+You can contact us via **\[matrix\]**, a free chat protocol. We have two channels, one for user questions and one for development-related discussions:
+
+* [`#keepassxc:mozilla.org` Element.io web chat](https://app.element.io/#/room/#keepassxc:mozilla.org) (user's channel)
+* [`#keepassxc-dev:mozilla.org` Element.io web chat](https://app.element.io/#/room/#keepassxc-dev:mozilla.org) (developer's channel)
+
+Please be patient when asking a question! You may not get an immediate answer, but someone will respond to you eventually.
+
+In case you prefer it old-school, we also have the two equivalent **IRC** channels `#keepassxc` and `#keepassxc-dev` on `irc.libera.chat`, which are synced with the **\[matrix\]** channels above.
+
+* [`#keepassxc` web chat](https://web.libera.chat/#keepassxc) (user's channel)
+* [`#keepassxc-dev` web chat](https://web.libera.chat/#keepassxc-dev) (developer's channel)
+
+If you need to report a security issue, please email us. We prefer these reports be sent with PGP-signed/encrypted email. **Please do not (!)** send user questions, bug reports or support requests to that address (that's what \[matrix\], IRC, and our [GitHub issue tracker](https://github.com/keepassxreboot/keepassxc/issues) are for).
+
+## Legal Info / Impressum
+
+<p>Janek Bevendorff<br>
+Friesstr. 1<br>
+99423 Weimar, Germany<br>
+<span class="eobfsl">legal 'AT` keepassxc ^DOT' org</span></p>
+
+No user questions, please! Legal or otherwise confidential correspondence only!_
+
+Team email PGP key: [`105D 8D57 BB97 46BD`](https://keys.openpgp.org/search?q=legal%40keepassxc.org)
+
+Please note: We are an international team who speak a few different languages and we will use Google Translate if needed (mind your privacy!), but it's easiest for us to respond to English emails. Thank you!
+
+<script type="module">
+    $(() => {
+        $(".eobfs").each((i, e) => {
+            $(e).text($(e).text().replace(/ 'AT` /, '@').replace(/ \^DOT' /, '.'));
+        });
+        $(".eobfsl").each((i, e) => {
+            let n = $(e).text().replace(/ 'AT` /, '@').replace(/ \^DOT' /, '.');
+            $(e).html('<a href="mailto:' + n + '?body=Thank%20you%20for%20mailing%20us.%0APlease%20be%20sure%20to%20send%20only%20legal%20or%20security%20issues%20to%20this%20address.%0A%0AFor%20all%20non-confidential%20correspondence%20requiring%20no%20direct%20contact%20to%20a%20team%20member%2C%20please%20use%20%5Bmatrix%5D%2C%20IRC%2C%20or%20GitHub.%0A%0AOur%20PGP%20key%20is%20105D%208D57%20BB97%2046BD.">' + n + '</a>');
+        });
+    });
+</script>
+
+<script type="module">
+$(() => {
+    let team = $("#team");
+    let request = new XMLHttpRequest();
+    $.get("https://api.github.com/orgs/keepassxreboot/public_members", function(data) {
+        team.html('<div class="uk-margin-medium uk-grid uk-grid-small uk-child-width-1-2@m uk-child-width-1-3@m" uk-grid></div>');
+        let row = team.find(".uk-grid:first-child");
+        data.forEach(function (value, index) {
+          row.html(row.html() +
+              `<div>
+                  <div class="uk-card uk-card-default">
+                      <div class="uk-card-body uk-padding-small">
+                          <div class="uk-grid uk-grid-small uk-child-width-1-2" uk-grid>
+                              <div class="uk-text-center">
+                                  <img class="uk-border-circle" src="` + value.avatar_url + `" width="60" height="60" alt="` + value.login + `">
+                                  <div class="uk-text-small uk-text-bold uk-text-uppercase uk-margin-small"><a href="` + value.html_url + `">` + value.login + `</a></div>
+                              </div>
+                              <div>
+                                 <a href="` + value.html_url + `" class="uk-button uk-button-primary uk-button-medium uk-width-1-1 uk-margin-small"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+                                 <a href="https://github.com/keepassxreboot/keepassxc/commits?author=` + value.login + `" class="uk-button uk-button-secondary uk-button-medium uk-width-1-1 uk-margin-small"><i class="fa-solid fa-code-pull-request"></i> Code</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>`);
+        });
+    }).fail(function() {
+        console.error(request.statusText);
+        team.html(team.html() + "<p>Error loading contributors... Connection issues?</p>");
+    });
+});
+</script>

@@ -27,6 +27,8 @@
     {{- $uikitIcons := resources.Get "node_modules/uikit/dist/js/uikit-icons.min.js" }}
     {{- $uikit := slice $uikitMain $uikitIcons | resources.Concat "assets/js/uikit.min.js" | fingerprint }}
     <script src="{{ $uikit.RelPermalink }}"></script>
+    {{- $jquery := resources.Get "node_modules/jquery/dist/jquery.min.js" | fingerprint }}
+    <script type="module" src="{{ $jquery.RelPermalink }}"></script>
     {{- block "head" . }}{{ end }}
 </head>
 <body>
