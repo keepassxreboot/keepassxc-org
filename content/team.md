@@ -73,7 +73,7 @@ $(() => {
                           <div class="uk-grid uk-grid-small uk-child-width-1-2" uk-grid>
                               <div class="uk-text-center">
                                   <img class="uk-border-circle" src="` + value.avatar_url + `" width="60" height="60" alt="` + value.login + `">
-                                  <div class="uk-text-small uk-text-bold uk-text-uppercase uk-margin-small"><a href="` + value.html_url + `">` + value.login + `</a></div>
+                                  <div class="uk-text-small uk-text-bold uk-text-uppercase uk-margin-small"><a href="` + value.html_url + `" class="uk-text-muted">` + value.login + `</a></div>
                               </div>
                               <div>
                                  <a href="` + value.html_url + `" class="uk-button uk-button-primary uk-button-medium uk-width-1-1 uk-margin-small"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
