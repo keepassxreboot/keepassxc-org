@@ -17,6 +17,8 @@ The KeePassXC team is formed by
     </ul>
 </div>
 
+<hr class="uk-divider-icon uk-margin-medium">
+
 ## Contact
 
 You can contact us via **\[matrix\]**, a free chat protocol. We have two channels, one for user questions and one for development-related discussions:
@@ -32,6 +34,8 @@ In case you prefer it old-school, we also have the two equivalent **IRC** channe
 * [`#keepassxc-dev` web chat](https://web.libera.chat/#keepassxc-dev) (developer's channel)
 
 If you need to report a security issue, please email us. We prefer these reports be sent with PGP-signed/encrypted email. **Please do not (!)** send user questions, bug reports or support requests to that address (that's what \[matrix\], IRC, and our [GitHub issue tracker](https://github.com/keepassxreboot/keepassxc/issues) are for).
+
+<hr class="uk-divider-icon uk-margin-medium">
 
 ## Legal Info / Impressum
 
@@ -63,7 +67,7 @@ $(() => {
     let team = $("#team");
     let request = new XMLHttpRequest();
     $.get("https://api.github.com/orgs/keepassxreboot/public_members", function(data) {
-        team.html('<div class="uk-margin-medium uk-grid uk-grid-small uk-child-width-1-2@m uk-child-width-1-3@m" uk-grid></div>');
+        team.html('<div class="uk-margin-large uk-grid uk-grid-small uk-child-width-1-2@m uk-child-width-1-3@m" uk-grid></div>');
         let row = team.find(".uk-grid:first-child");
         data.forEach(function (value, index) {
           row.html(row.html() +
