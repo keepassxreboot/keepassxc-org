@@ -19,7 +19,7 @@
         | resources.ToCSS (dict
         "outputStyle" "compressed"
         "enableSourceMap" (not hugo.IsProduction)
-        "includePaths" (slice "node_modules"))
+        "includePaths" (slice "."))
         | fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 

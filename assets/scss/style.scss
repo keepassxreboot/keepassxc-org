@@ -3,8 +3,8 @@
 @import 'fonts';
 
 // UIkit default variables and mixins
-@import "uikit/src/scss/variables-theme.scss";
-@import "uikit/src/scss/mixins-theme.scss";
+@import "node_modules/uikit/src/scss/variables-theme.scss";
+@import "node_modules/uikit/src/scss/mixins-theme.scss";
 
 // Fontawesome overrides
 @import "theme/fontawesome";
@@ -17,7 +17,7 @@
 @import "theme/offcanvas-bar-mixins";
 
 // UIkit
-@import "uikit/src/scss/uikit-theme.scss";
+@import "node_modules/uikit/src/scss/uikit-theme.scss";
 
 // Custom layout components
 @import "theme/global";
