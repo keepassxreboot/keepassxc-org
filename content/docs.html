@@ -167,7 +167,7 @@ menu:
         <dd>
             <p>The AppImage is a self-contained executable archive, comparable to an Android APK or macOS DMG. To execute
                 it, simply give the downloaded <code>*.AppImage</code> file execution permissions:</p>
-            {{< highlight console >}}chmod +x ./KeePassXC-*.AppImage{{< / highlight >}}
+            {{< highlight bash >}}chmod +x ./KeePassXC-*.AppImage{{< / highlight >}}
             <p>After that you can execute it either from the terminal or by double clicking it just like any other program.</p>
         </dd>
 
@@ -183,7 +183,7 @@ menu:
         <dd>
             <p>Starting with version 2.2.2, you can run the KeePassXC CLI tool from the AppImage by executing it with the
                 <code>cli</code> argument:</p>
-            {{< highlight console >}}./KeePassXC-*.AppImage cli{{< / highlight >}}
+            {{< highlight bash >}}./KeePassXC-*.AppImage cli{{< / highlight >}}
         </dd>
 
         <dt id="faq-appsnap-theme"><a href="#faq-appsnap-theme">Why doesn't my theme work?</a></dt>
@@ -196,7 +196,7 @@ menu:
         <dd>
             <p>Due to a Snap's isolation and security settings, you must manually enable the <code>raw-usb</code> interface in order
                 to use your YubiKey. Issue the following command from a terminal to enable this interface:</p>
-            {{< highlight console >}}sudo snap connect keepassxc:raw-usb core:raw-usb{{< / highlight >}}
+            {{< highlight bash >}}sudo snap connect "keepassxc:raw-usb" "core:raw-usb"{{< / highlight >}}
         </dd>
 
         <dt id="faq-appsnap-homedir"><a href="#faq-appsnap-homedir">Why can't I see anything outside my home directory?</a></dt>

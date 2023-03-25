@@ -11,6 +11,16 @@ publishDate = ['publishDate', 'date']
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = false
+tabWidth = 4
+noClasses = true
+style  = "nord"
+
 [module]
   [[module.mounts]]
   source = "assets"
