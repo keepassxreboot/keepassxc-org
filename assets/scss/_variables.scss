@@ -9,7 +9,7 @@ $base-heading-font-weight: 400;
 
 // Global Colours
 $global-color: #333;
-$global-emphasis-color: #333;
+$global-emphasis-color: #272727;
 $global-inverse-color: #fff;
 $inverse-global-emphasis-color: #eee;
 $global-muted-color: #888;
@@ -75,4 +75,14 @@ $breadcrumb-item-hover-color: $global-link-hover-color;
 
 // Articles
 $article-title-font-size-m: 1.5rem;
-$article-margin-top: 2.7rem;
+$article-margin-top: 2.7em;
+
+// Dividers
+$divider-margin-vertical: 3em;
+
+// Description lists
+$description-list-term-font-weight: 800;
+$description-list-term-text-transform: none;
+
+// Bullet lists
+$list-margin-top: .3em;

@@ -20,3 +20,25 @@ body {
         font-size: 1rem;
     }
 }
+
+figure {
+    margin: 1.5em 0;
+    text-align: center;
+
+    & img {
+        @extend .uk-card-default;
+        border: 1px solid $global-border;
+        border-radius: 3px;
+        max-width: 100%;
+
+        &:hover, &:focus {
+            @extend .uk-card-default.uk-card-hover:hover;
+        }
+    }
+}
+
+figcaption {
+    margin: 1em 0;
+    color: $global-muted-color;
+    font-size: $base-small-font-size;
+}

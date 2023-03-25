@@ -1,12 +1,12 @@
 {{- define "main" }}
-    <div class="uk-section">
-        {{ partial "breadcrumbs.html" . }}
+<div class="uk-section">
+    {{ partial "breadcrumbs.html" . }}
 
-        <article class="uk-container uk-margin-medium">
-            <h1>{{ .Title }}</h1>
-            <hr class="uk-margin-medium-bottom">
+    <div class="uk-container uk-margin-medium">
+        <h1>{{ .Title }}</h1>
+        <hr class="uk-margin-medium-bottom">
 
-            {{ .Content }}
-        </article>
+        {{ .Content }}
     </div>
+</div>
 {{ end }}
