@@ -1,3 +1,9 @@
-.fa, .fa-brands, .fa-solid {
+.fa, .fa-brands, .fa-solid, .svg-icon {
     padding: 0 .25em 0 .3em;
+}
+
+.svg-icon {
+    height: 1em;
+    fill: currentColor;
+    vertical-align: middle;
 }
