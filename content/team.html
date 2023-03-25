@@ -51,9 +51,9 @@ menu:
 
 <strong class="uk-text-danger">No user questions via email, please! Legal or otherwise confidential correspondence only!</strong>
 
-<p>Team email PGP key: <a href="https://keys.openpgp.org/search?q=legal%40keepassxc.org"><code>105D 8D57 BB97 46BD</code></a>
+<p>Team email PGP key: <a href="https://keys.openpgp.org/search?q=legal%40keepassxc.org"><code>105D 8D57 BB97 46BD</code></a></p>
 
-<p>Please note: We are an international team who speak a few different languages and we will use Google Translate if needed (mind your privacy!), but it's easiest for us to respond to English emails. Thank you!
+<p>Please note: We are an international team who speak a few different languages, and we will use Google Translate if needed (mind your privacy!), but it's easiest for us to respond to English emails. Thank you!
 
 <script type="module">
     $(() => {
@@ -65,9 +65,7 @@ menu:
             $(e).html('<a href="mailto:' + n + '?body=Thank%20you%20for%20mailing%20us.%0APlease%20be%20sure%20to%20send%20only%20legal%20or%20security%20issues%20to%20this%20address.%0A%0AFor%20all%20non-confidential%20correspondence%20requiring%20no%20direct%20contact%20to%20a%20team%20member%2C%20please%20use%20%5Bmatrix%5D%2C%20IRC%2C%20or%20GitHub.%0A%0AOur%20PGP%20key%20is%20105D%208D57%20BB97%2046BD.">' + n + '</a>');
         });
     });
-</script>
 
-<script type="module">
 $(() => {
     let team = $("#team");
     $.get("https://api.github.com/orgs/keepassxreboot/public_members", (data) => {
