@@ -3,7 +3,7 @@
     <div class="uk-container uk-margin-medium">
         <h1 hidden>Download</h1>
 
-        <ul class="uk-tab uk-flex-center"id="os-tabbar">
+        <ul class="uk-tab uk-flex-center" id="os-tabbar">
             <li><a href="#tab-macos"><i class="fa-brands fa-apple"></i> macOS</a></li>
             <li><a href="#tab-windows"><i class="fa-brands fa-windows"></i> Windows</a></li>
             <li><a href="#tab-linux"><i class="fa-brands fa-linux"></i> Linux</a></li>
@@ -19,7 +19,7 @@
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download for macOS</a>
+                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for macOS</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
                         Version {{ .Params.version.macos.dmg_arm64.version }} &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
@@ -83,7 +83,7 @@
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}/{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download for Windows 11</a>
+                    <a href="{{ $gh }}/{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for Windows 11</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
                         Version {{ .Params.version.windows.msi.version }} &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
@@ -183,7 +183,7 @@
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download AppImage</a>
+                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download AppImage</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
                         Version {{ .Params.version.linux.appimage.version }} &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
@@ -313,7 +313,7 @@
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}/{{ .Params.version.version }}/keepassxc-{{ .Params.version.version }}{{ .Params.version.suffix.source.tarball }}-src.tar.xz" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download Source Code</a>
+                    <a href="{{ $gh }}/{{ .Params.version.version }}/keepassxc-{{ .Params.version.version }}{{ .Params.version.suffix.source.tarball }}-src.tar.xz" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download Source Code</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
                         Version {{ .Params.version.source.tarball.version }} &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
@@ -327,12 +327,47 @@
                 </div>
             </div>
         </div>
+
+        <div class="uk-margin-medium" id="download-started" hidden>
+            <div class="uk-label-success uk-margin-medium uk-width-xlarge uk-align-center uk-padding-small uk-text-center">
+                Your download has started! <strong><a href="" id="download-again-link">Download again.</a></strong>
+            </div>
+
+            <div class="uk-card uk-card-default uk-width-xxlarge uk-align-center uk-background-muted">
+                <div class="uk-card-body uk-text-center uk-width-xlarge uk-align-center">
+                    <div class="uk-text-small uk-text-primary uk-text-bold uk-text-uppercase uk-margin-small">Next Step</div>
+                    <h2 class="uk-card-title uk-margin-small">Get the browser extension</h2>
+                    <p>Once you have KeePassXC set up on your computer, get the KeePassXC browser extension to automatically fill in your online passwords in the browser.</p>
+
+                    <div class="uk-margin-medium uk-grid uk-child-width-1-3" uk-grid>
+                        <div>
+                            <div class="uk-margin-small" style="height: 70px">
+                                <img src="{{ .Site.BaseURL }}assets/img/browser-icons/firefox.svg" width="60" alt="Firefox logo">
+                            </div>
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/" target="_blank" class="uk-button uk-button-default uk-margin-small uk-display-block">Install</a>
+                        </div>
+                        <div>
+                            <div class="uk-margin-small" style="height: 70px">
+                                <img src="{{ .Site.BaseURL }}assets/img/browser-icons/chrome.svg" width="60" alt="Firefox logo">
+                            </div>
+                            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk" target="_blank" class="uk-button uk-button-default uk-margin-small uk-display-block">Install</a>
+                        </div>
+                        <div>
+                            <div class="uk-margin-small" style="height: 70px">
+                                <img src="{{ .Site.BaseURL }}assets/img/browser-icons/edge.svg" width="60" alt="Firefox logo">
+                            </div>
+                            <a href="https://microsoftedge.microsoft.com/addons/detail/keepassxcbrowser/pdffhmdngciaglkoonimfcmckehcpafo" target="_blank" class="uk-button uk-button-default uk-margin-small uk-display-block">Install</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="uk-section uk-background-muted">
-    <div class="uk-container">
-        <div class="screenshot-carousel uk-position-relative uk-margin-large" uk-slider>
+    <div class="uk-container uk-margin-medium-bottom" id="screenshot-carousel">
+        <div class="uk-position-relative uk-margin-large" uk-slider>
             <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small" uk-lightbox>
                 <li>
                     <a href="{{ .Site.BaseURL }}assets/img/screenshots/welcome_screen.png" data-caption="Welcome Screen">
@@ -367,7 +402,7 @@
         </div>
     </div>
 
-    <div class="uk-container uk-margin-medium-top">
+    <div class="uk-container">
         <h2 class="uk-text-medium">Love it?</h2>
 
         <div class="uk-grid uk-grid-match uk-child-width-1-2@m uk-text-small" uk-grid>
@@ -444,12 +479,25 @@
 
     // Hide "more options"
     $('.collapse').each((i, e) => {
-        $(e).attr('hidden', '');
+        e.hidden = true;
     });
 
     UIkit.util.on('.uk-switcher > *', 'shown', (e) => {
         window.history.pushState(null, null, '#' + e.target.id.replace('tab-', ''));
     });
 
+    $('.download').on('click', (e) => {
+        $('#os-tabbar')[0].hidden = true;
+        $('#tab-body')[0].hidden = true;
+        $('#screenshot-carousel')[0].hidden = true;
+        const startedElement = $('#download-started');
+        startedElement.hide();
+        startedElement[0].hidden = false;
+        startedElement.fadeIn(600);
+    });
+    $('#download-again-link').click((e) => {
+        location.reload();
+        e.preventDefault();
+    })
 </script>
 {{ end }}

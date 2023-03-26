@@ -23,7 +23,10 @@ $text-warning-color: #d1892a;
 $global-warning-background: #f7c465;
 $label-warning-background: $global-warning-background;
 $label-warning-color: $global-emphasis-color;
-$text-success-color: #239640;
+$text-success-color: darken($branding-color, 6%);
+$global-success-background: desaturate(lighten($branding-color, 50%), 15%);
+$label-success-background: $global-success-background;
+$label-success-color: $text-success-color;
 
 $global-link-color: $branding-color;
 $global-link-hover-color: desaturate(lighten($branding-color, 13%), 5%);
@@ -42,6 +45,7 @@ $global-danger-background: #f0506e;
 $global-border: #dadada;
 
 // Buttons
+$button-default-background: #fff;
 $button-default-border: lighten($global-muted-color, 30%);
 $button-default-color: $global-color;
 $button-default-hover-color: lighten($global-color, 25%);
