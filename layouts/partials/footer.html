@@ -18,9 +18,9 @@
                 <nav class="uk-grid uk-child-width-expand uk-grid-large" uk-grid aria-label="Footer">
                     {{- block "footer-nav" . }}
                     <ul class="uk-list">
-                        <li><a href="{{ .Site.BaseURL }}donate">Donate</a>
-                        <li><a href="{{ .Site.BaseURL }}blog">Blog</a>
-                        <li><a href="{{ .Site.BaseURL }}privacy">Privacy Policy</a>
+                        {{- range .Site.Menus.footer }}
+                            <li><a href="{{ .URL }}{{ .Params.fragment }}">{{ .Name }}</a></li>
+                        {{- end }}
                         <li><a href="{{ .Site.BaseURL }}team#contact">Contact</a>
                         <li><a href="{{ .Site.BaseURL }}team#legal">Legal Info / Impressum</a>
                     </ul>
