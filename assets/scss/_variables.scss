@@ -18,7 +18,9 @@ $secondary-color: #ffd200;
 $base-em-color: inherit;
 $base-code-color: lighten($global-color, 15%);
 
-$text-danger-color: #c2304b;
+$text-danger-color: #d13653;
+$global-danger-background: #d45069;
+$label-danger-background: $global-danger-background;
 $text-warning-color: #d1892a;
 $global-warning-background: #f7c465;
 $label-warning-background: $global-warning-background;
