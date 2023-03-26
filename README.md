@@ -48,4 +48,5 @@ To create a new blog post, run
 hugo new blog/202X-XX-XX-blog-post-name.md
 ```
 
-This will create a new file `blog/202x-XX-XX-blog-post-name.md` from the `blog` archetype with some pre-filled frontmatter fields.
+This will create a new file `blog/202x-XX-XX-blog-post-name.md` from the `blog` archetype with inserted
+boilerplate and some pre-filled frontmatter fields.
