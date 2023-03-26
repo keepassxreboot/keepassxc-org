@@ -1,0 +1,6 @@
+<figure {{ if (.Get "lightbox" | default true) }}uk-lightbox{{ end }}{{ if .Get "class" }} class="{{ .Get "class" }}"{{ end }}>
+    <a href="{{ .Site.BaseURL }}{{ index .Params "src" }}">
+        <img style="max-width: {{ or (index .Params "width") "100%" }}; max-height: {{ or (index .Params "height") "500px" }};" alt="{{ index .Params "alt" }}" src="{{ .Site.BaseURL }}{{ index .Params "src" }}">
+    </a>
+    <figcaption>{{ or (index .Params "figcaption") (index .Params "alt") }}</figcaption>
+</figure>

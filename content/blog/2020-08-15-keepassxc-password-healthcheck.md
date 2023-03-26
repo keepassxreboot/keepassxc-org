@@ -13,7 +13,7 @@ KeePassXC 2.6.0 comes with a new and long-awaited feature: The Health Check repo
 
 You invoke Health Check with "Database → Database Reports". It looks like this:
 
-![Screenshot]({{< baseurl >}}blog/images/password-healthcheck.png)
+{{< figure src="blog/images/password-healthcheck.png" alt="KeePassXC password health check" >}}
 
 By the way, if you've been using the "Statistics" panel in KeePassXC 2.5.x, please note that it's been moved from the "Database Settings" dialog to the "Reports" pane, just below Health Check.
 

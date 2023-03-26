@@ -1,0 +1,12 @@
+<div uk-slideshow="autoplay: {{ .Get "autoplay" | default true }}; ratio: {{ .Get "ratio" | default "2:1" }}; max-height: {{ .Get "max-height" | default "600" }}" class="uk-position-relative">
+    <ul class="uk-slideshow-items"{{ if (.Get "lightbox" | default true) }} uk-lightbox{{ end }}>
+        {{- $items := split .Inner "\n- " -}}
+        {{ range after 1 $items -}}
+        <li>
+            {{ . | safeHTML }}
+        </li>
+        {{ end }}
+    </ul>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+</div>

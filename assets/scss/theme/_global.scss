@@ -36,8 +36,14 @@ figure {
         max-width: 100%;
     }
 
-    a img:hover, a img:focus {
+    a:hover img, a:focus img {
         @extend .uk-card-default.uk-card-hover:hover;
+    }
+
+    &.no-border img, &.no-border a:hover img, &.no-border a:focus img {
+        box-shadow: none;
+        background: none;
+        border: none;
     }
 }
 

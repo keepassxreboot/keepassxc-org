@@ -29,13 +29,13 @@ In detail:
 
 1. In KeePassXC, in the "Database" menu, click "Export", then click "HTML File ...".
 2. A warning message appears that explains that you are going to create an unencrypted file that exposes all your passwords. Read the warning and click "Yes" if you agree to proceed.
-3. A file selection box appears. Choose a file in a temporary location, e. g. your desktop, and name it something like `paperbackup.html`.
+3. A file selection box appears. Choose a file in a temporary location, e.g. your desktop, and name it something like `paperbackup.html`.
 4. Open `paperbackup.html` in your web browser (for example, double-click it in Finder/Explorer/file manager).
 5. Use the browser's "print" function to print the file to paper.
 6. Delete `paperbackup.html`. Make sure to really destroy the file, rather than moving it to the trash.
 7. Store the printed pages in a safe place.
 
-![Screenshot]({{< baseurl >}}blog/images/paper-backup.png)
+{{< figure src="blog/images/paper-backup.png" alt="Paper backup printed as PDF" >}}
 
 ## How about security?
 
