@@ -69,13 +69,11 @@
 }
 
 @mixin hook-button-default() {
-    color: $button-default-color;
     border: $button-border-width solid $button-default-border;
-    transition: color 300ms, border-color 300ms;
+    transition: 300ms;
 }
 
 @mixin hook-button-default-hover() {
-    color: $button-default-hover-color;
     border-color: $button-default-hover-border;
 }
 
