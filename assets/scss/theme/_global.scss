@@ -6,6 +6,10 @@ body {
     background: linear-gradient(#f5f5f5 0, #fff 70vh);
 }
 
+main > *:last-child {
+    padding-bottom: $section-large-padding-vertical + $margin-medium-margin;
+}
+
 .blog {
     h2 {
         font-size: 1.6rem;

@@ -13,8 +13,11 @@
 @import "theme/article-mixins";
 @import "theme/button-mixins";
 @import "theme/navbar-mixins";
+@import "theme/tab-mixins";
+@import "theme/slider-mixins";
 @import "theme/description-list-mixins";
 @import "theme/offcanvas-bar-mixins";
+@import "theme/toggle-mixins";
 
 // UIkit
 @import "node_modules/uikit/src/scss/uikit-theme.scss";

@@ -79,6 +79,6 @@
     border-color: $button-default-hover-border;
 }
 
-@mixin hook-button-default-active(){
+@mixin hook-button-default-active() {
     border-color: $button-default-active-border;
 }

@@ -1,0 +1,4 @@
+@mixin hook-tab-item-active() {
+    border-color: $tab-item-active-border;
+    border-bottom-width: 2px;
+}
