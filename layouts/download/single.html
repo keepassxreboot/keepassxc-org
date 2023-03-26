@@ -365,37 +365,38 @@
 
 <div class="uk-section uk-background-muted">
     <div class="uk-container uk-margin-medium-bottom" id="screenshot-carousel">
-        <div class="uk-position-relative uk-margin-large" uk-slider>
-            <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small" uk-lightbox>
-                <li>
-                    <a href="{{ .Site.BaseURL }}assets/img/screenshots/welcome_screen.png" data-caption="Welcome Screen">
-                        <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/welcome_screen.png" alt="Welcome Screen">
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ .Site.BaseURL }}assets/img/screenshots/unlock_database.png" data-caption="Unlock Database">
-                        <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/unlock_database.png" alt="Unlock Database">
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ .Site.BaseURL }}assets/img/screenshots/new_db_wizard_1.png" data-caption="New Database Wizard">
-                        <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/new_db_wizard_1.png" alt="New Database Wizard">
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ .Site.BaseURL }}assets/img/screenshots/new_db_wizard_2.png" data-caption="New Database Wizard">
-                        <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/new_db_wizard_2.png" alt="New Database Wizard">
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ .Site.BaseURL }}assets/img/screenshots/new_db_wizard_3.png" data-caption="New Database Wizard">
-                        <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/new_db_wizard_3.png" alt="New Database Wizard">
-                    </a>
-                </li>
-            </ul>
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-
+        <div uk-slider>
+            <div class="uk-position-relative">
+                <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small" uk-lightbox>
+                    <li>
+                        <a href="{{ .Site.BaseURL }}assets/img/screenshots/welcome_screen.png" data-caption="Welcome Screen">
+                            <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/welcome_screen.png" alt="Welcome Screen">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ .Site.BaseURL }}assets/img/screenshots/unlock_database.png" data-caption="Unlock Database">
+                            <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/unlock_database.png" alt="Unlock Database">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ .Site.BaseURL }}assets/img/screenshots/new_db_wizard_1.png" data-caption="New Database Wizard">
+                            <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/new_db_wizard_1.png" alt="New Database Wizard">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ .Site.BaseURL }}assets/img/screenshots/new_db_wizard_2.png" data-caption="New Database Wizard">
+                            <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/new_db_wizard_2.png" alt="New Database Wizard">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ .Site.BaseURL }}assets/img/screenshots/new_db_wizard_3.png" data-caption="New Database Wizard">
+                            <img src="{{ .Site.BaseURL }}assets/img/screenshots/thumbs/new_db_wizard_3.png" alt="New Database Wizard">
+                        </a>
+                    </li>
+                </ul>
+                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+            </div>
             <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
         </div>
     </div>
