@@ -23,8 +23,22 @@ winget install Hugo.Hugo.Extended
 
 ## Build website
 
-- Install NPM dependencies: `npm install`
-- Run Hugo dev server: `hugo serve`
+Install NPM dependencies
+```bash
+npm install
+```
+
+Compile website:
+```bash
+hugo
+```
+
+The compiled HTML files will be stored in the `public` folder.
+
+Instead of building static HTML files, you can also start a Hugo development server with live reload:
+```bash
+hugo serve
+```
 
 ## Create a new blog post
 
