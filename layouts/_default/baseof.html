@@ -16,10 +16,7 @@
     {{ block "title" . }}<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Page.Title }} – KeePassXC{{ end }}</title>{{ end }}
     {{ $style := resources.Get "scss/style.scss"
         | resources.ExecuteAsTemplate "assets/css/style.css" .
-        | resources.ToCSS (dict
-        "outputStyle" "compressed"
-        "enableSourceMap" (not hugo.IsProduction)
-        "includePaths" (slice "."))
+        | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "."))
         | fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 
@@ -27,7 +24,7 @@
     {{- $uikitIcons := resources.Get "node_modules/uikit/dist/js/uikit-icons.min.js" }}
     {{- $uikit := slice $uikitMain $uikitIcons | resources.Concat "assets/js/uikit.min.js" | fingerprint }}
     <script src="{{ $uikit.RelPermalink }}"></script>
-    {{- $jquery := resources.Get "node_modules/jquery/dist/jquery.min.js" | fingerprint }}
+    {{- $jquery := resources.Get "node_modules/jquery/dist/jquery.min.js" | resources.Copy "assets/js/jquery.min.js" | fingerprint }}
     <script type="module" src="{{ $jquery.RelPermalink }}"></script>
     {{- block "head" . }}{{ end }}
 </head>

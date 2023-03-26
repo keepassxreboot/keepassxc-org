@@ -436,7 +436,7 @@
     </div>
 </div>
 
-{{- $uaParser := resources.Get "node_modules/ua-parser-js/dist/ua-parser.pack.js" | fingerprint }}
+{{- $uaParser := resources.Get "node_modules/ua-parser-js/dist/ua-parser.pack.js" | resources.Copy "assets/js/ua-parser.pack.js" | fingerprint }}
 <script type="module" src="{{ $uaParser.RelPermalink }}"></script>
 <script type="module">
     const uap = UAParser();
