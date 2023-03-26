@@ -1,0 +1,5 @@
+@mixin hook-card() {
+    border-radius: 3px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-in-out;
+}
