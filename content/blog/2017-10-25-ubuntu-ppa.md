@@ -3,8 +3,6 @@ title: "KeePassXC Ubuntu PPA Launched"
 date: 2017-10-25T14:51:00+02:00
 category: "Packages"
 author: Janek Bevendorff
-teaser_image: /blog/images/ubuntu-logo.png
-teaser_image_alt: "Ubuntu logo"
 ---
 
 With our AppImage and Snap release, KeePassXC runs on almost any desktop Linux platform
