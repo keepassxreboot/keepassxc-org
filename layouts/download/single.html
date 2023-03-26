@@ -3,36 +3,198 @@
     <div class="uk-container uk-margin-medium">
         <h1 hidden>Download</h1>
 
-        <ul class="uk-tab uk-flex-center" uk-tab="animation: uk-animation-fade" id="os-tabbar">
-            <li><a href="#tab-linux"><i class="fa-brands fa-linux"></i> Linux</a></li>
+        <ul class="uk-tab uk-flex-center"id="os-tabbar">
             <li><a href="#tab-macos"><i class="fa-brands fa-apple"></i> macOS</a></li>
             <li><a href="#tab-windows"><i class="fa-brands fa-windows"></i> Windows</a></li>
+            <li><a href="#tab-linux"><i class="fa-brands fa-linux"></i> Linux</a></li>
             <li><a href="#tab-code"><i class="fa-solid fa-code"></i> Source Code</a></li>
         </ul>
 
+        {{ $gh := "https://github.com/keepassxreboot/keepassxc/releases/download/" }}
         <div class="uk-switcher uk-text-center" id="tab-body">
+            <div id="tab-macos">
+                <div class="uk-margin-large-top uk-margin-medium-bottom">
+                    <h2>KeePassXC for macOS (<span class="apple-arch">Apple Silicon</span>)</h2>
+                    <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
+                </div>
+
+                <a href="{{ $gh }}{{ .Params.version.macos.dmg_arm64.version }}/KeePassXC-{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download for macOS</a>
+                <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
+                    Version {{ .Params.version.macos.dmg_arm64.version }} &ndash;
+                    <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
+                </div>
+
+                <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
+                    <a href="{{ $gh }}{{ .Params.version.macos.dmg_arm64.version }}/KeePassXC-{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                    <a href="{{ $gh }}{{ .Params.version.macos.dmg_arm64.version }}/KeePassXC-{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                    <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
+                </div>
+
+                <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="macos-packages-more">
+                    <div class="uk-card-header uk-text-decoration-none uk-background-muted" uk-toggle="target: #macos-packages-more .uk-card-body, #macos-packages-more .toggle; animation: uk-animation-fade">
+                        <h3 class="uk-text-small uk-position-relative">
+                            See more options
+                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
+                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
+                        </h3>
+                    </div>
+                    <div class="uk-card-body collapse">
+                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-apple"></i> KeePassXC for Apple Silicon Macs
+                                </div>
+                                <div class="uk-margin-small">
+                                <a href="{{ $gh }}{{ .Params.version.macos.dmg_arm64.version }}/KeePassXC-{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                <a href="{{ $gh }}{{ .Params.version.macos.dmg_arm64.version }}/KeePassXC-{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                <a href="{{ $gh }}{{ .Params.version.macos.dmg_arm64.version }}/KeePassXC-{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-apple"></i> KeePassXC for Intel Macs
+                                </div>
+                                <div class="uk-margin-small">
+                                    <a href="{{ $gh }}{{ .Params.version.macos.dmg_intel.version }}/KeePassXC-{{ .Params.version.macos.dmg_intel.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-x86_64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    <a href="{{ $gh }}{{ .Params.version.macos.dmg_intel.version }}/KeePassXC-{{ .Params.version.macos.dmg_intel.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-x86_64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                    <a href="{{ $gh }}{{ .Params.version.macos.dmg_intel.version }}/KeePassXC-{{ .Params.version.macos.dmg_intel.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-x86_64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.938 0a.214.214 0 0 0-.206.156c-.316 1.104.179 2.15.838 2.935.153.181.313.347.476.501a2.039 2.039 0 0 0-.665.02c-1.184.233-2.193.985-2.74 2.532a3.893 3.893 0 0 0-.2 1.466 1.565 1.565 0 0 0-1.156 1.504 1.59 1.59 0 0 0 1.227 1.541l.026 12.046c0 .195.1.377.264.482a.214.214 0 0 0 .008.005c.537.31 2.047.812 5.21.812 3.238 0 4.7-.678 5.181-1.04a.214.214 0 0 0 .008-.007.571.571 0 0 0 .206-.439c.002-.344.002-1.136.002-1.604a.143.143 0 0 1 .147-.144c.397.006.869.006 1.318.005a1.826 1.826 0 0 0 1.832-1.825v-5.804a1.826 1.826 0 0 0-1.825-1.826H16.56a.14.14 0 0 1-.143-.144V10.6h.007v-.001a1.573 1.573 0 0 0 1.356-1.556c0-.816-.627-1.489-1.424-1.563-.025-1.438-.437-2.126-.736-2.58a.214.214 0 0 0-.005-.007c-.364-.51-1.193-1.282-2.275-1.316-.503-.016-.842.124-1.125.254-.217.1-.42.177-.67.22.002-1.286.945-1.981.945-1.981a.214.214 0 0 0 .05-.298s-.087-.122-.21-.26c-.121-.136-.269-.294-.47-.378a.214.214 0 0 0-.079-.017.214.214 0 0 0-.145.055 4.308 4.308 0 0 0-.875 1.101 3.42 3.42 0 0 0-.133.273 3.497 3.497 0 0 0-.381-.846C9.794.978 9.063.436 8.017.016A.214.214 0 0 0 7.939 0zm.156.524c.85.378 1.43.83 1.79 1.403.274.438.426.962.484 1.584a3.07 3.07 0 0 0-.012.462 6.897 6.897 0 0 1-.168-.052 5.487 5.487 0 0 1-1.29-1.106c-.551-.657-.935-1.46-.804-2.291zM11.8 1.618c.07.054.141.101.212.18.034.039.032.04.058.073-.332.308-1.07 1.144-.952 2.453a.214.214 0 0 0 .222.195c.469-.017.782-.172 1.056-.299.273-.126.508-.228.931-.214.875.027 1.639.715 1.939 1.134.295.449.65 1 .663 2.36a1.66 1.66 0 0 0-.41.142 1.938 1.938 0 0 0-1.77-1.16 1.94 1.94 0 0 0-1.87 1.448 1.783 1.783 0 0 0-1.356-.64c-.484 0-.91.205-1.233.517a1.873 1.873 0 0 0-1.85-1.625c-.649 0-1.218.335-1.552.84a3.1 3.1 0 0 1 .157-.735c.51-1.437 1.355-2.045 2.42-2.254.367-.073.664-.011.99.095.325.106.671.262 1.094.342a.214.214 0 0 0 .252-.245c-.112-.67.073-1.266.336-1.744a3.71 3.71 0 0 1 .663-.863zM7.44 6.611a1.442 1.442 0 0 1 1.363 1.925.214.214 0 0 0 .168.283h.005a.214.214 0 0 0 .238-.146 1.373 1.373 0 0 1 2.613-.01.214.214 0 0 0 .417-.09 1.509 1.509 0 0 1 1.504-1.664c.678 0 1.249.445 1.442 1.056a.214.214 0 0 0 .259.143l.15-.04a.214.214 0 0 0 .051-.02 1.139 1.139 0 0 1 1.702.995 1.14 1.14 0 0 1-.985 1.131.214.214 0 0 0-.001 0 2.215 2.215 0 0 0-.485.126 10.65 10.65 0 0 1-1.176.365.214.214 0 0 0-.162.186 1.276 1.276 0 0 1-.146.478 2.07 2.07 0 0 0-.239 1.111l.001.151a.438.438 0 0 1-.16.36.665.665 0 0 1-.43.14.586.586 0 0 1-.588-.59.803.803 0 0 0-.38-.681.214.214 0 0 0-.002-.002c-.24-.145-.43-.37-.532-.636a.214.214 0 0 0-.207-.138 19.469 19.469 0 0 1-5.37-.6l-.003-.002a9.007 9.007 0 0 0-.838-.194h.003a1.16 1.16 0 0 1-.937-1.134c0-.619.488-1.118 1.101-1.14a.214.214 0 0 0 .204-.176 1.443 1.443 0 0 1 1.42-1.187zm8.549 4.106v.455c0 .314.259.573.572.573h1.329a1.397 1.397 0 0 1 1.397 1.397v5.804a1.396 1.396 0 0 1-1.402 1.396.214.214 0 0 0-.002 0c-.448.002-.918 0-1.31-.005a.573.573 0 0 0-.584.573c0 .468 0 1.262-.002 1.603a.214.214 0 0 0 0 .001c0 .042-.019.08-.05.107-.346.26-1.75.95-4.915.95-3.107 0-4.587-.52-4.99-.752a.143.143 0 0 1-.065-.118l-.025-11.955c.145.033.288.07.431.11a.214.214 0 0 0 .003 0c.115.031.246.064.383.097v10.37c0 .129.069.247.18.31.453.217 1.767.732 4.071.732 2.32 0 3.595-.626 4.022-.884a.357.357 0 0 0 .164-.3l.001-10.21c.267-.075.531-.158.792-.254zm-7.99.894a.493.493 0 0 1 .494.493v8.578a.493.493 0 0 1-.493.493.493.493 0 0 1-.494-.493v-8.578A.493.493 0 0 1 8 11.611zm8.652 1.14a.663.663 0 0 0-.662.662v5.208a.663.663 0 0 0 .662.662h1.14a.663.663 0 0 0 .662-.662v-5.209a.663.663 0 0 0-.662-.662zm0 .428h1.14a.233.233 0 0 1 .233.233v5.21a.233.233 0 0 1-.233.232h-1.14a.233.233 0 0 1-.233-.233v-5.209a.233.233 0 0 1 .233-.233z"/></svg>
+                                    <a class="uk-link-reset" href="https://formulae.brew.sh/cask/keepassxc">Homebrew Cask</a>
+                                </div>
+                                <div class="uk-margin-small-top">
+                                    <code>brew install --cask keepassxc</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-windows">
+                <div class="uk-margin-large-top uk-margin-medium-bottom">
+                    <h2>KeePassXC for Windows 11</h2>
+                    <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
+                </div>
+
+                <a href="{{ $gh }}/{{ .Params.version.windows.msi.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.msi.suffix }}-Win64.msi" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download for Windows 11</a>
+                <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
+                    Version {{ .Params.version.windows.msi.version }} &ndash;
+                    <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
+                </div>
+                <div class="uk-margin-small uk-text-small uk-text-muted">Requires <a href="https://aka.ms/vs/17/release/vc_redist.arm64.exe" target="_blank">MSVC Support Libraries</a></div>
+
+                <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
+                    <a href="{{ $gh }}/{{ .Params.version.windows.msi.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.msi.suffix }}-Win64.msi.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                    <a href="{{ $gh }}/{{ .Params.version.windows.msi.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.msi.suffix }}-Win64.msi.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                    <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
+                </div>
+
+                <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="windows-packages-more">
+                    <div class="uk-card-header uk-text-decoration-none uk-background-muted" uk-toggle="target: #windows-packages-more .uk-card-body, #windows-packages-more .toggle; animation: uk-animation-fade">
+                        <h3 class="uk-text-small uk-position-relative">
+                            See more options
+                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
+                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
+                        </h3>
+                    </div>
+                    <div class="uk-card-body collapse">
+                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-microsoft"></i> <a class="uk-link-reset" href="https://apps.microsoft.com/store/detail/keepassxc/XP8K2L36VP0QMB">Microsoft Store</a>
+                                </div>
+                                <div class="uk-margin-small">
+                                    <a href="ms-windows-store://pdp/?ProductId=XP8K2L36VP0QMB" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Install</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-windows"></i> Installer (64-bit, Windows 10 / 11)
+                                </div>
+                                <div class="uk-margin-small">
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.msi.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.msi.suffix }}-Win64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.msi.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.msi.suffix }}-Win64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.msi.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.msi.suffix }}-Win64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-windows"></i> Portable ZIP (64-bit, Windows 10 / 11)
+                                </div>
+                                <div class="uk-margin-small">
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.portable.version }}/KeePassXC-{{ .Params.version.windows.portable.version }}{{ .Params.version.windows.portable.suffix }}-Win64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.portable.version }}/KeePassXC-{{ .Params.version.windows.portable.version }}{{ .Params.version.windows.portable.suffix }}-Win64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.portable.version }}/KeePassXC-{{ .Params.version.windows.portable.version }}{{ .Params.version.windows.portable.suffix }}-Win64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-windows"></i> Legacy Installer (64-bit, Windows 7 / 8 / 8.1)
+                                </div>
+                                <div class="uk-margin-small">
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.legacy.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.legacy.suffix }}-Win64-LegacyWindows.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.legacy.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.legacy.suffix }}-Win64-LegacyWindows.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                    <a href="{{ $gh }}/{{ .Params.version.windows.legacy.version }}/KeePassXC-{{ .Params.version.windows.msi.version }}{{ .Params.version.windows.legacy.suffix }}-Win64-LegacyWindows.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-windows"></i> Legacy 32-bit Downloads
+                                </div>
+                                <div class="uk-margin-small">
+                                    <a href="https://github.com/keepassxreboot/keepassxc/releases/tag/2.6.6" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    <p class="uk-text-muted uk-margin-small">Note: 32-bit Windows is no longer supported after version 2.6.6.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <i class="fa-brands fa-windows"></i> <a class="uk-link-reset" href="https://winget.run/pkg/KeePassXCTeam/KeePassXC">Windows Package Manager</a>
+                                </div>
+                                <div class="uk-margin-small-top">
+                                    <code>winget install -e --id KeePassXCTeam.KeePassXC</code>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-text-bold">
+                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.249l1.439 3.18L0 6.926l1.439 2.5L0 11.923l1.439 2.424L0 16.845l1.439 2.5L0 22.75l2.8-.91c6.3.01 12.696.006 18.096 0l3.104.91-2.044-3.635 1.136-1.892-2.196-2.272-.004-.017V2.005c-6.551-.001-12.243 0-18.091 0zm19.688 1.968v7.03l-.23-.898-1.438-4.39-3.56.605-1.89-2.343zm-11.695.004h4.563L9.539 4.428zm2.86 3.68a3.903 3.903 0 0 1 1.64.254c1.968.757 1.286 2.8.15 4.012-.378.378-1.21.227-.605-.908.228-.454.454-1.363-.227-1.59-1.515-.53-3.255.682-3.634 2.271-.378 1.363.606 2.801 2.347 2.423 1.439-.303 2.802-1.288 3.332-1.742.53-.455.907.38.301 1.288-.68.908-1.74 1.968-2.65 2.574-3.558 2.423-6.662-.758-5.375-4.392.677-1.845 2.454-4.041 4.72-4.19zm6.527 2.031a.66.66 0 0 1 .454.182c.324.326.204.972-.268 1.445-.473.474-1.121.593-1.446.268-.325-.326-.205-.972.267-1.445.292-.292.666-.461.993-.45zm-.42 3.233a.66.66 0 0 1 .454.182c.325.325.206.973-.268 1.446-.473.473-1.12.592-1.445.268-.324-.326-.205-.972.268-1.445.291-.292.664-.462.99-.451Z"/></svg>
+                                    <a class="uk-link-reset" href="https://community.chocolatey.org/packages/keepassxc">Chocolatey</a>
+                                </div>
+                                <div class="uk-margin-small-top">
+                                    <code>choco install keepassxc</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div id="tab-linux">
                 <div class="uk-margin-large-top uk-margin-medium-bottom">
                     <h2>KeePassXC for Linux Desktops</h2>
                     <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                 </div>
 
-                <a href="" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download AppImage</a>
-                <p class="uk-text-small uk-margin-small uk-text-muted">
-                    Version 2.7.5 &ndash;
+                <a href="{{ $gh }}{{ .Params.version.linux.appimage.version }}/KeePassXC-{{ .Params.version.linux.appimage.version }}{{ .Params.version.linux.appimage.suffix }}-x86_64.AppImage" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download AppImage</a>
+                <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
+                    Version {{ .Params.version.linux.appimage.version }} &ndash;
                     <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
-                </p>
+                </div>
 
                 <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
+                    <a href="{{ $gh }}{{ .Params.version.linux.appimage.version }}/KeePassXC-{{ .Params.version.linux.appimage.version }}{{ .Params.version.linux.appimage.suffix }}-x86_64.AppImage.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                    <a href="{{ $gh }}{{ .Params.version.linux.appimage.version }}/KeePassXC-{{ .Params.version.linux.appimage.version }}{{ .Params.version.linux.appimage.suffix }}-x86_64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                    <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                     <div class="uk-margin-small uk-text-small uk-text-muted"><a href="https://docs.appimage.org/user-guide/run-appimages.html">AppImages</a> are self-contained Linux executables.</div>
                 </div>
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="linux-packages-official">
                     <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #linux-packages-official .uk-card-body, #linux-packages-official .toggle; animation: uk-animation-fade">
                         <h3 class="uk-text-small uk-position-relative">
-                            Official Linux Packages
+                            Other Official Linux Packages
                             <i class="fa-solid fa-chevron-down uk-position-center-right toggle" hidden></i>
                             <i class="fa-solid fa-chevron-up uk-position-center-right toggle"></i>
                         </h3>
@@ -77,7 +239,7 @@
                             <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
                         </h3>
                     </div>
-                    <div class="uk-card-body" hidden>
+                    <div class="uk-card-body collapse">
                         <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
                             <div>
                                 <div class="uk-text-bold">
@@ -138,178 +300,22 @@
                 </div>
             </div>
 
-            <div id="tab-macos">
-                <div class="uk-margin-large-top uk-margin-medium-bottom">
-                    <h2>KeePassXC for macOS (<span class="apple-arch">Apple Silicon</span>)</h2>
-                    <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
-                </div>
-
-                <a href="" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download for macOS</a>
-                <p class="uk-text-small uk-margin-small uk-text-muted">
-                    Version 2.7.5 &ndash;
-                    <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
-                </p>
-
-                <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
-                </div>
-
-                <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="macos-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-muted" uk-toggle="target: #macos-packages-more .uk-card-body, #macos-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-position-relative">
-                            See more options
-                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
-                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
-                        </h3>
-                    </div>
-                    <div class="uk-card-body" hidden>
-                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-apple"></i> KeePassXC for Apple Silicon Macs
-                                </div>
-                                <div class="uk-margin-small">
-                                <a href="" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-apple"></i> KeePassXC for Intel Macs
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.938 0a.214.214 0 0 0-.206.156c-.316 1.104.179 2.15.838 2.935.153.181.313.347.476.501a2.039 2.039 0 0 0-.665.02c-1.184.233-2.193.985-2.74 2.532a3.893 3.893 0 0 0-.2 1.466 1.565 1.565 0 0 0-1.156 1.504 1.59 1.59 0 0 0 1.227 1.541l.026 12.046c0 .195.1.377.264.482a.214.214 0 0 0 .008.005c.537.31 2.047.812 5.21.812 3.238 0 4.7-.678 5.181-1.04a.214.214 0 0 0 .008-.007.571.571 0 0 0 .206-.439c.002-.344.002-1.136.002-1.604a.143.143 0 0 1 .147-.144c.397.006.869.006 1.318.005a1.826 1.826 0 0 0 1.832-1.825v-5.804a1.826 1.826 0 0 0-1.825-1.826H16.56a.14.14 0 0 1-.143-.144V10.6h.007v-.001a1.573 1.573 0 0 0 1.356-1.556c0-.816-.627-1.489-1.424-1.563-.025-1.438-.437-2.126-.736-2.58a.214.214 0 0 0-.005-.007c-.364-.51-1.193-1.282-2.275-1.316-.503-.016-.842.124-1.125.254-.217.1-.42.177-.67.22.002-1.286.945-1.981.945-1.981a.214.214 0 0 0 .05-.298s-.087-.122-.21-.26c-.121-.136-.269-.294-.47-.378a.214.214 0 0 0-.079-.017.214.214 0 0 0-.145.055 4.308 4.308 0 0 0-.875 1.101 3.42 3.42 0 0 0-.133.273 3.497 3.497 0 0 0-.381-.846C9.794.978 9.063.436 8.017.016A.214.214 0 0 0 7.939 0zm.156.524c.85.378 1.43.83 1.79 1.403.274.438.426.962.484 1.584a3.07 3.07 0 0 0-.012.462 6.897 6.897 0 0 1-.168-.052 5.487 5.487 0 0 1-1.29-1.106c-.551-.657-.935-1.46-.804-2.291zM11.8 1.618c.07.054.141.101.212.18.034.039.032.04.058.073-.332.308-1.07 1.144-.952 2.453a.214.214 0 0 0 .222.195c.469-.017.782-.172 1.056-.299.273-.126.508-.228.931-.214.875.027 1.639.715 1.939 1.134.295.449.65 1 .663 2.36a1.66 1.66 0 0 0-.41.142 1.938 1.938 0 0 0-1.77-1.16 1.94 1.94 0 0 0-1.87 1.448 1.783 1.783 0 0 0-1.356-.64c-.484 0-.91.205-1.233.517a1.873 1.873 0 0 0-1.85-1.625c-.649 0-1.218.335-1.552.84a3.1 3.1 0 0 1 .157-.735c.51-1.437 1.355-2.045 2.42-2.254.367-.073.664-.011.99.095.325.106.671.262 1.094.342a.214.214 0 0 0 .252-.245c-.112-.67.073-1.266.336-1.744a3.71 3.71 0 0 1 .663-.863zM7.44 6.611a1.442 1.442 0 0 1 1.363 1.925.214.214 0 0 0 .168.283h.005a.214.214 0 0 0 .238-.146 1.373 1.373 0 0 1 2.613-.01.214.214 0 0 0 .417-.09 1.509 1.509 0 0 1 1.504-1.664c.678 0 1.249.445 1.442 1.056a.214.214 0 0 0 .259.143l.15-.04a.214.214 0 0 0 .051-.02 1.139 1.139 0 0 1 1.702.995 1.14 1.14 0 0 1-.985 1.131.214.214 0 0 0-.001 0 2.215 2.215 0 0 0-.485.126 10.65 10.65 0 0 1-1.176.365.214.214 0 0 0-.162.186 1.276 1.276 0 0 1-.146.478 2.07 2.07 0 0 0-.239 1.111l.001.151a.438.438 0 0 1-.16.36.665.665 0 0 1-.43.14.586.586 0 0 1-.588-.59.803.803 0 0 0-.38-.681.214.214 0 0 0-.002-.002c-.24-.145-.43-.37-.532-.636a.214.214 0 0 0-.207-.138 19.469 19.469 0 0 1-5.37-.6l-.003-.002a9.007 9.007 0 0 0-.838-.194h.003a1.16 1.16 0 0 1-.937-1.134c0-.619.488-1.118 1.101-1.14a.214.214 0 0 0 .204-.176 1.443 1.443 0 0 1 1.42-1.187zm8.549 4.106v.455c0 .314.259.573.572.573h1.329a1.397 1.397 0 0 1 1.397 1.397v5.804a1.396 1.396 0 0 1-1.402 1.396.214.214 0 0 0-.002 0c-.448.002-.918 0-1.31-.005a.573.573 0 0 0-.584.573c0 .468 0 1.262-.002 1.603a.214.214 0 0 0 0 .001c0 .042-.019.08-.05.107-.346.26-1.75.95-4.915.95-3.107 0-4.587-.52-4.99-.752a.143.143 0 0 1-.065-.118l-.025-11.955c.145.033.288.07.431.11a.214.214 0 0 0 .003 0c.115.031.246.064.383.097v10.37c0 .129.069.247.18.31.453.217 1.767.732 4.071.732 2.32 0 3.595-.626 4.022-.884a.357.357 0 0 0 .164-.3l.001-10.21c.267-.075.531-.158.792-.254zm-7.99.894a.493.493 0 0 1 .494.493v8.578a.493.493 0 0 1-.493.493.493.493 0 0 1-.494-.493v-8.578A.493.493 0 0 1 8 11.611zm8.652 1.14a.663.663 0 0 0-.662.662v5.208a.663.663 0 0 0 .662.662h1.14a.663.663 0 0 0 .662-.662v-5.209a.663.663 0 0 0-.662-.662zm0 .428h1.14a.233.233 0 0 1 .233.233v5.21a.233.233 0 0 1-.233.232h-1.14a.233.233 0 0 1-.233-.233v-5.209a.233.233 0 0 1 .233-.233z"/></svg>
-                                    <a class="uk-link-reset" href="https://formulae.brew.sh/cask/keepassxc">Homebrew Cask</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <code>brew install --cask keepassxc</code>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-windows">
-                <div class="uk-margin-large-top uk-margin-medium-bottom">
-                    <h2>KeePassXC for Windows 11</h2>
-                    <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
-                </div>
-
-                <a href="" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download for Windows 11</a>
-                <p class="uk-text-small uk-margin-small uk-text-muted">
-                    Version 2.7.5 &ndash;
-                    <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
-                </p>
-
-                <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
-                </div>
-
-                <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="windows-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-muted" uk-toggle="target: #windows-packages-more .uk-card-body, #windows-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-position-relative">
-                            See more options
-                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
-                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
-                        </h3>
-                    </div>
-                    <div class="uk-card-body" hidden>
-                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-microsoft"></i> <a class="uk-link-reset" href="https://apps.microsoft.com/store/detail/keepassxc/XP8K2L36VP0QMB">Microsoft Store</a>
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="ms-windows-store://pdp/?ProductId=XP8K2L36VP0QMB" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Install</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Installer (64-bit, Windows 10 / 11)
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Portable (64-bit, Windows 10 / 11)
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Legacy Installer (64-bit, Windows 7 / 8 / 8.1)
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Legacy 32-bit Downloads
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <p class="uk-text-muted uk-margin-small">Note: 32-bit Windows is no longer supported after v2.6.6.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> <a class="uk-link-reset" href="https://winget.run/pkg/KeePassXCTeam/KeePassXC">Windows Package Manager</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <code>winget install -e --id KeePassXCTeam.KeePassXC</code>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.249l1.439 3.18L0 6.926l1.439 2.5L0 11.923l1.439 2.424L0 16.845l1.439 2.5L0 22.75l2.8-.91c6.3.01 12.696.006 18.096 0l3.104.91-2.044-3.635 1.136-1.892-2.196-2.272-.004-.017V2.005c-6.551-.001-12.243 0-18.091 0zm19.688 1.968v7.03l-.23-.898-1.438-4.39-3.56.605-1.89-2.343zm-11.695.004h4.563L9.539 4.428zm2.86 3.68a3.903 3.903 0 0 1 1.64.254c1.968.757 1.286 2.8.15 4.012-.378.378-1.21.227-.605-.908.228-.454.454-1.363-.227-1.59-1.515-.53-3.255.682-3.634 2.271-.378 1.363.606 2.801 2.347 2.423 1.439-.303 2.802-1.288 3.332-1.742.53-.455.907.38.301 1.288-.68.908-1.74 1.968-2.65 2.574-3.558 2.423-6.662-.758-5.375-4.392.677-1.845 2.454-4.041 4.72-4.19zm6.527 2.031a.66.66 0 0 1 .454.182c.324.326.204.972-.268 1.445-.473.474-1.121.593-1.446.268-.325-.326-.205-.972.267-1.445.292-.292.666-.461.993-.45zm-.42 3.233a.66.66 0 0 1 .454.182c.325.325.206.973-.268 1.446-.473.473-1.12.592-1.445.268-.324-.326-.205-.972.268-1.445.291-.292.664-.462.99-.451Z"/></svg>
-                                    <a class="uk-link-reset" href="https://community.chocolatey.org/packages/keepassxc">Chocolatey</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <code>choco install keepassxcc</code>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div id="tab-code">
                 <div class="uk-margin-large-top uk-margin-medium-bottom">
                     <h2>KeePassXC Source Code</h2>
                     <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                 </div>
 
-                <a href="" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download Source Code</a>
-                <p class="uk-text-small uk-margin-small uk-text-muted">
-                    Version 2.7.5 &ndash;
+                <a href="{{ $gh }}/{{ .Params.version.source.tarball.version }}/keepassxc-{{ .Params.version.source.tarball.version }}{{ .Params.version.source.tarball.suffix }}-src.tar.xz" class="uk-button uk-button-primary uk-button-large"><i class="fa-solid fa-download"></i> Download Source Code</a>
+                <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
+                    Version {{ .Params.version.source.tarball.version }} &ndash;
                     <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
-                </p>
+                </div>
 
                 <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                    <a href="" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 digest</a>
+                    <a href="{{ $gh }}/{{ .Params.version.source.tarball.version }}/keepassxc-{{ .Params.version.source.tarball.version }}{{ .Params.version.source.tarball.suffix }}-src.tar.xz.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                    <a href="{{ $gh }}/{{ .Params.version.source.tarball.version }}/keepassxc-{{ .Params.version.source.tarball.version }}{{ .Params.version.source.tarball.suffix }}-src.tar.xz.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                    <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                 </div>
             </div>
         </div>
@@ -391,7 +397,7 @@
 {{- $uaParser := resources.Get "node_modules/ua-parser-js/dist/ua-parser.pack.js" | fingerprint }}
 <script type="module" src="{{ $uaParser.RelPermalink }}"></script>
 <script type="module">
-    let uap = UAParser();
+    const uap = UAParser();
     let os;
     let arch = uap.cpu.architecture;
     if (!location.hash) {
@@ -406,20 +412,36 @@
     } else {
         os = location.hash.substring(1);
     }
-    let idx = ['linux', 'macos', 'windows', 'code'].indexOf(os);
+    const tabbar = $('#os-tabbar');
+    const idx = tabbar.find('li > a').map((i, e) => $(e).attr('href').replace('#tab-', '')).get().indexOf(os);
     if (idx > -1) {
         UIkit.tab('#os-tabbar').show(idx);
     }
+    // Enable animation only after switching tab to reduce flicker
+    tabbar.attr('uk-tab', 'animation: uk-animation-fade');
+
+    // Adjust macOS download links to processor architecture
     if (arch === 'amd64') {
-        let t = $('#tab-macos');
+        const t = $('#tab-macos');
         t.find('.apple-arch').text('Intel');
         t.find('a').each((i, e) => {
-            $(e).attr('href').replace('arm64', 'x86_64');
+            const a = $(e).attr('href');
+            if (a.startsWith('{{ $gh }}')) {
+                $(e).attr('href', a.replace(
+                    '{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg',
+                    '{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-x86_64.dmg'));
+            }
         });
     }
+
+    // Hide "more options"
+    $('.collapse').each((i, e) => {
+        $(e).attr('hidden', '');
+    });
 
     UIkit.util.on('.uk-switcher > *', 'shown', (e) => {
         window.history.pushState(null, null, '#' + e.target.id.replace('tab-', ''));
     });
+
 </script>
 {{ end }}
