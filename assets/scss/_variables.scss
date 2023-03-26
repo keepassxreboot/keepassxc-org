@@ -18,6 +18,13 @@ $secondary-color: #ffd200;
 $base-em-color: inherit;
 $base-code-color: lighten($global-color, 15%);
 
+$text-danger-color: #c2304b;
+$text-warning-color: #d1892a;
+$global-warning-background: #f7c465;
+$label-warning-background: $global-warning-background;
+$label-warning-color: $global-emphasis-color;
+$text-success-color: #239640;
+
 $global-link-color: $branding-color;
 $global-link-hover-color: desaturate(lighten($branding-color, 13%), 5%);
 

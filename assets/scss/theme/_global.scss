@@ -1,5 +1,5 @@
 html {
-    scroll-padding-top: $navbar-height-sticky + 1;
+    scroll-padding-top: $navbar-height-sticky + 3;
 }
 
 body {
@@ -34,10 +34,10 @@ figure {
         border: 1px solid $global-border;
         border-radius: 3px;
         max-width: 100%;
+    }
 
-        &:hover, &:focus {
-            @extend .uk-card-default.uk-card-hover:hover;
-        }
+    a img:hover, a img:focus {
+        @extend .uk-card-default.uk-card-hover:hover;
     }
 }
 
