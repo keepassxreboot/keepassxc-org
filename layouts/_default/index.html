@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="uk-width-expand uk-visible@l frontpage-hero">
-                <img src="{{ .Site.BaseURL }}assets/img/frontpage-hero.svg" alt="">
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-hero.svg" alt="" uk-parallax="opacity: 1,0; scale: 1,1.5; end: 10vh;">
             </div>
         </div>
     </div>
@@ -55,8 +55,11 @@
 
 <section class="uk-section" id="project">
     <div class="uk-container">
-        <div class="uk-grid uk-child-width-1-2@s uk-grid-large" uk-grid>
+        <div class="uk-grid uk-child-width-1-2@m uk-grid-large" uk-grid>
             <div>
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-1.svg" uk-parallax="opacity: 0,1; scale: 2,1; end: 65vh + 50%;">
+            </div>
+            <div class="uk-flex-first@m">
                 <h2>The Project</h2>
 
                 <p><strong>KeePassXC</strong> is a modern, secure, and open-source password manager that stores and manages your most sensitive information.</p>
@@ -67,18 +70,15 @@
                     and notes in an offline, encrypted file that can be stored in any location, including private and public cloud solutions.
                 </p>
             </div>
-            <div>
-                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-1.svg">
-            </div>
         </div>
     </div>
 </section>
 
 <section class="uk-section">
     <div class="uk-container">
-        <div class="uk-grid uk-child-width-1-2@s uk-grid-large" uk-grid>
+        <div class="uk-grid uk-child-width-1-2@m uk-grid-large" uk-grid>
             <div>
-                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-2.svg">
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-2.svg" uk-parallax="opacity: 0,1; scale: 2,1; end: 65vh + 50%;">
             </div>
             <div>
                 <h2>How to Get Started</h2>
