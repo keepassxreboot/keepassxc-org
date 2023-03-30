@@ -13,7 +13,7 @@ $global-emphasis-color: #272727;
 $global-inverse-color: #fff;
 $inverse-global-emphasis-color: #eee;
 $global-muted-color: #888;
-$branding-color: #629931;
+$branding-color: #45862b;
 $base-em-color: inherit;
 $base-code-color: lighten($global-color, 15%);
 
@@ -29,14 +29,14 @@ $global-success-background: desaturate(lighten($branding-color, 50%), 15%);
 $label-success-background: $global-success-background;
 $label-success-color: $text-success-color;
 
-$text-primary-color: saturate(darken($branding-color, 3%), 10%);
+$text-primary-color: $branding-color;
 $global-link-color: $text-primary-color;
 $global-link-hover-color: desaturate(lighten($branding-color, 13%), 5%);
 
 $global-background: #fff;
 $global-muted-background: #f8f8f8;
 $global-primary-background: $branding-color;
-$global-primary-background-gradient: #8fcc2f;
+$global-primary-background-gradient: #8ec92e;
 $global-secondary-background: #efbb54;
 $global-secondary-background-gradient: #ffdd7d;
 

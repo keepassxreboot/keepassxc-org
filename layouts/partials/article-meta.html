@@ -1,13 +1,11 @@
-<header class="uk-article-meta uk-margin-small-bottom">
-    {{- if .Params.author }}By <em><i class="fa-solid fa-circle-user"></i> {{ .Params.author }}{{ end }}</em>
-    <span class="uk-visible@m">&ndash;</span>
-    <br class="uk-hidden@m">
+<header class="uk-article-meta">
+    <span class="uk-text-nowrap">{{- if .Params.author }}By <em class="p-author"><i class="fa-solid fa-circle-user"></i> {{ .Params.author }}{{ end }}</em></span>
+    <br>
 
-    Posted on <time datetime="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }}" class="blog-date">
-        <i class="fa-solid fa-clock"></i> {{ .PublishDate.Format "January 2 2006, 15:04" }}</time>
+    <span class="uk-text-nowrap">Posted on <time datetime="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }}" class="dt-published">
+        <i class="fa-solid fa-clock"></i> {{ .PublishDate.Format "2 January 2006, 15:04" }}</time></span>
 
     {{- if .Params.category }}
-        &ndash;
-        Category <em class="blog-category"><i class="fa-solid fa-tags"></i> {{ .Params.category }}</em>
+        <span class="uk-text-nowrap">&nbsp;in <em class="blog-category"><i class="fa-solid fa-tags"></i> {{ .Params.category }}</em></span>
     {{- end }}
 </header>

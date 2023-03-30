@@ -1,5 +1,10 @@
-<article class="uk-article uk-margin-bottom-large">
-    <h2 class="uk-article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ partial "article-meta.html" . }}
-    {{ .Summary }}
+<article class="uk-article uk-margin-bottom-large uk-card uk-card-default">
+    <div class="uk-card-header uk-margin-small-top">
+        <h2 class="uk-article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ partial "article-meta.html" . }}
+    </div>
+    <div class="uk-card-body">
+        {{ .Summary }}
+        {{- if .Truncated }}<p><a href="{{ .Permalink }}">Read more&hellip;</a></p>{{ end }}
+    </div>
 </article>

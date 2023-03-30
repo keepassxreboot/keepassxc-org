@@ -1,22 +1,29 @@
 {{ define "main" }}
-<section class="uk-section uk-margin-medium-top uk-margin-medium-bottom index-page-hero">
+<section class="uk-section uk-margin-medium-bottom uk-position-relative frontpage-hero-section">
     <div class="uk-container">
-        <div class="uk-width-xlarge@l">
-            <h1 class="uk-margin-remove-bottom">KeePassXC</h1>
-            <div class="uk-text-muted uk-margin-remove-top">Cross-platform Password Manager</div>
-            <p class="uk-margin-medium-top">Never forget a password again. Instead, securely store and auto-fill them into your applications and webservices.</p>
-            <p>No data collection, completely open source, works on all desktop platforms.</p>
-        </div>
-        <div class="uk-margin-large-top">
-            <a class="uk-button uk-button-large uk-button-primary uk-width-expand uk-width-auto@s uk-margin-small-bottom" href="{{ .Site.BaseURL }}download" role="button">
-                <i class="fa-solid fa-download"></i> Download
-            </a>
-            <a class="uk-button uk-button-large uk-button-secondary uk-width-expand uk-width-auto@s uk-margin-small-bottom" href="{{ .Site.BaseURL }}project" role="button">
-                <i class="fa-solid fa-circle-info"></i> Learn More
-            </a>
-            <a class="uk-button uk-button-large uk-button-default uk-width-expand uk-width-auto@s uk-margin-small-bottom" href="{{ .Site.BaseURL }}donate" role="button">
-                <i class="fa-solid fa-hand-holding-dollar"></i> Donate
-            </a>
+        <div class="uk-grid" uk-grid>
+            <div>
+                <div class="uk-width-xlarge@l">
+                    <h1 class="uk-margin-remove-bottom frontpage-app-name">KeePassXC</h1>
+                    <div class="uk-text-muted uk-margin-remove-top">Cross-platform Password Manager</div>
+                    <p class="uk-margin-medium-top">Forget about passwords and let KeePassXC safely store them and auto-fill them into your everyday apps and webservices for you.</p>
+                    <p>No data collection, free, open source, works on all desktop platforms.</p>
+                </div>
+                <div class="uk-margin-large-top">
+                    <a class="uk-button uk-button-large uk-button-primary uk-width-expand uk-width-auto@s uk-margin-small-bottom" href="{{ .Site.BaseURL }}download" role="button">
+                        <i class="fa-solid fa-download"></i> Download
+                    </a>
+                    <a class="uk-button uk-button-large uk-button-secondary uk-width-expand uk-width-auto@s uk-margin-small-bottom" href="#project" role="button" uk-scroll="offset: 50">
+                        <i class="fa-solid fa-circle-info"></i> Learn More
+                    </a>
+                    <a class="uk-button uk-button-large uk-button-default uk-width-expand uk-width-auto@s uk-margin-small-bottom" href="{{ .Site.BaseURL }}donate" role="button">
+                        <i class="fa-solid fa-hand-holding-dollar"></i> Donate
+                    </a>
+                </div>
+            </div>
+            <div class="uk-width-expand uk-visible@l frontpage-hero">
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-hero.svg" alt="">
+            </div>
         </div>
     </div>
 </section>
@@ -46,15 +53,66 @@
 
 <hr class="uk-divider-icon">
 
+<section class="uk-section" id="project">
+    <div class="uk-container">
+        <div class="uk-grid uk-child-width-1-2@s uk-grid-large" uk-grid>
+            <div>
+                <h2>The Project</h2>
+
+                <p><strong>KeePassXC</strong> is a modern, secure, and open-source password manager that stores and manages your most sensitive information.</p>
+
+                <p>
+                    You can run KeePassXC on Windows, macOS, and Linux systems. KeePassXC is for people with extremely high demands of secure
+                    personal data management. It saves many types of information, such as usernames, passwords, URLs, attachments,
+                    and notes in an offline, encrypted file that can be stored in any location, including private and public cloud solutions.
+                </p>
+            </div>
+            <div>
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-1.svg">
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid uk-child-width-1-2@s uk-grid-large" uk-grid>
+            <div>
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-2.svg">
+            </div>
+            <div>
+                <h2>How to Get Started</h2>
+                <p>
+                    Our <strong>
+                    <a href="{{ .Site.BaseURL }}docs/KeePassXC_GettingStarted.html"><i class="fa-solid fa-rocket"></i> Getting Started Guide</a></strong> walks you through the steps of
+                    <strong><a href="{{  .Site.BaseURL }}download"><i class="fa-solid fa-download"></i> downloading</a></strong> and installing KeePassXC for Windows, macOS, or Linux.
+                    Additionally, many Linux distributions ship their own versions, so in that case please check your distribution's package
+                    list.
+                </p>
+
+                <p>
+                    Detailed usage documentation is available in the
+                    <strong><a href="{{  .Site.BaseURL }}docs/KeePassXC_UserGuide.html"><i class="fa-solid fa-book"></i> User Guide</a></strong>. Also head over to our
+                    <strong><a href="{{  .Site.BaseURL }}docs"><i class="fa-solid fa-circle-question"></i> Documentation &amp; FAQ page</a></strong> for more information.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="uk-section uk-section-muted">
     <div class="uk-container">
         <h2 class="uk-margin-medium-bottom">Recent Blog Posts</h2>
 
-        {{- block "index-post-teasers" . }}
-            {{- range first 4 (where .Site.RegularPages "Section" "blog").ByPublishDate.Reverse }}
-                {{ partial "article-teaser" . }}
-            {{- end }}
-        {{ end }}
+        <div class="uk-grid uk-child-width-1-2@m uk-text-small" uk-grid="masonry: true">
+            {{- block "index-post-teasers" . }}
+                {{- range first 4 (where .Site.RegularPages "Section" "blog").ByPublishDate.Reverse }}
+                <div>
+                    {{ partial "article-teaser" . }}
+                </div>
+                {{- end }}
+            {{ end }}
+        </div>
     </div>
 </section>
 {{ end }}
