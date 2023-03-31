@@ -2,9 +2,10 @@
 <div class="uk-section blog">
     {{ partial "breadcrumbs.html" . }}
 
-    <article class="uk-container uk-margin-medium">
-        <h1 class="uk-margin-remove-bottom">{{ .Title }}</h1>
+    <article class="uk-article uk-container uk-margin-medium">
+        <h1 class="uk-margin-remove-bottom uk-article-title">{{ .Title }}</h1>
         {{ partial "article-meta.html" . }}
+        <hr>
 
         <div class="uk-margin-medium-top">
             {{ .Content }}

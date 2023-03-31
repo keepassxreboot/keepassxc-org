@@ -1,10 +1,12 @@
 @mixin hook-article-title() {
     font-weight: bold;
+    font-size: 2rem !important;
     margin-bottom: $margin-small-margin;
 }
 
 @mixin hook-article-meta() {
     margin-top: $margin-small-margin;
+    font-size: $text-small-font-size * .95;
     line-height: 150%;
 
     em, time {
