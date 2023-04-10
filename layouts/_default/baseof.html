@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {{ block "title" . }}<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Page.Title }} – KeePassXC{{ end }}</title>{{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="KeePassXC Password Manager">
     <meta name="author" content="KeePassXC Team">
@@ -14,8 +15,6 @@
     <link rel="apple-touch-icon-precomposed" href="{{ .Site.BaseURL }}assets/img/apple-touch-icon-precomposed.png" sizes="192x192">
     <link rel="mask-icon" href="{{ .Site.BaseURL }}assets/img/safari-pinned-tab.svg" color="#45862b">
     {{- block "head-meta" . }}{{ end }}
-
-    {{ block "title" . }}<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Page.Title }} – KeePassXC{{ end }}</title>{{ end }}
     {{ $style := resources.Get "scss/style.scss"
         | resources.ExecuteAsTemplate "assets/css/style.css" .
         | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "."))
