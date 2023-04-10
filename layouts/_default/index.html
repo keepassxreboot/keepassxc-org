@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="uk-width-expand uk-visible@l frontpage-hero">
-                <img src="{{ .Site.BaseURL }}assets/img/frontpage-hero.svg" alt="" uk-parallax="opacity: 1,0; scale: 1,1.5; end: 10vh; media: @m">
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-hero.svg" alt="" uk-parallax="opacity: 1,0; scale: 1,1.2; end: 5vh; easing: -2; media: @m">
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
     <div class="uk-container">
         <div class="uk-grid uk-child-width-1-2@m uk-grid-large" uk-grid>
             <div>
-                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-1.svg" uk-parallax="opacity: 0,1; scale: 2,1; end: 65vh + 50%; media: @m">
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-1.svg" uk-parallax="y: -120,0; opacity: 0,1; scale: 1.1,1; end: 70vh + 70%; easing: 2; media: @m">
             </div>
             <div class="uk-flex-first@m">
                 <h2>The Project</h2>
@@ -78,7 +78,7 @@
     <div class="uk-container">
         <div class="uk-grid uk-child-width-1-2@m uk-grid-large" uk-grid>
             <div>
-                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-2.svg" uk-parallax="opacity: 0,1; scale: 2,1; end: 65vh + 50%; media: @m">
+                <img src="{{ .Site.BaseURL }}assets/img/frontpage-illustration-2.svg" uk-parallax="y: -120,0; opacity: 0,1; scale: 1.1,1; end: 70vh + 70%; easing: 2; media: @m">
             </div>
             <div>
                 <h2>How to Get Started</h2>
@@ -104,7 +104,8 @@
     <div class="uk-container">
         <h2 class="uk-margin-medium-bottom">Recent Blog Posts</h2>
 
-        <div class="uk-grid uk-child-width-1-2@m uk-text-small" uk-grid="masonry: true">
+        <div class="uk-grid uk-child-width-1-2@m uk-text-small" uk-grid="masonry: true"
+             uk-parallax="y: -50,0; scale: 1.1,1; opacity: 0,1; end: 70vh + 100%; media: @m">
             {{- block "index-post-teasers" . }}
                 {{- range first 4 (where .Site.RegularPages "Section" "blog").ByPublishDate.Reverse }}
                 <div>
