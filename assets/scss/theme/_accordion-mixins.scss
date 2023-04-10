@@ -1,7 +1,7 @@
 @mixin hook-accordion() {
     .uk-accordion-title {
         color: $base-link-color;
-        font-size: 1.1em;
+        font-size: 1.1rem;
 
         &:hover, &:focus {
             color: $base-link-hover-color;
