@@ -443,11 +443,8 @@
         let os;
         let arch = uap.cpu.architecture;
         if (!location.hash) {
-            os = uap.os.name;
-            if (os === 'Mac OS') {
-                os = 'macos';
-            } else if (os === 'Windows') {
-                os = 'windows';
+            if (uap.os.name === 'macOS' || uap.os.name === 'Windows') {
+                os = uap.os.name.toLowerCase();
             } else {
                 os = 'linux';
             }
