@@ -479,9 +479,9 @@
         // Adjust Windows version
         if (os === 'windows') {
             const t = $('#tab-windows');
-            if (uap.os.version >= '10') {
+            if (uap.os.version >= '10' && uap.browser.name !== "Firefox") {
                 t.find('.windows-version').text(uap.os.version);
-            } else {
+            } else if (uap.os.version < '10') {
                 t.find('.windows-version').text('7 / 8 / 8.1');
                 t.find('.requires-msvc').remove();
                 t.find('.download-main a').each((i, e) => {
