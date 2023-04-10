@@ -1,5 +1,5 @@
 @mixin hook-navbar-container() {
-    background: linear-gradient(rgba(darken($global-primary-background, 2%), .99) 0%, rgba(darken($global-primary-background-gradient, 8%), .85) 100%) !important;
+    background: linear-gradient(rgba(lighten($global-primary-background, 7%), .99) 0%, rgba(darken($global-primary-background-gradient, 8%), .85) 100%) !important;
 }
 
 @mixin hook-navbar() {
