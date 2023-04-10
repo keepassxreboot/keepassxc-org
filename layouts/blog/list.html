@@ -10,10 +10,14 @@
         <h1>{{ .Title }}</h1>
         <hr class="uk-margin-medium-bottom">
 
+        <div class="uk-grid uk-child-width-1-2@m uk-text-small" uk-grid="masonry: true">
         {{ $paginator := .Paginate  (where .Site.RegularPages.ByPublishDate.Reverse "Section" .Page.Section ) }}
         {{- range $paginator.Pages }}
-            {{ partial "article-teaser" . }}
+            <div>
+                {{ partial "article-teaser" . }}
+            </div>
         {{- end }}
+        </div>
 
         <div class="uk-margin-large">
             {{ partial "pagination.html" . }}
