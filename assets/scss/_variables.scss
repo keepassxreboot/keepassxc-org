@@ -81,7 +81,7 @@ $navbar-font-size: 1.2rem;
 $navbar-font-size-sticky: 1rem;
 $navbar-font-size-logo: 1.7rem;
 $navbar-font-size-logo-sticky: 1.2rem;
-$navbar-logo-size: $navbar-height;
+$navbar-logo-size: $navbar-height * 0.9;
 $navbar-logo-size-sticky: $navbar-height - 1;
 
 // Breadcrumbs
