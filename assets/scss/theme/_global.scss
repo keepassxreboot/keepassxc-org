@@ -52,3 +52,7 @@ figcaption {
     color: $global-muted-color;
     font-size: $base-small-font-size;
 }
+
+:not(pre) > code {
+    white-space: normal;
+}
