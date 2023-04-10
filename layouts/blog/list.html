@@ -1,5 +1,6 @@
 {{- define "head-meta" }}
 <meta name="robots" content="noindex, follow">
+<link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}/index.xml" title="{{ .Page.Title }}">
 {{ end }}
 
 {{- define "main" }}
