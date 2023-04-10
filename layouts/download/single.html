@@ -79,11 +79,11 @@
             <div id="tab-windows">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
-                        <h2>KeePassXC for Windows 11</h2>
+                        <h2>KeePassXC for Windows <span class="windows-version">11</span></h2>
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}/{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for Windows 11</a>
+                    <a href="{{ $gh }}/{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for Windows <span class="windows-version">11</span></a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
                         Version {{ .Params.version.version }} &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
@@ -439,64 +439,83 @@
 {{- $uaParser := resources.Get "node_modules/ua-parser-js/dist/ua-parser.pack.js" | resources.Copy "assets/js/ua-parser.pack.js" | fingerprint }}
 <script type="module" src="{{ $uaParser.RelPermalink }}"></script>
 <script type="module">
-    const uap = UAParser();
-    let os;
-    let arch = uap.cpu.architecture;
-    if (!location.hash) {
-        os = uap.os.name;
-        if (os === 'Mac OS') {
-            os = 'macos';
-        } else if (os === 'Windows') {
-            os = 'windows';
-        } else {
-            os = 'linux';
-        }
-    } else {
-        os = location.hash.substring(1);
-    }
-    const tabbar = $('#os-tabbar');
-    const idx = tabbar.find('li > a').map((i, e) => $(e).attr('href').replace('#tab-', '')).get().indexOf(os);
-    if (idx > -1) {
-        UIkit.tab('#os-tabbar').show(idx);
-    }
-    // Enable animation only after switching tab to reduce flicker
-    tabbar.attr('uk-tab', 'animation: uk-animation-fade');
-
-    // Adjust macOS download links to processor architecture
-    if (arch === 'amd64') {
-        const t = $('#tab-macos');
-        t.find('.apple-arch').text('Intel');
-        t.find('.download-main a').each((i, e) => {
-            const a = $(e).attr('href');
-            if (a.startsWith('{{ $gh }}')) {
-                $(e).attr('href', a.replace(
-                    '{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg',
-                    '{{ .Params.version.macos.dmg_arm64.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-x86_64.dmg'));
+    UAParser().withClientHints().then((uap) => {
+        let os;
+        let arch = uap.cpu.architecture;
+        if (!location.hash) {
+            os = uap.os.name;
+            if (os === 'Mac OS') {
+                os = 'macos';
+            } else if (os === 'Windows') {
+                os = 'windows';
+            } else {
+                os = 'linux';
             }
+        } else {
+            os = location.hash.substring(1);
+        }
+        const tabbar = $('#os-tabbar');
+        const idx = tabbar.find('li > a').map((i, e) => $(e).attr('href').replace('#tab-', '')).get().indexOf(os);
+        if (idx > -1) {
+            UIkit.tab('#os-tabbar').show(idx);
+        }
+        // Enable animation only after switching tab to reduce flicker
+        tabbar.attr('uk-tab', 'animation: uk-animation-fade');
+
+        // Adjust macOS download links to processor architecture
+        if (arch === 'amd64') {
+            const t = $('#tab-macos');
+            t.find('.apple-arch').text('Intel');
+            t.find('.download-main a').each((i, e) => {
+                const a = $(e).attr('href');
+                if (a.startsWith('{{ $gh }}')) {
+                    $(e).attr('href', a.replace(
+                        '{{ .Params.version.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg',
+                        '{{ .Params.version.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-x86_64.dmg'));
+                }
+            });
+        }
+
+        // Adjust Windows version
+        if (os === 'windows') {
+            const t = $('#tab-windows');
+            if (uap.os.version >= '10') {
+                t.find('.windows-version').text(uap.os.version);
+            } else {
+                t.find('.windows-version').text('7 / 8 / 8.1');
+                t.find('.download-main a').each((i, e) => {
+                    const a = $(e).attr('href');
+                    if (a.startsWith('{{ $gh }}')) {
+                        $(e).attr('href', a.replace(
+                            '{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi',
+                            '{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi'));
+                    }
+                });
+            }
+        }
+
+        // Hide "more options"
+        $('.collapse').each((i, e) => {
+            e.hidden = true;
         });
-    }
 
-    // Hide "more options"
-    $('.collapse').each((i, e) => {
-        e.hidden = true;
-    });
+        UIkit.util.on('.uk-switcher > *', 'shown', (e) => {
+            window.history.pushState(null, null, '#' + e.target.id.replace('tab-', ''));
+        });
 
-    UIkit.util.on('.uk-switcher > *', 'shown', (e) => {
-        window.history.pushState(null, null, '#' + e.target.id.replace('tab-', ''));
+        $('.download').on('click', (e) => {
+            $('#os-tabbar')[0].hidden = true;
+            $('#tab-body')[0].hidden = true;
+            $('#screenshot-carousel')[0].hidden = true;
+            const startedElement = $('#download-started');
+            startedElement.hide();
+            startedElement[0].hidden = false;
+            startedElement.fadeIn(600);
+        });
+        $('#download-again-link').click((e) => {
+            location.reload();
+            e.preventDefault();
+        });
     });
-
-    $('.download').on('click', (e) => {
-        $('#os-tabbar')[0].hidden = true;
-        $('#tab-body')[0].hidden = true;
-        $('#screenshot-carousel')[0].hidden = true;
-        const startedElement = $('#download-started');
-        startedElement.hide();
-        startedElement[0].hidden = false;
-        startedElement.fadeIn(600);
-    });
-    $('#download-again-link').click((e) => {
-        location.reload();
-        e.preventDefault();
-    })
 </script>
 {{ end }}
