@@ -1,0 +1,15 @@
+@mixin hook-accordion() {
+    .uk-accordion-title {
+        color: $base-link-color;
+        font-size: 1.1em;
+
+        &:hover, &:focus {
+            color: $base-link-hover-color;
+        }
+    }
+
+    & > li {
+        border-bottom: 1px solid $grid-divider-border;
+        padding-bottom: $padding-small-padding;
+    }
+}
