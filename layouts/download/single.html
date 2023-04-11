@@ -440,19 +440,18 @@
 <script type="module" src="{{ $uaParser.RelPermalink }}"></script>
 <script type="module">
     UAParser().withClientHints().then((uap) => {
-        let os;
-        let arch = uap.cpu.architecture;
+        let osTabActive;
         if (!location.hash) {
             if (uap.os.name === 'macOS' || uap.os.name === 'Windows') {
-                os = uap.os.name.toLowerCase();
+                osTabActive = uap.os.name.toLowerCase();
             } else {
-                os = 'linux';
+                osTabActive = 'linux';
             }
         } else {
-            os = location.hash.substring(1);
+            osTabActive = location.hash.substring(1);
         }
         const tabbar = $('#os-tabbar');
-        const idx = tabbar.find('li > a').map((i, e) => $(e).attr('href').replace('#tab-', '')).get().indexOf(os);
+        const idx = tabbar.find('li > a').map((i, e) => $(e).attr('href').replace('#tab-', '')).get().indexOf(osTabActive);
         if (idx > -1) {
             UIkit.tab('#os-tabbar').show(idx);
         }
@@ -460,7 +459,7 @@
         tabbar.attr('uk-tab', 'animation: uk-animation-fade');
 
         // Adjust macOS download links to processor architecture
-        if (arch === 'amd64') {
+        if (uap.cpu.architecture === 'amd64') {
             const t = $('#tab-macos');
             t.find('.apple-arch').text('Intel');
             t.find('.download-main a').each((i, e) => {
@@ -474,7 +473,7 @@
         }
 
         // Adjust Windows version
-        if (os === 'windows') {
+        if (uap.os.name === 'windows') {
             const t = $('#tab-windows');
             if (uap.os.version >= '10' && uap.browser.name !== "Firefox") {
                 t.find('.windows-version').text(uap.os.version);
