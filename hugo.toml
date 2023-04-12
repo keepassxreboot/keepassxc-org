@@ -1,6 +1,7 @@
 title = 'KeePassXC Password Manager'
 baseURL = 'https://keepassxc.org'
 languageCode = 'en-us'
+relativeURLs = true
 
 [frontmatter]
 date = ['publishDate', 'date', 'lastmod']
