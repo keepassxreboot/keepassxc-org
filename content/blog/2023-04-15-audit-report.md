@@ -9,7 +9,7 @@ An audit of KeePassXC has been on the wish list since we started this project ov
 of an audit conducted by Zaur Molotnikov, an independent security consultant, that was completed on January 19, 2023 against KeePassXC 2.7.4.
 This audit was conducted free of charge to the KeePassXC Team and the findings and writeup were reviewed for correctness.
 
-**[Read the Audit Report](http://localhost:1313/assets/pdf/KeePassXC-Review-V1-Molotnikov.pdf)**
+**[Read the Audit Report](/assets/pdf/KeePassXC-Review-V1-Molotnikov.pdf)**
 
 <!--more-->
 
