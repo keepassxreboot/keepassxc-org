@@ -477,7 +477,7 @@
         }
 
         // Adjust Windows version
-        if (uap.os.name === 'windows') {
+        if (uap.os.name === 'Windows') {
             const t = $('#tab-windows');
             if (uap.os.version >= '10' && uap.browser.name !== "Firefox") {
                 t.find('.windows-version').text(uap.os.version);
