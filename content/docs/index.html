@@ -62,10 +62,9 @@ menu:
         <li>
             <a id="faq-format" class="uk-accordion-title" href="#faq-format">Which password database formats are compatible with KeePassXC?</a>
             <div class="uk-accordion-content">
-                <p>KeePassXC currently uses the KeePass 2.x (.kdbx) password database format as its native file format
-                    in versions
-                    3.1 and 4. Database files in version 2 can be opened, but will be upgraded to a newer format.
-                    KeePass 1.x (.kdb) databases can be imported into a .kdbx file, but this process is one-way.</p>
+                <p>KeePassXC currently uses the KeePass 2.x (.kdbx) password database formats KDBX 3.1 and KDBX 4 as its native file formats.
+                    KDBX 2 files can be opened, but will be upgraded to a newer format. KeePass 1.x (.kdb) databases can be imported into
+                    a .kdbx file, but saving a .kdbx file as .kdb would be lossy, and saving to .kdb is not supported by KeePassXC.</p>
             </div>
         </li>
 
