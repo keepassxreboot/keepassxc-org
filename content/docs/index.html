@@ -39,7 +39,7 @@ menu:
         <li>
             <a id="faq-keepassx" href="#faq-keepassx" class="uk-accordion-title">Why KeePassXC instead of KeePassX?</a>
             <div class="uk-accordion-content">
-                <p>KeePassX is no longer developed - as announced on the project website on 2021-12-09. Our decision to fork KeePassX
+                <p>KeePassX is no longer developed - as announced on the KeePassX website on 2021-12-09. Our decision to fork KeePassX
                     was made some years prior, due to a sharp decline in code frequency at the time, combined with our wish to provide
                     you with everything you love about KeePassX plus many new <a href="/#project">features and bugfixes</a>.</p>
             </div>
@@ -48,13 +48,11 @@ menu:
         <li>
             <a id="faq-keepass" href="#faq-keepass" class="uk-accordion-title">Why KeePassXC instead of KeePass?</a>
             <div class="uk-accordion-content">
-                <p>KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong
-                    with it.
+                <p>KeePass is a very proven and feature-rich password manager and there is nothing fundamentally wrong with it.
                     However, it is written in C# and therefore requires Microsoft's .NET platform.
-                    On systems other than Windows, you can run KeePass using the Mono runtime libraries, but you won't
-                    get
+                    On systems other than Windows, you can run KeePass using the Mono runtime libraries, but you won't get
                     the native look and feel which you are used to.</p>
-                <p>KeePassXC, on the other hand, is developed in C++ and runs natively on all platforms giving you the
+                <p>KeePassXC, on the other hand, is developed in C++ and runs natively on Linux, macOS and Windows giving you the
                     best-possible platform integration.</p>
             </div>
         </li>
@@ -71,12 +69,9 @@ menu:
         <li>
             <a id="faq-cloudsync" class="uk-accordion-title" href="#faq-cloudsync">Why is there no cloud synchronization feature built into KeePassXC?</a>
             <div class="uk-accordion-content">
-                <p>Cloud synchronization with Dropbox, Google Drive, OneDrive, ownCloud, Nextcloud etc. can be easily
-                    accomplished by
-                    simply storing your KeePassXC database inside your shared cloud folder and letting your desktop
-                    synchronization client
-                    do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider
-                    and keeps
+                <p>Cloud synchronization with Dropbox, Google Drive, OneDrive, ownCloud, Nextcloud etc. can be easily accomplished by
+                    simply storing your KeePassXC database inside your shared cloud folder and letting your synchronization service of
+                    choice do the rest. We prefer this approach, because it is simple, not tied to a specific cloud provider and keeps
                     the complexity of our code low.</p>
             </div>
         </li>
@@ -85,26 +80,27 @@ menu:
             <a id="faq-general-plugins" class="uk-accordion-title" href="#faq-general-plugins">Does KeePassXC support (KeePass2) plugins?</a>
             <div class="uk-accordion-content">
                 <p>No, KeePassXC does not support plugins at the moment and probably never will. KeePassXC already provides many of the features that
-                    need third-party plugins in KeePass2 out of the box, so for most things you don't even need plugins, nor should you ever want them.
+                    need third-party plugins in KeePass2, so for most things you don't even need plugins, nor should you ever want them.
                     Plugins are inherently dangerous. Many KeePass2 plugins are barely maintained (if at all), some have known vulnerabilities that
                     have never been (and probably never will be) fixed, and none of them are as thoroughly tested and reviewed as we test and review
                     code that goes into our main application. We find that encouraging users to install untested (and often quickly-abandoned) third-party
                     plugins is inherently incompatible with the security demands of a password manager.</p>
 
                 <p>If you really need external functionality not
-                    available in KeePassXC, you can look for "plugins" that use the KeePassXC-Browser API, which is a much  more secure way of sharing
+                    available in KeePassXC, you can look for "plugins" that use the KeePassXC-Browser API, which is a much more secure way of sharing
                     passwords with third-party applications than loading those applications as plugins directly into KeePassXC.</p>
             </div>
         </li>
 
         <li>
-            <a id="faq-general-wordlist" class="uk-accordion-title" href="#faq-general-wordlist">How can I add additional  word lists to the passphrase generator?</a>
+            <a id="faq-general-wordlist" class="uk-accordion-title" href="#faq-general-wordlist">How can I add additional word lists to the passphrase generator?</a>
             <div class="uk-accordion-content">
                 <p>You can add additional word lists to the passphrase generator by copying the word list file to the
                     <code>share/wordlists</code> folder inside your KeePassXC installation directory and then restarting KeePassXC.</p>
 
-                <p>On Linux, the default install location is <code>/usr/share/keepassxc</code>, on macOS it's
-                    <code>/Applications/KeePassXC.app/Contents/Resources</code> and on Windows <code>C:\Program Files\KeePassXC</code> (or <code>C:\Program Files (x86)\KeePassXC</code> for 32-bit).</p>
+                <p>On Linux, the default install location is <code>/usr/share/keepassxc</code>, 
+                    on macOS it is <code>/Applications/KeePassXC.app/Contents/Resources</code> and 
+                    on Windows <code>C:\Program Files\KeePassXC</code> (or <code>C:\Program Files (x86)\KeePassXC</code> for 32-bit).</p>
             </div>
         </li>
     </ul>
@@ -120,8 +116,8 @@ menu:
         </li>
 
         <li>
-            <a id="faq-security-totp" class="uk-accordion-title" href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this alleviate any advantage of
-            two-factor authentication?</a>
+            <a id="faq-security-totp" class="uk-accordion-title" href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. 
+                Doesn't this undermine any advantage of two-factor authentication?</a>
             <div class="uk-accordion-content">
                 <p>Yes. But only if you store them in the same database as your password. We believe that storing both together
                     can still be more secure than not using 2FA at all, but to maximize the security gain from using 2FA,
@@ -360,7 +356,7 @@ menu:
                 <p>We do support generation of timed one-time passwords (TOTP), but do not (and cannot) support it for securing
                     your KeePassXC database. KeePassXC allows you to store TOTP secrets for online services inside a database
                     and generates the corresponding timed one-time passwords for you. For TOTP, see also the question
-                    <a href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this alleviate any advantage of
+                    <a href="#faq-security-totp">KeePassXC allows me to store my TOTP secrets. Doesn't this undermine any advantage of
                     two-factor authentication?</a></p>
             </div>
         </li>
