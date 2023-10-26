@@ -8,6 +8,7 @@
             <li><a href="#tab-windows"><i class="fa-brands fa-windows"></i> Windows</a></li>
             <li><a href="#tab-linux"><i class="fa-brands fa-linux"></i> Linux</a></li>
             <li><a href="#tab-code"><i class="fa-solid fa-code"></i> Source Code</a></li>
+            <li><a href="#tab-browser"><i class="fa-solid fa-globe"></i> Browser Extention</a></li>
         </ul>
 
         {{ $gh := "https://github.com/keepassxreboot/keepassxc/releases/download/" }}
@@ -330,6 +331,40 @@
                     <a href="{{ $gh }}{{ .Params.version.version }}/keepassxc-{{ .Params.version.version }}{{ .Params.version.suffix.source.tarball }}-src.tar.xz.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
                     <a href="{{ $gh }}{{ .Params.version.version }}/keepassxc-{{ .Params.version.version }}{{ .Params.version.suffix.source.tarball }}-src.tar.xz.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
                     <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
+                </div>
+            </div>
+
+            <div id="tab-browser">
+                <div class="download-main">
+                    <div class="uk-margin-large-top uk-margin-medium-bottom">
+                        <h2>KeePassXC Browser Extension</h2>
+                        <p>Autofill passwords from your local KeepassXC install.</p>
+                    </div>
+
+                    <div class="uk-flex uk-flex-middle uk-flex-center uk-width-1-1" style="gap: 1rem;">
+                        <div>
+                            <div class="uk-margin-small" style="height: 70px">
+                                <img src="{{ .Site.BaseURL }}assets/img/browser-icons/firefox.svg" width="60" alt="Firefox logo">
+                            </div>
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/" target="_blank" class="uk-button uk-button-default uk-display-block">Install</a>
+                        </div>
+                        <div>
+                            <div class="uk-margin-small" style="height: 70px">
+                                <img src="{{ .Site.BaseURL }}assets/img/browser-icons/chrome.svg" width="60" alt="Chrome logo">
+                            </div>
+                            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk" target="_blank" class="uk-button uk-button-default uk-display-block">Install</a>
+                        </div>
+                        <div>
+                            <div class="uk-margin-small" style="height: 70px">
+                                <img src="{{ .Site.BaseURL }}assets/img/browser-icons/edge.svg" width="60" alt="Edge logo">
+                            </div>
+                            <a href="https://microsoftedge.microsoft.com/addons/detail/keepassxcbrowser/pdffhmdngciaglkoonimfcmckehcpafo" target="_blank" class="uk-button uk-button-default uk-display-block">Install</a>
+                        </div>
+                    </div>
+
+                    <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
+                        <a href="https://github.com/keepassxreboot/keepassxc-browser" class="uk-padding-small"><i class="fa-solid fa-code"></i> Source Code</a>
+                    </div>
                 </div>
             </div>
         </div>
