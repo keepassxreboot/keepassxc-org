@@ -1,0 +1,47 @@
+.copyable {
+    display: flex;
+    margin-top: 5px;
+
+    code > span {
+        display: inline !important;
+    }
+
+    .highlight {
+        overflow-x: auto;
+        margin: 0;
+        width: 100%;
+
+        pre {
+            border-radius: $global-border-radius;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        &:not(:only-child) pre {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        code[data-lang="shell"]::before {
+            display: inline;
+            content: "$ ";
+        }
+
+        code[data-lang="powershell"]::before {
+            display: inline;
+            content: "> ";
+        }
+    }
+
+    button {
+        cursor: pointer;
+        margin: 0;
+        border: 1px solid $global-border;
+        border-left: 0px;
+        border-top-right-radius: $global-border-radius;
+        border-bottom-right-radius: $global-border-radius;
+        background-color: lighten($button-default-color, 75%);
+    }
+    button:hover {
+        background-color: lighten($button-default-color, 70%);
+    }
+}

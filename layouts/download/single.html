@@ -1,4 +1,5 @@
 {{- define "main" }}
+{{- $highlightOptions := dict "lineNos" false "style" "autumn" -}}
 <div class="uk-section uk-section-small uk-margin-medium-bottom">
     <div class="uk-container uk-margin-medium">
         <h1 hidden>Download</h1>
@@ -34,8 +35,8 @@
                 </div>
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="macos-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-muted" uk-toggle="target: #macos-packages-more .uk-card-body, #macos-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-position-relative">
+                    <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #macos-packages-more .uk-card-body, #macos-packages-more .toggle; animation: uk-animation-fade">
+                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
                             See more options
                             <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
                             <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
@@ -69,7 +70,9 @@
                                     <a class="uk-link-reset" href="https://formulae.brew.sh/cask/keepassxc">Homebrew Cask</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>brew install --cask keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "brew install --cask keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -99,8 +102,8 @@
                 </div>
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="windows-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-muted" uk-toggle="target: #windows-packages-more .uk-card-body, #windows-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-position-relative">
+                    <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #windows-packages-more .uk-card-body, #windows-packages-more .toggle; animation: uk-animation-fade">
+                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
                             See more options
                             <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
                             <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
@@ -160,7 +163,9 @@
                                     <i class="fa-brands fa-windows"></i> <a class="uk-link-reset" href="https://winget.run/pkg/KeePassXCTeam/KeePassXC">Windows Package Manager</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>winget install -e --id KeePassXCTeam.KeePassXC</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "winget install -e --id KeePassXCTeam.KeePassXC" "powershell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -169,7 +174,9 @@
                                     <a class="uk-link-reset" href="https://community.chocolatey.org/packages/keepassxc">Chocolatey</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>choco install keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "choco install keepassxc" "powershell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +207,7 @@
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="linux-packages-official">
                     <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #linux-packages-official .uk-card-body, #linux-packages-official .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-position-relative">
+                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
                             Other Official Linux Packages
                             <i class="fa-solid fa-chevron-down uk-position-center-right toggle" hidden></i>
                             <i class="fa-solid fa-chevron-up uk-position-center-right toggle"></i>
@@ -214,9 +221,12 @@
                                     <a class="uk-link-reset" href="https://flathub.org/apps/details/org.keepassxc.KeePassXC">Flatpak Package</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</code><br>
-                                    <br>
-                                    <code>flatpak install --user flathub org.keepassxc.KeePassXC</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo" "shell" $highlightOptions }}
+                                    </div>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "flatpak install --user flathub org.keepassxc.KeePassXC" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -224,7 +234,11 @@
                                     <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.804 13.367V5.69l5.292 2.362-5.292 5.315zM3.701 23.514l6.49-12.22 2.847 2.843L3.7 23.514zM0 .486l13.355 4.848v8.484L0 .486zM21.803 5.334H14.11L24 9.748z"/></svg>
                                     <a class="uk-link-reset" href="https://snapcraft.io/keepassxc">Snap Package</a>
                                 </div>
-                                <div class="uk-margin-small-top"><code>sudo snap install keepassxc</code></div>
+                                <div class="uk-margin-small-top">
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo snap install keepassxc" "shell" $highlightOptions }}
+                                    </div>
+                                </div>
                                 <div class="uk-margin-small-top">
                                     <a href="https://raw.githubusercontent.com/keepassxreboot/keepassxc/latest/utils/keepassxc-snap-helper.sh">KeePassXC-Browser Helper Script</a>
                                     <span class="uk-text-muted">(Right click &rarr; Save link as&hellip;)</span>
@@ -235,9 +249,15 @@
                                     <i class="fa-brands fa-ubuntu"></i> <a class="uk-link-reset" href="https://launchpad.net/~phoerious/+archive/ubuntu/keepassxc">Ubuntu PPA</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>sudo add-apt-repository ppa:phoerious/keepassxc</code><br>
-                                    <code>sudo apt update</code><br>
-                                    <code>sudo apt install keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo add-apt-repository ppa:phoerious/keepassxc" "shell" $highlightOptions }}
+                                    </div>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo apt update" "shell" $highlightOptions }}
+                                    </div>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo apt install keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -246,8 +266,8 @@
 
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="linux-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-muted" uk-toggle="target: #linux-packages-more .uk-card-body, #linux-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-position-relative">
+                    <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #linux-packages-more .uk-card-body, #linux-packages-more .toggle; animation: uk-animation-fade">
+                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
                             See more options
                             <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
                             <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
@@ -260,7 +280,9 @@
                                     <i class="fa-brands fa-ubuntu"></i> <a class="uk-link-reset" href="https://packages.ubuntu.com/source/keepassxc">Ubuntu / Debian (distribution package)</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>sudo apt install keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo apt install keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -269,7 +291,9 @@
                                     <a class="uk-link-reset" href="https://src.fedoraproject.org/rpms/keepassxc">Fedora</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>sudo dnf install keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo dnf install keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -278,7 +302,9 @@
                                     <a class="uk-link-reset" href="https://archlinux.org/packages/extra/x86_64/keepassxc/">Arch Linux</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>sudo pacman -S keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo pacman -S keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -287,7 +313,9 @@
                                     <a class="uk-link-reset" href="https://software.opensuse.org/package/keepassxc">OpenSUSE</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>sudo zypper install keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo zypper install keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -296,7 +324,9 @@
                                     <a class="uk-link-reset" href="https://packages.gentoo.org/packages/app-admin/keepassxc">Gentoo</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>sudo emerge app-admin/keepassxc</code>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo emerge app-admin/keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -305,7 +335,10 @@
                                     <a class="uk-link-reset" href="https://packages.gentoo.org/packages/app-admin/keepassxc">RHEL 8 / CentOS Stream</a>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <code>sudo dnf install keepassxc</code> (<a href="https://fedoraproject.org/wiki/EPEL">Enable EPEL repository</a>)
+                                    <a href="https://docs.fedoraproject.org/en-US/epel/">Enable EPEL repository</a>
+                                    <div class="copyable">
+                                        {{ transform.Highlight "sudo dnf install keepassxc" "shell" $highlightOptions }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
