@@ -99,6 +99,10 @@
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
                     </div>
                     <div class="uk-margin-small uk-text-small uk-text-muted requires-msvc">Requires <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">MSVC Redistributable</a></div>
+                    
+                    <div class="uk-alert-warning uk-padding-small uk-width-2xlarge uk-align-center">
+                        Note: We have received some reports of silent crashing starting with 2.7.9. This is immediately fixed by reinstalling the <a class="uk-alert-warning" href="https://aka.ms/vs/17/release/vc_redist.x64.exe">MSVC Redistributable</a>.
+                    </div>
 
                     <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
                         <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
