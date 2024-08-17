@@ -21,6 +21,13 @@
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
     {{ $script := resources.Get "js/copyable.js" | fingerprint -}}
     <script type="module" src="{{ $script.RelPermalink }}"></script>
+    <noscript>
+    {{ $style := resources.Get "scss/noscript.scss"
+          | resources.ExecuteAsTemplate "assets/css/noscript.css" .
+          | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "."))
+          | fingerprint -}}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+    </noscript>
 
     {{- $uikitMain := resources.Get "node_modules/uikit/dist/js/uikit.min.js" }}
     {{- $uikitIcons := resources.Get "node_modules/uikit/dist/js/uikit-icons.min.js" }}

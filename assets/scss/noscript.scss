@@ -1,0 +1,9 @@
+// Display all switchers on the Downloads page
+.uk-switcher > :not(.uk-active) {
+    display: block !important;
+}
+
+// Make carousel wrap instead of exceeding the page width
+#screenshot-carousel .uk-slider-items {
+    flex-wrap: wrap;
+}
