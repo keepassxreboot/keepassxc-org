@@ -56,3 +56,13 @@ figcaption {
 :not(pre) > code {
     white-space: normal;
 }
+
+details > summary {
+  cursor: pointer;
+}
+details[open] .details-closed {
+  display: none;
+}
+details:not([open]) .details-opened {
+  display: none;
+}

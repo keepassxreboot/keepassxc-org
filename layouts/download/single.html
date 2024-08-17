@@ -5,16 +5,16 @@
         <h1 hidden>Download</h1>
 
         <ul class="uk-tab uk-flex-center" id="os-tabbar">
-            <li><a href="#tab-macos"><i class="fa-brands fa-apple"></i> macOS</a></li>
-            <li><a href="#tab-windows"><i class="fa-brands fa-windows"></i> Windows</a></li>
-            <li><a href="#tab-linux"><i class="fa-brands fa-linux"></i> Linux</a></li>
-            <li><a href="#tab-code"><i class="fa-solid fa-code"></i> Source Code</a></li>
-            <li><a href="#tab-browser"><i class="fa-solid fa-globe"></i> Browser Extension</a></li>
+            <li><a href="#macos"><i class="fa-brands fa-apple"></i> macOS</a></li>
+            <li><a href="#windows"><i class="fa-brands fa-windows"></i> Windows</a></li>
+            <li><a href="#linux"><i class="fa-brands fa-linux"></i> Linux</a></li>
+            <li><a href="#code"><i class="fa-solid fa-code"></i> Source Code</a></li>
+            <li><a href="#browser"><i class="fa-solid fa-globe"></i> Browser Extension</a></li>
         </ul>
 
         {{ $gh := "https://github.com/keepassxreboot/keepassxc/releases/download/" }}
         <div class="uk-switcher uk-text-center" id="tab-body">
-            <div id="tab-macos">
+            <div id="macos">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC for macOS 11+ (<span class="apple-arch">Apple Silicon</span>)</h2>
@@ -35,61 +35,62 @@
                 </div>
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="macos-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #macos-packages-more .uk-card-body, #macos-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
-                            See more options
-                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
-                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
-                        </h3>
-                    </div>
-                    <div class="uk-card-body collapse">
-                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-apple"></i> KeePassXC for Apple Silicon Macs
+                    <details>
+                        <summary class="uk-card-header uk-text-decoration-none uk-background-secondary">
+                            <h3 class="uk-text-small uk-text-bold uk-position-relative">
+                                See more options
+                                <i class="fa-solid fa-chevron-up uk-position-center-right details-opened"></i>
+                                <i class="fa-solid fa-chevron-down uk-position-center-right details-closed"></i>
+                            </h3>
+                        </summary>
+                        <div class="uk-card-body">
+                            <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-apple"></i> KeePassXC for Apple Silicon Macs
+                                    </div>
+                                    <div class="uk-margin-small">
+                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                    </div>
                                 </div>
-                                <div class="uk-margin-small">
-                                <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-apple"></i> KeePassXC for Intel Macs
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-apple"></i> KeePassXC for Intel Macs
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.938 0a.214.214 0 0 0-.206.156c-.316 1.104.179 2.15.838 2.935.153.181.313.347.476.501a2.039 2.039 0 0 0-.665.02c-1.184.233-2.193.985-2.74 2.532a3.893 3.893 0 0 0-.2 1.466 1.565 1.565 0 0 0-1.156 1.504 1.59 1.59 0 0 0 1.227 1.541l.026 12.046c0 .195.1.377.264.482a.214.214 0 0 0 .008.005c.537.31 2.047.812 5.21.812 3.238 0 4.7-.678 5.181-1.04a.214.214 0 0 0 .008-.007.571.571 0 0 0 .206-.439c.002-.344.002-1.136.002-1.604a.143.143 0 0 1 .147-.144c.397.006.869.006 1.318.005a1.826 1.826 0 0 0 1.832-1.825v-5.804a1.826 1.826 0 0 0-1.825-1.826H16.56a.14.14 0 0 1-.143-.144V10.6h.007v-.001a1.573 1.573 0 0 0 1.356-1.556c0-.816-.627-1.489-1.424-1.563-.025-1.438-.437-2.126-.736-2.58a.214.214 0 0 0-.005-.007c-.364-.51-1.193-1.282-2.275-1.316-.503-.016-.842.124-1.125.254-.217.1-.42.177-.67.22.002-1.286.945-1.981.945-1.981a.214.214 0 0 0 .05-.298s-.087-.122-.21-.26c-.121-.136-.269-.294-.47-.378a.214.214 0 0 0-.079-.017.214.214 0 0 0-.145.055 4.308 4.308 0 0 0-.875 1.101 3.42 3.42 0 0 0-.133.273 3.497 3.497 0 0 0-.381-.846C9.794.978 9.063.436 8.017.016A.214.214 0 0 0 7.939 0zm.156.524c.85.378 1.43.83 1.79 1.403.274.438.426.962.484 1.584a3.07 3.07 0 0 0-.012.462 6.897 6.897 0 0 1-.168-.052 5.487 5.487 0 0 1-1.29-1.106c-.551-.657-.935-1.46-.804-2.291zM11.8 1.618c.07.054.141.101.212.18.034.039.032.04.058.073-.332.308-1.07 1.144-.952 2.453a.214.214 0 0 0 .222.195c.469-.017.782-.172 1.056-.299.273-.126.508-.228.931-.214.875.027 1.639.715 1.939 1.134.295.449.65 1 .663 2.36a1.66 1.66 0 0 0-.41.142 1.938 1.938 0 0 0-1.77-1.16 1.94 1.94 0 0 0-1.87 1.448 1.783 1.783 0 0 0-1.356-.64c-.484 0-.91.205-1.233.517a1.873 1.873 0 0 0-1.85-1.625c-.649 0-1.218.335-1.552.84a3.1 3.1 0 0 1 .157-.735c.51-1.437 1.355-2.045 2.42-2.254.367-.073.664-.011.99.095.325.106.671.262 1.094.342a.214.214 0 0 0 .252-.245c-.112-.67.073-1.266.336-1.744a3.71 3.71 0 0 1 .663-.863zM7.44 6.611a1.442 1.442 0 0 1 1.363 1.925.214.214 0 0 0 .168.283h.005a.214.214 0 0 0 .238-.146 1.373 1.373 0 0 1 2.613-.01.214.214 0 0 0 .417-.09 1.509 1.509 0 0 1 1.504-1.664c.678 0 1.249.445 1.442 1.056a.214.214 0 0 0 .259.143l.15-.04a.214.214 0 0 0 .051-.02 1.139 1.139 0 0 1 1.702.995 1.14 1.14 0 0 1-.985 1.131.214.214 0 0 0-.001 0 2.215 2.215 0 0 0-.485.126 10.65 10.65 0 0 1-1.176.365.214.214 0 0 0-.162.186 1.276 1.276 0 0 1-.146.478 2.07 2.07 0 0 0-.239 1.111l.001.151a.438.438 0 0 1-.16.36.665.665 0 0 1-.43.14.586.586 0 0 1-.588-.59.803.803 0 0 0-.38-.681.214.214 0 0 0-.002-.002c-.24-.145-.43-.37-.532-.636a.214.214 0 0 0-.207-.138 19.469 19.469 0 0 1-5.37-.6l-.003-.002a9.007 9.007 0 0 0-.838-.194h.003a1.16 1.16 0 0 1-.937-1.134c0-.619.488-1.118 1.101-1.14a.214.214 0 0 0 .204-.176 1.443 1.443 0 0 1 1.42-1.187zm8.549 4.106v.455c0 .314.259.573.572.573h1.329a1.397 1.397 0 0 1 1.397 1.397v5.804a1.396 1.396 0 0 1-1.402 1.396.214.214 0 0 0-.002 0c-.448.002-.918 0-1.31-.005a.573.573 0 0 0-.584.573c0 .468 0 1.262-.002 1.603a.214.214 0 0 0 0 .001c0 .042-.019.08-.05.107-.346.26-1.75.95-4.915.95-3.107 0-4.587-.52-4.99-.752a.143.143 0 0 1-.065-.118l-.025-11.955c.145.033.288.07.431.11a.214.214 0 0 0 .003 0c.115.031.246.064.383.097v10.37c0 .129.069.247.18.31.453.217 1.767.732 4.071.732 2.32 0 3.595-.626 4.022-.884a.357.357 0 0 0 .164-.3l.001-10.21c.267-.075.531-.158.792-.254zm-7.99.894a.493.493 0 0 1 .494.493v8.578a.493.493 0 0 1-.493.493.493.493 0 0 1-.494-.493v-8.578A.493.493 0 0 1 8 11.611zm8.652 1.14a.663.663 0 0 0-.662.662v5.208a.663.663 0 0 0 .662.662h1.14a.663.663 0 0 0 .662-.662v-5.209a.663.663 0 0 0-.662-.662zm0 .428h1.14a.233.233 0 0 1 .233.233v5.21a.233.233 0 0 1-.233.232h-1.14a.233.233 0 0 1-.233-.233v-5.209a.233.233 0 0 1 .233-.233z"/></svg>
+                                        <a class="uk-link-reset" href="https://formulae.brew.sh/cask/keepassxc">Homebrew Cask</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "brew install --cask keepassxc" "shell" $highlightOptions }}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="uk-margin-small">
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.938 0a.214.214 0 0 0-.206.156c-.316 1.104.179 2.15.838 2.935.153.181.313.347.476.501a2.039 2.039 0 0 0-.665.02c-1.184.233-2.193.985-2.74 2.532a3.893 3.893 0 0 0-.2 1.466 1.565 1.565 0 0 0-1.156 1.504 1.59 1.59 0 0 0 1.227 1.541l.026 12.046c0 .195.1.377.264.482a.214.214 0 0 0 .008.005c.537.31 2.047.812 5.21.812 3.238 0 4.7-.678 5.181-1.04a.214.214 0 0 0 .008-.007.571.571 0 0 0 .206-.439c.002-.344.002-1.136.002-1.604a.143.143 0 0 1 .147-.144c.397.006.869.006 1.318.005a1.826 1.826 0 0 0 1.832-1.825v-5.804a1.826 1.826 0 0 0-1.825-1.826H16.56a.14.14 0 0 1-.143-.144V10.6h.007v-.001a1.573 1.573 0 0 0 1.356-1.556c0-.816-.627-1.489-1.424-1.563-.025-1.438-.437-2.126-.736-2.58a.214.214 0 0 0-.005-.007c-.364-.51-1.193-1.282-2.275-1.316-.503-.016-.842.124-1.125.254-.217.1-.42.177-.67.22.002-1.286.945-1.981.945-1.981a.214.214 0 0 0 .05-.298s-.087-.122-.21-.26c-.121-.136-.269-.294-.47-.378a.214.214 0 0 0-.079-.017.214.214 0 0 0-.145.055 4.308 4.308 0 0 0-.875 1.101 3.42 3.42 0 0 0-.133.273 3.497 3.497 0 0 0-.381-.846C9.794.978 9.063.436 8.017.016A.214.214 0 0 0 7.939 0zm.156.524c.85.378 1.43.83 1.79 1.403.274.438.426.962.484 1.584a3.07 3.07 0 0 0-.012.462 6.897 6.897 0 0 1-.168-.052 5.487 5.487 0 0 1-1.29-1.106c-.551-.657-.935-1.46-.804-2.291zM11.8 1.618c.07.054.141.101.212.18.034.039.032.04.058.073-.332.308-1.07 1.144-.952 2.453a.214.214 0 0 0 .222.195c.469-.017.782-.172 1.056-.299.273-.126.508-.228.931-.214.875.027 1.639.715 1.939 1.134.295.449.65 1 .663 2.36a1.66 1.66 0 0 0-.41.142 1.938 1.938 0 0 0-1.77-1.16 1.94 1.94 0 0 0-1.87 1.448 1.783 1.783 0 0 0-1.356-.64c-.484 0-.91.205-1.233.517a1.873 1.873 0 0 0-1.85-1.625c-.649 0-1.218.335-1.552.84a3.1 3.1 0 0 1 .157-.735c.51-1.437 1.355-2.045 2.42-2.254.367-.073.664-.011.99.095.325.106.671.262 1.094.342a.214.214 0 0 0 .252-.245c-.112-.67.073-1.266.336-1.744a3.71 3.71 0 0 1 .663-.863zM7.44 6.611a1.442 1.442 0 0 1 1.363 1.925.214.214 0 0 0 .168.283h.005a.214.214 0 0 0 .238-.146 1.373 1.373 0 0 1 2.613-.01.214.214 0 0 0 .417-.09 1.509 1.509 0 0 1 1.504-1.664c.678 0 1.249.445 1.442 1.056a.214.214 0 0 0 .259.143l.15-.04a.214.214 0 0 0 .051-.02 1.139 1.139 0 0 1 1.702.995 1.14 1.14 0 0 1-.985 1.131.214.214 0 0 0-.001 0 2.215 2.215 0 0 0-.485.126 10.65 10.65 0 0 1-1.176.365.214.214 0 0 0-.162.186 1.276 1.276 0 0 1-.146.478 2.07 2.07 0 0 0-.239 1.111l.001.151a.438.438 0 0 1-.16.36.665.665 0 0 1-.43.14.586.586 0 0 1-.588-.59.803.803 0 0 0-.38-.681.214.214 0 0 0-.002-.002c-.24-.145-.43-.37-.532-.636a.214.214 0 0 0-.207-.138 19.469 19.469 0 0 1-5.37-.6l-.003-.002a9.007 9.007 0 0 0-.838-.194h.003a1.16 1.16 0 0 1-.937-1.134c0-.619.488-1.118 1.101-1.14a.214.214 0 0 0 .204-.176 1.443 1.443 0 0 1 1.42-1.187zm8.549 4.106v.455c0 .314.259.573.572.573h1.329a1.397 1.397 0 0 1 1.397 1.397v5.804a1.396 1.396 0 0 1-1.402 1.396.214.214 0 0 0-.002 0c-.448.002-.918 0-1.31-.005a.573.573 0 0 0-.584.573c0 .468 0 1.262-.002 1.603a.214.214 0 0 0 0 .001c0 .042-.019.08-.05.107-.346.26-1.75.95-4.915.95-3.107 0-4.587-.52-4.99-.752a.143.143 0 0 1-.065-.118l-.025-11.955c.145.033.288.07.431.11a.214.214 0 0 0 .003 0c.115.031.246.064.383.097v10.37c0 .129.069.247.18.31.453.217 1.767.732 4.071.732 2.32 0 3.595-.626 4.022-.884a.357.357 0 0 0 .164-.3l.001-10.21c.267-.075.531-.158.792-.254zm-7.99.894a.493.493 0 0 1 .494.493v8.578a.493.493 0 0 1-.493.493.493.493 0 0 1-.494-.493v-8.578A.493.493 0 0 1 8 11.611zm8.652 1.14a.663.663 0 0 0-.662.662v5.208a.663.663 0 0 0 .662.662h1.14a.663.663 0 0 0 .662-.662v-5.209a.663.663 0 0 0-.662-.662zm0 .428h1.14a.233.233 0 0 1 .233.233v5.21a.233.233 0 0 1-.233.232h-1.14a.233.233 0 0 1-.233-.233v-5.209a.233.233 0 0 1 .233-.233z"/></svg>
-                                    <a class="uk-link-reset" href="https://formulae.brew.sh/cask/keepassxc">Homebrew Cask</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "brew install --cask keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        MacPorts for 10.15 and below
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="https://ports.macports.org/port/KeePassXC/" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Visit Site</a>
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    MacPorts for 10.15 and below
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="https://ports.macports.org/port/KeePassXC/" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Visit Site</a>
-                                </div>
-                            </div>
-                            
                         </div>
-                    </div>
+                    </details>
                 </div>
             </div>
 
-            <div id="tab-windows">
+            <div id="windows">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC for Windows <span class="windows-version">10 / 11</span></h2>
@@ -102,7 +103,7 @@
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
                     </div>
                     <div class="uk-margin-small uk-text-small uk-text-muted requires-msvc">Requires <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">MSVC Redistributable</a></div>
-                    
+
                     <div class="uk-alert-warning uk-padding-small uk-width-2xlarge uk-align-center">
                         Note: We have received some reports of silent crashing starting with 2.7.9. This is immediately fixed by reinstalling the <a class="uk-alert-warning" href="https://aka.ms/vs/17/release/vc_redist.x64.exe">MSVC Redistributable</a>.
                     </div>
@@ -115,89 +116,91 @@
                 </div>
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="windows-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #windows-packages-more .uk-card-body, #windows-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
-                            See more options
-                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
-                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
-                        </h3>
-                    </div>
-                    <div class="uk-card-body collapse">
-                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-microsoft"></i> <a class="uk-link-reset" href="https://apps.microsoft.com/store/detail/keepassxc/XP8K2L36VP0QMB">Microsoft Store</a>
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="ms-windows-store://pdp/?ProductId=XP8K2L36VP0QMB" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Install</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Installer (64-bit, Windows 10 / 11)
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Portable ZIP (64-bit, Windows 10 / 11)
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Legacy Installer (64-bit, Windows 7 / 8 / 8.1)
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> Legacy 32-bit Downloads
-                                </div>
-                                <div class="uk-margin-small">
-                                    <a href="https://github.com/keepassxreboot/keepassxc/releases/tag/2.6.6" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <p class="uk-text-muted uk-margin-small">Note: 32-bit Windows is no longer supported after version 2.6.6.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-windows"></i> <a class="uk-link-reset" href="https://winget.run/pkg/KeePassXCTeam/KeePassXC">Windows Package Manager</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "winget install -e --id KeePassXCTeam.KeePassXC" "powershell" $highlightOptions }}
+                    <details>
+                        <summary class="uk-card-header uk-text-decoration-none uk-background-secondary">
+                            <h3 class="uk-text-small uk-text-bold uk-position-relative">
+                                See more options
+                                <i class="fa-solid fa-chevron-up uk-position-center-right details-opened"></i>
+                                <i class="fa-solid fa-chevron-down uk-position-center-right details-closed"></i>
+                            </h3>
+                        </summary>
+                        <div class="uk-card-body">
+                            <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-microsoft"></i> <a class="uk-link-reset" href="https://apps.microsoft.com/store/detail/keepassxc/XP8K2L36VP0QMB">Microsoft Store</a>
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="ms-windows-store://pdp/?ProductId=XP8K2L36VP0QMB" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Install</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.249l1.439 3.18L0 6.926l1.439 2.5L0 11.923l1.439 2.424L0 16.845l1.439 2.5L0 22.75l2.8-.91c6.3.01 12.696.006 18.096 0l3.104.91-2.044-3.635 1.136-1.892-2.196-2.272-.004-.017V2.005c-6.551-.001-12.243 0-18.091 0zm19.688 1.968v7.03l-.23-.898-1.438-4.39-3.56.605-1.89-2.343zm-11.695.004h4.563L9.539 4.428zm2.86 3.68a3.903 3.903 0 0 1 1.64.254c1.968.757 1.286 2.8.15 4.012-.378.378-1.21.227-.605-.908.228-.454.454-1.363-.227-1.59-1.515-.53-3.255.682-3.634 2.271-.378 1.363.606 2.801 2.347 2.423 1.439-.303 2.802-1.288 3.332-1.742.53-.455.907.38.301 1.288-.68.908-1.74 1.968-2.65 2.574-3.558 2.423-6.662-.758-5.375-4.392.677-1.845 2.454-4.041 4.72-4.19zm6.527 2.031a.66.66 0 0 1 .454.182c.324.326.204.972-.268 1.445-.473.474-1.121.593-1.446.268-.325-.326-.205-.972.267-1.445.292-.292.666-.461.993-.45zm-.42 3.233a.66.66 0 0 1 .454.182c.325.325.206.973-.268 1.446-.473.473-1.12.592-1.445.268-.324-.326-.205-.972.268-1.445.291-.292.664-.462.99-.451Z"/></svg>
-                                    <a class="uk-link-reset" href="https://community.chocolatey.org/packages/keepassxc">Chocolatey</a>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-windows"></i> Installer (64-bit, Windows 10 / 11)
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                    </div>
                                 </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "choco install keepassxc" "powershell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-windows"></i> Portable ZIP (64-bit, Windows 10 / 11)
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-windows"></i> Legacy Installer (64-bit, Windows 7 / 8 / 8.1)
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-windows"></i> Legacy 32-bit Downloads
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="https://github.com/keepassxreboot/keepassxc/releases/tag/2.6.6" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <p class="uk-text-muted uk-margin-small">Note: 32-bit Windows is no longer supported after version 2.6.6.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-windows"></i> <a class="uk-link-reset" href="https://winget.run/pkg/KeePassXCTeam/KeePassXC">Windows Package Manager</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "winget install -e --id KeePassXCTeam.KeePassXC" "powershell" $highlightOptions }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.249l1.439 3.18L0 6.926l1.439 2.5L0 11.923l1.439 2.424L0 16.845l1.439 2.5L0 22.75l2.8-.91c6.3.01 12.696.006 18.096 0l3.104.91-2.044-3.635 1.136-1.892-2.196-2.272-.004-.017V2.005c-6.551-.001-12.243 0-18.091 0zm19.688 1.968v7.03l-.23-.898-1.438-4.39-3.56.605-1.89-2.343zm-11.695.004h4.563L9.539 4.428zm2.86 3.68a3.903 3.903 0 0 1 1.64.254c1.968.757 1.286 2.8.15 4.012-.378.378-1.21.227-.605-.908.228-.454.454-1.363-.227-1.59-1.515-.53-3.255.682-3.634 2.271-.378 1.363.606 2.801 2.347 2.423 1.439-.303 2.802-1.288 3.332-1.742.53-.455.907.38.301 1.288-.68.908-1.74 1.968-2.65 2.574-3.558 2.423-6.662-.758-5.375-4.392.677-1.845 2.454-4.041 4.72-4.19zm6.527 2.031a.66.66 0 0 1 .454.182c.324.326.204.972-.268 1.445-.473.474-1.121.593-1.446.268-.325-.326-.205-.972.267-1.445.292-.292.666-.461.993-.45zm-.42 3.233a.66.66 0 0 1 .454.182c.325.325.206.973-.268 1.446-.473.473-1.12.592-1.445.268-.324-.326-.205-.972.268-1.445.291-.292.664-.462.99-.451Z"/></svg>
+                                        <a class="uk-link-reset" href="https://community.chocolatey.org/packages/keepassxc">Chocolatey</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "choco install keepassxc" "powershell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </details>
                 </div>
             </div>
 
-            <div id="tab-linux">
+            <div id="linux">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC for Linux Desktops</h2>
@@ -219,158 +222,162 @@
                 </div>
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="linux-packages-official">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #linux-packages-official .uk-card-body, #linux-packages-official .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
-                            Other Official Linux Packages
-                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle" hidden></i>
-                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle"></i>
-                        </h3>
-                    </div>
-                    <div class="uk-card-body">
-                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-.556 0-1.111.144-1.61.432l-7.603 4.39a3.217 3.217 0 0 0-1.61 2.788v8.78c0 1.151.612 2.212 1.61 2.788l7.603 4.39a3.217 3.217 0 0 0 3.22 0l7.603-4.39a3.217 3.217 0 0 0 1.61-2.788V7.61a3.217 3.217 0 0 0-1.61-2.788L13.61.432A3.218 3.218 0 0 0 12 0Zm0 2.358c.15 0 .299.039.431.115l7.604 4.39c.132.077.24.187.315.316L12 12v9.642a.863.863 0 0 1-.431-.116l-7.604-4.39a.866.866 0 0 1-.431-.746V7.61c0-.153.041-.302.116-.43L12 12Z"/></svg>
-                                    <a class="uk-link-reset" href="https://flathub.org/apps/details/org.keepassxc.KeePassXC">Flatpak Package</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo" "shell" $highlightOptions }}
+                    <details>
+                        <summary class="uk-card-header uk-text-decoration-none uk-background-secondary">
+                            <h3 class="uk-text-small uk-text-bold uk-position-relative">
+                                Other Official Linux Packages
+                                <i class="fa-solid fa-chevron-up uk-position-center-right details-opened"></i>
+                                <i class="fa-solid fa-chevron-down uk-position-center-right details-closed"></i>
+                            </h3>
+                        </summary>
+                        <div class="uk-card-body">
+                            <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-.556 0-1.111.144-1.61.432l-7.603 4.39a3.217 3.217 0 0 0-1.61 2.788v8.78c0 1.151.612 2.212 1.61 2.788l7.603 4.39a3.217 3.217 0 0 0 3.22 0l7.603-4.39a3.217 3.217 0 0 0 1.61-2.788V7.61a3.217 3.217 0 0 0-1.61-2.788L13.61.432A3.218 3.218 0 0 0 12 0Zm0 2.358c.15 0 .299.039.431.115l7.604 4.39c.132.077.24.187.315.316L12 12v9.642a.863.863 0 0 1-.431-.116l-7.604-4.39a.866.866 0 0 1-.431-.746V7.61c0-.153.041-.302.116-.43L12 12Z"/></svg>
+                                        <a class="uk-link-reset" href="https://flathub.org/apps/details/org.keepassxc.KeePassXC">Flatpak Package</a>
                                     </div>
-                                    <div class="copyable">
-                                        {{ transform.Highlight "flatpak install --user flathub org.keepassxc.KeePassXC" "shell" $highlightOptions }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.804 13.367V5.69l5.292 2.362-5.292 5.315zM3.701 23.514l6.49-12.22 2.847 2.843L3.7 23.514zM0 .486l13.355 4.848v8.484L0 .486zM21.803 5.334H14.11L24 9.748z"/></svg>
-                                    <a class="uk-link-reset" href="https://snapcraft.io/keepassxc">Snap Package</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo snap install keepassxc" "shell" $highlightOptions }}
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo" "shell" $highlightOptions }}
+                                        </div>
+                                        <div class="copyable">
+                                            {{ transform.Highlight "flatpak install --user flathub org.keepassxc.KeePassXC" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="uk-margin-small-top">
-                                    <a href="https://raw.githubusercontent.com/keepassxreboot/keepassxc/latest/utils/keepassxc-snap-helper.sh">KeePassXC-Browser Helper Script</a>
-                                    <span class="uk-text-muted">(Right click &rarr; Save link as&hellip;)</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-ubuntu"></i> <a class="uk-link-reset" href="https://launchpad.net/~phoerious/+archive/ubuntu/keepassxc">Ubuntu PPA</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo add-apt-repository ppa:phoerious/keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.804 13.367V5.69l5.292 2.362-5.292 5.315zM3.701 23.514l6.49-12.22 2.847 2.843L3.7 23.514zM0 .486l13.355 4.848v8.484L0 .486zM21.803 5.334H14.11L24 9.748z"/></svg>
+                                        <a class="uk-link-reset" href="https://snapcraft.io/keepassxc">Snap Package</a>
                                     </div>
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo apt update" "shell" $highlightOptions }}
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo snap install keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo apt install keepassxc" "shell" $highlightOptions }}
+                                    <div class="uk-margin-small-top">
+                                        <a href="https://raw.githubusercontent.com/keepassxreboot/keepassxc/latest/utils/keepassxc-snap-helper.sh">KeePassXC-Browser Helper Script</a>
+                                        <span class="uk-text-muted">(Right click &rarr; Save link as&hellip;)</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-ubuntu"></i> <a class="uk-link-reset" href="https://launchpad.net/~phoerious/+archive/ubuntu/keepassxc">Ubuntu PPA</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo add-apt-repository ppa:phoerious/keepassxc" "shell" $highlightOptions }}
+                                        </div>
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo apt update" "shell" $highlightOptions }}
+                                        </div>
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo apt install keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </details>
                 </div>
 
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="linux-packages-more">
-                    <div class="uk-card-header uk-text-decoration-none uk-background-secondary" uk-toggle="target: #linux-packages-more .uk-card-body, #linux-packages-more .toggle; animation: uk-animation-fade">
-                        <h3 class="uk-text-small uk-text-bold uk-position-relative">
-                            See more options
-                            <i class="fa-solid fa-chevron-up uk-position-center-right toggle" hidden></i>
-                            <i class="fa-solid fa-chevron-down uk-position-center-right toggle"></i>
-                        </h3>
-                    </div>
-                    <div class="uk-card-body collapse">
-                        <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <i class="fa-brands fa-ubuntu"></i> <a class="uk-link-reset" href="https://packages.ubuntu.com/source/keepassxc">Ubuntu / Debian (distribution package)</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo apt install keepassxc" "shell" $highlightOptions }}
+                    <details>
+                        <summary class="uk-card-header uk-text-decoration-none uk-background-secondary">
+                            <h3 class="uk-text-small uk-text-bold uk-position-relative">
+                                See more options
+                                <i class="fa-solid fa-chevron-up uk-position-center-right details-opened"></i>
+                                <i class="fa-solid fa-chevron-down uk-position-center-right details-closed"></i>
+                            </h3>
+                        </summary>
+                        <div class="uk-card-body">
+                            <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-ubuntu"></i> <a class="uk-link-reset" href="https://packages.ubuntu.com/source/keepassxc">Ubuntu / Debian (distribution package)</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo apt install keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.001 0C5.376 0 .008 5.369.004 11.992H.002v9.287h.002A2.726 2.726 0 0 0 2.73 24h9.275c6.626-.004 11.993-5.372 11.993-11.997C23.998 5.375 18.628 0 12 0zm2.431 4.94c2.015 0 3.917 1.543 3.917 3.671 0 .197.001.395-.03.619a1.002 1.002 0 0 1-1.137.893 1.002 1.002 0 0 1-.842-1.175 2.61 2.61 0 0 0 .013-.337c0-1.207-.987-1.672-1.92-1.672-.934 0-1.775.784-1.777 1.672.016 1.027 0 2.046 0 3.07l1.732-.012c1.352-.028 1.368 2.009.016 1.998l-1.748.013c-.004.826.006.677.002 1.093 0 0 .015 1.01-.016 1.776-.209 2.25-2.124 4.046-4.424 4.046-2.438 0-4.448-1.993-4.448-4.437.073-2.515 2.078-4.492 4.603-4.469l1.409-.01v1.996l-1.409.013h-.007c-1.388.04-2.577.984-2.6 2.47a2.438 2.438 0 0 0 2.452 2.439c1.356 0 2.441-.987 2.441-2.437l-.001-7.557c0-.14.005-.252.02-.407.23-1.848 1.883-3.256 3.754-3.256z"/></svg>
-                                    <a class="uk-link-reset" href="https://src.fedoraproject.org/rpms/keepassxc">Fedora</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo dnf install keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.001 0C5.376 0 .008 5.369.004 11.992H.002v9.287h.002A2.726 2.726 0 0 0 2.73 24h9.275c6.626-.004 11.993-5.372 11.993-11.997C23.998 5.375 18.628 0 12 0zm2.431 4.94c2.015 0 3.917 1.543 3.917 3.671 0 .197.001.395-.03.619a1.002 1.002 0 0 1-1.137.893 1.002 1.002 0 0 1-.842-1.175 2.61 2.61 0 0 0 .013-.337c0-1.207-.987-1.672-1.92-1.672-.934 0-1.775.784-1.777 1.672.016 1.027 0 2.046 0 3.07l1.732-.012c1.352-.028 1.368 2.009.016 1.998l-1.748.013c-.004.826.006.677.002 1.093 0 0 .015 1.01-.016 1.776-.209 2.25-2.124 4.046-4.424 4.046-2.438 0-4.448-1.993-4.448-4.437.073-2.515 2.078-4.492 4.603-4.469l1.409-.01v1.996l-1.409.013h-.007c-1.388.04-2.577.984-2.6 2.47a2.438 2.438 0 0 0 2.452 2.439c1.356 0 2.441-.987 2.441-2.437l-.001-7.557c0-.14.005-.252.02-.407.23-1.848 1.883-3.256 3.754-3.256z"/></svg>
+                                        <a class="uk-link-reset" href="https://src.fedoraproject.org/rpms/keepassxc">Fedora</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo dnf install keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.998 1.607 0 12l5.998 10.393h12.004L24 12 18.002 1.607H5.998zM9.965 7.12 12.66 9.9l1.598 1.595.002-.002 2.41 2.363c-.2.14-.386.252-.563.344a3.756 3.756 0 0 1-.496.217 2.702 2.702 0 0 1-.425.111c-.131.023-.25.034-.358.034-.13 0-.242-.014-.338-.034a1.317 1.317 0 0 1-.24-.072.95.95 0 0 1-.2-.113l-1.062-1.092-3.039-3.041-1.1 1.053-3.07 3.072a.974.974 0 0 1-.2.111 1.274 1.274 0 0 1-.237.073 1.66 1.66 0 0 1-.338.033c-.108 0-.227-.009-.358-.031a2.7 2.7 0 0 1-.425-.114 3.748 3.748 0 0 1-.496-.217 5.228 5.228 0 0 1-.563-.343L9.965 7.12zm4.72.785 4.579 4.598 1.382 1.353a5.24 5.24 0 0 1-.564.344 3.73 3.73 0 0 1-.494.217 2.697 2.697 0 0 1-.426.111c-.13.023-.251.034-.36.034-.129 0-.241-.014-.337-.034a1.285 1.285 0 0 1-.385-.146.239.239 0 0 1-.053-.04l-1.232-1.218-2.111-2.111-.334.334L12.79 9.8l1.896-1.897zm-5.966 4.12v2.529a2.128 2.128 0 0 1-.356-.035 2.765 2.765 0 0 1-.422-.116 3.708 3.708 0 0 1-.488-.214 5.217 5.217 0 0 1-.555-.34l1.82-1.825z"/></svg>
-                                    <a class="uk-link-reset" href="https://pkgs.alpinelinux.org/packages?name=keepassxc">Alpine Linux</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "doas apk add keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.998 1.607 0 12l5.998 10.393h12.004L24 12 18.002 1.607H5.998zM9.965 7.12 12.66 9.9l1.598 1.595.002-.002 2.41 2.363c-.2.14-.386.252-.563.344a3.756 3.756 0 0 1-.496.217 2.702 2.702 0 0 1-.425.111c-.131.023-.25.034-.358.034-.13 0-.242-.014-.338-.034a1.317 1.317 0 0 1-.24-.072.95.95 0 0 1-.2-.113l-1.062-1.092-3.039-3.041-1.1 1.053-3.07 3.072a.974.974 0 0 1-.2.111 1.274 1.274 0 0 1-.237.073 1.66 1.66 0 0 1-.338.033c-.108 0-.227-.009-.358-.031a2.7 2.7 0 0 1-.425-.114 3.748 3.748 0 0 1-.496-.217 5.228 5.228 0 0 1-.563-.343L9.965 7.12zm4.72.785 4.579 4.598 1.382 1.353a5.24 5.24 0 0 1-.564.344 3.73 3.73 0 0 1-.494.217 2.697 2.697 0 0 1-.426.111c-.13.023-.251.034-.36.034-.129 0-.241-.014-.337-.034a1.285 1.285 0 0 1-.385-.146.239.239 0 0 1-.053-.04l-1.232-1.218-2.111-2.111-.334.334L12.79 9.8l1.896-1.897zm-5.966 4.12v2.529a2.128 2.128 0 0 1-.356-.035 2.765 2.765 0 0 1-.422-.116 3.708 3.708 0 0 1-.488-.214 5.217 5.217 0 0 1-.555-.34l1.82-1.825z"/></svg>
+                                        <a class="uk-link-reset" href="https://pkgs.alpinelinux.org/packages?name=keepassxc">Alpine Linux</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "doas apk add keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"/></svg>
-                                    <a class="uk-link-reset" href="https://archlinux.org/packages/extra/x86_64/keepassxc/">Arch Linux</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo pacman -S keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"/></svg>
+                                        <a class="uk-link-reset" href="https://archlinux.org/packages/extra/x86_64/keepassxc/">Arch Linux</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo pacman -S keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.724 0a12 12 0 0 0-9.448 4.623c1.464.391 2.5.727 2.81.832.005-.19.037-1.893.037-1.893s.004-.04.025-.06c.026-.026.065-.018.065-.018.385.056 8.602 1.274 12.066 3.292.427.25.638.517.902.786.958.99 2.223 5.108 2.359 5.957.005.033-.036.07-.054.083a5.177 5.177 0 0 1-.313.228c-.82.55-2.708 1.872-5.13 1.656-2.176-.193-5.018-1.44-8.445-3.699.336.79.668 1.58 1 2.371.497.258 5.287 2.7 7.651 2.651 1.904-.04 3.941-.968 4.756-1.458 0 0 .179-.108.257-.048.085.066.061.167.041.27-.05.234-.164.66-.242.863l-.065.165c-.093.25-.183.482-.356.625-.48.436-1.246.784-2.446 1.305-1.855.812-4.865 1.328-7.66 1.31-1.001-.022-1.968-.133-2.817-.232-1.743-.197-3.161-.357-4.026.269A12 12 0 0 0 10.724 24a12 12 0 0 0 12-12 12 12 0 0 0-12-12zM13.4 6.963a3.503 3.503 0 0 0-2.521.942 3.498 3.498 0 0 0-1.114 2.449 3.528 3.528 0 0 0 3.39 3.64 3.48 3.48 0 0 0 2.524-.946 3.504 3.504 0 0 0 1.114-2.446 3.527 3.527 0 0 0-3.393-3.64zm-.03 1.035a2.458 2.458 0 0 1 2.368 2.539 2.43 2.43 0 0 1-.774 1.706 2.456 2.456 0 0 1-1.762.659 2.461 2.461 0 0 1-2.364-2.542c.02-.655.3-1.26.777-1.707a2.419 2.419 0 0 1 1.756-.655zm.402 1.23c-.602 0-1.087.325-1.087.727 0 .4.485.725 1.087.725.6 0 1.088-.326 1.088-.725 0-.402-.487-.726-1.088-.726Z"/></svg>
-                                    <a class="uk-link-reset" href="https://software.opensuse.org/package/keepassxc">OpenSUSE</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo zypper install keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.724 0a12 12 0 0 0-9.448 4.623c1.464.391 2.5.727 2.81.832.005-.19.037-1.893.037-1.893s.004-.04.025-.06c.026-.026.065-.018.065-.018.385.056 8.602 1.274 12.066 3.292.427.25.638.517.902.786.958.99 2.223 5.108 2.359 5.957.005.033-.036.07-.054.083a5.177 5.177 0 0 1-.313.228c-.82.55-2.708 1.872-5.13 1.656-2.176-.193-5.018-1.44-8.445-3.699.336.79.668 1.58 1 2.371.497.258 5.287 2.7 7.651 2.651 1.904-.04 3.941-.968 4.756-1.458 0 0 .179-.108.257-.048.085.066.061.167.041.27-.05.234-.164.66-.242.863l-.065.165c-.093.25-.183.482-.356.625-.48.436-1.246.784-2.446 1.305-1.855.812-4.865 1.328-7.66 1.31-1.001-.022-1.968-.133-2.817-.232-1.743-.197-3.161-.357-4.026.269A12 12 0 0 0 10.724 24a12 12 0 0 0 12-12 12 12 0 0 0-12-12zM13.4 6.963a3.503 3.503 0 0 0-2.521.942 3.498 3.498 0 0 0-1.114 2.449 3.528 3.528 0 0 0 3.39 3.64 3.48 3.48 0 0 0 2.524-.946 3.504 3.504 0 0 0 1.114-2.446 3.527 3.527 0 0 0-3.393-3.64zm-.03 1.035a2.458 2.458 0 0 1 2.368 2.539 2.43 2.43 0 0 1-.774 1.706 2.456 2.456 0 0 1-1.762.659 2.461 2.461 0 0 1-2.364-2.542c.02-.655.3-1.26.777-1.707a2.419 2.419 0 0 1 1.756-.655zm.402 1.23c-.602 0-1.087.325-1.087.727 0 .4.485.725 1.087.725.6 0 1.088-.326 1.088-.725 0-.402-.487-.726-1.088-.726Z"/></svg>
+                                        <a class="uk-link-reset" href="https://software.opensuse.org/package/keepassxc">OpenSUSE</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo zypper install keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.94 0a7.31 7.31 0 00-1.26.116c-4.344.795-7.4 4.555-7.661 7.031-.126 1.215.53 2.125.89 2.526.977 1.085 2.924 1.914 4.175 2.601-1.81 1.543-2.64 2.296-3.457 3.154C1.403 16.712.543 18.125.54 19.138c0 .325-.053 1.365.371 2.187.16.309.613 1.338 1.98 2.109.874.494 2.119.675 3.337.501 3.772-.538 8.823-3.737 12.427-6.716 2.297-1.9 3.977-3.739 4.462-4.644.39-.731.434-2.043.207-2.866-.645-2.337-5.887-7.125-10.172-9.051A7.824 7.824 0 009.94 0zm-.008.068a7.4 7.4 0 013.344.755c3.46 1.7 9.308 6.482 9.739 8.886.534 2.972-9.931 11.017-16.297 12.272-2.47.485-4.576.618-5.537-1.99-.832-2.262.783-3.916 3.16-6.09a92.546 92.546 0 012.96-2.576c.065-.069-5.706-2.059-5.89-4.343C1.221 4.634 4.938.3 9.697.076c.08-.004.157-.007.235-.008zm-.112.52a5.647 5.647 0 00-.506.032c-2.337.245-2.785.547-4.903 2.149-.71.537-2.016 1.844-2.35 3.393-.128.59.024 1.1.448 1.458 1.36 1.144 3.639 2.072 5.509 2.97.547.263.185.74-.698 1.505-2.227 1.928-5.24 4.276-5.45 6.066-.099.842.19 1.988 1.213 2.574 1.195.685 3.676.238 5.333-.379 2.422-.902 5.602-2.892 8.127-4.848 2.625-2.034 5.067-4.617 5.188-5.038.148-.517.133-.996-.154-1.546-.448-.862-1.049-1.503-1.694-2.22-1.732-1.825-3.563-3.43-5.754-4.658C12.694 1.242 11.417.564 9.82.588zm1.075 3.623c.546 0 1.176.173 1.853.5 1.688.817 3.422 2.961-.015 4.195-.935.336-3.9-.824-3.81-2.407.09-1.57.854-2.289 1.972-2.288zm.285 1.367c-.317-.002-.575.079-.694.263-.557.861-.303 1.472.212 1.862.192-.457 2.156.043 2.148.472a.32.32 0 00.055-.032c1.704-1.282-.472-2.557-1.72-2.565z"/></svg>
-                                    <a class="uk-link-reset" href="https://packages.gentoo.org/packages/app-admin/keepassxc">Gentoo</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo emerge app-admin/keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.94 0a7.31 7.31 0 00-1.26.116c-4.344.795-7.4 4.555-7.661 7.031-.126 1.215.53 2.125.89 2.526.977 1.085 2.924 1.914 4.175 2.601-1.81 1.543-2.64 2.296-3.457 3.154C1.403 16.712.543 18.125.54 19.138c0 .325-.053 1.365.371 2.187.16.309.613 1.338 1.98 2.109.874.494 2.119.675 3.337.501 3.772-.538 8.823-3.737 12.427-6.716 2.297-1.9 3.977-3.739 4.462-4.644.39-.731.434-2.043.207-2.866-.645-2.337-5.887-7.125-10.172-9.051A7.824 7.824 0 009.94 0zm-.008.068a7.4 7.4 0 013.344.755c3.46 1.7 9.308 6.482 9.739 8.886.534 2.972-9.931 11.017-16.297 12.272-2.47.485-4.576.618-5.537-1.99-.832-2.262.783-3.916 3.16-6.09a92.546 92.546 0 012.96-2.576c.065-.069-5.706-2.059-5.89-4.343C1.221 4.634 4.938.3 9.697.076c.08-.004.157-.007.235-.008zm-.112.52a5.647 5.647 0 00-.506.032c-2.337.245-2.785.547-4.903 2.149-.71.537-2.016 1.844-2.35 3.393-.128.59.024 1.1.448 1.458 1.36 1.144 3.639 2.072 5.509 2.97.547.263.185.74-.698 1.505-2.227 1.928-5.24 4.276-5.45 6.066-.099.842.19 1.988 1.213 2.574 1.195.685 3.676.238 5.333-.379 2.422-.902 5.602-2.892 8.127-4.848 2.625-2.034 5.067-4.617 5.188-5.038.148-.517.133-.996-.154-1.546-.448-.862-1.049-1.503-1.694-2.22-1.732-1.825-3.563-3.43-5.754-4.658C12.694 1.242 11.417.564 9.82.588zm1.075 3.623c.546 0 1.176.173 1.853.5 1.688.817 3.422 2.961-.015 4.195-.935.336-3.9-.824-3.81-2.407.09-1.57.854-2.289 1.972-2.288zm.285 1.367c-.317-.002-.575.079-.694.263-.557.861-.303 1.472.212 1.862.192-.457 2.156.043 2.148.472a.32.32 0 00.055-.032c1.704-1.282-.472-2.557-1.72-2.565z"/></svg>
+                                        <a class="uk-link-reset" href="https://packages.gentoo.org/packages/app-admin/keepassxc">Gentoo</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo emerge app-admin/keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="uk-text-bold">
-                                    <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.009 13.386c1.577 0 3.86-.326 3.86-2.202a1.765 1.765 0 0 0-.04-.431l-.94-4.08c-.216-.898-.406-1.305-1.982-2.093-1.223-.625-3.888-1.658-4.676-1.658-.733 0-.947.946-1.822.946-.842 0-1.467-.706-2.255-.706-.757 0-1.25.515-1.63 1.576 0 0-1.06 2.99-1.197 3.424a.81.81 0 0 0-.028.245c0 1.162 4.577 4.974 10.71 4.974m4.101-1.435c.218 1.032.218 1.14.218 1.277 0 1.765-1.984 2.745-4.593 2.745-5.895.004-11.06-3.451-11.06-5.734a2.326 2.326 0 0 1 .19-.925C2.746 9.415 0 9.794 0 12.217c0 3.969 9.405 8.861 16.851 8.861 5.71 0 7.149-2.582 7.149-4.62 0-1.605-1.387-3.425-3.887-4.512"/></svg>
-                                    <a class="uk-link-reset" href="https://packages.gentoo.org/packages/app-admin/keepassxc">RHEL 8 / CentOS Stream</a>
-                                </div>
-                                <div class="uk-margin-small-top">
-                                    <a href="https://docs.fedoraproject.org/en-US/epel/">Enable EPEL repository</a>
-                                    <div class="copyable">
-                                        {{ transform.Highlight "sudo dnf install keepassxc" "shell" $highlightOptions }}
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.009 13.386c1.577 0 3.86-.326 3.86-2.202a1.765 1.765 0 0 0-.04-.431l-.94-4.08c-.216-.898-.406-1.305-1.982-2.093-1.223-.625-3.888-1.658-4.676-1.658-.733 0-.947.946-1.822.946-.842 0-1.467-.706-2.255-.706-.757 0-1.25.515-1.63 1.576 0 0-1.06 2.99-1.197 3.424a.81.81 0 0 0-.028.245c0 1.162 4.577 4.974 10.71 4.974m4.101-1.435c.218 1.032.218 1.14.218 1.277 0 1.765-1.984 2.745-4.593 2.745-5.895.004-11.06-3.451-11.06-5.734a2.326 2.326 0 0 1 .19-.925C2.746 9.415 0 9.794 0 12.217c0 3.969 9.405 8.861 16.851 8.861 5.71 0 7.149-2.582 7.149-4.62 0-1.605-1.387-3.425-3.887-4.512"/></svg>
+                                        <a class="uk-link-reset" href="https://packages.gentoo.org/packages/app-admin/keepassxc">RHEL 8 / CentOS Stream</a>
+                                    </div>
+                                    <div class="uk-margin-small-top">
+                                        <a href="https://docs.fedoraproject.org/en-US/epel/">Enable EPEL repository</a>
+                                        <div class="copyable">
+                                            {{ transform.Highlight "sudo dnf install keepassxc" "shell" $highlightOptions }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </details>
             </div>
 
-            <div id="tab-code">
+            <div id="code">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC Source Code</h2>
@@ -391,7 +398,7 @@
                 </div>
             </div>
 
-            <div id="tab-browser">
+            <div id="browser">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC Browser Extension</h2>
@@ -551,7 +558,7 @@
             osTabActive = location.hash.substring(1);
         }
         const tabbar = $('#os-tabbar');
-        const idx = tabbar.find('li > a').map((i, e) => $(e).attr('href').replace('#tab-', '')).get().indexOf(osTabActive);
+        const idx = tabbar.find('li > a').map((i, e) => $(e).attr('href').substring(1)).get().indexOf(osTabActive);
         if (idx > -1) {
             UIkit.tab('#os-tabbar').show(idx);
         }
@@ -560,7 +567,7 @@
 
         // Adjust macOS download links to processor architecture
         if (uap.cpu.architecture === 'amd64') {
-            const t = $('#tab-macos');
+            const t = $('#macos');
             t.find('.apple-arch').text('Intel');
             t.find('.download-main a').each((i, e) => {
                 const a = $(e).attr('href');
@@ -574,7 +581,7 @@
 
         // Adjust Windows version
         if (uap.os.name === 'Windows') {
-            const t = $('#tab-windows');
+            const t = $('#windows');
             if (uap.os.version >= '10' && uap.browser.name !== "Firefox") {
                 t.find('.windows-version').text(uap.os.version);
             } else if (uap.os.version < '10') {
@@ -591,13 +598,8 @@
             }
         }
 
-        // Hide "more options"
-        $('.collapse').each((i, e) => {
-            e.hidden = true;
-        });
-
         UIkit.util.on('.uk-switcher > *', 'shown', (e) => {
-            window.history.pushState(null, null, '#' + e.target.id.replace('tab-', ''));
+            window.history.pushState(null, null, '#' + e.target.id);
         });
 
         $('.download').on('click', (e) => {
