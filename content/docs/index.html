@@ -304,14 +304,19 @@ menu:
         <li>
             <a id="faq-yubikey-howto" class="uk-accordion-title" href="#faq-yubikey-howto">How do I configure my YubiKey / OnlyKey for use with KeePassXC?</a>
             <div class="uk-accordion-content">
-                <p>To use a YubiKey or OnlyKey for securing your KeePassXC database, you have to configure one of your YubiKey / OnlyKey slots
-                    for HMAC-SHA1 Challenge Response mode (see this
-                    <a href="https://www.youtube.com/watch?v=r6Qe9Z-kOH0">video</a>
-                    for how to do this). Once your YubiKey (or OnlyKey, you got the point&hellip;) is set up, open your database in KeePassXC, go to
-                    <em>File / Change master key</em>, enable <em>Challenge Response</em> and then save the database.<br>
-                    <strong>Important:</strong> Always make a copy of the secret that is programmed into your YubiKey while
-                    you configure it for HMAC-SHA1 and store it in a secure location. If you lose or brick the key or accidentally
-                    reprogram it with a different secret, you will permanently lose access to your database!</p>
+                <p>To use a YubiKey for securing your KeePassXC database, you have to configure one of your slots for HMAC-SHA1 Challenge-Response mode
+                    <strong>(see <a href="https://www.youtube.com/watch?v=vYUVzWDgmVc" target="_blank">this video</a>)</strong>.
+                    Instructions on how to use your OnlyKey are found <a href="https://docs.onlykey.io/usersguide.html#using-onlykey-with-a-software-password-manager" target="_blank">here</a>.
+                    Once your hardware key is set up, open your database in KeePassXC, go to
+                    <em>Database -> Database Security</em>, click on <em>Add additional protection</em>, then <em>Add Challenge Response</em>.
+                    Once your key/slot is recognized, press ok and then save your database.
+                    <br/><br/>
+                    <strong>Important:</strong> Always make a copy of the secret that is programmed into your hardware key while
+                    you configure it and store in a secure physical location. If you lose or brick the key you will permanently 
+                    lose access to your database!
+                    <br/><br/>
+                    For more information on Challenge Response, please see <a href="https://docs.yubico.com/yesdk/users-manual/application-otp/challenge-response.html" target="_blank">Yubico's website</a>.
+                    </p>
             </div>
         </li>
 
