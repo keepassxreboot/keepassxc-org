@@ -102,11 +102,7 @@
                         Version {{ .Params.version.version }} &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
                     </div>
-                    <div class="uk-margin-small uk-text-small uk-text-muted requires-msvc">Requires <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">MSVC Redistributable</a></div>
-
-                    <div class="uk-alert-warning uk-padding-small uk-width-2xlarge uk-align-center">
-                        Note: We have received some reports of silent crashing starting with 2.7.9. This is immediately fixed by reinstalling the <a class="uk-alert-warning" href="https://aka.ms/vs/17/release/vc_redist.x64.exe">MSVC Redistributable</a>.
-                    </div>
+                    <div class="uk-margin-small uk-text-medium uk-text-bold">Requires <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">MSVC Redistributable</a></div>
 
                     <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
                         <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
@@ -207,25 +203,29 @@
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download AppImage</a>
-                    <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
-                        Version {{ .Params.version.version }} &ndash;
-                        <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
-                    </div>
-                    <div class="uk-margin-small uk-text-small uk-text-muted"><a href="https://docs.appimage.org/user-guide/run-appimages.html">AppImages</a> are self-contained Linux executables.</div>
-
-                    <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
-                        <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
+                    <div class="uk-card uk-card-default uk-width-2xlarge uk-margin-auto uk-margin-medium uk-box-shadow-medium uk-border-rounded">
+                        <div class="uk-card-header uk-background-primary uk-light">
+                            <h4 class="uk-margin-remove">
+                                <svg class="svg-icon" style="width: 1.5em; height: 1.5em;" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-.556 0-1.111.144-1.61.432l-7.603 4.39a3.217 3.217 0 0 0-1.61 2.788v8.78c0 1.151.612 2.212 1.61 2.788l7.603 4.39a3.217 3.217 0 0 0 3.22 0l7.603-4.39a3.217 3.217 0 0 0 1.61-2.788V7.61a3.217 3.217 0 0 0-1.61-2.788L13.61.432A3.218 3.218 0 0 0 12 0Zm0 2.358c.15 0 .299.039.431.115l7.604 4.39c.132.077.24.187.315.316L12 12v9.642a.863.863 0 0 1-.431-.116l-7.604-4.39a.866.866 0 0 1-.431-.746V7.61c0-.153.041-.302.116-.43L12 12Z"/></svg>
+                                Flatpak Package - Recommended</h4>
+                        </div>
+                        <div class="uk-card-body">
+                            <p class="uk-text-muted">The most reliable way to run KeePassXC with automatic updates<br/><a class="uk-link-text" href="https://flathub.org/apps/org.keepassxc.KeePassXC" target="_blank">Visit us on flathub.org</a></p>
+                            <div class="uk-text-left copyable">
+                                {{ transform.Highlight "flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo" "shell" $highlightOptions }}
+                            </div>
+                            <div class="uk-text-left copyable">
+                                {{ transform.Highlight "flatpak install --user flathub org.keepassxc.KeePassXC" "shell" $highlightOptions }}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="uk-card uk-card-default uk-width-xlarge uk-margin-auto uk-margin-large uk-text-small uk-text-left" id="linux-packages-official">
-                    <details>
+                    <details open>
                         <summary class="uk-card-header uk-text-decoration-none uk-background-secondary">
                             <h3 class="uk-text-small uk-text-bold uk-position-relative">
-                                Other Official Linux Packages
+                                Other Official Packages
                                 <i class="fa-solid fa-chevron-up uk-position-center-right details-opened"></i>
                                 <i class="fa-solid fa-chevron-down uk-position-center-right details-closed"></i>
                             </h3>
@@ -234,16 +234,15 @@
                             <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
                                 <div>
                                     <div class="uk-text-bold">
-                                        <svg class="svg-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-.556 0-1.111.144-1.61.432l-7.603 4.39a3.217 3.217 0 0 0-1.61 2.788v8.78c0 1.151.612 2.212 1.61 2.788l7.603 4.39a3.217 3.217 0 0 0 3.22 0l7.603-4.39a3.217 3.217 0 0 0 1.61-2.788V7.61a3.217 3.217 0 0 0-1.61-2.788L13.61.432A3.218 3.218 0 0 0 12 0Zm0 2.358c.15 0 .299.039.431.115l7.604 4.39c.132.077.24.187.315.316L12 12v9.642a.863.863 0 0 1-.431-.116l-7.604-4.39a.866.866 0 0 1-.431-.746V7.61c0-.153.041-.302.116-.43L12 12Z"/></svg>
-                                        <a class="uk-link-reset" href="https://flathub.org/apps/org.keepassxc.KeePassXC">Flatpak Package</a>
+                                        <i class="fa-solid fa-box-archive"></i> AppImage &ndash; Version {{ .Params.version.version }}
+                                        <br/>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
                                     </div>
-                                    <div class="uk-margin-small-top">
-                                        <div class="copyable">
-                                            {{ transform.Highlight "flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo" "shell" $highlightOptions }}
-                                        </div>
-                                        <div class="copyable">
-                                            {{ transform.Highlight "flatpak install --user flathub org.keepassxc.KeePassXC" "shell" $highlightOptions }}
-                                        </div>
+                                    <div class="uk-margin-small">
+                                        
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ .Site.BaseURL }}verifying-signatures"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                                     </div>
                                 </div>
                                 <div>
@@ -255,10 +254,6 @@
                                         <div class="copyable">
                                             {{ transform.Highlight "sudo snap install keepassxc" "shell" $highlightOptions }}
                                         </div>
-                                    </div>
-                                    <div class="uk-margin-small-top">
-                                        <a href="https://raw.githubusercontent.com/keepassxreboot/keepassxc/latest/utils/keepassxc-snap-helper.sh">KeePassXC-Browser Helper Script</a>
-                                        <span class="uk-text-muted">(Right click &rarr; Save link as&hellip;)</span>
                                     </div>
                                 </div>
                                 <div>
@@ -287,7 +282,7 @@
                     <details>
                         <summary class="uk-card-header uk-text-decoration-none uk-background-secondary">
                             <h3 class="uk-text-small uk-text-bold uk-position-relative">
-                                See more options
+                                Other Linux Distributions
                                 <i class="fa-solid fa-chevron-up uk-position-center-right details-opened"></i>
                                 <i class="fa-solid fa-chevron-down uk-position-center-right details-closed"></i>
                             </h3>
