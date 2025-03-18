@@ -37,6 +37,27 @@ menu:
     <h3>General</h3>
     <ul uk-accordion="multiple: true">
         <li>
+            <a id="faq-security-why-pm" class="uk-accordion-title" href="#faq-security-why-pm">Why would I use a password manager? Isn't it totally insecure to use
+                    one password for everything?</a>
+            <div class="uk-accordion-content">
+                <p>Password reuse and simple, easy-to-guess passwords are the biggest problems when using online services.
+                    If one service gets compromised (either by guessing your password or by exploiting a security vulnerability
+                    in the service's infrastructure), an attacker may gain access to all of your other accounts.</p>
+
+                <p>But using different passwords for all websites is difficult without a way of storing them somewhere safe.
+                    Especially with arbitrary password rules for various services, it becomes increasingly hard to use both strong
+                    and diverse passwords. KeePassXC stores your passwords for you in an encrypted database file, so you only
+                    need to remember one master password. Of course, the security of all your services depends on the strength
+                    of your master password now, but with a sufficiently strong password, the password database should be
+                    infeasible to crack.</p>
+
+                <p>The database is encrypted with either the industry-standard AES256 or the Twofish
+                    block cipher and the master password is strengthened by a configurable number of key transformations
+                    to harden it against brute force attacks. Additionally, you can use a key file filled with an arbitrary
+                    number of random bytes or a YubiKey to further enhance your master key.</p>
+            </div>
+        </li>
+        <li>
             <a id="faq-keepassx" href="#faq-keepassx" class="uk-accordion-title">Why KeePassXC instead of KeePassX?</a>
             <div class="uk-accordion-content">
                 <p>KeePassX is no longer developed - as announced on the KeePassX website on 2021-12-09. Our decision to fork KeePassX
@@ -122,28 +143,6 @@ menu:
                 <p>Yes. But only if you store them in the same database as your password. We believe that storing both together
                     can still be more secure than not using 2FA at all, but to maximize the security gain from using 2FA,
                     you should always store TOTP secrets in a separate database, secured with a different password, possibly even on a different computer.</p>
-            </div>
-        </li>
-
-        <li>
-            <a id="faq-security-why-pm" class="uk-accordion-title" href="#faq-security-why-pm">Why would I use a password manager? Isn't it totally insecure to use
-                    one password for everything?</a>
-            <div class="uk-accordion-content">
-                <p>Password reuse and simple, easy-to-guess passwords are the biggest problems when using online services.
-                    If one service gets compromised (either by guessing your password or by exploiting a security vulnerability
-                    in the service's infrastructure), an attacker may gain access to all of your other accounts.</p>
-
-                <p>But using different passwords for all websites is difficult without a way of storing them somewhere safe.
-                    Especially with arbitrary password rules for various services, it becomes increasingly hard to use both strong
-                    and diverse passwords. KeePassXC stores your passwords for you in an encrypted database file, so you only
-                    need to remember one master password. Of course, the security of all your services depends on the strength
-                    of your master password now, but with a sufficiently strong password, the password database should be
-                    infeasible to crack.</p>
-
-                <p>The database is encrypted with either the industry-standard AES256 or the Twofish
-                    block cipher and the master password is strengthened by a configurable number of key transformations
-                    to harden it against brute force attacks. Additionally, you can use a key file filled with an arbitrary
-                    number of random bytes or a YubiKey to further enhance your master key.</p>
             </div>
         </li>
 
