@@ -16,7 +16,7 @@
     {{- block "head-meta" . }}{{ end }}
     {{ $style := resources.Get "scss/style.scss"
         | resources.ExecuteAsTemplate "assets/css/style.css" .
-        | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "."))
+        | css.Sass (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "."))
         | fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
     {{ $script := resources.Get "js/copyable.js" | fingerprint -}}
@@ -24,7 +24,7 @@
     <noscript>
     {{ $style := resources.Get "scss/noscript.scss"
           | resources.ExecuteAsTemplate "assets/css/noscript.css" .
-          | resources.ToCSS (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "."))
+          | css.Sass (dict "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "."))
           | fingerprint -}}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
     </noscript>
