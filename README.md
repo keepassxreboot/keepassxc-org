@@ -6,19 +6,22 @@ Website sources for https://keepassxc.org.
 
 This website uses [Hugo](https://gohugo.io/). To build the sources, you need to install it first.
 
+Additionally, NPM (bundled with NodeJS) is required to install other dependencies.
+
 Linux:
 ```bash
 sudo snap install hugo
+sudo snap install node --classic
 ```
 
 macOS:
 ```bash
-brew install hugo
+brew install hugo node
 ```
 
 Windows:
 ```bash
-winget install Hugo.Hugo.Extended
+winget install Hugo.Hugo.Extended OpenJS.NodeJS
 ```
 
 ## Build website
