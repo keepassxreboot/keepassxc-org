@@ -16,6 +16,6 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "jquery": "^3.6.4",
     "ua-parser-js": "^2.0.3",
-    "uikit": "^3.23.7"
+    "uikit": "^3.23.9"
   }
 }
