@@ -422,25 +422,19 @@ menu:
             <a id="faq-browser-string-fields" class="uk-accordion-title" href="#faq-string-fields">How do I fill in additional values on a webpage?</a>
             <div class="uk-accordion-content">
                 <p>It is possible to fill additional information beyond username, password, and TOTP by defining String Fields on a page.</p>
+                
+                <p>For detailed instructions on handling special situations and extra field filling, please refer to the 
+                <strong><a href="https://github.com/keepassxreboot/keepassxc-browser/wiki/HowTo:-Special-situations-and-debugging#filling-extra--third-field" target="_blank">KeePassXC-Browser Wiki</a></strong>.</p>
+
+                <p><strong>Quick overview:</strong></p>
                 <ol class="uk-list uk-list-decimal">
-                    <li>From the extension popup menu, click "Choose custom login fields". You can skip the Username, Password, and TOTP fields if not needed.</li>
-                    <li>On Step 4 (Confirm Selection), choose the additional string fields you need to fill.  Note that they are numbered sequentially.</li>
-                    <li>After choosing the String Fields, go to your KeePassXC client and create advanced attributes with a prefix of 'KPH: ' in the order you chose them above.  NOTE: The space after the colon is required.</li>
-                    <li>If you wish, you may add a short name after the prefix to help you remember its purpose.</li>
+                    <li>From the extension popup menu, click "Choose custom login fields".</li>
+                    <li>On Step 4 (Confirm Selection), choose the additional string fields you need to fill. Note that they are numbered sequentially.</li>
+                    <li>In your KeePassXC entry, create advanced attributes with a prefix of 'KPH: ' (note the space after the colon).</li>
+                    <li>The string fields are numbered based on alphabetical order of the KPH attributes, not the order you create them.</li>
                 </ol>
-                <p>An example using the page <code>https://meine.deutsche-bank.de/trxm/db/init.do</code>:</p>
-                <ol class="uk-list uk-list-decimal">
-                    <li>Choose custom login fields for this page and select Branch, Account and Sub-account as String Fields when you reach step 4.</li>
-                    <li>
-                        Go to your entry and add the following advanced attributes (the order is critical):
-                        <ol class="uk-list uk-list-decimal uk-margin-small-top">
-                            <li>KPH: Branch</li>
-                            <li>KPH: Account</li>
-                            <li>KPH: Sub-account</li>
-                        </ol>
-                    </li>
-                    <li>Test the filling of the string fields by refreshing the page and using the extension.</li>
-                </ol>
+                
+                <p><strong>Important:</strong> String Field #1 corresponds to the first KPH attribute in alphabetical order, String Field #2 to the second, and so on. The names after "KPH: " don't matter functionally - they're just for your reference.</p>
             </div>
         </li>
     </ul>
