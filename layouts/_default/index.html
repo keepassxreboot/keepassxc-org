@@ -8,6 +8,7 @@
                     <div class="uk-text-muted uk-margin-remove-top">Cross-platform Password Manager</div>
                     <p class="uk-margin-medium-top">Let KeePassXC safely store your passwords and auto-fill them into your favorite apps, so you can forget all about them.</p>
                     <p>We do the heavy lifting in a no-nonsense, ad-free, tracker-free, and cloud-free manner. Free and open source.</p>
+                    <p>KeePassXC has been awarded a <a href="#certified-security">Security Visa</a> by the French National Cybersecurity Agency (ANSSI).</p>
                 </div>
                 <div class="uk-margin-large-top">
                     <a class="uk-button uk-button-large uk-button-primary uk-width-expand uk-width-auto@s uk-margin-small-bottom" href="{{ .Site.BaseURL }}download" role="button">
@@ -20,6 +21,7 @@
                         <i class="fa-solid fa-hand-holding-dollar"></i> Donate
                     </a>
                 </div>
+
             </div>
             <div class="uk-width-expand uk-visible@l frontpage-hero">
                 <img src="{{ .Site.BaseURL }}assets/img/frontpage-hero.svg" alt="" uk-parallax="opacity: 1,0; scale: 1,1.2; end: 5vh; easing: -2; media: @m">
@@ -99,6 +101,32 @@
         </div>
     </div>
 </section>
+
+<section class="uk-section" id="certified-security">
+    <div class="uk-container">
+        <div class="uk-grid uk-child-width-1-2@m uk-grid-large" uk-grid>
+            <div>
+                <a href="{{  .Site.BaseURL }}audits/#cspn-2025-11-17">
+                    <img alt="ANSSI Security Visa" src="{{  .Site.BaseURL }}/assets/img/anssi-cspn-security-visa.png" class="uk-width-1-1 uk-align-center"
+                         uk-parallax="y: -120,0; opacity: 0,1; scale: 1.1,1; end: 70vh + 70%; easing: 2; media: @m">
+                </a>
+            </div>
+            <div class="uk-flex-first@m">
+                <h2>Certified Security</h2>
+
+                <p><strong>KeePassXC 2.7.9</strong> has been awarded a security Visa by the French National Cybersecurity Agency (ANSSI).</p>
+                <p>
+                    The security Visa has been awarded for passing ANSSI's First-level Security Certification (CSPN). The certificate demonstrates that
+                    KeePassXC has been tested for complying with security standards set by ANSSI, and it is recognised in France and in Germany.
+                </p>
+                <p>
+                    More information can be found on our <a href="{{  .Site.BaseURL }}audits/">security audits and certifications page</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section class="uk-section uk-section-muted">
     <div class="uk-container">
