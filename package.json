@@ -14,7 +14,7 @@
   "homepage": "https://github.com/keepassxreboot/keepassxc-org#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
-    "jquery": "^3.7.1",
+    "jquery": "^4.0.0",
     "ua-parser-js": "^2.0.8",
     "uikit": "<3.23.8"
   }
