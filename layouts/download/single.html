@@ -60,9 +60,9 @@
                                         <i class="fa-brands fa-apple"></i> KeePassXC for Intel Macs
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-x86_64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
@@ -559,7 +559,6 @@
         }
         // Enable animation only after switching tab to reduce flicker
         tabbar.attr('uk-tab', 'animation: uk-animation-fade');
-
         // Adjust macOS download links to processor architecture
         if (uap.cpu.architecture === 'amd64') {
             const t = $('#macos');
@@ -568,8 +567,8 @@
                 const a = $(e).attr('href');
                 if (a.startsWith('{{ $gh }}')) {
                     $(e).attr('href', a.replace(
-                        '{{ .Params.version.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-arm64.dmg',
-                        '{{ .Params.version.version }}{{ .Params.version.macos.dmg_arm64.suffix }}-x86_64.dmg'));
+                        '{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg',
+                        '{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg'));
                 }
             });
         }
