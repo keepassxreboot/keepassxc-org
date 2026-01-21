@@ -63,24 +63,28 @@ menu:
                 <p>Send money via SEPA transfer or <a href="https://wero-wallet.eu/" target="_blank">Wero</a>  (EU only).</p>
                 <ul class="uk-list uk-list-divider">
                     <li>
-                        SEPA:
-                        <div class="uk-align-right" uk-lightbox>
-                            <a href="{{< baseurl >}}assets/img/keepassxc-sepa.svg" uk-tooltip="Scan EPC QR code with your banking app">
-                                <i class="fa-solid fa-qrcode"></i>
-                            </a>
+                        <div class="uk-flex">
+                            <span class="uk-width-3-4">SEPA:</span>
+                            <span class="uk-width-1-4 uk-text-right" uk-lightbox>
+                                <a href="{{< baseurl >}}assets/img/keepassxc-sepa.svg" uk-tooltip="Scan EPC QR code with your banking app">
+                                    <i class="fa-solid fa-qrcode"></i>
+                                </a>
+                            </span>
                         </div>
-                        <div style="font-size: .7rem;">
+                        <div style="font-size: .7rem">
                             Recipient: Janek Bevendorff<br>
                             IBAN: DE36 5139 0000 0032 5243 03<br>
                             BIC: VBMHDE5FXXX
                         </div>
                     </li>
                     <li>
-                        <a href="https://share.weropay.eu/p/1/c/BGJUGJPfL4" target="_blank">Donate with Wero</a>
-                        <div class="uk-align-right" uk-lightbox>
-                            <a href="{{< baseurl >}}assets/img/keepassxc-wero.png" uk-tooltip="Donate with Wero to wero@keepassxc.org">
-                                <i class="fa-solid fa-qrcode"></i>
-                            </a>
+                        <div class="uk-flex">
+                            <a href="https://share.weropay.eu/p/1/c/BGJUGJPfL4" target="_blank" class="uk-width-3-4">Donate with Wero</a>
+                            <div class="uk-width-1-4 uk-text-right" uk-lightbox>
+                                <a href="{{< baseurl >}}assets/img/keepassxc-wero.png" uk-tooltip="Donate with Wero to wero@keepassxc.org">
+                                    <i class="fa-solid fa-qrcode"></i>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
