@@ -234,14 +234,27 @@
                             <div class="uk-grid-divider uk-child-width-1-1 uk-grid-divider uk-grid-medium" uk-grid>
                                 <div>
                                     <div class="uk-text-bold">
-                                        <i class="fa-solid fa-box-archive"></i> AppImage &ndash; Version {{ .Params.version.version }}
+                                        <i class="fa-solid fa-box-archive"></i> AppImage (x86-64) &ndash; Version {{ .Params.version.version }}
                                         <br/>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_x86_64 }}-x86_64.AppImage" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
                                     </div>
                                     <div class="uk-margin-small">
                                         
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage }}-x86_64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_x86_64 }}-x86_64.AppImage.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_x86_64 }}-x86_64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ .Site.BaseURL }}verifying-signatures"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-solid fa-box-archive"></i> AppImage (AArch64) &ndash; Version {{ .Params.version.version }}
+                                        <br/>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_aarch64 }}-aarch64.AppImage" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    </div>
+                                    <div class="uk-margin-small">
+
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_aarch64 }}-aarch64.AppImage.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_aarch64 }}-aarch64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                         <a href="{{ .Site.BaseURL }}verifying-signatures"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                                     </div>
                                 </div>
