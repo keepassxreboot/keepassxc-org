@@ -24,7 +24,7 @@
         {{ $source := printf "%s%s/keepassxc-%s%s-src.tar.xz" $gh .Params.version.version .Params.version.version (.Params.version.suffix.source.tarball | default "") }}
         {{ $windowsLegacy := printf "https://github.com/keepassxreboot/keepassxc/releases/tag/%s" .Params.version.suffix.windows.legacy }}
         <div class="uk-switcher uk-text-center" id="tab-body">
-            <div id="macos">
+            <div data-platform="macos">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-bottom">
                         <h2>KeePassXC for macOS 12+ <span class="architecture-label">(<span class="apple-arch">Apple Silicon</span>)</span></h2>
@@ -108,7 +108,7 @@
                 </div>
             </div>
 
-            <div id="windows">
+            <div data-platform="windows">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-bottom">
                         <h2>KeePassXC for Windows <span class="windows-version">10 / 11</span> <span class="architecture-label">(<span class="windows-arch">x64</span>)</span></h2>
@@ -232,7 +232,7 @@
                 </div>
             </div>
 
-            <div id="linux">
+            <div data-platform="linux">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC for Linux Desktops</h2>
@@ -421,7 +421,7 @@
                 </div>
             </div>
 
-            <div id="code">
+            <div data-platform="code">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC Source Code</h2>
@@ -442,7 +442,7 @@
                 </div>
             </div>
 
-            <div id="browser">
+            <div data-platform="browser">
                 <div class="download-main">
                     <div class="uk-margin-large-top uk-margin-medium-bottom">
                         <h2>KeePassXC Browser Extension</h2>
@@ -625,13 +625,13 @@
         };
 
         const setMacosArchitecture = (architecture) => {
-            const t = $('#macos');
+            const t = $('[data-platform="macos"]');
             const isArm64 = architecture === 'arm64';
             t.find('.apple-arch').text(isArm64 ? 'Apple Silicon' : 'Intel');
             setDownload(t, isArm64 ? {{ $macosArm64 }} : {{ $macosIntel }});
         };
         const setWindowsArchitecture = (architecture) => {
-            const t = $('#windows');
+            const t = $('[data-platform="windows"]');
             const isArm64 = architecture === 'arm64';
             t.find('.windows-arch').text(isArm64 ? 'ARM64' : 'x64');
             setDownload(t, isArm64 ? {{ $windowsArm64 }} : {{ $windowsX64 }});
@@ -654,15 +654,17 @@
 
         // Adjust Windows version.
         if (uap.os.name === 'Windows') {
-            const t = $('#windows');
+            const t = $('[data-platform="windows"]');
             const windowsVersion = parseInt(uap.os.version, 10);
             if (windowsVersion >= 10 && uap.browser.name !== 'Firefox') {
                 t.find('.windows-version').text(uap.os.version);
             }
         }
 
-        UIkit.util.on('.uk-switcher > *', 'shown', (e) => {
-            window.history.pushState(null, null, '#' + e.target.id);
+        UIkit.util.on('#tab-body > [data-platform]', 'shown', (e) => {
+            if (e.target.parentElement.id === 'tab-body') {
+                window.history.pushState(null, null, '#' + e.target.dataset.platform);
+            }
         });
 
         $('.download').on('click', (e) => {
