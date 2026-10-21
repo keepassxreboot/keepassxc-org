@@ -97,7 +97,7 @@
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for Windows</a>
+                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for Windows</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
                         Version {{ .Params.version.version }} &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
@@ -105,8 +105,8 @@
                     <div class="uk-margin-small uk-text-medium uk-text-bold">Requires <a href="https://aka.ms/vc14/vc_redist.x64.exe">MSVC Redistributable</a></div>
 
                     <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
                         <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                     </div>
                 </div>
@@ -132,41 +132,51 @@
                                 </div>
                                 <div>
                                     <div class="uk-text-bold">
-                                        <i class="fa-brands fa-windows"></i> Installer (64-bit, Windows 10 / 11)
+                                        <i class="fa-brands fa-windows"></i> Installer (x64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="uk-text-bold">
-                                        <i class="fa-brands fa-windows"></i> Portable ZIP (64-bit, Windows 10 / 11)
+                                        <i class="fa-brands fa-windows"></i> Portable ZIP (x64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable }}-Win64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_x64 }}-x64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_x64 }}-x64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_x64 }}-x64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="uk-text-bold">
-                                        <i class="fa-brands fa-windows"></i> Legacy Installer (64-bit, Windows 7 / 8 / 8.1)
+                                        <i class="fa-brands fa-windows"></i> Installer (ARM64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_arm64 }}-ARM64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_arm64 }}-ARM64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_arm64 }}-ARM64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="uk-text-bold">
-                                        <i class="fa-brands fa-windows"></i> Legacy 32-bit Downloads
+                                        <i class="fa-brands fa-windows"></i> Portable ZIP (ARM64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="https://github.com/keepassxreboot/keepassxc/releases/tag/2.6.6" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <p class="uk-text-muted uk-margin-small">Note: 32-bit Windows is no longer supported after version 2.6.6.</p>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_arm64 }}-ARM64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_arm64 }}-ARM64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_arm64 }}-ARM64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="uk-text-bold">
+                                        <i class="fa-brands fa-windows"></i> Legacy Installer (x64, Windows 7 / 8 / 8.1)
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <a href="https://github.com/keepassxreboot/keepassxc/releases/tag/2.7.12" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <p class="uk-text-muted uk-margin-small">Note: Legacy Installer is no longer supported after version 2.7.12.</p>
                                     </div>
                                 </div>
                                 <div>
@@ -381,8 +391,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </details>
+                    </details>
+                </div>
             </div>
 
             <div id="code">
@@ -589,7 +599,7 @@
         // Adjust Windows version
         if (uap.os.name === 'Windows') {
             const t = $('#windows');
-            if (uap.os.version >= '10' && uap.browser.name !== "Firefox") {
+                        if (uap.os.version >= '10' && uap.browser.name !== "Firefox") {
                 t.find('.windows-version').text(uap.os.version);
             } else if (uap.os.version < '10') {
                 t.find('.windows-version').text('7 / 8 / 8.1');
@@ -598,7 +608,7 @@
                     const a = $(e).attr('href');
                     if (a.startsWith('{{ $gh }}')) {
                         $(e).attr('href', a.replace(
-                            '{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi }}-Win64.msi',
+                            '{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi',
                             '{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi'));
                     }
                 });
