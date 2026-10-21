@@ -13,23 +13,41 @@
         </ul>
 
         {{ $gh := "https://github.com/keepassxreboot/keepassxc/releases/download/" }}
+        {{ $macosArm64 := printf "%s%s/KeePassXC-%s%s-arm64.dmg" $gh .Params.version.version .Params.version.version (.Params.version.suffix.macos.dmg_arm64 | default "") }}
+        {{ $macosIntel := printf "%s%s/KeePassXC-%s%s-x86_64.dmg" $gh .Params.version.version .Params.version.version (.Params.version.suffix.macos.dmg_intel | default "") }}
+        {{ $windowsX64 := printf "%s%s/KeePassXC-%s%s-x64.msi" $gh .Params.version.version .Params.version.version (.Params.version.suffix.windows.msi_x64 | default "") }}
+        {{ $windowsPortableX64 := printf "%s%s/KeePassXC-%s%s-x64.zip" $gh .Params.version.version .Params.version.version (.Params.version.suffix.windows.portable_x64 | default "") }}
+        {{ $windowsArm64 := printf "%s%s/KeePassXC-%s%s-ARM64.msi" $gh .Params.version.version .Params.version.version (.Params.version.suffix.windows.msi_arm64 | default "") }}
+        {{ $windowsPortableArm64 := printf "%s%s/KeePassXC-%s%s-ARM64.zip" $gh .Params.version.version .Params.version.version (.Params.version.suffix.windows.portable_arm64 | default "") }}
+        {{ $linuxX86_64 := printf "%s%s/KeePassXC-%s%s-x86_64.AppImage" $gh .Params.version.version .Params.version.version (.Params.version.suffix.linux.appimage_x86_64 | default "") }}
+        {{ $linuxAarch64 := printf "%s%s/KeePassXC-%s%s-aarch64.AppImage" $gh .Params.version.version .Params.version.version (.Params.version.suffix.linux.appimage_aarch64 | default "") }}
+        {{ $source := printf "%s%s/keepassxc-%s%s-src.tar.xz" $gh .Params.version.version .Params.version.version (.Params.version.suffix.source.tarball | default "") }}
+        {{ $windowsLegacy := printf "https://github.com/keepassxreboot/keepassxc/releases/tag/%s" .Params.version.suffix.windows.legacy }}
         <div class="uk-switcher uk-text-center" id="tab-body">
             <div id="macos">
                 <div class="download-main">
-                    <div class="uk-margin-large-top uk-margin-medium-bottom">
-                        <h2>KeePassXC for macOS 12+ (<span class="apple-arch">Apple Silicon</span>)</h2>
+                    <div class="uk-margin-large-top uk-margin-bottom">
+                        <h2>KeePassXC for macOS 12+ <span class="architecture-label">(<span class="apple-arch">Apple Silicon</span>)</span></h2>
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for macOS</a>
+                    <div class="uk-margin-small-bottom uk-padding-remove-top uk-text-small architecture-picker" hidden>
+                        <label for="macos-architecture">Platform:</label>
+                        <select id="macos-architecture" class="uk-select uk-form-small uk-form-width-small">
+                            <option value="arm64">Apple Silicon</option>
+                            <option value="amd64">Intel</option>
+                        </select>
+                    </div>
+
+                    <a href="{{ $macosArm64 }}" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for macOS</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
-                        Version {{ .Params.version.version }} &ndash;
+                        Version <span class="download-version">{{ .Params.version.version }}</span> &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
                     </div>
 
-                    <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                    <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted download-verification">
+                        <a href="{{ $macosArm64 }}.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                        <a href="{{ $macosArm64 }}.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
                         <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                     </div>
                 </div>
@@ -50,9 +68,9 @@
                                         <i class="fa-brands fa-apple"></i> KeePassXC for Apple Silicon Macs
                                     </div>
                                     <div class="uk-margin-small">
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                    <a href="{{ $macosArm64 }}" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                    <a href="{{ $macosArm64 }}.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                    <a href="{{ $macosArm64 }}.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
@@ -60,9 +78,9 @@
                                         <i class="fa-brands fa-apple"></i> KeePassXC for Intel Macs
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $macosIntel }}" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $macosIntel }}.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $macosIntel }}.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
@@ -92,21 +110,29 @@
 
             <div id="windows">
                 <div class="download-main">
-                    <div class="uk-margin-large-top uk-margin-medium-bottom">
-                        <h2>KeePassXC for Windows <span class="windows-version">10 / 11</span></h2>
+                    <div class="uk-margin-large-top uk-margin-bottom">
+                        <h2>KeePassXC for Windows <span class="windows-version">10 / 11</span> <span class="architecture-label">(<span class="windows-arch">x64</span>)</span></h2>
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for Windows</a>
+                    <div class="uk-margin-small-bottom uk-text-small architecture-picker" hidden>
+                        <label for="windows-architecture">Platform:</label>
+                        <select id="windows-architecture" class="uk-select uk-form-small uk-form-width-small">
+                            <option value="amd64">x64</option>
+                            <option value="arm64">ARM64</option>
+                        </select>
+                    </div>
+
+                    <a href="{{ $windowsX64 }}" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download for Windows</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
-                        Version {{ .Params.version.version }} &ndash;
+                        Version <span class="download-version">{{ .Params.version.version }}</span> &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
                     </div>
-                    <div class="uk-margin-small uk-text-medium uk-text-bold">Requires <a href="https://aka.ms/vc14/vc_redist.x64.exe">MSVC Redistributable</a></div>
+                    <div class="uk-margin-small uk-text-medium uk-text-bold requires-msvc">Requires <a href="https://aka.ms/vc14/vc_redist.x64.exe">MSVC Redistributable</a></div>
 
-                    <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                    <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted download-verification">
+                        <a href="{{ $windowsX64 }}.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                        <a href="{{ $windowsX64 }}.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
                         <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                     </div>
                 </div>
@@ -135,9 +161,9 @@
                                         <i class="fa-brands fa-windows"></i> Installer (x64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $windowsX64 }}" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $windowsX64 }}.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $windowsX64 }}.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
@@ -145,9 +171,9 @@
                                         <i class="fa-brands fa-windows"></i> Portable ZIP (x64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_x64 }}-x64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_x64 }}-x64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_x64 }}-x64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $windowsPortableX64 }}" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $windowsPortableX64 }}.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $windowsPortableX64 }}.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
@@ -155,9 +181,9 @@
                                         <i class="fa-brands fa-windows"></i> Installer (ARM64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_arm64 }}-ARM64.msi" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_arm64 }}-ARM64.msi.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_arm64 }}-ARM64.msi.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $windowsArm64 }}" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $windowsArm64 }}.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $windowsArm64 }}.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
@@ -165,18 +191,18 @@
                                         <i class="fa-brands fa-windows"></i> Portable ZIP (ARM64, Windows 10 / 11)
                                     </div>
                                     <div class="uk-margin-small">
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_arm64 }}-ARM64.zip" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_arm64 }}-ARM64.zip.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.windows.portable_arm64 }}-ARM64.zip.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $windowsPortableArm64 }}" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $windowsPortableArm64 }}.sig" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $windowsPortableArm64 }}.DIGEST" class="uk-visible@s uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="uk-text-bold">
                                         <i class="fa-brands fa-windows"></i> Legacy Installer (x64, Windows 7 / 8 / 8.1)
                                     </div>
-                                    <div class="uk-margin-small">
-                                        <a href="https://github.com/keepassxreboot/keepassxc/releases/tag/2.7.12" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
-                                        <p class="uk-text-muted uk-margin-small">Note: Legacy Installer is no longer supported after version 2.7.12.</p>
+                                    <div class="uk-margin-small-top">
+                                        <a href="{{ $windowsLegacy }}" class="uk-button uk-button-secondary uk-button-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <p class="uk-text-muted uk-margin-small-top uk-margin-remove-bottom">Note: Legacy Installer is no longer supported after version {{ .Params.version.suffix.windows.legacy }}.</p>
                                     </div>
                                 </div>
                                 <div>
@@ -246,12 +272,12 @@
                                     <div class="uk-text-bold">
                                         <i class="fa-solid fa-box-archive"></i> AppImage (x86-64) &ndash; Version {{ .Params.version.version }}
                                         <br/>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_x86_64 }}-x86_64.AppImage" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $linuxX86_64 }}" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
                                     </div>
                                     <div class="uk-margin-small">
                                         
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_x86_64 }}-x86_64.AppImage.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_x86_64 }}-x86_64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $linuxX86_64 }}.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $linuxX86_64 }}.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                         <a href="{{ .Site.BaseURL }}verifying-signatures"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                                     </div>
                                 </div>
@@ -259,12 +285,12 @@
                                     <div class="uk-text-bold">
                                         <i class="fa-solid fa-box-archive"></i> AppImage (AArch64) &ndash; Version {{ .Params.version.version }}
                                         <br/>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_aarch64 }}-aarch64.AppImage" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
+                                        <a href="{{ $linuxAarch64 }}" class="uk-button uk-button-secondary uk-button-small uk-margin-small"><i class="fa-solid fa-download"></i> Download</a>
                                     </div>
                                     <div class="uk-margin-small">
 
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_aarch64 }}-aarch64.AppImage.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
-                                        <a href="{{ $gh }}{{ .Params.version.version }}/KeePassXC-{{ .Params.version.version }}{{ .Params.version.suffix.linux.appimage_aarch64 }}-aarch64.AppImage.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
+                                        <a href="{{ $linuxAarch64 }}.sig"><i class="fa-solid fa-key"></i> PGP Signature</a>
+                                        <a href="{{ $linuxAarch64 }}.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a>
                                         <a href="{{ .Site.BaseURL }}verifying-signatures"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                                     </div>
                                 </div>
@@ -402,16 +428,16 @@
                         <p>Keep your passwords safe on the computer you trust. No clouds. No 3rd parties.</p>
                     </div>
 
-                    <a href="{{ $gh }}{{ .Params.version.version }}/keepassxc-{{ .Params.version.version }}{{ .Params.version.suffix.source.tarball }}-src.tar.xz" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download Source Code</a>
+                    <a href="{{ $source }}" class="uk-button uk-button-primary uk-button-large download"><i class="fa-solid fa-download"></i> Download Source Code</a>
                     <div class="uk-margin-small uk-text-small uk-margin-small uk-text-muted">
-                        Version {{ .Params.version.version }} &ndash;
+                        Version <span class="download-version">{{ .Params.version.version }}</span> &ndash;
                         <a href="https://github.com/keepassxreboot/keepassxc/releases">Older Releases</a>
                     </div>
                 </div>
 
                 <div class="uk-text-small uk-margin-medium uk-margin-medium-bottom uk-text-muted">
-                    <a href="{{ $gh }}{{ .Params.version.version }}/keepassxc-{{ .Params.version.version }}{{ .Params.version.suffix.source.tarball }}-src.tar.xz.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
-                    <a href="{{ $gh }}{{ .Params.version.version }}/keepassxc-{{ .Params.version.version }}{{ .Params.version.suffix.source.tarball }}-src.tar.xz.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
+                    <a href="{{ $source }}.sig" class="uk-padding-small"><i class="fa-solid fa-key"></i> PGP Signature</a> &ndash;
+                    <a href="{{ $source }}.DIGEST" class="uk-padding-small"><i class="fa-solid fa-hashtag"></i> SHA-256 Digest</a> &ndash;
                     <a href="{{ .Site.BaseURL }}verifying-signatures" class="uk-padding-small"><i class="fa-solid fa-circle-question"></i> Verifying Signatures</a>
                 </div>
             </div>
@@ -434,7 +460,7 @@
                             <div class="uk-margin-small" style="height: 70px">
                                 <img src="{{ .Site.BaseURL }}assets/img/browser-icons/chrome.svg" width="60" alt="Chrome logo">
                             </div>
-                            <a href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk" target="_blank" class="uk-button uk-button-default uk-display-block">Install</a>
+                            <a href="https://chromewebstore.google.com/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk" target="_blank" class="uk-button uk-button-default uk-display-block">Install</a>
                         </div>
                         <div>
                             <div class="uk-margin-small" style="height: 70px">
@@ -452,7 +478,8 @@
         </div>
 
         <div class="uk-margin-medium" id="download-started" hidden>
-            <div class="uk-label-success uk-margin-medium uk-width-xlarge uk-align-center uk-padding-small uk-text-center">
+            <div class="uk-label-success uk-margin-medium uk-width-xlarge uk-align-center uk-padding-small uk-text-center uk-position-relative">
+                <button type="button" id="close-download-started" class="uk-position-top-right uk-margin-small-top uk-margin-small-right" style="color: inherit;" aria-label="Back to downloads" uk-close></button>
                 Your download has started! <strong><a href="" id="download-again-link">Download again.</a></strong>
             </div>
 
@@ -582,36 +609,55 @@
         }
         // Enable animation only after switching tab to reduce flicker
         tabbar.attr('uk-tab', 'animation: uk-animation-fade');
-        // Adjust macOS download links to processor architecture
-        if (uap.cpu.architecture === 'amd64') {
-            const t = $('#macos');
-            t.find('.apple-arch').text('Intel');
-            t.find('.download-main a').each((i, e) => {
-                const a = $(e).attr('href');
-                if (a.startsWith('{{ $gh }}')) {
-                    $(e).attr('href', a.replace(
-                        '{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_arm64 }}-arm64.dmg',
-                        '{{ .Params.version.version }}{{ .Params.version.suffix.macos.dmg_intel }}-x86_64.dmg'));
+        // Keep the download, signature, and digest pointed at the same package.
+        const setDownload = (platform, url) => {
+            platform.find('.download-main a.download').attr('href', url);
+            platform.find('.download-main a').each((i, e) => {
+                const href = $(e).attr('href');
+                if (href.startsWith('{{ $gh }}')) {
+                    if (href.endsWith('.sig')) {
+                        $(e).attr('href', url + '.sig');
+                    } else if (href.endsWith('.DIGEST')) {
+                        $(e).attr('href', url + '.DIGEST');
+                    }
                 }
             });
+        };
+
+        const setMacosArchitecture = (architecture) => {
+            const t = $('#macos');
+            const isArm64 = architecture === 'arm64';
+            t.find('.apple-arch').text(isArm64 ? 'Apple Silicon' : 'Intel');
+            setDownload(t, isArm64 ? {{ $macosArm64 }} : {{ $macosIntel }});
+        };
+        const setWindowsArchitecture = (architecture) => {
+            const t = $('#windows');
+            const isArm64 = architecture === 'arm64';
+            t.find('.windows-arch').text(isArm64 ? 'ARM64' : 'x64');
+            setDownload(t, isArm64 ? {{ $windowsArm64 }} : {{ $windowsX64 }});
+            t.find('.requires-msvc a').attr('href', isArm64
+                ? 'https://aka.ms/vc14/vc_redist.arm64.exe'
+                : 'https://aka.ms/vc14/vc_redist.x64.exe');
+        };
+
+        // Offer a platform choice when the browser does not expose its architecture.
+        const architecture = uap.cpu.architecture;
+        if (architecture === undefined) {
+            $('.architecture-label').prop('hidden', true);
+            $('#macos-architecture').on('change', (e) => setMacosArchitecture(e.currentTarget.value));
+            $('#windows-architecture').on('change', (e) => setWindowsArchitecture(e.currentTarget.value));
+            $('.architecture-picker').prop('hidden', false);
+        } else if (architecture === 'arm64' || architecture === 'amd64') {
+            setMacosArchitecture(architecture);
+            setWindowsArchitecture(architecture);
         }
 
-        // Adjust Windows version
+        // Adjust Windows version.
         if (uap.os.name === 'Windows') {
             const t = $('#windows');
-                        if (uap.os.version >= '10' && uap.browser.name !== "Firefox") {
+            const windowsVersion = parseInt(uap.os.version, 10);
+            if (windowsVersion >= 10 && uap.browser.name !== 'Firefox') {
                 t.find('.windows-version').text(uap.os.version);
-            } else if (uap.os.version < '10') {
-                t.find('.windows-version').text('7 / 8 / 8.1');
-                t.find('.requires-msvc').remove();
-                t.find('.download-main a').each((i, e) => {
-                    const a = $(e).attr('href');
-                    if (a.startsWith('{{ $gh }}')) {
-                        $(e).attr('href', a.replace(
-                            '{{ .Params.version.version }}{{ .Params.version.suffix.windows.msi_x64 }}-x64.msi',
-                            '{{ .Params.version.version }}{{ .Params.version.suffix.windows.legacy }}-Win64-LegacyWindows.msi'));
-                    }
-                });
             }
         }
 
@@ -620,6 +666,7 @@
         });
 
         $('.download').on('click', (e) => {
+            $('#download-again-link').attr('href', e.currentTarget.href);
             $('#os-tabbar')[0].hidden = true;
             $('#tab-body')[0].hidden = true;
             $('#screenshot-carousel')[0].hidden = true;
@@ -628,9 +675,13 @@
             startedElement[0].hidden = false;
             startedElement.fadeIn(600);
         });
-        $('#download-again-link').click((e) => {
-            location.reload();
+
+        $('#close-download-started').on('click', (e) => {
             e.preventDefault();
+            $('#download-started').stop(true, true)[0].hidden = true;
+            $('#os-tabbar')[0].hidden = false;
+            $('#tab-body')[0].hidden = false;
+            $('#screenshot-carousel')[0].hidden = false;
         });
     });
 </script>
