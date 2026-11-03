@@ -131,6 +131,6 @@ KeePassXC-*: OK{{< /highlight >}}
 <p>Open a PowerShell window (hit <em>WIN+R</em>, type in <em>powershell</em>, press <em>Enter</em>) and change directory to the folder you downloaded the files to, e.g. <code>cd C:\Users\username\Downloads</code></p>
 <p>Copy/Paste the following command into the PowerShell window:</p>
 
-{{< highlight powershell >}}(Get-FileHash .\KeePassXC-*-Win64.msi).Hash -eq (Get-Content .\KeePassXC-*-Win64.msi.DIGEST).split(" ")[0].ToUpper(){{< / highlight >}}
+{{< highlight powershell >}}(Get-FileHash .\KeePassXC-*.msi).Hash -eq (Get-Content .\KeePassXC-*.msi.DIGEST).split(" ")[0].ToUpper(){{< / highlight >}}
 
 <p>You should see <code>True</code> appear. If not, then the download is invalid or your files are not together.</p>
